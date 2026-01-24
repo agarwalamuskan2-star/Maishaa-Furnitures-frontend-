@@ -10,6 +10,7 @@ import SingleBigImage from "@/components/sections/single-big-image";
 import CuratedGalleries from "@/components/sections/curated-galleries";
 import FeaturesGrid from "@/components/sections/features-grid";
 import SEOContent from "@/components/sections/seo-content";
+import AboutYears from "@/components/sections/about-years";
 import Footer from "@/components/sections/footer";
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
         <SingleBigImage />
         <CuratedGalleries />
         <FeaturesGrid />
+        <AboutYears />
         <SEOContent />
       </main>
       <Footer />
