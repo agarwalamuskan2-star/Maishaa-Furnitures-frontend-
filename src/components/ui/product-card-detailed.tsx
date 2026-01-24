@@ -36,7 +36,7 @@ const ProductCardDetailed: React.FC<ProductCardDetailedProps> = ({
     return (
         <div className="group flex flex-col w-full bg-white relative">
             {/* Image Container */}
-            <div className="relative w-full aspect-square bg-[#f5f5f5] overflow-hidden mb-4 rounded-sm">
+            <div className="relative w-full aspect-square bg-[#f5f5f5] overflow-hidden mb-4">
 
                 {/* Badges (Top Left) */}
                 <div className="absolute top-3 left-3 z-20 flex flex-col gap-2">
@@ -44,8 +44,8 @@ const ProductCardDetailed: React.FC<ProductCardDetailedProps> = ({
                         <span
                             key={index}
                             className={`px-3 py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wider ${badge.color === "black"
-                                    ? "bg-black text-white"
-                                    : "bg-white text-black border border-gray-200"
+                                ? "bg-black text-white"
+                                : "bg-white text-black border border-gray-200"
                                 }`}
                         >
                             {badge.text}
