@@ -20,6 +20,8 @@ import Link from "next/link";
  */
 
 export default function NewLaunchPage() {
+    const [isMobileFilterOpen, setIsMobileFilterOpen] = React.useState(false);
+
     return (
         <div className="flex min-h-screen flex-col bg-white">
             <Header />
@@ -34,8 +36,13 @@ export default function NewLaunchPage() {
 
                 {/* Main Content Layout */}
                 <div className="flex flex-col lg:flex-row lg:gap-12 xl:gap-16 items-start">
-                    <NewPageSidebar />
-                    <NewPageGrid />
+                    <NewPageSidebar
+                        isOpen={isMobileFilterOpen}
+                        onClose={() => setIsMobileFilterOpen(false)}
+                    />
+                    <NewPageGrid
+                        onFilterClick={() => setIsMobileFilterOpen(true)}
+                    />
                 </div>
             </main>
 

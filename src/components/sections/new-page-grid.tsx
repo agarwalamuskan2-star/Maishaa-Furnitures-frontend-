@@ -92,7 +92,11 @@ const products = [
     },
 ];
 
-const NewPageGrid = () => {
+interface NewPageGridProps {
+    onFilterClick?: () => void;
+}
+
+const NewPageGrid: React.FC<NewPageGridProps> = ({ onFilterClick }) => {
     const [isSortOpen, setIsSortOpen] = React.useState(false);
     const [selectedSort, setSelectedSort] = React.useState("Featured");
 
@@ -112,7 +116,10 @@ const NewPageGrid = () => {
 
                 <div className="flex items-center gap-4">
                     {/* Filter Toggle (Mobile) */}
-                    <button className="lg:hidden flex items-center gap-2 text-sm font-medium text-gray-800">
+                    <button
+                        className="lg:hidden flex items-center gap-2 text-sm font-medium text-gray-800"
+                        onClick={onFilterClick}
+                    >
                         <SlidersHorizontal size={16} /> Filters
                     </button>
 
