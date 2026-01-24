@@ -41,7 +41,6 @@ export default function NewLaunchPage() {
 
             {/* Standard Bottom Sections */}
             <div className="w-full">
-                <SEOContent />
             </div>
 
             <Footer />
