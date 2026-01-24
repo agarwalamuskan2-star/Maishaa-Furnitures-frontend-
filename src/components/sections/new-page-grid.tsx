@@ -93,10 +93,21 @@ const products = [
 ];
 
 const NewPageGrid = () => {
+    const [isSortOpen, setIsSortOpen] = React.useState(false);
+    const [selectedSort, setSelectedSort] = React.useState("Featured");
+
+    const sortOptions = [
+        "Price: Low to High",
+        "Price: High to Low",
+        "Featured",
+        "Newest First",
+        "Relevance"
+    ];
+
     return (
         <div className="flex-1 w-full">
             {/* Header / Sort Bar */}
-            <div className="flex flex-col sm:flex-row items-center justify-between mb-6 pb-4 border-b border-gray-100">
+            <div className="flex flex-col sm:flex-row items-center justify-between mb-6 pb-4 border-b border-gray-100 relative">
                 <span className="text-sm font-medium text-gray-500 mb-4 sm:mb-0">228 Results</span>
 
                 <div className="flex items-center gap-4">
@@ -106,11 +117,38 @@ const NewPageGrid = () => {
                     </button>
 
                     {/* Sort Dropdown */}
-                    <div className="flex items-center gap-2 cursor-pointer group relative">
-                        <span className="text-sm text-gray-500">Sort:</span>
-                        <span className="text-sm font-medium text-gray-900 flex items-center gap-1">
-                            Featured <ChevronDown size={14} />
-                        </span>
+                    <div className="relative">
+                        <div
+                            className="flex items-center gap-2 cursor-pointer group"
+                            onClick={() => setIsSortOpen(!isSortOpen)}
+                        >
+                            <span className="text-sm text-gray-500">Sort:</span>
+                            <span className="text-sm font-medium text-gray-900 flex items-center gap-1">
+                                {selectedSort} <ChevronDown size={14} className={`transition-transform duration-200 ${isSortOpen ? "rotate-180" : ""}`} />
+                            </span>
+                        </div>
+
+                        {/* Dropdown Menu */}
+                        {isSortOpen && (
+                            <div className="absolute right-0 top-full mt-2 w-48 bg-white shadow-lg border border-gray-100 rounded-md py-2 z-30">
+                                {sortOptions.map((option) => (
+                                    <button
+                                        key={option}
+                                        className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors flex items-center justify-between ${selectedSort === option ? "text-amber-900 font-medium bg-amber-50" : "text-gray-600"
+                                            }`}
+                                        onClick={() => {
+                                            setSelectedSort(option);
+                                            setIsSortOpen(false);
+                                        }}
+                                    >
+                                        {option}
+                                        {selectedSort === option && (
+                                            <span className="w-1.5 h-1.5 rounded-full bg-amber-900"></span>
+                                        )}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

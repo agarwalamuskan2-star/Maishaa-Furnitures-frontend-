@@ -41,9 +41,6 @@ export default function NewLaunchPage() {
 
             {/* Standard Bottom Sections */}
             <div className="w-full">
-                <CuratedGalleries />
-                <FeaturesGrid />
-                <AboutYears />
                 <SEOContent />
             </div>
 
