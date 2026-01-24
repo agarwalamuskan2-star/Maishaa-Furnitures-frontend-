@@ -42,7 +42,7 @@ const CollectionsGrid = () => {
     return (
         <section className="bg-white py-6 md:py-10 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
             <div className="max-w-[1920px] mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 md:gap-y-20">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8 md:gap-y-10">
                     {collections.map((item) => (
                         <div key={item.id} className="group cursor-pointer flex flex-col space-y-6">
                             {/* Image Box */}
