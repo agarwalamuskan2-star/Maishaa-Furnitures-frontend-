@@ -1,13 +1,21 @@
 "use client";
 
 import React, { useState } from "react";
+import { Play } from "lucide-react";
+
+/**
+ * VIDEO BANNER SECTION
+ * 
+ * Features a high-quality background video with a decorative
+ * "Play" button overlay as seen in the reference design.
+ */
 
 const VideoBanner = () => {
     const [hasError, setHasError] = useState(false);
 
     return (
         <div className="w-full py-6 md:py-10 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-            <section className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden bg-transparent">
+            <section className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden bg-transparent group cursor-pointer">
                 {/* Background Video */}
                 {!hasError ? (
                     <video
@@ -34,8 +42,20 @@ const VideoBanner = () => {
                 )}
 
                 {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-black/40"></div>
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-500"></div>
 
+                {/* Play Button Overlay (Bottom Left) */}
+                <div className="absolute bottom-12 left-8 sm:left-12 md:left-16 lg:left-20 z-20 flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full border border-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Play className="w-5 h-5 text-white fill-white ml-0.5" />
+                    </div>
+                    <span className="text-white text-lg font-medium tracking-wide font-body">
+                        Play
+                    </span>
+                </div>
+
+                {/* Optional subtle corner accent like in reference if needed, 
+                    but for now focused on the specific "Play" request */}
             </section>
         </div>
     );
