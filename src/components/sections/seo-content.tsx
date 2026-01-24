@@ -19,7 +19,7 @@ export default function SEOContent() {
                             You might be wondering if your bedroom, living room or office space needs a revamp, either way investing in premium furniture can make all the difference.
                         </p>
                         <p>
-                            At Dtale Modern, we bring you a stunning range of premium furniture designed to complement diverse styles and preferences. With a seamless online shopping experience, you can explore our curated collection and find pieces that perfectly align with your vision.
+                            At Maishaa Modern, we bring you a stunning range of premium furniture designed to complement diverse styles and preferences. With a seamless online shopping experience, you can explore our curated collection and find pieces that perfectly align with your vision.
                         </p>
                         <p>
                             So whether you&apos;re searching for{" "}
@@ -28,7 +28,7 @@ export default function SEOContent() {
                             <Link href="#" className="underline hover:text-gray-900">bedroom furniture</Link>,{" "}
                             <Link href="#" className="underline hover:text-gray-900">dining room furniture</Link>,{" "}
                             <Link href="#" className="underline hover:text-gray-900">home office furniture</Link>, or{" "}
-                            <Link href="#" className="underline hover:text-gray-900">outdoor furniture</Link>, Dtale Modern has it all.
+                            <Link href="#" className="underline hover:text-gray-900">outdoor furniture</Link>, Maishaa Modern has it all.
                         </p>
                     </div>
                 </div>
@@ -90,11 +90,11 @@ export default function SEOContent() {
                 {/* Section 4 */}
                 <div className="space-y-4">
                     <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
-                        Why Buy Premium Furniture Online from Dtale Modern?
+                        Why Buy Premium Furniture Online from Maishaa Modern?
                     </h2>
                     <div className="space-y-4 text-sm md:text-base leading-relaxed">
                         <p>
-                            Dtale Modern is your go-to destination for premium furniture, offering a seamless and enjoyable shopping experience. Here&apos;s why you should pick Dtale Modern for your furniture shopping:
+                            Maishaa Modern is your go-to destination for premium furniture, offering a seamless and enjoyable shopping experience. Here&apos;s why you should pick Maishaa Modern for your furniture shopping:
                         </p>
                         <ul className="space-y-3 pl-2">
                             <li className="flex gap-2">
@@ -124,17 +124,17 @@ export default function SEOContent() {
                 {/* Section 5: Build the Space of Your Dreams */}
                 <div className="space-y-6">
                     <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 leading-tight">
-                        Build the Space of Your Dreams with Dtale Modern, the Premium Online Store.
+                        Build the Space of Your Dreams with Maishaa Modern, the Premium Online Store.
                     </h2>
                     <div className="space-y-6 text-sm md:text-base leading-relaxed">
                         <p>
-                            Your home is an extension of your personal space and choices and this haven deserves nothing short of what&apos;s the best. At Dtale Modern, we are committed to helping you create a space that reflects your taste and lifestyle. Whether you&apos;re looking for sleek and modern designs, classic aesthetics, or a blend of both, our collection offers carefully crafted pieces that transform every room into a statement of refined taste.
+                            Your home is an extension of your personal space and choices and this haven deserves nothing short of what&apos;s the best. At Maishaa Modern, we are committed to helping you create a space that reflects your taste and lifestyle. Whether you&apos;re looking for sleek and modern designs, classic aesthetics, or a blend of both, our collection offers carefully crafted pieces that transform every room into a statement of refined taste.
                         </p>
                         <p>
-                            A collection of <Link href="#" className="underline hover:text-gray-900">dining tables</Link>, <Link href="#" className="underline hover:text-gray-900">modern beds</Link>, <Link href="#" className="underline hover:text-gray-900">storage consoles</Link>, <Link href="#" className="underline hover:text-gray-900">coffee tables</Link>, <Link href="#" className="underline hover:text-gray-900">TV units</Link>, <Link href="#" className="underline hover:text-gray-900">wardrobe furniture</Link>, <Link href="#" className="underline hover:text-gray-900">bookshelves</Link>, <Link href="#" className="underline hover:text-gray-900">accent chairs</Link>, and much more is what we have for you. At Dtale Modern, you can buy on-trend <Link href="#" className="underline hover:text-gray-900">wooden furniture</Link> including <Link href="#" className="underline hover:text-gray-900">outdoor furniture</Link> and <Link href="#" className="underline hover:text-gray-900">home accents</Link> from the comfort of your own space, with features like simple EMI &amp; free Pan-India shipping.
+                            A collection of <Link href="#" className="underline hover:text-gray-900">dining tables</Link>, <Link href="#" className="underline hover:text-gray-900">modern beds</Link>, <Link href="#" className="underline hover:text-gray-900">storage consoles</Link>, <Link href="#" className="underline hover:text-gray-900">coffee tables</Link>, <Link href="#" className="underline hover:text-gray-900">TV units</Link>, <Link href="#" className="underline hover:text-gray-900">wardrobe furniture</Link>, <Link href="#" className="underline hover:text-gray-900">bookshelves</Link>, <Link href="#" className="underline hover:text-gray-900">accent chairs</Link>, and much more is what we have for you. At Maishaa Modern, you can buy on-trend <Link href="#" className="underline hover:text-gray-900">wooden furniture</Link> including <Link href="#" className="underline hover:text-gray-900">outdoor furniture</Link> and <Link href="#" className="underline hover:text-gray-900">home accents</Link> from the comfort of your own space, with features like simple EMI &amp; free Pan-India shipping.
                         </p>
                         <p>
-                            From welcoming entryway collections to cosy living room sets, exquisite dining sets, serene bedroom furnishings, and efficient home office solutions—every piece at Dtale Modern is designed to elevate your interiors. Our thoughtfully curated selection ensures that you don&apos;t just furnish a space but create an ambience that resonates with warmth and elegance
+                            From welcoming entryway collections to cosy living room sets, exquisite dining sets, serene bedroom furnishings, and efficient home office solutions—every piece at Maishaa Modern is designed to elevate your interiors. Our thoughtfully curated selection ensures that you don&apos;t just furnish a space but create an ambience that resonates with warmth and elegance
                         </p>
                         <p className="font-medium text-gray-900">
                             Discover the perfect blend of sophistication and functionality—shop now and create a home that truly reflects you!

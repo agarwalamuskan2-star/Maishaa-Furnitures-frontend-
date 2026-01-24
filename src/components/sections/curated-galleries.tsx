@@ -7,19 +7,19 @@ const CuratedGalleries = () => {
     const galleries = [
         {
             image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
-            alt: "Dtale Modern Store Front 1",
+            alt: "Maishaa Modern Store Front 1",
             location: "BENGALURU",
             subtitle: "Explore this curated gallery",
         },
         {
             image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
-            alt: "Dtale Modern Store Front 2",
+            alt: "Maishaa Modern Store Front 2",
             location: "KOCHI",
             subtitle: "Explore this curated gallery",
         },
         {
             image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1200&auto=format&fit=crop",
-            alt: "Dtale Modern Store Front 3",
+            alt: "Maishaa Modern Store Front 3",
             location: "THRISSUR",
             subtitle: "Explore this curated gallery",
         },
@@ -56,7 +56,7 @@ const CuratedGalleries = () => {
                                 <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-6 md:p-8">
                                     <div className="text-white">
                                         <div className="text-xl md:text-2xl font-bold tracking-wider mb-1">
-                                            DTALE <span className="font-normal">{gallery.location}</span>
+                                            Maishaa <span className="font-normal">{gallery.location}</span>
                                         </div>
                                         <div className="text-xs md:text-sm text-gray-300">
                                             {gallery.subtitle}
