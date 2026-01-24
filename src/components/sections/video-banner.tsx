@@ -36,14 +36,6 @@ const VideoBanner = () => {
                 {/* Dark Overlay */}
                 <div className="absolute inset-0 bg-black/40"></div>
 
-                {/* Text Content */}
-                <div className="relative z-10 flex items-center h-full px-8 sm:px-12 md:px-16 lg:px-20">
-                    <h2
-                        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white text-left tracking-wide max-w-3xl"
-                    >
-                        "Maishaa is Home Culture."
-                    </h2>
-                </div>
             </section>
         </div>
     );
