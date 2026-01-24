@@ -8,19 +8,19 @@ const CuratedGalleries = () => {
         {
             image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
             alt: "Maishaa Modern Store Front 1",
-            location: "BENGALURU",
+            location: "SILIGURI",
             subtitle: "Explore this curated gallery",
         },
         {
             image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
             alt: "Maishaa Modern Store Front 2",
-            location: "KOCHI",
+            location: "SILIGURI",
             subtitle: "Explore this curated gallery",
         },
         {
             image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1200&auto=format&fit=crop",
             alt: "Maishaa Modern Store Front 3",
-            location: "THRISSUR",
+            location: "SILIGURI",
             subtitle: "Explore this curated gallery",
         },
     ];
