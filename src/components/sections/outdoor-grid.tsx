@@ -23,7 +23,7 @@ const products = [
         originalPrice: "₹209,333",
         discount: "10%OFF",
         emiStart: "19736",
-        mainImage: "https://images.unsplash.com/photo-1601058268499-e52658bdf922?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1556911223-053450c768e1?q=80&w=800&auto=format&fit=crop",
         isMadeToOrder: true,
     },
     {
@@ -31,7 +31,7 @@ const products = [
         title: "Malibu Poolside Lounger",
         price: "₹45,910",
         emiStart: "4811",
-        mainImage: "https://images.unsplash.com/photo-1591963836262-113f9f9842a5?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1596700422223-7467614d9b3d?q=80&w=800&auto=format&fit=crop",
         isMadeToOrder: true,
         badges: [{ text: "BEST SELLER", color: "black" as const }],
     },
@@ -42,7 +42,7 @@ const products = [
         originalPrice: "₹46,571",
         discount: "30%OFF",
         emiStart: "3417",
-        mainImage: "https://images.unsplash.com/photo-1582735689369-4fe9a7375a14?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1621506821199-a99a74461933?q=80&w=800&auto=format&fit=crop",
         isMadeToOrder: true,
     },
     {

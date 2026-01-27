@@ -10,7 +10,7 @@ export default function OutdoorHero() {
         <section className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[80vh] overflow-hidden">
             {/* Background Image */}
             <Image
-                src="https://images.unsplash.com/photo-1511874570319-3549298533b6?q=80&w=1920&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1544173104-e3505be1b8a5?q=80&w=1920&auto=format&fit=crop"
                 alt="Outdoor Collections"
                 fill
                 priority
