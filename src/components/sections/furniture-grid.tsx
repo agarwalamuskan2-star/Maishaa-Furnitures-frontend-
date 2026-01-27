@@ -62,7 +62,7 @@ const products = [
         originalPrice: "₹124,900",
         discount: "20%OFF",
         emiStart: "10476",
-        mainImage: "https://images.unsplash.com/photo-1595428774223-ef52624120ec?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop",
         isMadeToOrder: true,
         badges: [{ text: "BEST SELLER", color: "black" as const }],
     },

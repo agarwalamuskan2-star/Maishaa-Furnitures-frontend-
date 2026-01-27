@@ -18,12 +18,12 @@ const categories = [
     },
     {
         name: "Dining",
-        image: "https://images.unsplash.com/photo-1530018607912-eff2df114f11?q=80&w=200&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1617806118233-18e1de24739f?q=80&w=800&auto=format&fit=crop",
         href: "/furniture/dining",
     },
     {
         name: "Bedroom",
-        image: "https://images.unsplash.com/photo-1505693419148-43306071f96c?q=80&w=200&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800&auto=format&fit=crop",
         href: "/furniture/bedroom",
     },
     {
