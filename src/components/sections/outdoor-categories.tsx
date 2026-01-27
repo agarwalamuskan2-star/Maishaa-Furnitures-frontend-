@@ -7,22 +7,22 @@ import Link from "next/link";
 const categories = [
     {
         name: "Outdoor Seating",
-        image: "https://images.unsplash.com/photo-1590059346654-e9102ca633b4?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=400&auto=format&fit=crop",
         href: "/outdoor/seating",
     },
     {
         name: "Outdoor Dining",
-        image: "https://images.unsplash.com/photo-1596700422223-7467614d9b3d?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1601058268499-e52658bdf922?q=80&w=400&auto=format&fit=crop",
         href: "/outdoor/dining",
     },
     {
         name: "Outdoor Accessories",
-        image: "https://images.unsplash.com/photo-1621506821199-a99a74461933?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1582735689369-4fe9a7375a14?q=80&w=400&auto=format&fit=crop",
         href: "/outdoor/accessories",
     },
     {
         name: "Loungers",
-        image: "https://images.unsplash.com/photo-1544161515-4ae6ce6ca8b8?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1591963836262-113f9f9842a5?q=80&w=400&auto=format&fit=crop",
         href: "/outdoor/loungers",
     },
     {
