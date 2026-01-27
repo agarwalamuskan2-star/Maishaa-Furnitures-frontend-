@@ -7,10 +7,10 @@ import { ChevronRight } from "lucide-react";
 
 export default function OutdoorHero() {
     return (
-        <section className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden">
+        <section className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[80vh] overflow-hidden">
             {/* Background Image */}
             <Image
-                src="https://images.unsplash.com/photo-1590059346654-e9102ca633b4?q=80&w=1920&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1511874570319-3549298533b6?q=80&w=1920&auto=format&fit=crop"
                 alt="Outdoor Collections"
                 fill
                 priority

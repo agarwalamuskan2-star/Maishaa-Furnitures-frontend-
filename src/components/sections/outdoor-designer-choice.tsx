@@ -28,7 +28,7 @@ export default function OutdoorDesignerChoice() {
                     {/* Image Section */}
                     <div className="w-full lg:w-3/5 mt-8 lg:mt-0 relative h-[400px] sm:h-[500px] lg:h-[600px]">
                         <Image
-                            src="https://images.unsplash.com/photo-1596700422223-7467614d9b3d?q=80&w=1200&auto=format&fit=crop"
+                            src="https://images.unsplash.com/photo-1544173104-e3505be1b8a5?q=80&w=1200&auto=format&fit=crop"
                             alt="Wren Lounge Chair"
                             fill
                             className="object-cover shadow-2xl"
