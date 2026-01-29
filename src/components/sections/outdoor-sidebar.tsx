@@ -39,7 +39,7 @@ export default function OutdoorSidebar({ isOpen, onClose }: OutdoorSidebarProps)
 
     const sidebarClasses = isOpen
         ? "fixed inset-0 z-50 bg-white w-full h-full overflow-y-auto p-6 md:p-8" // Mobile Open
-        : "hidden lg:block w-full lg:w-[280px] flex-shrink-0 pr-0 lg:pr-8 mb-8 lg:mb-0"; // Desktop / Mobile Closed
+        : "hidden lg:block lg:sticky lg:top-0 h-screen w-full lg:w-[280px] flex-shrink-0 pr-0 lg:pr-8 mb-8 lg:mb-0 overflow-y-auto"; // Desktop / Mobile Closed
 
     return (
         <>

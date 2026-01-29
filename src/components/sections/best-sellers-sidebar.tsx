@@ -22,7 +22,7 @@ export default function BestSellersSidebar({ isOpen = false, onClose }: BestSell
             {/* Sidebar */}
             <aside
                 className={`
-                    fixed lg:sticky top-0 left-0 h-screen lg:h-auto
+                    fixed lg:sticky top-0 left-0 h-screen
                     w-72 lg:w-64 xl:w-72
                     bg-white z-50 lg:z-0
                     transform transition-transform duration-300 ease-in-out
