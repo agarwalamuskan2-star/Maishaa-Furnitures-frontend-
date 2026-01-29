@@ -8,22 +8,22 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const categories = [
     {
         name: "Entryway",
-        image: "https://images.unsplash.com/photo-1534349762230-e0cadf78f505?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/entryway",
     },
     {
         name: "Living",
-        image: "https://images.unsplash.com/photo-1583847268964-b28dc2f51ac9?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/living",
     },
     {
         name: "Dining",
-        image: "https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1567529854338-fc397bed61b9?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/dining",
     },
     {
         name: "Bedroom",
-        image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1505691938895-1758d7eaa511?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/bedroom",
     },
     {
