@@ -8,27 +8,27 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const categories = [
     {
         name: "Entryway",
-        image: "https://images.unsplash.com/photo-1544642899-7069ed429644?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1534349762230-e0cadf78f505?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/entryway",
     },
     {
         name: "Living",
-        image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1583847268964-b28dc2f51ac9?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/living",
     },
     {
         name: "Dining",
-        image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/dining",
     },
     {
         name: "Bedroom",
-        image: "https://images.unsplash.com/photo-1505693333534-7d52f676b911?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/bedroom",
     },
     {
         name: "Office Home",
-        image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/office",
     },
 ];
