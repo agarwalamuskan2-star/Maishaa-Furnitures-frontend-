@@ -4,7 +4,7 @@ export default function DecorIntro() {
     return (
         <section className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 mb-16">
             <div className="max-w-3xl mx-auto text-center">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gray-900 mb-6 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-sans text-gray-900 mb-6 tracking-tight">
                     Elevate Your Space with Premium Accents
                 </h2>
                 <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-light">

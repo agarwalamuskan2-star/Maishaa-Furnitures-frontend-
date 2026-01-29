@@ -42,7 +42,7 @@ export default function WarehouseSaleSidebar({ isOpen = false, onClose }: Wareho
 
                 {/* Browse By Header */}
                 <div className="mb-8">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 font-serif italic">Browse by</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 font-sans italic">Browse by</h3>
                     <p className="text-sm text-gray-500">148 Results</p>
                 </div>
 

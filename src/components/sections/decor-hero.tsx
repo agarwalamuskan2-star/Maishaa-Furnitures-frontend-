@@ -20,7 +20,7 @@ export default function DecorHero() {
                         <p className="text-xs sm:text-sm text-white/80 font-light uppercase tracking-[0.3em] mb-4">
                             DISCOVER EACH PIECE FROM OUR
                         </p>
-                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-white tracking-wider">
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans text-white tracking-wider">
                             ACCENTS
                         </h1>
                     </div>

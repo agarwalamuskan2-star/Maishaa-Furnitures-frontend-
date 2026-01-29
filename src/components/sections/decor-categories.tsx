@@ -31,7 +31,7 @@ export default function DecorCategories() {
     return (
         <section className="mb-20">
             <div className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl font-serif text-gray-900 mb-4 tracking-tight">Explore more</h2>
+                <h2 className="text-3xl sm:text-4xl font-sans text-gray-900 mb-4 tracking-tight">Explore more</h2>
                 <p className="text-sm sm:text-base text-gray-500 font-light">
                     Discover our curated selection of premium home accents.
                 </p>

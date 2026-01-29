@@ -60,7 +60,7 @@ export default function StyleGallery() {
                                     <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">
                                         {style.subtitle}
                                     </p>
-                                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-gray-900 leading-tight mb-6">
+                                    <h3 className="text-3xl sm:text-4xl lg:text-5xl text-gray-900 leading-tight mb-6">
                                         {style.name}
                                     </h3>
                                     <span className="inline-block text-[10px] sm:text-xs font-bold text-white bg-black/80 backdrop-blur-sm px-6 py-2 tracking-[0.2em] group-hover:bg-black transition-colors">

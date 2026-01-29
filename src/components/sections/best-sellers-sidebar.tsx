@@ -42,7 +42,7 @@ export default function BestSellersSidebar({ isOpen = false, onClose }: BestSell
 
                 {/* Browse By Header */}
                 <div className="mb-8">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 font-serif italic">Filter by</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 font-sans italic">Filter by</h3>
                     <p className="text-sm text-gray-500">84 Best Sellers</p>
                 </div>
 

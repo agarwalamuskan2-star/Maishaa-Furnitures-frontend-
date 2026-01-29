@@ -13,7 +13,7 @@ export default function OutdoorDesignerChoice() {
                         <span className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-[0.3em] mb-4 block">
                             DESIGNER'S CHOICE
                         </span>
-                        <h3 className="text-4xl sm:text-5xl font-serif text-gray-900 mb-8 leading-tight">
+                        <h3 className="text-4xl sm:text-5xl font-sans text-gray-900 mb-8 leading-tight">
                             Wren Lounge Chair
                         </h3>
                         <p className="text-base text-gray-600 mb-10 leading-relaxed max-w-md">
