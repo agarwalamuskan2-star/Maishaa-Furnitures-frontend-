@@ -47,59 +47,57 @@ export default function FurnitureCategories() {
     };
 
     return (
-        <section className="w-full mb-12 relative group h-[160px]">
-            {/* Left Gradient/Button Overlay */}
-            <div className="absolute left-0 top-0 bottom-0 z-10 w-12 flex items-center justify-start pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-                <button
-                    onClick={() => scroll("left")}
-                    className="p-2 bg-white/80 hover:bg-white rounded-full shadow-md pointer-events-auto ml-1 border border-gray-100"
-                >
-                    <ChevronLeft size={20} />
-                </button>
-            </div>
+        <section className="w-full mb-12 relative group">
+            {/* Left Button */}
+            <button
+                onClick={() => scroll("left")}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 text-gray-400 hover:text-black transition-colors"
+                aria-label="Scroll left"
+            >
+                <ChevronLeft size={24} strokeWidth={1} />
+            </button>
 
             {/* Scroll Container */}
             <div
                 ref={scrollRef}
-                className="flex overflow-x-auto no-scrollbar border-t border-b border-gray-100 bg-white"
+                className="flex overflow-x-auto no-scrollbar border-t border-b border-gray-100 bg-white scroll-smooth"
             >
                 {categories.map((cat, idx) => (
                     <Link
                         key={cat.name}
                         href={cat.href}
                         className={`
-                            flex-shrink-0 flex items-center justify-between p-8 sm:p-10 
-                            w-[280px] sm:w-[320px] lg:w-[360px] h-[160px]
+                            flex-shrink-0 flex items-center justify-between px-8 sm:px-12 
+                            w-[280px] sm:w-[320px] lg:w-[340px] h-[140px]
                             group/card transition-all
                             ${idx !== categories.length - 1 ? 'border-r border-gray-100' : ''}
                         `}
                     >
                         <div className="flex flex-col pr-4">
-                            <span className="text-sm sm:text-base font-bold text-gray-900 uppercase tracking-widest leading-tight group-hover/card:text-black">
+                            <span className="text-sm font-bold text-gray-900 uppercase tracking-widest leading-tight">
                                 {cat.name}
                             </span>
                         </div>
-                        <div className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 overflow-hidden flex-shrink-0">
+                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 overflow-hidden flex-shrink-0">
                             <Image
                                 src={cat.image}
                                 alt={cat.name}
                                 fill
-                                className="object-contain group-hover/card:scale-105 transition-transform duration-500"
+                                className="object-contain group-hover/card:scale-110 transition-transform duration-500"
                             />
                         </div>
                     </Link>
                 ))}
             </div>
 
-            {/* Right Gradient/Button Overlay */}
-            <div className="absolute right-0 top-0 bottom-0 z-10 w-12 flex items-center justify-end pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-                <button
-                    onClick={() => scroll("right")}
-                    className="p-2 bg-white/80 hover:bg-white rounded-full shadow-md pointer-events-auto mr-1 border border-gray-100"
-                >
-                    <ChevronRight size={20} />
-                </button>
-            </div>
+            {/* Right Button */}
+            <button
+                onClick={() => scroll("right")}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 text-gray-400 hover:text-black transition-colors"
+                aria-label="Scroll right"
+            >
+                <ChevronRight size={24} strokeWidth={1} />
+            </button>
         </section>
     );
 }
