@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function DecorHero() {
     return (
         <section className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 mb-10">
-            <div className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[80vh] overflow-hidden bg-black">
+            <div className="relative w-full h-[calc(100dvh-70px)] lg:h-[calc(100vh-120px)] overflow-hidden bg-black">
                 {/* Background Image */}
                 <Image
                     src="/images/decor/hero.png"
