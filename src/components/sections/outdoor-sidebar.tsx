@@ -54,56 +54,7 @@ export default function OutdoorSidebar({ isOpen, onClose }: OutdoorSidebarProps)
                 </div>
 
                 {/* Filter Sections */}
-                <FilterSection
-                    title="Material"
-                    isOpen={openSections.includes("material")}
-                    onToggle={() => toggleSection("material")}
-                >
-                    <div className="space-y-3 sm:space-y-4">
-                        {["Teak (12)", "Metal (8)", "Wicker (15)", "Rattan (10)"].map((item) => (
-                            <label key={item} className="flex items-center gap-3 cursor-pointer group">
-                                <input type="checkbox" className="w-4 h-4 border-gray-300 rounded text-black focus:ring-black" />
-                                <span className="text-xs sm:text-sm text-gray-600 group-hover:text-black transition-colors">
-                                    {item}
-                                </span>
-                            </label>
-                        ))}
-                    </div>
-                </FilterSection>
-
-                <FilterSection
-                    title="Durability"
-                    isOpen={openSections.includes("durability")}
-                    onToggle={() => toggleSection("durability")}
-                >
-                    <div className="space-y-3 sm:space-y-4">
-                        {["Weather Resistant (18)", "UV Protected (12)", "Rust Proof (10)"].map((item) => (
-                            <label key={item} className="flex items-center gap-3 cursor-pointer group">
-                                <input type="checkbox" className="w-4 h-4 border-gray-300 rounded text-black focus:ring-black" />
-                                <span className="text-xs sm:text-sm text-gray-600 group-hover:text-black transition-colors">
-                                    {item}
-                                </span>
-                            </label>
-                        ))}
-                    </div>
-                </FilterSection>
-
-                <FilterSection
-                    title="Discount"
-                    isOpen={openSections.includes("discount")}
-                    onToggle={() => toggleSection("discount")}
-                >
-                    <div className="space-y-3 sm:space-y-4">
-                        {["10% and above", "20% and above", "30% and above", "40% and above"].map((item) => (
-                            <label key={item} className="flex items-center gap-3 cursor-pointer group">
-                                <input type="checkbox" className="w-4 h-4 border-gray-300 rounded text-black focus:ring-black" />
-                                <span className="text-xs sm:text-sm text-gray-600 group-hover:text-black transition-colors">
-                                    {item}
-                                </span>
-                            </label>
-                        ))}
-                    </div>
-                </FilterSection>
+                {/* Removed Material, Durability, and Discount as requested */}
             </aside>
 
             {/* Overlay Backdrop for Mobile */}

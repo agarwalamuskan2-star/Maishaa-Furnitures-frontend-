@@ -1,56 +1,51 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const categories = [
     {
-        name: "Outdoor Seating",
-        image: "/images/outdoor/seating-cat.png",
-        href: "/outdoor/seating",
+        name: "Lighting",
+        image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?q=80&w=800&auto=format&fit=crop",
+        href: "/decor/lighting",
     },
     {
-        name: "Outdoor Dining",
-        image: "/images/outdoor/dining-cat.png",
-        href: "/outdoor/dining",
+        name: "Wall Decor",
+        image: "https://images.unsplash.com/photo-1513519245088-0e12902e35ca?q=80&w=800&auto=format&fit=crop",
+        href: "/decor/wall-decor",
     },
     {
-        name: "Outdoor Accessories",
-        image: "/images/outdoor/accessories-cat.png",
-        href: "/outdoor/accessories",
+        name: "Vases & Planters",
+        image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=800&auto=format&fit=crop",
+        href: "/decor/vases",
     },
     {
-        name: "Loungers",
-        image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=400&auto=format&fit=crop",
-        href: "/outdoor/loungers",
-    },
-    {
-        name: "Garden Decor",
-        image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=400&auto=format&fit=crop",
-        href: "/outdoor/garden-decor",
+        name: "Decorative Objects",
+        image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop",
+        href: "/decor/objects",
     },
 ];
 
-export default function OutdoorCategories() {
+export default function DecorCategories() {
     return (
-        <section className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 mb-20">
+        <section className="mb-20">
             <div className="text-center mb-12">
                 <h2 className="text-3xl sm:text-4xl font-serif text-gray-900 mb-4 tracking-tight">Explore more</h2>
                 <p className="text-sm sm:text-base text-gray-500 font-light">
-                    Furniture to choose from our most promising range of artistries.
+                    Discover our curated selection of premium home accents.
                 </p>
             </div>
 
-            {/* Categories Grid - Matching the visual style of product cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {categories.slice(0, 4).map((cat) => (
+            {/* Categories Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {categories.slice(0, 3).map((cat) => (
                     <Link
                         key={cat.name}
                         href={cat.href}
                         className="group flex flex-col w-full bg-white relative"
                     >
-                        {/* Image Container - Square to match ProductCardDetailed */}
+                        {/* Image Container - Square */}
                         <div className="relative w-full aspect-square bg-[#f5f5f5] overflow-hidden mb-4">
                             {/* "BEST SELLER" Badge */}
                             <div className="absolute top-3 left-3 z-20 flex flex-col gap-2">
@@ -79,14 +74,14 @@ export default function OutdoorCategories() {
 
                             {/* Image */}
                             <Image
-                                src={cat.name === "Loungers" ? "/images/outdoor/wren-chair.png" : cat.image}
+                                src={cat.image}
                                 alt={cat.name}
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                         </div>
 
-                        {/* Details - Below image, matching ProductCardDetailed */}
+                        {/* Details - Below image */}
                         <div className="text-left">
                             <h3 className="text-base text-gray-900 font-normal mb-1 font-body uppercase tracking-wide">
                                 {cat.name}
