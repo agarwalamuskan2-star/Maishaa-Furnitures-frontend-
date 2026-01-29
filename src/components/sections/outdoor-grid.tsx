@@ -10,7 +10,7 @@ const products = [
         title: "Davyn Outdoor Lounge Chair",
         price: "₹69,900",
         emiStart: "6211",
-        mainImage: "/images/outdoor/davyn-lounge-chair.png",
+        mainImage: "https://images.unsplash.com/photo-1567016432779-094069958ad5?q=80&w=800&auto=format&fit=crop",
         isReadyToShip: true,
     },
     {
@@ -18,7 +18,7 @@ const products = [
         title: "Davyn Outdoor Loveseat",
         price: "₹122,900",
         emiStart: "10919",
-        mainImage: "/images/outdoor/davyn-loveseat.png",
+        mainImage: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=800&auto=format&fit=crop",
         isReadyToShip: true,
     },
     {
@@ -26,7 +26,7 @@ const products = [
         title: "Davyn Outdoor Nesting Tables",
         price: "₹54,900",
         emiStart: "4878",
-        mainImage: "/images/outdoor/davyn-nesting-tables.png",
+        mainImage: "https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=800&auto=format&fit=crop",
         isReadyToShip: true,
     },
     {
