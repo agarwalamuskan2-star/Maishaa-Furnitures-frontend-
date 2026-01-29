@@ -47,11 +47,14 @@ export default function StyleHeroImages() {
         <section className="w-full pb-20">
             <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
                 <div className="flex flex-col gap-10">
-                    {styleItems.map((style) => (
+                    {styleItems.map((style, index) => (
                         <Link
                             key={style.id}
                             href={style.href}
-                            className="group relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-gray-100 rounded-sm"
+                            className={`group relative w-full overflow-hidden bg-gray-100 rounded-sm ${index === 0
+                                    ? "aspect-[21/7] md:aspect-[32/9]"
+                                    : "aspect-[16/9] md:aspect-[21/9]"
+                                }`}
                         >
                             {/* Background Image */}
                             <Image
