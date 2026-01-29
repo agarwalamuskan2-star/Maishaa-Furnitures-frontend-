@@ -12,7 +12,7 @@ const products = [
         originalPrice: "₹43,400",
         discount: "40%OFF",
         emiStart: "2730",
-        mainImage: "https://images.unsplash.com/photo-1567016432779-094069958ad5?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=800&auto=format&fit=crop",
         readyToShip: true,
     },
     {
@@ -42,7 +42,7 @@ const products = [
         originalPrice: "₹8,400",
         discount: "30%OFF",
         emiStart: "617",
-        mainImage: "https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=800&auto=format&fit=crop",
         readyToShip: true,
     },
     {
@@ -52,7 +52,7 @@ const products = [
         originalPrice: "₹11,400",
         discount: "30%OFF",
         emiStart: "837",
-        mainImage: "https://images.unsplash.com/photo-1578500494198-246f612d3b3d?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop",
         readyToShip: true,
     },
     {
@@ -62,7 +62,7 @@ const products = [
         originalPrice: "₹9,900",
         discount: "30%OFF",
         emiStart: "727",
-        mainImage: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=800&auto=format&fit=crop",
         readyToShip: true,
     },
 ];
