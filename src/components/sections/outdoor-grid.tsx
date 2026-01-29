@@ -10,7 +10,7 @@ const products = [
         title: "Davyn Outdoor Lounge Chair",
         price: "₹69,900",
         emiStart: "6211",
-        mainImage: "https://images.unsplash.com/photo-1567016432779-094069958ad5?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1596243553500-cabb49ecbd0c?q=80&w=800&auto=format&fit=crop",
         isReadyToShip: true,
     },
     {
@@ -18,7 +18,7 @@ const products = [
         title: "Davyn Outdoor Loveseat",
         price: "₹122,900",
         emiStart: "10919",
-        mainImage: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1601392840469-81bc9f97607a?q=80&w=800&auto=format&fit=crop",
         isReadyToShip: true,
     },
     {
