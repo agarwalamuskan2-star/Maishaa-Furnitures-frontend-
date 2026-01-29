@@ -13,17 +13,17 @@ const categories = [
     },
     {
         name: "Living",
-        image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/living",
     },
     {
         name: "Dining",
-        image: "https://images.unsplash.com/photo-1617806118233-12a14ef0ed2b?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/dining",
     },
     {
         name: "Bedroom",
-        image: "https://images.unsplash.com/photo-1505691938895-1758d7eaa511?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1505693333534-7d52f676b911?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/bedroom",
     },
     {

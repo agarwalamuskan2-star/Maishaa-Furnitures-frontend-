@@ -20,12 +20,12 @@ const products = [
         title: "Nawka Rattan Daybed",
         price: "₹88,400",
         emiStart: "9268",
-        mainImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1550226844-274518975b9a?q=80&w=800&auto=format&fit=crop",
         isMadeToOrder: true,
     },
     {
         id: 3,
-        title: "Alonzo Accent Chair - Charlotte 500",
+        title: "Alonzo Accent Chair",
         price: "₹80,910",
         originalPrice: "₹89,900",
         discount: "10%OFF",
@@ -36,7 +36,7 @@ const products = [
     },
     {
         id: 4,
-        title: "Guilio Swivel Lounge Chair - Charlotte 500",
+        title: "Guilio Swivel Lounge Chair",
         price: "₹102,600",
         originalPrice: "₹114,000",
         discount: "10%OFF",
@@ -47,12 +47,12 @@ const products = [
     },
     {
         id: 5,
-        title: "Sinag Upholstered Easy Chair- Golden Teak-Zanafi Mimosa",
+        title: "Sinag Upholstered Easy Chair",
         price: "₹77,920",
         originalPrice: "₹97,400",
         discount: "20%OFF",
         emiStart: "8169",
-        mainImage: "https://images.unsplash.com/photo-1519947486511-46149fa0a254?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop",
         isMadeToOrder: true,
     },
     {
