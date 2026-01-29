@@ -20,7 +20,7 @@ const products = [
         title: "Nawka Rattan Daybed",
         price: "₹88,400",
         emiStart: "9268",
-        mainImage: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1544457070-4cd77a714300?q=80&w=800&auto=format&fit=crop",
         isMadeToOrder: true,
     },
     {

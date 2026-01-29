@@ -18,7 +18,7 @@ const categories = [
     },
     {
         name: "Dining",
-        image: "https://images.unsplash.com/photo-1617806118233-18e1674375a3?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1617103996702-96ff29b1c467?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/dining",
     },
     {

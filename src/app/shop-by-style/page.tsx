@@ -6,6 +6,7 @@ import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import StyleHero from "@/components/sections/style-hero";
 import StyleIntro from "@/components/sections/style-intro";
+import StyleHeroImages from "@/components/sections/style-hero-images";
 import StyleGallery from "@/components/sections/style-gallery";
 
 export default function ShopByStylePage() {
@@ -30,6 +31,9 @@ export default function ShopByStylePage() {
 
                 {/* Intro Section */}
                 <StyleIntro />
+
+                {/* Hero Images Strip */}
+                <StyleHeroImages />
 
                 {/* Gallery Section */}
                 <StyleGallery />
