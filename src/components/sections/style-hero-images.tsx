@@ -44,14 +44,14 @@ const styleItems = [
 
 export default function StyleHeroImages() {
     return (
-        <section className="w-full pb-20 overflow-hidden">
+        <section className="w-full pb-20">
             <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-                <div className="flex flex-nowrap overflow-x-auto no-scrollbar gap-6 pb-8 snap-x snap-mandatory">
+                <div className="flex flex-col gap-10">
                     {styleItems.map((style) => (
                         <Link
                             key={style.id}
                             href={style.href}
-                            className="group relative flex-shrink-0 w-[85vw] md:w-[70vw] lg:w-[60vw] aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-gray-100 snap-center rounded-sm"
+                            className="group relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-gray-100 rounded-sm"
                         >
                             {/* Background Image */}
                             <Image
@@ -59,7 +59,7 @@ export default function StyleHeroImages() {
                                 alt={style.name}
                                 fill
                                 className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                                sizes="(max-width: 768px) 85vw, (max-width: 1024px) 70vw, 60vw"
+                                sizes="100vw"
                             />
 
                             {/* Refined Overlays */}
@@ -78,13 +78,6 @@ export default function StyleHeroImages() {
                                 </span>
                             </div>
                         </Link>
-                    ))}
-                </div>
-
-                {/* Scroll Indicator Hint */}
-                <div className="flex justify-center gap-2 mt-4">
-                    {styleItems.map((_, i) => (
-                        <div key={i} className="w-1.5 h-1.5 rounded-full bg-gray-200" />
                     ))}
                 </div>
             </div>
