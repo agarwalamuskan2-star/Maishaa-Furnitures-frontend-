@@ -16,21 +16,21 @@ const styles = [
         id: 2,
         name: "MODERN MINIMALIST",
         subtitle: "Sleek & Clean",
-        image: "https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?q=80&w=1200&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop",
         href: "/collections/modern-minimalist",
     },
     {
         id: 3,
         name: "INDUSTRIAL CHIC",
         subtitle: "Raw & Urban",
-        image: "https://images.unsplash.com/photo-1505691938895-1758d7eaa511?q=80&w=1200&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=1200&auto=format&fit=crop",
         href: "/collections/industrial-chic",
     },
     {
         id: 4,
         name: "SCANDINAVIAN",
         subtitle: "Light & Functional",
-        image: "https://images.unsplash.com/photo-1583847268964-b28dc2f51d92?q=80&w=1200&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop",
         href: "/collections/scandinavian",
     }
 ];
