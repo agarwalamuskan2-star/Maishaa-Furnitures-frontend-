@@ -12,7 +12,7 @@ export default function OutdoorIntro() {
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-light">
                     Embark on a journey of outdoor rejuvenation, where every piece of furniture exudes allure and
                     charm, beckoning you to unwind and immerse yourself in the beauty of nature. Let your outdoor
-                    space undergo a remarkable makeover showcasing exquisite furnishings from DTALE Modern that
+                    space undergo a remarkable makeover showcasing exquisite furnishings from MAISHAA Modern that
                     promise to elevate your outdoor experience to new heights of elegance and sophistication.
                 </p>
             </div>

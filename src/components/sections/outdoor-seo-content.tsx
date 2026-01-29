@@ -8,13 +8,13 @@ export default function OutdoorSEOContent() {
                     {/* Main Title Section */}
                     <div>
                         <h2 className="text-2xl sm:text-3xl font-serif text-gray-900 mb-6">
-                            Shop for Outdoor Furniture That Matches Your Space Aesthetics from Dtale Modern
+                            Shop for Outdoor Furniture That Matches Your Space Aesthetics from Maishaa Modern
                         </h2>
                         <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-light">
                             Outdoor furniture is the key to transforming your backyard, patio, or balcony into a comfortable and inviting living space. The perfect outdoor furniture online provides a space to host summer barbecues, relax with a good book or simply enjoy the fresh air. High-quality outdoor furniture enhances your outdoor experience and extends your home’s livable area.
                         </p>
                         <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-light mt-4">
-                            Dtale Modern offers a range of products that can beautify your outdoor setting to refresh your body and soul. Purchase perfect pieces for your outdoor oasis, inviting you to relax, entertain and embrace the beauty of open-air living.
+                            Maishaa Modern offers a range of products that can beautify your outdoor setting to refresh your body and soul. Purchase perfect pieces for your outdoor oasis, inviting you to relax, entertain and embrace the beauty of open-air living.
                         </p>
                     </div>
 
@@ -60,30 +60,30 @@ export default function OutdoorSEOContent() {
 
                     {/* Types Section */}
                     <div className="text-left">
-                        <h3 className="text-xl font-serif text-gray-900 mb-4">Types of Outdoor Furniture for Balconies and Patios from Dtale Modern</h3>
+                        <h3 className="text-xl font-serif text-gray-900 mb-4">Types of Outdoor Furniture for Balconies and Patios from Maishaa Modern</h3>
                         <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-light mb-6">
-                            At Dtale Modern, we take the initiative to make your outdoor furniture the best. To have a cosy morning tea, breakfast, or dinner or just to wind up your entire day's stress, outdoor furniture has a huge role to play. Here are some of the premium outdoor furniture that you can avail of from Dtale Modern.
+                            At Maishaa Modern, we take the initiative to make your outdoor furniture the best. To have a cosy morning tea, breakfast, or dinner or just to wind up your entire day's stress, outdoor furniture has a huge role to play. Here are some of the premium outdoor furniture that you can avail of from Maishaa Modern.
                         </p>
                         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                             {/* Lounge */}
                             <div>
                                 <h4 className="font-bold text-gray-800 text-sm mb-2">Outdoor Lounge</h4>
                                 <p className="text-sm text-gray-600 font-light">
-                                    The outdoor lounge offers a perfect blend of comfort and nature, creating an inviting space to relax and unwind in your backyard or patio. Dtale Modern has premium outdoor sofas & sectionals, outdoor lounge chairs, outdoor gazebo daybeds, outdoor coffee tables and outdoor ottomans. If you are hosting a summer barbecue or enjoying a quiet evening under the stars, the outdoor lounge provides the ideal setting for all your outdoor living needs.
+                                    The outdoor lounge offers a perfect blend of comfort and nature, creating an inviting space to relax and unwind in your backyard or patio. Maishaa Modern has premium outdoor sofas & sectionals, outdoor lounge chairs, outdoor gazebo daybeds, outdoor coffee tables and outdoor ottomans. If you are hosting a summer barbecue or enjoying a quiet evening under the stars, the outdoor lounge provides the ideal setting for all your outdoor living needs.
                                 </p>
                             </div>
                             {/* Dining */}
                             <div>
                                 <h4 className="font-bold text-gray-800 text-sm mb-2">Outdoor Dining</h4>
                                 <p className="text-sm text-gray-600 font-light">
-                                    The outdoor dining is all about a refreshing al fresco experience, allowing patrons to enjoy their meals surrounded by nature’s beauty or urban landscapes. Dtale Modern has a premium collection of outdoor dining tables and outdoor chairs & benches that suit your space beautifully. Whether you are planning for a casual brunch or a romantic dinner under the stars, outdoor dining offers you a delightful escape from the confines of indoor spaces.
+                                    The outdoor dining is all about a refreshing al fresco experience, allowing patrons to enjoy their meals surrounded by nature’s beauty or urban landscapes. Maishaa Modern has a premium collection of outdoor dining tables and outdoor chairs & benches that suit your space beautifully. Whether you are planning for a casual brunch or a romantic dinner under the stars, outdoor dining offers you a delightful escape from the confines of indoor spaces.
                                 </p>
                             </div>
                             {/* Patio */}
                             <div>
                                 <h4 className="font-bold text-gray-800 text-sm mb-2">Outdoor Patio & Balcony</h4>
                                 <p className="text-sm text-gray-600 font-light">
-                                    An outdoor balcony or patio has all the potential to transform your space, especially if it's a home. It offers a space for a serene retreat to enjoy fresh air and nature. Accent or lounge chairs from Dtale Modern’s outdoor patio collection are just the outdoor balcony furniture pieces if you want a space for spinning your morning coffee, entertaining friends or stargazing at night.
+                                    An outdoor balcony or patio has all the potential to transform your space, especially if it's a home. It offers a space for a serene retreat to enjoy fresh air and nature. Accent or lounge chairs from Maishaa Modern’s outdoor patio collection are just the outdoor balcony furniture pieces if you want a space for spinning your morning coffee, entertaining friends or stargazing at night.
                                 </p>
                             </div>
                         </div>
@@ -91,12 +91,12 @@ export default function OutdoorSEOContent() {
 
                     {/* Final Section */}
                     <div className="text-left border-t border-gray-200 pt-8">
-                        <h3 className="text-xl font-serif text-gray-900 mb-4">Find Premium Outdoor Furniture Online from Dtale Modern</h3>
+                        <h3 className="text-xl font-serif text-gray-900 mb-4">Find Premium Outdoor Furniture Online from Maishaa Modern</h3>
                         <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-light mb-4">
                             Outdoor furniture is just as important as the ones in your outdoor space. It has to align perfectly with the aesthetic of your outdoors. There is no better place to enjoy a tranquil moment in your space.
                         </p>
                         <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-light">
-                            With Dtale Modern’s wide range of collections, you will find the perfect outdoor furniture where you can unwind perfectly more than any other indoor space. Take your outdoor space into a peaceful, comfortable space and heaven of style with the best online furniture store.
+                            With Maishaa Modern’s wide range of collections, you will find the perfect outdoor furniture where you can unwind perfectly more than any other indoor space. Take your outdoor space into a peaceful, comfortable space and heaven of style with the best online furniture store.
                         </p>
                     </div>
 

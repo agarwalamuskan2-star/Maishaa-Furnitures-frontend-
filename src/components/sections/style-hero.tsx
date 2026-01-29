@@ -8,7 +8,7 @@ export default function StyleHero() {
             <div className="max-w-[1920px] mx-auto px-4 text-center">
                 {/* Top Tagline */}
                 <p className="text-[10px] sm:text-[12px] font-bold text-gray-400 uppercase tracking-[0.4em] mb-4">
-                    A DTALE STUDIO EDITION
+                    A MAISHAA STUDIO EDITION
                 </p>
 
                 {/* Hero Title with Script Font Fallback */}

@@ -33,7 +33,7 @@ const StoreLocation: React.FC<StoreLocationProps> = ({
                 {/* Image Section */}
                 <div className="w-full lg:w-1/2">
                     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm bg-gray-100">
-                        {/* Brand Overlay as per screenshot (DTALE -> MAISHAA) */}
+                        {/* Brand Overlay (MAISHAA) */}
                         <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
                             <span className="text-white/80 font-bold text-6xl md:text-8xl tracking-widest opacity-30 select-none">
                                 MAISHAA
