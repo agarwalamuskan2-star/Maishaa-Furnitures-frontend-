@@ -13,7 +13,7 @@ const categories = [
     },
     {
         name: "Living",
-        image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/living",
     },
     {
