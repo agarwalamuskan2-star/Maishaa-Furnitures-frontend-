@@ -22,7 +22,7 @@ export default function StoresPage() {
                     email="help@maishaamodern.com"
                     phone="+91 98320 12345"
                     timings="10 AM to 8 PM"
-                    image="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop"
+                    image="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?q=80&w=1200&auto=format&fit=crop"
                 />
 
                 {/* Store 2: Siliguri City Centre */}
@@ -32,7 +32,7 @@ export default function StoresPage() {
                     email="help@maishaamodern.com"
                     phone="+91 98320 67890"
                     timings="9:30 AM to 7:30 PM"
-                    image="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=1200&auto=format&fit=crop"
+                    image="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop"
                     isReversed={true}
                 />
 
@@ -43,7 +43,7 @@ export default function StoresPage() {
                     email="help@maishaamodern.com"
                     phone="+91 98320 11223"
                     timings="Under Renovation"
-                    image="https://images.unsplash.com/photo-1577412647305-991150c7d163?q=80&w=1200&auto=format&fit=crop"
+                    image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop"
                     isRenovation={true}
                 />
 

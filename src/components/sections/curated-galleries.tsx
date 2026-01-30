@@ -12,14 +12,14 @@ const CuratedGalleries = () => {
             subtitle: "Explore this curated gallery",
         },
         {
-            image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
-            alt: "Maishaa Modern Store Front 2",
+            image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1200&auto=format&fit=crop",
+            alt: "Maishaa Modern Interior 1",
             location: "SILIGURI",
             subtitle: "Explore this curated gallery",
         },
         {
-            image: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1200&auto=format&fit=crop",
-            alt: "Maishaa Modern Store Front 3",
+            image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop",
+            alt: "Maishaa Modern Interior 2",
             location: "SILIGURI",
             subtitle: "Explore this curated gallery",
         },

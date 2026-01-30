@@ -51,50 +51,55 @@ export default function FurnitureCategories() {
             {/* Left Button */}
             <button
                 onClick={() => scroll("left")}
-                className="absolute -left-6 top-1/2 -translate-y-1/2 z-20 p-2 text-gray-400 hover:text-black transition-colors"
+                className="absolute -left-6 top-1/2 -translate-y-1/2 z-30 p-2 text-gray-500 hover:text-black transition-colors bg-white/80 rounded-full shadow-sm border border-gray-100 sm:bg-transparent sm:border-0 sm:shadow-none"
                 aria-label="Scroll left"
             >
                 <ChevronLeft size={24} strokeWidth={1} />
             </button>
 
-            {/* Scroll Container with Stronger Border */}
+            {/* Scroll Container with Connected Boxes (Minimalist Ribbon) */}
             <div
-                ref={scrollRef}
-                className="flex overflow-x-auto no-scrollbar border border-gray-200 bg-white scroll-smooth"
+                className="w-full bg-white overflow-hidden"
+                style={{ borderTop: '1px solid black', borderBottom: '1px solid black', borderLeft: '1px solid black' }}
             >
-                {categories.map((cat, idx) => (
-                    <Link
-                        key={cat.name}
-                        href={cat.href}
-                        className={`
-                            flex-shrink-0 flex items-center justify-between px-6 sm:px-8 
-                            w-[240px] sm:w-[280px] lg:w-[300px] h-[100px]
-                            group/card transition-all
-                            ${idx !== categories.length - 1 ? 'border-r border-gray-200' : ''}
-                        `}
-                    >
-                        <div className="flex flex-col pr-4">
-                            <span className="text-[13px] font-medium text-gray-900 leading-tight">
-                                {cat.name}
-                            </span>
-                        </div>
-                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 overflow-hidden flex-shrink-0">
-                            <Image
-                                src={cat.image}
-                                alt={cat.name}
-                                fill
-                                className="object-contain group-hover/card:scale-105 transition-transform duration-500"
-                                sizes="(max-width: 768px) 64px, 80px"
-                            />
-                        </div>
-                    </Link>
-                ))}
+                <div
+                    ref={scrollRef}
+                    className="flex overflow-x-auto no-scrollbar scroll-smooth"
+                >
+                    {categories.map((cat, idx) => (
+                        <Link
+                            key={cat.name}
+                            href={cat.href}
+                            className="
+                                flex-shrink-0 flex items-center justify-between px-6 sm:px-10
+                                w-[220px] sm:w-[260px] md:w-[300px] h-[100px]
+                                group/card transition-all hover:bg-gray-50
+                            "
+                            style={{ borderRight: '1px solid black' }}
+                        >
+                            <div className="flex flex-col pr-4">
+                                <span className="text-[14px] sm:text-[15px] font-medium text-black leading-tight uppercase tracking-widest">
+                                    {cat.name}
+                                </span>
+                            </div>
+                            <div className="relative w-16 h-12 sm:w-20 sm:h-16 overflow-hidden flex-shrink-0">
+                                <Image
+                                    src={cat.image}
+                                    alt={cat.name}
+                                    fill
+                                    className="object-contain group-hover/card:scale-105 transition-transform duration-500"
+                                    sizes="(max-width: 768px) 64px, 80px"
+                                />
+                            </div>
+                        </Link>
+                    ))}
+                </div>
             </div>
 
             {/* Right Button */}
             <button
                 onClick={() => scroll("right")}
-                className="absolute -right-6 top-1/2 -translate-y-1/2 z-20 p-2 text-gray-400 hover:text-black transition-colors"
+                className="absolute -right-6 top-1/2 -translate-y-1/2 z-30 p-2 text-gray-500 hover:text-black transition-colors bg-white/80 rounded-full shadow-sm border border-gray-100 sm:bg-transparent sm:border-0 sm:shadow-none"
                 aria-label="Scroll right"
             >
                 <ChevronRight size={24} strokeWidth={1} />

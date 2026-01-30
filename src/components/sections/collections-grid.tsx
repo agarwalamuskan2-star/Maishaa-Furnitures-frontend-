@@ -35,7 +35,7 @@ const collections: CollectionItem[] = [
     { id: 15, title: "Forest Retreat", image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop" },
     { id: 16, title: "Midnight Lounge", image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=800&auto=format&fit=crop" },
     { id: 17, title: "Golden Hour", image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=800&auto=format&fit=crop" },
-    { id: 18, title: "Pure Elegance", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop" },
+    { id: 18, title: "Pure Elegance", image: "https://images.unsplash.com/photo-1574739782594-db4ead022697?q=80&w=800&auto=format&fit=crop" },
 ];
 
 const CollectionsGrid = () => {

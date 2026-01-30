@@ -16,13 +16,13 @@ const FeaturedCategories = () => {
         {
             id: 1,
             title: "New Arrivals",
-            image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=1000&auto=format&fit=crop",
+            image: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=1000&auto=format&fit=crop",
             alt: "New Arrivals category",
         },
         {
             id: 2,
             title: "Ready to Ship",
-            image: "https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?q=80&w=1000&auto=format&fit=crop",
+            image: "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=1000&auto=format&fit=crop",
             alt: "Ready to Ship category",
         },
         {

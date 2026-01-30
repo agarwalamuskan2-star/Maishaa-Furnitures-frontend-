@@ -12,7 +12,7 @@ const products = [
         originalPrice: "₹1,56,125",
         discount: "20%OFF",
         emiStart: "10500",
-        mainImage: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop",
         badges: [{ text: "BEST SELLER", color: "black" as const }],
     },
     {
@@ -48,7 +48,7 @@ const products = [
         originalPrice: "₹21,000",
         discount: "10%OFF",
         emiStart: "1580",
-        mainImage: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=800&auto=format&fit=crop",
         badges: [{ text: "BEST SELLER", color: "black" as const }],
     },
     {
