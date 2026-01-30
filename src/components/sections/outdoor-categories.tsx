@@ -35,8 +35,8 @@ const categories = [
 export default function OutdoorCategories() {
     return (
         <section className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 mb-20">
-            <div className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl font-sans text-gray-900 mb-4 tracking-tight">Explore more</h2>
+            <div className="text-left mb-12">
+                <h2 className="text-3xl sm:text-4xl font-sans font-bold text-gray-900 mb-4 tracking-tight leading-tight">Explore more</h2>
                 <p className="text-sm sm:text-base text-gray-500 font-light">
                     Furniture to choose from our most promising range of artistries.
                 </p>
