@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const categories = [
     {
         name: "Entryway",
-        image: "https://images.unsplash.com/photo-1513519245086-46c8c8ad859b?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1574739782594-db4ead022697?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/entryway",
     },
     {
@@ -18,17 +18,17 @@ const categories = [
     },
     {
         name: "Dining",
-        image: "https://images.unsplash.com/photo-1617806118283-c20d4afcb713?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/dining",
     },
     {
         name: "Bedroom",
-        image: "https://images.unsplash.com/photo-1616594111360-610bbe58814f?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/bedroom",
     },
     {
         name: "Office Home",
-        image: "https://images.unsplash.com/photo-1593062096033-9a26b09daec4?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/office",
     },
 ];

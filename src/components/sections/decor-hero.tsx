@@ -7,7 +7,7 @@ export default function DecorHero() {
             <div className="relative w-full h-[calc(100dvh-70px)] lg:h-[calc(100vh-120px)] overflow-hidden bg-black">
                 {/* Background Image */}
                 <Image
-                    src="/images/decor/hero.png"
+                    src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1920&auto=format&fit=crop"
                     alt="Decor & Accents"
                     fill
                     priority

@@ -12,7 +12,7 @@ const categories = [
     },
     {
         name: "Wall Decor",
-        image: "https://images.unsplash.com/photo-1513519245088-0e12902e35ca?q=80&w=800&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop",
         href: "/decor/wall-decor",
     },
     {

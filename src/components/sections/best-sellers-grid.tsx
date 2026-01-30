@@ -38,7 +38,7 @@ const products = [
         title: "Minimalist Bed Frame",
         price: "₹72,400",
         emiStart: "6050",
-        mainImage: "https://images.unsplash.com/photo-1505691938895-1758d7eaa511?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800&auto=format&fit=crop",
         badges: [{ text: "BEST SELLER", color: "black" as const }],
     },
     {

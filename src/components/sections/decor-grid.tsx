@@ -52,7 +52,7 @@ const products = [
         title: "Brass Candle Holders",
         price: "₹6,800",
         emiStart: "713",
-        mainImage: "https://images.unsplash.com/photo-1602874801006-e24aa9f5d64f?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=800&auto=format&fit=crop",
     },
 ];
 
