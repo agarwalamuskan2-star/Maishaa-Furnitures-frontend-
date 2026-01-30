@@ -3,44 +3,58 @@
 import React from "react";
 import Image from "next/image";
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
 export default function OutdoorDesignerChoice() {
     return (
-        <section className="w-full py-16 sm:py-24 bg-white overflow-hidden">
+        <section className="w-full py-16 sm:py-24 bg-white">
             <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
-                <div className="relative flex flex-col lg:flex-row items-center">
-                    {/* Text Context (Light grey background as seen in Image 2) */}
-                    <div className="w-full lg:w-1/2 bg-[#f8f8f8] p-8 sm:p-12 lg:p-20 z-10 lg:-mr-20">
-                        <span className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-[0.3em] mb-4 block">
-                            DESIGNER'S CHOICE
-                        </span>
-                        <h3 className="text-4xl sm:text-5xl font-sans text-gray-900 mb-8 leading-tight">
-                            Wren Lounge Chair
-                        </h3>
-                        <p className="text-base text-gray-600 mb-10 leading-relaxed max-w-md">
-                            Find serenity in the Wren Lounge Chair. Crafted to mirror the agility of the wren,
-                            this chair harmoniously fuses a streamlined design with functionality.
-                        </p>
-                        <button className="flex items-center gap-4 text-sm font-bold text-gray-900 uppercase tracking-widest hover:gap-6 transition-all group">
-                            Explore <span className="text-gray-400 group-hover:text-black">+</span>
-                        </button>
+                <div className="relative flex flex-col lg:flex-row items-stretch min-h-[500px] lg:h-[600px]">
+                    {/* Text Section (Designers Choice) */}
+                    <div className="w-full lg:w-[45%] bg-[#f7f7f7] p-8 sm:p-12 md:p-16 lg:p-24 flex flex-col justify-center relative z-10">
+                        <div className="max-w-md">
+                            <span className="text-[11px] font-bold text-black uppercase tracking-[0.35em] mb-10 block font-sans">
+                                DESIGNER'S CHOICE
+                            </span>
+                            <h3 className="text-3xl sm:text-4xl lg:text-[42px] font-sans text-gray-900 mb-8 leading-[1.1]">
+                                Wren Lounge Chair
+                            </h3>
+                            <p className="text-[15px] sm:text-[16px] text-gray-600 mb-12 leading-relaxed font-light font-sans text-balance">
+                                Find serenity in the Wren Lounge Chair. Crafted to mirror the agility of the wren,
+                                this chair harmoniously fuses a streamlined design with functionality.
+                            </p>
+
+                            <a href="#" className="inline-flex items-center gap-3 text-[12px] font-bold text-black uppercase tracking-[0.2em] border-b-2 border-black pb-1 hover:border-gray-400 transition-all duration-300 w-fit font-sans">
+                                Explore <span className="text-[18px] leading-none">+</span>
+                            </a>
+                        </div>
                     </div>
 
                     {/* Image Section */}
-                    <div className="w-full lg:w-3/5 mt-8 lg:mt-0 relative h-[400px] sm:h-[500px] lg:h-[600px]">
+                    <div className="w-full lg:w-[55%] relative h-[400px] lg:h-full overflow-hidden">
                         <Image
-                            src="/images/outdoor/wren-chair.png"
+                            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1600&auto=format&fit=crop"
                             alt="Wren Lounge Chair"
                             fill
-                            className="object-cover shadow-2xl"
+                            className="object-cover"
+                            priority
                         />
-                    </div>
 
-                    {/* Pagination (Image 3) */}
-                    <div className="absolute -bottom-10 right-0 flex items-center gap-6 z-20">
-                        <div className="flex items-center gap-4 text-xs font-medium text-gray-400">
-                            <button className="hover:text-black transition-colors">{"<"}</button>
-                            <span className="text-black">1</span> / <span>2</span>
-                            <button className="hover:text-black transition-colors">{">"}</button>
+                        {/* Pagination (Bottom Right of Image) */}
+                        <div className="absolute bottom-10 right-10 flex items-center gap-10 z-20 bg-white/10 backdrop-blur-sm p-4 rounded-sm lg:bg-transparent">
+                            <div className="flex items-center gap-8 text-[14px]">
+                                <button className="text-gray-400 hover:text-black transition-colors">
+                                    <ChevronLeft size={20} strokeWidth={1} />
+                                </button>
+                                <div className="flex items-center gap-2 font-medium tracking-widest font-sans">
+                                    <span className="text-black">1</span>
+                                    <span className="text-gray-300">/</span>
+                                    <span className="text-gray-400">2</span>
+                                </div>
+                                <button className="text-black hover:text-gray-600 transition-colors">
+                                    <ChevronRight size={20} strokeWidth={1} />
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

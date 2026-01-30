@@ -73,7 +73,7 @@ const Header = () => {
   return (
     <header className="w-full sticky top-0 left-0 right-0 z-50 bg-white font-sans flex flex-col">
       {/* 2. Main Header */}
-      <div className="w-full">
+      <div className="w-full border-b border-gray-100">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 h-[70px] flex items-center justify-between">
           {/* Logo (Left) */}
           <div className="flex-shrink-0">
@@ -142,7 +142,7 @@ const Header = () => {
       </div>
 
       {/* 3. Secondary Navigation Bar with Dropdowns - Hidden on Mobile */}
-      <div className="hidden lg:block w-full bg-white">
+      <div className="hidden lg:block w-full bg-white border-b border-gray-100">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex items-center justify-center h-[50px]">
           <nav className="flex items-center space-x-8 xl:space-x-10">
             {secondaryNavLinks.map((link) => (

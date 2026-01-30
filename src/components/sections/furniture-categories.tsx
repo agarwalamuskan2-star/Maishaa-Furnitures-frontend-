@@ -48,20 +48,32 @@ export default function FurnitureCategories() {
 
     return (
         <section className="w-full mb-12 relative group">
+            {/* Force Borders Style */}
+            <style dangerouslySetInnerHTML={{
+                __html: `
+                .furniture-ribbon-container {
+                    border-top: 1px solid #e5e7eb !important;
+                    border-bottom: 1px solid #e5e7eb !important;
+                    border-left: 1px solid #e5e7eb !important;
+                    box-sizing: border-box;
+                }
+                .furniture-ribbon-item {
+                    border-right: 1px solid #e5e7eb !important;
+                    box-sizing: border-box;
+                }
+            `}} />
+
             {/* Left Button */}
             <button
                 onClick={() => scroll("left")}
-                className="absolute -left-6 top-1/2 -translate-y-1/2 z-30 p-2 text-gray-500 hover:text-black transition-colors bg-white/80 rounded-full shadow-sm border border-gray-100 sm:bg-transparent sm:border-0 sm:shadow-none"
+                className="absolute -left-6 top-1/2 -translate-y-1/2 z-30 p-2 text-gray-500 hover:text-black transition-colors bg-white rounded-full shadow-md border border-gray-200"
                 aria-label="Scroll left"
             >
                 <ChevronLeft size={24} strokeWidth={1} />
             </button>
 
             {/* Scroll Container with Connected Boxes (Minimalist Ribbon) */}
-            <div
-                className="w-full bg-white overflow-hidden"
-                style={{ borderTop: '1px solid black', borderBottom: '1px solid black', borderLeft: '1px solid black' }}
-            >
+            <div className="w-full bg-white furniture-ribbon-container overflow-hidden">
                 <div
                     ref={scrollRef}
                     className="flex overflow-x-auto no-scrollbar scroll-smooth"
@@ -72,13 +84,13 @@ export default function FurnitureCategories() {
                             href={cat.href}
                             className="
                                 flex-shrink-0 flex items-center justify-between px-6 sm:px-10
-                                w-[220px] sm:w-[260px] md:w-[300px] h-[100px]
+                                w-[220px] sm:w-[260px] md:w-[300px] h-[110px]
                                 group/card transition-all hover:bg-gray-50
+                                furniture-ribbon-item
                             "
-                            style={{ borderRight: '1px solid black' }}
                         >
                             <div className="flex flex-col pr-4">
-                                <span className="text-[14px] sm:text-[15px] font-medium text-black leading-tight uppercase tracking-widest">
+                                <span className="text-[14px] sm:text-[15px] font-bold text-black leading-tight uppercase tracking-widest">
                                     {cat.name}
                                 </span>
                             </div>
@@ -99,7 +111,7 @@ export default function FurnitureCategories() {
             {/* Right Button */}
             <button
                 onClick={() => scroll("right")}
-                className="absolute -right-6 top-1/2 -translate-y-1/2 z-30 p-2 text-gray-500 hover:text-black transition-colors bg-white/80 rounded-full shadow-sm border border-gray-100 sm:bg-transparent sm:border-0 sm:shadow-none"
+                className="absolute -right-6 top-1/2 -translate-y-1/2 z-30 p-2 text-gray-500 hover:text-black transition-colors bg-white rounded-full shadow-md border border-gray-200"
                 aria-label="Scroll right"
             >
                 <ChevronRight size={24} strokeWidth={1} />

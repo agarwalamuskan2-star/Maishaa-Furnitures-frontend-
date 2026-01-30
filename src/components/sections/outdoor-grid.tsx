@@ -98,42 +98,6 @@ export default function OutdoorGrid() {
 
     return (
         <div className="flex-1 w-full">
-            {/* Header / Sort Bar */}
-            <div className="flex flex-col sm:flex-row items-center justify-between mb-6 pb-4 border-b border-gray-100 relative">
-                <span className="text-sm font-medium text-gray-500 mb-4 sm:mb-0">16 Results</span>
-
-                <div className="flex items-center gap-4">
-                    {/* Sort Dropdown */}
-                    <div className="relative">
-                        <button
-                            onClick={() => setIsSortOpen(!isSortOpen)}
-                            className="flex items-center gap-2 text-sm font-medium text-gray-800 hover:text-black transition-colors"
-                        >
-                            <span className="text-gray-400">Sort By:</span> {currentSort}
-                            <ChevronDown size={14} className={`transition-transform duration-200 ${isSortOpen ? 'rotate-180' : ''}`} />
-                        </button>
-
-                        {isSortOpen && (
-                            <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-gray-100 shadow-xl z-30 py-2">
-                                {sortOptions.map((option) => (
-                                    <button
-                                        key={option.value}
-                                        className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors ${sortBy === option.value ? 'font-bold text-black' : 'text-gray-600'
-                                            }`}
-                                        onClick={() => {
-                                            setSortBy(option.value);
-                                            setIsSortOpen(false);
-                                        }}
-                                    >
-                                        {option.name}
-                                    </button>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </div>
-
             {/* Product Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
                 {products.concat(products).concat(products.slice(0, 4)).map((product, index) => (

@@ -237,25 +237,9 @@
     transform: scale(1.05);
   }
 
-  /* Remove all pink/orange borders and outlines */
-  img,
-  div,
-  section,
-  button,
-  a,
-  *:focus,
-  *:active,
+  /* Reset default outlines for better accessibility/UI */
   *:focus-visible {
-    outline: none !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-
-  /* Specifically target Next.js Image components */
-  img[alt],
-  [class*="Image"] {
-    outline: none !important;
-    border: none !important;
-    box-shadow: none !important;
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
   }
 }

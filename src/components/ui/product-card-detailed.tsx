@@ -36,7 +36,7 @@ const ProductCardDetailed: React.FC<ProductCardDetailedProps> = ({
     return (
         <div className="group flex flex-col w-full bg-white relative">
             {/* Image Container */}
-            <div className="relative w-full aspect-square bg-[#f5f5f5] overflow-hidden mb-4">
+            <div className="relative w-full aspect-square bg-[#f5f5f5] overflow-hidden">
 
                 {/* Badges (Top Left) */}
                 <div className="absolute top-3 left-3 z-20 flex flex-col gap-2">
@@ -77,42 +77,47 @@ const ProductCardDetailed: React.FC<ProductCardDetailedProps> = ({
                 )}
             </div>
 
-            {/* Product Tag (Made to Order / Ready to Ship) */}
-            <div className="mb-2">
-                {isMadeToOrder && (
-                    <span className="bg-gray-100 text-gray-600 text-[10px] px-2 py-0.5 uppercase tracking-wider font-medium">
-                        MADE TO ORDER
-                    </span>
+            {/* Content Box */}
+            <div className="border border-gray-200 p-5 mt-0 transition-shadow duration-300 group-hover:shadow-sm">
+                {/* Product Tag (Made to Order / Ready to Ship) */}
+                {(isMadeToOrder || isReadyToShip) && (
+                    <div className="mb-3">
+                        {isMadeToOrder && (
+                            <span className="bg-[#f3f0eb] text-[#8c6b5d] text-[10px] px-2 py-1 uppercase tracking-widest font-semibold">
+                                MADE TO ORDER
+                            </span>
+                        )}
+                        {isReadyToShip && (
+                            <span className="bg-[#e6f4ea] text-[#1e7e34] text-[10px] px-2 py-1 uppercase tracking-widest font-semibold">
+                                READY TO SHIP
+                            </span>
+                        )}
+                    </div>
                 )}
-                {isReadyToShip && (
-                    <span className="bg-green-50 text-green-700 text-[10px] px-2 py-0.5 uppercase tracking-wider font-medium">
-                        READY TO SHIP
-                    </span>
+
+                {/* Details */}
+                <h3 className="text-[15px] sm:text-[16px] text-gray-900 font-normal mb-1.5 font-sans leading-snug tracking-wide">{title}</h3>
+
+                <div className="flex items-baseline gap-2 mb-1.5">
+                    <span className="text-[16px] sm:text-[17px] font-bold text-gray-900">{price}</span>
+                    {originalPrice && (
+                        <span className="text-xs text-gray-400 line-through decoration-1">{originalPrice}</span>
+                    )}
+                    {discount && (
+                        <span className="text-xs text-[#a67f5e] font-bold tracking-wide">{discount}</span>
+                    )}
+                </div>
+
+                {/* Price Note */}
+                <p className="text-[10px] text-gray-400 mb-2.5 font-light tracking-wide">Price inclusive of all taxes | Pan India Shipping</p>
+
+                {/* EMI Info */}
+                {emiStart && (
+                    <p className="text-[11px] sm:text-xs text-[#d97706] font-medium tracking-wide">
+                        EMI starts from ₹ {emiStart}
+                    </p>
                 )}
             </div>
-
-            {/* Details */}
-            <h3 className="text-base text-gray-900 font-normal mb-1 font-body">{title}</h3>
-
-            <div className="flex items-baseline gap-2 mb-1">
-                <span className="text-lg font-bold text-gray-900">{price}</span>
-                {originalPrice && (
-                    <span className="text-sm text-gray-400 line-through decoration-1">{originalPrice}</span>
-                )}
-                {discount && (
-                    <span className="text-sm text-amber-700 font-medium">{discount}</span>
-                )}
-            </div>
-
-            {/* Price Note */}
-            <p className="text-[10px] text-gray-500 mb-2">Price inclusive of all taxes | Pan India Shipping</p>
-
-            {/* EMI Info */}
-            {emiStart && (
-                <p className="text-xs text-amber-700 font-medium">
-                    EMI starts from ₹ {emiStart}
-                </p>
-            )}
         </div>
     );
 };
