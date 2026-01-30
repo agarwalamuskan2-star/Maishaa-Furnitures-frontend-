@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const categories = [
     {
         name: "Entryway",
-        image: "https://images.unsplash.com/photo-1574519503410-b7440810ff82?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1513519245086-46c8c8ad859b?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/entryway",
     },
     {
@@ -18,7 +18,7 @@ const categories = [
     },
     {
         name: "Dining",
-        image: "https://images.unsplash.com/photo-1577124155169-974edfa36d94?q=80&w=400&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1617806118283-c20d4afcb713?q=80&w=400&auto=format&fit=crop",
         href: "/furniture/dining",
     },
     {
@@ -57,10 +57,10 @@ export default function FurnitureCategories() {
                 <ChevronLeft size={24} strokeWidth={1} />
             </button>
 
-            {/* Scroll Container with Border */}
+            {/* Scroll Container with Stronger Border */}
             <div
                 ref={scrollRef}
-                className="flex overflow-x-auto no-scrollbar border border-gray-100 bg-white scroll-smooth"
+                className="flex overflow-x-auto no-scrollbar border border-gray-200 bg-white scroll-smooth"
             >
                 {categories.map((cat, idx) => (
                     <Link
@@ -70,7 +70,7 @@ export default function FurnitureCategories() {
                             flex-shrink-0 flex items-center justify-between px-6 sm:px-8 
                             w-[240px] sm:w-[280px] lg:w-[300px] h-[100px]
                             group/card transition-all
-                            ${idx !== categories.length - 1 ? 'border-r border-gray-100' : ''}
+                            ${idx !== categories.length - 1 ? 'border-r border-gray-200' : ''}
                         `}
                     >
                         <div className="flex flex-col pr-4">
@@ -84,6 +84,7 @@ export default function FurnitureCategories() {
                                 alt={cat.name}
                                 fill
                                 className="object-contain group-hover/card:scale-105 transition-transform duration-500"
+                                sizes="(max-width: 768px) 64px, 80px"
                             />
                         </div>
                     </Link>
