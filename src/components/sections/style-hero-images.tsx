@@ -51,10 +51,7 @@ export default function StyleHeroImages() {
                         <Link
                             key={style.id}
                             href={style.href}
-                            className={`group relative w-full overflow-hidden bg-gray-100 rounded-sm ${index === 0
-                                    ? "aspect-[21/7] md:aspect-[32/9]"
-                                    : "aspect-[16/9] md:aspect-[21/9]"
-                                }`}
+                            className="group relative w-full overflow-hidden bg-gray-100 rounded-sm aspect-[16/9] md:aspect-[21/9]"
                         >
                             {/* Background Image */}
                             <Image
