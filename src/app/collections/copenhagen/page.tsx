@@ -10,10 +10,10 @@ import { Heart } from "lucide-react";
 
 const CopenhagenCurves = () => {
     const products = [
-        { name: "Copenhagen Sculptural Armchair", price: "95,000", originalPrice: "1,18,750", discount: "20% Off", emi: "8444", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=800" },
-        { name: "Nordic Wave Three Seater", price: "2,15,000", originalPrice: "2,68,750", discount: "20% Off", emi: "19111", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=800" },
-        { name: "Oslo Curved Coffee Table", price: "48,000", originalPrice: "60,000", discount: "20% Off", emi: "4266", tag: "READY TO SHIP", bestSeller: true, image: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=800" },
-        { name: "Hygge Lounge Chair - Cream", price: "72,000", originalPrice: "90,000", discount: "20% Off", emi: "6400", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800" },
+        { name: "Copenhagen Sculptural Armchair - Black", price: "95,000", originalPrice: "1,18,750", discount: "20% Off", emi: "8444", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=800" },
+        { name: "Nordic Wave Lounge Chair - Tan", price: "72,000", originalPrice: "90,000", discount: "20% Off", emi: "6400", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800" },
+        { name: "Copenhagen Minimalist Dining Chair", price: "24,500", originalPrice: "30,625", discount: "20% Off", emi: "2177", tag: "READY TO SHIP", bestSeller: true, image: "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?q=80&w=800" },
+        { name: "Oslo Curved Lounge Chair", price: "88,000", originalPrice: "1,10,000", discount: "20% Off", emi: "7822", tag: "READY TO SHIP", bestSeller: true, image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=800" },
         { name: "Scandinavian Organic Sideboard", price: "1,08,000", originalPrice: "1,35,000", discount: "20% Off", emi: "9600", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=800" },
         { name: "Copenhagen Loop Pedestal", price: "18,400", originalPrice: "23,000", discount: "20% Off", emi: "1635", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=800" },
         { name: "Nordic Minimalist Bench", price: "32,000", originalPrice: "40,000", discount: "20% Off", emi: "2844", tag: "READY TO SHIP", bestSeller: true, image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=800" },
@@ -33,128 +33,82 @@ const CopenhagenCurves = () => {
             <Header />
 
             <main className="flex-1">
-                {/* Hero Section */}
-                <section className="relative w-full h-[70vh] md:h-[90vh] overflow-hidden bg-[#f0f0f0]">
+                {/* Hero Section - Full Width, No Padding */}
+                <section className="relative w-full h-[60vh] md:h-[90vh] overflow-hidden">
                     <Image
-                        src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=2000&auto=format&fit=crop"
+                        src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2000"
                         alt="Copenhagen Curves Hero"
                         fill
-                        className="object-cover mix-blend-multiply opacity-80"
+                        className="object-cover"
                         priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
-                    <div className="absolute inset-x-0 bottom-32 flex flex-col items-center text-center px-4">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1 }}
-                            className="space-y-6"
-                        >
-                            <span className="text-xs md:text-sm font-bold tracking-[0.8em] text-gray-500 uppercase">SIGNATURE LINE</span>
-                            <h1 className="text-5xl md:text-9xl font-serif text-gray-900 leading-none tracking-tighter lowercase italic">
-                                copenhagen curves
-                            </h1>
-                            <p className="text-sm md:text-xl font-light tracking-[0.4em] uppercase text-gray-600 max-w-2xl mx-auto">
-                                The new language of Scandinavian sculptural comfort
-                            </p>
-                        </motion.div>
-                    </div>
-                </section>
-
-                {/* Narrative Section */}
-                <section className="py-32 px-4 max-w-6xl mx-auto text-center overflow-hidden">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-                        <div className="text-left space-y-10">
-                            <h2 className="text-4xl md:text-7xl font-serif text-gray-900 leading-tight">Nordic Simplicity, Sculptural Form</h2>
-                            <p className="text-gray-500 leading-relaxed text-lg md:text-xl font-light">
-                                The Copenhagen Curves collection is a tribute to the timeless principles of Nordic design—simplicity, functionality, and beauty.
-                                We've taken the classic Scandinavian silhouette and infused it with graceful, sculptural curves that redefine modern seating.
-                                Every piece is an exploration of form and comfort, meticulously crafted from the finest materials to create
-                                a serene atmosphere in your most cherished spaces.
-                            </p>
-                        </div>
-                        <div className="relative aspect-square md:aspect-[3/4] rounded-full overflow-hidden border-[20px] border-gray-50 shadow-inner">
-                            <Image
-                                src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1200"
-                                alt="Copenhagen Curves Detail"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                    </div>
-                </section>
-
-                {/* Material Focus */}
-                <section className="bg-[#fcfcfc] py-24 border-y border-gray-100">
-                    <div className="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-8 md:px-24">
-                        <div className="space-y-4">
-                            <h4 className="text-xs font-bold tracking-widest text-gray-400 uppercase">The Frame</h4>
-                            <p className="text-gray-900 font-serif text-xl italic">Hand-turned European Ashwood for organic durability.</p>
-                        </div>
-                        <div className="space-y-4">
-                            <h4 className="text-xs font-bold tracking-widest text-gray-400 uppercase">The Fill</h4>
-                            <p className="text-gray-900 font-serif text-xl italic">High-resiliency foam tailored for sculptural permanence.</p>
-                        </div>
-                        <div className="space-y-4">
-                            <h4 className="text-xs font-bold tracking-widest text-gray-400 uppercase">The Philosophy</h4>
-                            <p className="text-gray-900 font-serif text-xl italic">Form follows feeling, ensuring every curve serves comfort.</p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Explore More Section */}
-                <section className="py-32 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
-                    <div className="text-center mb-24 space-y-6">
-                        <h2 className="text-4xl md:text-6xl font-serif text-gray-900">The Signature Collection</h2>
-                        <span className="block w-24 h-[1px] bg-gray-200 mx-auto"></span>
-                        <p className="text-gray-400 font-light tracking-[0.3em] uppercase text-xs">
-                            Discover the sculptural elegance of Copenhagen
+                    <div className="absolute inset-0 bg-white/20" />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+                        <span className="text-sm md:text-xl font-light tracking-[0.5em] text-gray-800 uppercase mb-4">SIGNATURE LINE</span>
+                        <h1 className="text-6xl md:text-[10rem] font-bold text-gray-900 leading-tight tracking-tighter lowercase mb-4">
+                            copenhagen curves
+                        </h1>
+                        <p className="text-sm md:text-xl font-light tracking-[0.3em] text-gray-700 uppercase max-w-4xl border-t border-gray-400 pt-4">
+                            THE NEW LANGUAGE OF SCANDINAVIAN SCULPTURAL COMFORT
                         </p>
                     </div>
+                </section>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-24 lg:gap-y-32">
+                {/* Narrative Section - Centered content matching screenshot */}
+                <section className="py-24 px-4 max-w-5xl mx-auto text-center space-y-8">
+                    <h3 className="text-4xl md:text-6xl font-serif text-gray-900">Copenhagen Curves</h3>
+                    <p className="text-gray-500 leading-relaxed text-lg md:text-xl font-light max-w-4xl mx-auto">
+                        The art of modern seating, rooted in Scandinavian elegance. This collection combines sleek,
+                        sculptural designs with exceptional comfort, inspired by the timeless simplicity of Nordic design.
+                        Graceful curves, meticulous craftsmanship, and high-quality materials define each piece, making it
+                        a perfect addition to dining rooms, living spaces, or modern offices.
+                    </p>
+                </section>
+
+                {/* Explore More Section - 4 Rows */}
+                <section className="pb-32 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 lg:gap-y-24">
                         {products.map((product, idx) => (
                             <motion.div
                                 key={idx}
-                                initial={{ opacity: 0, y: 50 }}
+                                initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: (idx % 4) * 0.15 }}
+                                transition={{ duration: 0.6, delay: (idx % 4) * 0.1 }}
                                 viewport={{ once: true }}
                                 className="group cursor-pointer"
                             >
-                                <div className="relative aspect-[3/4] bg-[#fdfdfd] overflow-hidden mb-10 transition-all duration-700 group-hover:rounded-[100px] shadow-sm">
+                                <div className="relative aspect-[4/5] bg-[#f9f9f9] overflow-hidden mb-6">
                                     <Image
                                         src={product.image}
                                         alt={product.name}
                                         fill
                                         className="object-cover transition-transform duration-1000 group-hover:scale-110"
                                     />
-                                    <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-500" />
-                                    <button className="absolute top-8 right-8 p-3.5 bg-white/95 backdrop-blur-sm rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:text-red-500 hover:scale-110">
-                                        <Heart size={22} strokeWidth={1} />
+                                    <button className="absolute top-4 right-4 p-2.5 bg-white/90 backdrop-blur-sm rounded-full shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-300 hover:text-red-500">
+                                        <Heart size={18} />
                                     </button>
                                     {product.bestSeller && (
-                                        <div className="absolute -left-2 top-8 bg-gray-900 text-white text-[9px] px-6 py-2 font-bold tracking-[0.4em] uppercase shadow-lg transform -rotate-90 origin-bottom-left">
+                                        <div className="absolute top-0 left-0 bg-black text-white text-[10px] px-4 py-1.5 font-bold tracking-widest uppercase">
                                             BEST SELLER
                                         </div>
                                     )}
                                 </div>
 
-                                <div className="space-y-4 px-2">
-                                    <div className="flex justify-between items-baseline">
-                                        <span className="text-[11px] text-gray-400 font-bold tracking-[0.3em] uppercase">{product.tag}</span>
-                                        <p className="text-blue-500 text-[11px] font-bold tracking-widest">{product.discount}</p>
-                                    </div>
-                                    <h4 className="text-[19px] font-serif text-gray-900 group-hover:text-gray-400 transition-colors leading-tight min-h-[46px]">
+                                <div className="space-y-4 text-center">
+                                    <span className="text-[10px] text-gray-400 font-bold tracking-[0.2em] uppercase">{product.tag}</span>
+                                    <h4 className="text-[16px] text-gray-900 font-medium group-hover:text-black transition-colors line-clamp-2 min-h-[48px]">
                                         {product.name}
                                     </h4>
-                                    <div className="pt-6 border-t border-gray-50 space-y-2">
-                                        <div className="flex items-center gap-4">
-                                            <p className="text-[20px] font-medium text-gray-900">₹{product.price}</p>
-                                            <p className="text-[15px] text-gray-400 line-through font-light">₹{product.originalPrice}</p>
+                                    <div className="pt-2">
+                                        <div className="flex flex-col items-center gap-1">
+                                            <p className="text-[18px] font-bold text-gray-900">₹{product.price}</p>
+                                            <div className="flex items-center gap-2">
+                                                <p className="text-[14px] text-gray-400 line-through">₹{product.originalPrice}</p>
+                                                <p className="text-[14px] text-orange-600 font-medium">{product.discount}</p>
+                                            </div>
                                         </div>
-                                        <p className="text-[12px] text-gray-500 font-light italic leading-tight">
-                                            EMI starting from ₹ {product.emi} / month
+                                        <p className="text-[12px] text-orange-600 font-light italic mt-2">
+                                            EMI starting from ₹ {product.emi}
                                         </p>
                                     </div>
                                 </div>
