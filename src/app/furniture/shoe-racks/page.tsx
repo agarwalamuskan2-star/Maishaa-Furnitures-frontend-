@@ -145,79 +145,65 @@ const ShoeRackCollection = () => {
                     </div>
                 </section>
 
-                {/* Detailed Information Sections */}
-                <section className="py-24 px-4 sm:px-8 md:px-16 lg:px-20 bg-white border-t border-gray-100">
-                    <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
-                        <div className="space-y-12">
+                {/* BOTTOM CONTENT SECTION - STYLED PER REQUESTED SCREENSHOT */}
+                <section className="py-32 px-4 sm:px-8 md:px-16 lg:px-24 bg-white">
+                    <div className="max-w-5xl mx-auto space-y-16">
+                        {/* Block 1 */}
+                        <div className="space-y-8">
+                            <h2 className="text-3xl md:text-[32px] font-serif text-[#1a1a1a] leading-tight font-medium">
+                                Get the Perfect Wooden Shoe Rack for Your Home
+                            </h2>
                             <div className="space-y-6">
-                                <h3 className="text-2xl md:text-3xl font-serif text-gray-900 leading-tight">
-                                    What Are Some Important Points to Remember While Shopping for a Shoe Rack for Home?
-                                </h3>
-                                <div className="w-12 h-px bg-gray-900"></div>
+                                <p className="text-[#666] leading-relaxed text-[17px] font-light">
+                                    A shoe cabinet, especially a wooden one, is a piece of furniture particularly designed to store and organise shoes neatly. They create an aesthetic appeal in entryways, closets, or mudrooms by keeping footwear accessible while preventing clutter. These racks come in various styles, materials, and sizes, catering to different needs and spaces.
+                                </p>
+                                <p className="text-[#666] leading-relaxed text-[17px] font-light">
+                                    At Maishaa, we offer a great selection of premium shoe racks that not only keep your space tidy but also enhance your home decor. Whether you’re working with a cosy nook or a spacious foyer, we have the perfect shoe rack that offers a complete storage solution.
+                                </p>
                             </div>
+                        </div>
 
-                            <div className="space-y-8">
+                        {/* Block 2 */}
+                        <div className="space-y-8">
+                            <h3 className="text-2xl md:text-[28px] font-serif text-[#1a1a1a] leading-tight font-medium">
+                                What Are Some Important Points to Remember While Shopping for a Shoe Rack for Home?
+                            </h3>
+                            <div className="space-y-10 pt-4">
                                 <div className="space-y-3">
-                                    <h4 className="text-lg font-bold text-gray-900 tracking-tight uppercase">Size and Space</h4>
-                                    <p className="text-gray-500 font-light leading-relaxed">
-                                        Measure the entryway is wide enough for the shoe rack to fit comfortably without overcrowding the area. While in large spaces, you can go for multi-tiered options, compact designs are ideal for limited space. Vertical designs that maximise storage without taking up too much floor space is also worth considering.
+                                    <p className="text-[#1a1a1a] leading-relaxed text-[17px] font-light">
+                                        <span className="font-bold">Size and Space:</span> Measure the entryway is wide enough for the shoe rack to fit comfortably without overcrowding the area. While in large spaces, you can go for multi-tiered options, compact designs are ideal for limited space. Vertical designs that maximise storage without taking up too much floor space is also worth considering.
                                     </p>
                                 </div>
 
                                 <div className="space-y-3">
-                                    <h4 className="text-lg font-bold text-gray-900 tracking-tight uppercase">Material</h4>
-                                    <p className="text-gray-500 font-light leading-relaxed">
-                                        Choose a wooden shoe rack made from strong and durable materials that can withstand daily use. Solid wood options provide longevity and aesthetic appeal. Look for racks made from materials like temperature treated East European Ashwood which are known for their strength and resistance to wear.
+                                    <p className="text-[#1a1a1a] leading-relaxed text-[17px] font-light">
+                                        <span className="font-bold">Material:</span> Choose a wooden shoe rack made from strong and durable materials that can withstand daily use. Solid wood options provide longevity and aesthetic appeal. Look for racks made from materials like temperature treated East European Ashwood which are known for their strength and resistance to wear.
                                     </p>
                                 </div>
 
                                 <div className="space-y-3">
-                                    <h4 className="text-lg font-bold text-gray-900 tracking-tight uppercase">Design and Style</h4>
-                                    <p className="text-gray-500 font-light leading-relaxed">
-                                        Go for a design that matches the interiors of your space. From modern minimalist styles to traditional rustic looks, the right shoe rack can enhance your decor. Consider finishes like Carbon Black and Burnt Amber that complement your existing furniture.
+                                    <p className="text-[#1a1a1a] leading-relaxed text-[17px] font-light">
+                                        <span className="font-bold">Design and Style:</span> Go for a design that matches the interiors of your space. From modern minimalist styles to traditional rustic looks, the right shoe rack can enhance your decor. Consider finishes like Carbon Black and Burnt Amber that complement your existing furniture.
                                     </p>
                                 </div>
 
                                 <div className="space-y-3">
-                                    <h4 className="text-lg font-bold text-gray-900 tracking-tight uppercase">Capacity</h4>
-                                    <p className="text-gray-500 font-light leading-relaxed">
-                                        Consider how many pairs of shoes you need to store. Look for racks with adjustable shelves for flexibility. Some racks also feature compartments for boots, sandals, heels, wedges, flip-flops, and sneakers.
+                                    <p className="text-[#1a1a1a] leading-relaxed text-[17px] font-light">
+                                        <span className="font-bold">Capacity:</span> Consider how many pairs of shoes you need to store. Look for racks with adjustable shelves for flexibility. Some racks also feature compartments for boots, sandals, heels, wedges, flip-flops, and sneakers, ensuring all types of footwear are accommodated.
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="space-y-12">
-                            <div className="bg-[#fafafa] p-10 space-y-8 rounded-sm">
-                                <h3 className="text-2xl font-serif text-gray-900">
-                                    Why Shop for Shoe Racks from Maishaa?
-                                </h3>
-                                <p className="text-gray-600 font-light leading-relaxed">
-                                    At Maishaa, one of the top premium furniture providers in the industry, we are highly committed to offering our customers high quality, durable furniture while adhering to sustainability and environmental responsibility.
+                        {/* Block 3 */}
+                        <div className="space-y-8">
+                            <h3 className="text-2xl md:text-[28px] font-serif text-[#1a1a1a] leading-tight font-medium">
+                                Why Shop for Shoe Racks from Maishaa?
+                            </h3>
+                            <div className="space-y-6">
+                                <p className="text-[#666] leading-relaxed text-[17px] font-light">
+                                    At Maishaa, one of the top premium furniture providers in the industry, we are highly committed to offering our customers high quality, durable furniture while adhering to sustainability and environmental responsibility. Our highly skilled craftsmen help create each piece to ensure it stands the test of time, providing you with long lasting value for years to come.
                                 </p>
-                                <ul className="space-y-4">
-                                    {[
-                                        "Highly skilled craftsmen each piece to ensure it stands the test of time",
-                                        "Extensive inventory of racks, from modern, sleek lines to intricate designs",
-                                        "Wide variety of customisation options to fit your personal taste",
-                                        "Diverse collections that fit seamlessly into any space"
-                                    ].map((benefit, i) => (
-                                        <li key={i} className="flex gap-4 text-sm text-gray-500 font-light">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-gray-900 mt-2 shrink-0" />
-                                            {benefit}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            <div className="space-y-6 px-4">
-                                <h4 className="text-xl font-serif text-gray-900 italic">Practicality met with Elegance</h4>
-                                <p className="text-gray-500 font-light leading-relaxed">
-                                    A wooden shoe rack is an essential addition to any space. They are not just limited to homes; they can also enhance offices, entryways, and other areas. These racks offer both practicality and a stylish touch, allowing you to keep your footwear organised while elevating the overall decor of your environment.
-                                </p>
-                                <button className="px-10 py-4 bg-gray-900 text-white text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-black transition-colors">
-                                    EXPLORE FULL COLLECTION
-                                </button>
                             </div>
                         </div>
                     </div>
