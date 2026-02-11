@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { ShoppingBag, Menu, X, User, Search, Heart, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import AuthModal from "@/components/modals/AuthModal";
 import SearchOverlay from "@/components/modals/SearchOverlay";
@@ -18,6 +19,7 @@ const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
+  const [isSearchActive, setIsSearchActive] = useState(false);
 
   // Main Header Links
   const mainHeaderLinks = [
@@ -84,9 +86,9 @@ const Header = () => {
     <header className="w-full sticky top-0 left-0 right-0 z-50 bg-white font-sans flex flex-col">
       {/* 2. Main Header */}
       <div className="w-full border-b border-gray-100">
-        <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 h-[70px] flex items-center justify-between">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 h-[70px] flex items-center justify-between gap-4 md:gap-8">
           {/* Logo (Left) */}
-          <div className="flex-shrink-0">
+          <div className={`flex-shrink-0 transition-all duration-300 ${isSearchActive ? 'opacity-0 md:opacity-100 w-0 md:w-auto overflow-hidden' : 'opacity-100'}`}>
             <Link href="/" className="block">
               <Image
                 src={logoAsset}
@@ -99,21 +101,55 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Main Links (Center) - Hidden on Mobile */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {mainHeaderLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-sm text-gray-700 hover:text-black transition-colors font-medium"
-              >
-                {link.name}
-              </Link>
-            ))}
+          {/* Center Section: Links or Search Bar */}
+          <div className="flex-1 flex items-center justify-center relative min-w-0">
+            <AnimatePresence mode="wait">
+              {!isSearchActive ? (
+                <motion.div
+                  key="links"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="hidden lg:flex items-center space-x-8"
+                >
+                  {mainHeaderLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className="text-[13px] text-gray-700 hover:text-black transition-colors font-medium uppercase tracking-wider"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="search"
+                  initial={{ opacity: 0, width: 0 }}
+                  animate={{ opacity: 1, width: '100%' }}
+                  exit={{ opacity: 0, width: 0 }}
+                  className="flex items-center bg-transparent w-full max-w-2xl px-4"
+                >
+                  <Search size={18} className="text-gray-400 mr-3 shrink-0" />
+                  <input
+                    autoFocus
+                    type="text"
+                    placeholder="What are you looking for?"
+                    className="w-full bg-transparent outline-none h-10 text-sm md:text-base font-light placeholder:text-gray-300"
+                  />
+                  <button
+                    onClick={() => setIsSearchActive(false)}
+                    className="ml-2 p-1 text-gray-400 hover:text-black transition-colors"
+                  >
+                    <X size={20} />
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           {/* Utility Icons (Right) */}
-          <div className="flex items-center space-x-4 sm:space-x-6">
+          <div className="flex items-center space-x-4 sm:space-x-6 shrink-0">
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -129,34 +165,36 @@ const Header = () => {
                 className="flex items-center text-gray-700 hover:text-black transition-colors gap-2 text-sm font-medium"
               >
                 <User size={20} />
-                <span>Login</span>
+                <span className="hidden xl:inline">Login</span>
               </button>
-              <button
-                onClick={() => setIsSearchOpen(true)}
-                className="text-gray-700 hover:text-black transition-colors"
-                aria-label="Search"
-              >
-                <Search size={20} />
-              </button>
+              {!isSearchActive && (
+                <button
+                  onClick={() => setIsSearchActive(true)}
+                  className="text-gray-700 hover:text-black transition-colors"
+                  aria-label="Search"
+                >
+                  <Search size={22} strokeWidth={1.5} />
+                </button>
+              )}
               <button
                 onClick={() => setIsWishlistOpen(true)}
                 className="text-gray-700 hover:text-black transition-colors"
                 aria-label="Wishlist"
               >
-                <Heart size={20} />
+                <Heart size={22} strokeWidth={1.5} />
               </button>
               <button
                 onClick={() => setIsCartOpen(true)}
                 className="text-gray-700 hover:text-black transition-colors relative"
                 aria-label="Cart"
               >
-                <ShoppingBag size={20} />
+                <ShoppingBag size={22} strokeWidth={1.5} />
               </button>
             </div>
             {/* Mobile Only Icons (simplified for space) */}
             <div className="flex sm:hidden items-center space-x-4">
               <button
-                onClick={() => setIsSearchOpen(true)}
+                onClick={() => setIsSearchActive(true)}
                 className="text-gray-700 hover:text-black transition-colors"
                 aria-label="Search"
               >
