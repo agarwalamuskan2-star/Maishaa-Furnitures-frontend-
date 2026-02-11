@@ -35,7 +35,7 @@ const WishlistSidebar = ({ isOpen, onClose }: WishlistSidebarProps) => {
                         <div className="flex items-center justify-between p-6 border-b border-gray-100">
                             <div className="flex items-center gap-3">
                                 <Heart size={20} strokeWidth={1.5} />
-                                <h2 className="text-sm md:text-base font-serif tracking-[0.2em] uppercase">My Wishlist (0)</h2>
+                                <h2 className="text-sm md:text-base font-light tracking-[0.2em] uppercase">My Wishlist (0)</h2>
                             </div>
                             <button
                                 onClick={onClose}
@@ -51,7 +51,7 @@ const WishlistSidebar = ({ isOpen, onClose }: WishlistSidebarProps) => {
                             <div className="w-20 h-20 rounded-full bg-gray-50 flex items-center justify-center mb-6">
                                 <Heart size={32} strokeWidth={1} className="text-gray-300" />
                             </div>
-                            <h3 className="text-lg font-serif tracking-widest uppercase mb-4">No items saved yet</h3>
+                            <h3 className="text-lg font-light tracking-widest uppercase mb-4">No items saved yet</h3>
                             <p className="text-sm text-gray-500 font-light leading-relaxed max-w-xs mb-8">
                                 Love something? Tap the heart icon on any product to save it here for later.
                             </p>

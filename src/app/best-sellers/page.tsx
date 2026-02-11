@@ -26,7 +26,7 @@ export default function BestSellersPage() {
 
                 {/* Hero / Title Section */}
                 <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 mb-10">
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-gray-900 tracking-tight">Best Sellers</h1>
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl text-gray-900 tracking-tight font-light">Best Sellers</h1>
                     <p className="text-sm sm:text-base text-gray-500 mt-4 max-w-2xl font-light">
                         Discover our most-loved pieces, from timeless icons to contemporary favorites. These are the items that define our collection and inspire homes across the country.
                     </p>

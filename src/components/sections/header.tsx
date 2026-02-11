@@ -528,7 +528,7 @@ const Header = () => {
                           <div className="absolute inset-0 bg-black/10 transition-colors duration-500" />
                           <div className="absolute bottom-10 left-0 right-0 text-white text-center px-6">
                             <p className="text-[10px] uppercase tracking-[0.4em] font-medium opacity-80 mb-2">Selected</p>
-                            <h5 className="text-2xl font-serif">Curated Collections</h5>
+                            <h5 className="text-2xl font-light italic">Curated Collections</h5>
                           </div>
                         </div>
                       )}

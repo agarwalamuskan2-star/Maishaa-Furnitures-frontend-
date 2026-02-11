@@ -66,7 +66,7 @@ const CatalogList = () => {
 
                             {/* Catalog Info */}
                             <div className="mt-8 text-center flex flex-col items-center">
-                                <h3 className="text-xl md:text-2xl font-light text-black tracking-[0.2em] uppercase mb-8 font-serif">
+                                <h3 className="text-xl md:text-2xl font-light text-black tracking-[0.2em] uppercase mb-8">
                                     {catalog.title}
                                 </h3>
 

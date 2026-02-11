@@ -26,7 +26,7 @@ const CatalogHero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-black tracking-[0.05em] mb-12 uppercase font-light">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl text-black tracking-[0.05em] mb-12 uppercase font-light">
                         Discover Our Catalogs
                     </h1>
 
