@@ -23,28 +23,8 @@ const ConsoleTableCollection = () => {
             <Header />
 
             <main className="flex-1">
-                {/* Header Title Section */}
-                <div className="pt-32 pb-8 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
-                    <h1 className="text-4xl md:text-5xl font-serif text-gray-900 uppercase tracking-widest">
-                        Console Tables
-                    </h1>
-                </div>
-
-                {/* Breadcrumbs Section */}
-                <div className="py-6 px-4 sm:px-8 md:px-16 lg:px-20 bg-white border-b border-gray-100">
-                    <nav className="flex items-center gap-2 text-gray-400 text-[10px] tracking-[0.2em] uppercase font-bold">
-                        <Link href="/" className="hover:text-black transition-colors">Home</Link>
-                        <ChevronRight size={10} />
-                        <Link href="/furniture" className="hover:text-black transition-colors">Furniture</Link>
-                        <ChevronRight size={10} />
-                        <Link href="/furniture/entryway" className="hover:text-black transition-colors">Entryway</Link>
-                        <ChevronRight size={10} />
-                        <span className="text-black">Console Tables</span>
-                    </nav>
-                </div>
-
                 {/* Main Collection Section with Sidebar */}
-                <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                <section className="pt-32 pb-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
                     <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row gap-12">
                         {/* Sidebar */}
                         <aside className="w-full lg:w-64 flex-shrink-0 space-y-12">
