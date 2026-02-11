@@ -1,14 +1,33 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
-import { Heart } from "lucide-react";
+import { Heart, ChevronLeft, ChevronRight } from "lucide-react";
 
 const IslesOfGreeceCollection = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    const featuredProducts = [
+        {
+            name: "Irene Serenity Chest",
+            description: "The Irene Serenity Chest is the epitome of refined elegance and practical design. Crafted with attention to detail, it features natural rattan drawer fronts set within a sleek wooden frame finished in a soothing pastel sea green.",
+            image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=2000"
+        },
+        {
+            name: "Andros Storage Console",
+            description: "The Andros Storage Console brings the calm of the Aegean Sea to your living space. With its minimalist lines and ample storage, it perfectly balances functionality with a breezy, coastal aesthetic.",
+            image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=2000"
+        }
+    ];
+
+    const toggleSlide = () => {
+        setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
+    };
+
     const products = [
         { name: "Irene Serenity Chest", price: "45,000", originalPrice: "56,250", discount: "20% Off", emi: "4000", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=1000" },
         { name: "Andros Storage Console", price: "38,000", originalPrice: "47,500", discount: "20% Off", emi: "3377", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=1000" },
@@ -80,6 +99,75 @@ const IslesOfGreeceCollection = () => {
                             of pastel greens and sandy beiges evokes the tranquil essence of a coastal retreat.
                         </p>
                     </motion.div>
+                </section>
+
+                {/* Featured Product Slider Section - Added based on request */}
+                <section className="pb-24 pt-0 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <div className="max-w-[1920px] mx-auto bg-[#f9f9f9] rounded-sm overflow-hidden">
+                        <div className="flex flex-col lg:flex-row h-full">
+
+                            {/* Content Side (Left) */}
+                            <div className="w-full lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center relative bg-white lg:bg-[#f9f9f9]">
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={currentSlide}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        exit={{ opacity: 0, x: 20 }}
+                                        transition={{ duration: 0.5 }}
+                                        className="space-y-8"
+                                    >
+                                        <h3 className="text-4xl md:text-5xl font-light text-gray-900">
+                                            {featuredProducts[currentSlide].name}
+                                        </h3>
+                                        <p className="text-gray-600 leading-relaxed text-lg font-light max-w-xl">
+                                            {featuredProducts[currentSlide].description}
+                                        </p>
+                                        <div>
+                                            <button className="px-8 py-3 border border-gray-900 text-gray-900 text-sm font-medium hover:bg-black hover:text-white transition-all uppercase tracking-widest">
+                                                Explore +
+                                            </button>
+                                        </div>
+                                    </motion.div>
+                                </AnimatePresence>
+
+                                {/* Slider Navigation */}
+                                <div className="flex items-center gap-4 mt-16 md:absolute md:bottom-12 md:right-12">
+                                    <button onClick={toggleSlide} className="p-2 hover:bg-gray-200 rounded-full transition-colors">
+                                        <ChevronLeft size={20} className="text-gray-500" />
+                                    </button>
+                                    <span className="text-sm font-medium tracking-widest text-gray-500">
+                                        {currentSlide + 1} / {featuredProducts.length}
+                                    </span>
+                                    <button onClick={toggleSlide} className="p-2 hover:bg-gray-200 rounded-full transition-colors">
+                                        <ChevronRight size={20} className="text-gray-500" />
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Image Side (Right) */}
+                            <div className="w-full lg:w-1/2 relative h-[50vh] lg:h-auto min-h-[500px]">
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={currentSlide}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        transition={{ duration: 0.8 }}
+                                        className="absolute inset-0"
+                                    >
+                                        <Image
+                                            src={featuredProducts[currentSlide].image}
+                                            alt={featuredProducts[currentSlide].name}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </motion.div>
+                                </AnimatePresence>
+                            </div>
+
+                        </div>
+                    </div>
                 </section>
 
                 {/* Explore More - Product Grid */}
