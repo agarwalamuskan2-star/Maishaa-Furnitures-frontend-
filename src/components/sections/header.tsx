@@ -35,12 +35,51 @@ const Header = () => {
     {
       name: "Collections",
       href: "/collections",
-      dropdown: [
-        { name: "Living Room", href: "/collections/living-room" },
-        { name: "Bedroom", href: "/collections/bedroom" },
-        { name: "Dining Room", href: "/collections/dining-room" },
-        { name: "Home Office", href: "/collections/home-office" },
-      ]
+      megaMenu: {
+        columns: [
+          {
+            title: "Latest Edition",
+            links: [
+              { name: "Monocraft Collection", href: "/collections/monocraft" },
+              { name: "Incurve Episodes", href: "/collections/incurve" },
+              { name: "Apartment Living", href: "/collections/apartment" },
+              { name: "Veda Sangrah", href: "/collections/veda" },
+              { name: "French Country Collection", href: "/collections/french" },
+              { name: "Foster Living", href: "/collections/foster" },
+              { name: "Manhattan Collection", href: "/collections/manhattan" },
+            ]
+          },
+          {
+            title: "Signature Line",
+            links: [
+              { name: "Copenhagen Curves", href: "/collections/copenhagen" },
+              { name: "Jess Design", href: "/collections/jess" },
+              { name: "Verandah Collection", href: "/collections/verandah" },
+              { name: "Miller Lounge Series", href: "/collections/miller" },
+              { name: "Advi Series", href: "/collections/advi" },
+              { name: "Saturn Table Collection", href: "/collections/saturn" },
+              { name: "Bombay Club Collection", href: "/collections/bombay" },
+              { name: "Travancore Roots", href: "/collections/travancore" },
+            ]
+          },
+          {
+            title: "Exclusive Edit",
+            links: [
+              { name: "Isles of Greece", href: "/collections/isles" },
+              { name: "Ebba 2.0", href: "/collections/ebba-2" },
+              { name: "Home and Cottage", href: "/collections/home-cottage" },
+              { name: "Chandigarh Sangrah", href: "/collections/chandigarh" },
+              { name: "Ebba Collection", href: "/collections/ebba" },
+              { name: "Kobbler Collection", href: "/collections/kobbler" },
+              { name: "Mianzi", href: "/collections/mianzi" },
+            ]
+          }
+        ],
+        image: {
+          src: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1000&auto=format&fit=crop",
+          alt: "Featured Collection"
+        }
+      }
     },
     {
       name: "Furniture",
@@ -226,30 +265,82 @@ const Header = () => {
               <div
                 key={link.name}
                 className="relative group"
-                onMouseEnter={() => link.dropdown && setActiveDropdown(link.name)}
+                onMouseEnter={() => (link.dropdown || link.megaMenu) && setActiveDropdown(link.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <Link
                   href={link.href}
-                  className={`text-sm hover:text-black transition-colors flex items-center gap-1 ${link.className || "text-gray-600"}`}
+                  className={`text-sm hover:text-black transition-colors flex items-center gap-1 py-4 ${link.className || "text-gray-600"}`}
                 >
                   {link.name}
-                  {link.dropdown && <ChevronDown size={14} className="mt-0.5" />}
+                  {(link.dropdown || link.megaMenu) && <ChevronDown size={14} className={`mt-0.5 transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />}
                 </Link>
 
-                {/* Dropdown Menu */}
+                {/* Standard Dropdown Menu */}
                 {link.dropdown && activeDropdown === link.name && (
-                  <div className="absolute top-full left-0 mt-1 bg-white shadow-lg border border-gray-100 rounded-md py-2 min-w-[200px] z-50">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full left-0 mt-[1px] bg-white shadow-lg border border-gray-100 rounded-b-md py-4 min-w-[200px] z-50"
+                  >
                     {link.dropdown.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-black transition-colors"
+                        className="block px-6 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-black transition-colors"
                       >
                         {item.name}
                       </Link>
                     ))}
-                  </div>
+                  </motion.div>
+                )}
+
+                {/* Mega Menu */}
+                {link.megaMenu && activeDropdown === link.name && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 5 }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-[1px] w-[90vw] max-w-[1280px] bg-white shadow-2xl border-t border-gray-100 z-50 overflow-hidden"
+                  >
+                    <div className="grid grid-cols-4 gap-8 p-12">
+                      <div className="col-span-3 grid grid-cols-3 gap-12">
+                        {link.megaMenu.columns.map((column, idx) => (
+                          <div key={idx} className="space-y-6">
+                            <h4 className="text-[10px] text-gray-400 uppercase tracking-[0.4em] font-bold border-b border-gray-50 pb-2">
+                              {column.title}
+                            </h4>
+                            <ul className="space-y-3">
+                              {column.links.map((item, i) => (
+                                <li key={i}>
+                                  <Link
+                                    href={item.href}
+                                    className="text-[13px] text-gray-600 hover:text-black transition-colors font-light block"
+                                  >
+                                    {item.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="relative h-full min-h-[350px] bg-gray-50 overflow-hidden group/img">
+                        <Image
+                          src={link.megaMenu.image.src}
+                          alt={link.megaMenu.image.alt}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover/img:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-black/10 group-hover/img:bg-black/0 transition-colors duration-500" />
+                        <div className="absolute bottom-6 left-6 right-6 text-white text-center">
+                          <p className="text-[10px] uppercase tracking-[0.3em] font-medium opacity-90 mb-1">New Arrival</p>
+                          <h5 className="text-xl font-serif">Curated Collections</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
                 )}
               </div>
             ))}
@@ -297,6 +388,27 @@ const Header = () => {
                         >
                           {item.name}
                         </Link>
+                      ))}
+                    </div>
+                  )}
+                  {link.megaMenu && (
+                    <div className="ml-4 mt-3 space-y-6">
+                      {link.megaMenu.columns.map((column, idx) => (
+                        <div key={idx} className="space-y-2">
+                          <p className="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-bold">{column.title}</p>
+                          <div className="space-y-2">
+                            {column.links.map((item, i) => (
+                              <Link
+                                key={i}
+                                href={item.href}
+                                className="block text-sm text-gray-500"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                {item.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
                       ))}
                     </div>
                   )}
