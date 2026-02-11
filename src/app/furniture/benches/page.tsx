@@ -10,10 +10,10 @@ import { Heart, ChevronRight, ChevronDown } from "lucide-react";
 
 const BenchesCollection = () => {
     const products = [
-        { name: "Moon Rattan Two-Seater Bench", price: "53,000", originalPrice: "66,250", discount: "20% Off", emi: "5,557", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1581539250439-c96689b516dd?q=80&w=1000" },
-        { name: "Moon Rattan Three-Seater Bench", price: "72,900", originalPrice: "91,125", discount: "20% Off", emi: "7,643", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1567016432779-094069958ad5?q=80&w=1000" },
+        { name: "Moon Rattan Two-Seater Bench", price: "53,000", originalPrice: "66,250", discount: "20% Off", emi: "5,557", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?q=80&w=1000" },
+        { name: "Moon Rattan Three-Seater Bench", price: "72,900", originalPrice: "91,125", discount: "20% Off", emi: "7,643", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1000" },
         { name: "Moon Rattan Four-Seater Bench", price: "98,900", originalPrice: "123,625", discount: "20% Off", emi: "10,369", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=1000" },
-        { name: "Nakashi Hand Chiseled Bench", price: "83,160", originalPrice: "92,400", discount: "10% Off", emi: "6,930", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1000" },
+        { name: "Nakashi Hand Chiseled Bench", price: "83,160", originalPrice: "92,400", discount: "10% Off", emi: "6,930", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1616489953149-623830209425?q=80&w=1000" },
         { name: "Nakashi Dining Bench", price: "55,000", originalPrice: "68,750", discount: "20% Off", emi: "4,583", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1540304453527-62f979142a17?q=80&w=1000" },
         { name: "Calypso Bolster Diwan", price: "1,15,000", originalPrice: "1,43,750", discount: "20% Off", emi: "9,583", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1550586678-f7225f03c44b?q=80&w=1000" },
     ];
@@ -24,7 +24,7 @@ const BenchesCollection = () => {
 
             <main className="flex-1">
                 {/* Hero Section */}
-                <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
+                <section className="relative h-[40vh] md:h-[50vh] overflow-hidden">
                     <Image
                         src="https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=2000"
                         alt="Benches Collection Hero"
@@ -37,42 +37,33 @@ const BenchesCollection = () => {
                             initial={{ y: 30, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.8 }}
-                            className="text-4xl md:text-7xl font-serif text-white mb-6"
+                            className="text-4xl md:text-6xl font-serif text-white uppercase tracking-widest"
                         >
                             Benches
                         </motion.h1>
-                        <nav className="flex items-center gap-2 text-white/80 text-sm tracking-widest uppercase">
-                            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-                            <ChevronRight size={14} />
-                            <Link href="/furniture" className="hover:text-white transition-colors">Furniture</Link>
-                            <ChevronRight size={14} />
-                            <Link href="/furniture/entryway" className="hover:text-white transition-colors">Entryway</Link>
-                            <ChevronRight size={14} />
-                            <span className="text-white">Benches</span>
-                        </nav>
                     </div>
                 </section>
 
-                {/* Narrative Section */}
-                <section className="py-24 px-4 max-w-4xl mx-auto text-center">
-                    <div className="space-y-8">
-                        <h2 className="text-3xl md:text-5xl font-serif text-gray-900 leading-tight">
-                            Elevate Your Entryway with Designer Benches
-                        </h2>
-                        <div className="w-20 h-px bg-gray-300 mx-auto"></div>
-                        <p className="text-gray-500 leading-relaxed text-lg font-light font-serif italic">
-                            "More than just a place to sit, a premium bench is a statement of style and functionality. It bridges the gap between decor and utility, offering a welcoming touch to any space."
-                        </p>
-                    </div>
-                </section>
+                {/* Breadcrumbs Section - RIGHT UNDER HERO */}
+                <div className="py-6 px-4 sm:px-8 md:px-16 lg:px-20 bg-white border-b border-gray-100">
+                    <nav className="flex items-center gap-2 text-gray-400 text-[10px] tracking-[0.2em] uppercase font-bold">
+                        <Link href="/" className="hover:text-black transition-colors">Home</Link>
+                        <ChevronRight size={10} />
+                        <Link href="/furniture" className="hover:text-black transition-colors">Furniture</Link>
+                        <ChevronRight size={10} />
+                        <Link href="/furniture/entryway" className="hover:text-black transition-colors">Entryway</Link>
+                        <ChevronRight size={10} />
+                        <span className="text-black">Benches</span>
+                    </nav>
+                </div>
 
-                {/* Main Collection Section with Sidebar */}
-                <section className="py-20 px-4 sm:px-8 md:px-16 lg:px-20 bg-[#fafafa]">
+                {/* Main Collection Section with Sidebar - STARTING FROM TOP */}
+                <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
                     <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row gap-12">
                         {/* Sidebar */}
                         <aside className="w-full lg:w-64 flex-shrink-0 space-y-12">
                             <div>
-                                <h3 className="text-xl font-serif text-gray-900 mb-8">Browse by</h3>
+                                <h3 className="text-xl font-serif text-gray-900 mb-8 border-b border-gray-100 pb-4">Browse by</h3>
 
                                 <div className="space-y-10">
                                     {/* Product Type */}
@@ -154,20 +145,19 @@ const BenchesCollection = () => {
 
                         {/* Product Grid Content */}
                         <div className="flex-1">
-                            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-                                <div className="space-y-4">
-                                    <h2 className="text-4xl font-serif text-gray-900">The Collection</h2>
-                                    <p className="text-gray-400 font-light tracking-[0.2em] uppercase text-[10px]">
+                            <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-6">
+                                <div className="space-y-2">
+                                    <p className="text-gray-400 font-light tracking-[0.1em] text-sm italic font-serif uppercase">
                                         16 RESULTS FOUND
                                     </p>
                                 </div>
                                 <div className="flex items-center gap-8 text-[11px] font-bold tracking-[0.2em] uppercase text-gray-950 border-b border-black pb-1 cursor-pointer">
-                                    SORT: FEATURED
+                                    Sort: Featured
                                     <ChevronDown size={14} />
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-12">
                                 {products.map((product, idx) => (
                                     <motion.div
                                         key={idx}
@@ -175,9 +165,9 @@ const BenchesCollection = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
                                         viewport={{ once: true }}
-                                        className="group cursor-pointer flex flex-col bg-white border border-gray-100"
+                                        className="group cursor-pointer flex flex-col bg-white"
                                     >
-                                        <div className="relative aspect-[4/5] overflow-hidden">
+                                        <div className="relative aspect-[4/5] overflow-hidden bg-[#f9f9f9]">
                                             <Image
                                                 src={product.image}
                                                 alt={product.name}
@@ -195,25 +185,25 @@ const BenchesCollection = () => {
                                             )}
                                         </div>
 
-                                        <div className="p-8 flex flex-col flex-1" style={{ position: 'relative' }}>
+                                        <div className="pt-8 flex flex-col flex-1">
                                             <div className="mb-6">
-                                                <span className="inline-block bg-[#f5f5f5] text-[#999] px-3.5 py-1.5 text-[9px] font-bold tracking-[0.2em] uppercase mb-4">
+                                                <span className="inline-block bg-[#f5f5f5] text-[#999] px-3 py-1.5 text-[9px] font-bold tracking-[0.2em] uppercase mb-4">
                                                     {product.tag}
                                                 </span>
-                                                <h4 className="text-[17px] font-medium text-gray-900 group-hover:text-orange-600 transition-all duration-500 leading-snug font-serif">
+                                                <h4 className="text-[16px] font-medium text-gray-900 group-hover:text-orange-600 transition-all duration-500 leading-snug">
                                                     {product.name}
                                                 </h4>
                                             </div>
 
-                                            <div className="mt-auto space-y-3">
-                                                <p className="text-[20px] font-bold text-gray-900">₹{product.price}</p>
+                                            <div className="mt-auto space-y-2">
+                                                <p className="text-[18px] font-bold text-gray-900">₹{product.price}</p>
 
                                                 <div className="flex items-center gap-3">
-                                                    <span className="text-[14px] text-gray-400 line-through">₹{product.originalPrice}</span>
-                                                    <span className="text-[14px] text-orange-600 font-bold whitespace-nowrap">{product.discount}</span>
+                                                    <span className="text-[13px] text-gray-400 line-through">₹{product.originalPrice}</span>
+                                                    <span className="text-[13px] text-orange-600 font-bold whitespace-nowrap">{product.discount}</span>
                                                 </div>
 
-                                                <p className="text-[12px] text-orange-600 font-medium tracking-wide border-t border-gray-50 pt-3">
+                                                <p className="text-[11px] text-orange-600 font-medium tracking-wide">
                                                     EMI starts from ₹ {product.emi}
                                                 </p>
                                             </div>
@@ -225,8 +215,21 @@ const BenchesCollection = () => {
                     </div>
                 </section>
 
-                {/* BOTTOM CONTENT SECTION - STYLED PER REQUESTED SCREENSHOT */}
-                <section className="py-32 px-4 sm:px-8 md:px-16 lg:px-24 bg-white">
+                {/* Narrative Intro Section - MOVED BELOW GRID */}
+                <section className="py-24 px-4 max-w-4xl mx-auto text-center border-t border-gray-100">
+                    <div className="space-y-8">
+                        <h2 className="text-3xl md:text-5xl font-serif text-gray-900 leading-tight">
+                            Elevate Your Entryway with Designer Benches
+                        </h2>
+                        <div className="w-20 h-px bg-gray-300 mx-auto"></div>
+                        <p className="text-gray-500 leading-relaxed text-lg font-light font-serif italic">
+                            "More than just a place to sit, a premium bench is a statement of style and functionality. It bridges the gap between decor and utility, offering a welcoming touch to any space."
+                        </p>
+                    </div>
+                </section>
+
+                {/* BOTTOM CONTENT SECTION */}
+                <section className="py-32 px-4 sm:px-8 md:px-16 lg:px-24 bg-white border-t border-gray-100">
                     <div className="max-w-5xl mx-auto space-y-16">
                         {/* Block 1 */}
                         <div className="space-y-8">

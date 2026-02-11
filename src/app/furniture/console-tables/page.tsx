@@ -24,7 +24,7 @@ const ConsoleTableCollection = () => {
 
             <main className="flex-1">
                 {/* Hero Section */}
-                <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
+                <section className="relative h-[40vh] md:h-[50vh] overflow-hidden">
                     <Image
                         src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2000"
                         alt="Console Table Collection Hero"
@@ -37,42 +37,33 @@ const ConsoleTableCollection = () => {
                             initial={{ y: 30, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.8 }}
-                            className="text-4xl md:text-7xl font-serif text-white mb-6"
+                            className="text-4xl md:text-6xl font-serif text-white uppercase tracking-widest"
                         >
                             Console Tables
                         </motion.h1>
-                        <nav className="flex items-center gap-2 text-white/80 text-sm tracking-widest uppercase">
-                            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-                            <ChevronRight size={14} />
-                            <Link href="/furniture" className="hover:text-white transition-colors">Furniture</Link>
-                            <ChevronRight size={14} />
-                            <Link href="/furniture/entryway" className="hover:text-white transition-colors">Entryway</Link>
-                            <ChevronRight size={14} />
-                            <span className="text-white">Console Tables</span>
-                        </nav>
                     </div>
                 </section>
 
-                {/* Narrative Section */}
-                <section className="py-24 px-4 max-w-4xl mx-auto text-center">
-                    <div className="space-y-8">
-                        <h2 className="text-3xl md:text-5xl font-serif text-gray-900 leading-tight">
-                            Create a Welcoming Entry in Style: Check Out Maishaa's Chic Entryway Consoles
-                        </h2>
-                        <div className="w-20 h-px bg-gray-300 mx-auto"></div>
-                        <p className="text-gray-500 leading-relaxed text-lg font-light font-serif italic">
-                            "A good first impression lasts a long time. When entering a home, building, or space, the entryway console is the first thing that comes into view and has a huge role to play."
-                        </p>
-                    </div>
-                </section>
+                {/* Breadcrumbs Section */}
+                <div className="py-6 px-4 sm:px-8 md:px-16 lg:px-20 bg-white border-b border-gray-100">
+                    <nav className="flex items-center gap-2 text-gray-400 text-[10px] tracking-[0.2em] uppercase font-bold">
+                        <Link href="/" className="hover:text-black transition-colors">Home</Link>
+                        <ChevronRight size={10} />
+                        <Link href="/furniture" className="hover:text-black transition-colors">Furniture</Link>
+                        <ChevronRight size={10} />
+                        <Link href="/furniture/entryway" className="hover:text-black transition-colors">Entryway</Link>
+                        <ChevronRight size={10} />
+                        <span className="text-black">Console Tables</span>
+                    </nav>
+                </div>
 
                 {/* Main Collection Section with Sidebar */}
-                <section className="py-20 px-4 sm:px-8 md:px-16 lg:px-20 bg-[#fafafa]">
+                <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
                     <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row gap-12">
                         {/* Sidebar */}
                         <aside className="w-full lg:w-64 flex-shrink-0 space-y-12">
                             <div>
-                                <h3 className="text-xl font-serif text-gray-900 mb-8">Browse by</h3>
+                                <h3 className="text-xl font-serif text-gray-900 mb-8 border-b border-gray-100 pb-4">Browse by</h3>
 
                                 <div className="space-y-10">
                                     {/* Product Type */}
@@ -138,20 +129,19 @@ const ConsoleTableCollection = () => {
 
                         {/* Product Grid Content */}
                         <div className="flex-1">
-                            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-                                <div className="space-y-4">
-                                    <h2 className="text-4xl font-serif text-gray-900">The Collection</h2>
-                                    <p className="text-gray-400 font-light tracking-[0.2em] uppercase text-[10px]">
+                            <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-6">
+                                <div className="space-y-2">
+                                    <p className="text-gray-400 font-light tracking-[0.1em] text-sm italic font-serif uppercase">
                                         12 RESULTS FOUND
                                     </p>
                                 </div>
                                 <div className="flex items-center gap-8 text-[11px] font-bold tracking-[0.2em] uppercase text-gray-950 border-b border-black pb-1 cursor-pointer">
-                                    SORT: FEATURED
+                                    Sort: Featured
                                     <ChevronDown size={14} />
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-12">
                                 {products.map((product, idx) => (
                                     <motion.div
                                         key={idx}
@@ -159,9 +149,9 @@ const ConsoleTableCollection = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
                                         viewport={{ once: true }}
-                                        className="group cursor-pointer flex flex-col bg-white border border-gray-100"
+                                        className="group cursor-pointer flex flex-col bg-white"
                                     >
-                                        <div className="relative aspect-[4/5] overflow-hidden">
+                                        <div className="relative aspect-[4/5] overflow-hidden bg-[#f9f9f9]">
                                             <Image
                                                 src={product.image}
                                                 alt={product.name}
@@ -179,12 +169,12 @@ const ConsoleTableCollection = () => {
                                             )}
                                         </div>
 
-                                        <div className="p-8 flex flex-col flex-1" style={{ position: 'relative' }}>
+                                        <div className="pt-8 flex flex-col flex-1">
                                             <div className="mb-6">
-                                                <span className="inline-block bg-[#f5f5f5] text-[#999] px-3.5 py-1.5 text-[9px] font-bold tracking-[0.2em] uppercase mb-4">
+                                                <span className="inline-block bg-[#f5f5f5] text-[#999] px-3 py-1.5 text-[9px] font-bold tracking-[0.2em] uppercase mb-4">
                                                     {product.tag}
                                                 </span>
-                                                <h4 className="text-[17px] font-medium text-gray-900 group-hover:text-orange-600 transition-all duration-500 leading-snug font-serif">
+                                                <h4 className="text-[17px] font-medium text-gray-900 group-hover:text-orange-600 transition-all duration-500 leading-snug">
                                                     {product.name}
                                                 </h4>
                                             </div>
@@ -197,7 +187,7 @@ const ConsoleTableCollection = () => {
                                                     <span className="text-[14px] text-orange-600 font-bold whitespace-nowrap">{product.discount}</span>
                                                 </div>
 
-                                                <p className="text-[12px] text-orange-600 font-medium tracking-wide border-t border-gray-50 pt-3">
+                                                <p className="text-[12px] text-orange-600 font-medium tracking-wide">
                                                     EMI starts from ₹ {product.emi}
                                                 </p>
                                             </div>
@@ -209,8 +199,21 @@ const ConsoleTableCollection = () => {
                     </div>
                 </section>
 
-                {/* BOTTOM CONTENT SECTION - STYLED PER REQUESTED SCREENSHOT */}
-                <section className="py-32 px-4 sm:px-8 md:px-16 lg:px-24 bg-white">
+                {/* Narrative Intro Section - MOVED BELOW */}
+                <section className="py-24 px-4 max-w-4xl mx-auto text-center border-t border-gray-100">
+                    <div className="space-y-8">
+                        <h2 className="text-3xl md:text-5xl font-serif text-gray-900 leading-tight">
+                            Create a Welcoming Entry in Style: Check Out Maishaa's Chic Entryway Consoles
+                        </h2>
+                        <div className="w-20 h-px bg-gray-300 mx-auto"></div>
+                        <p className="text-gray-500 leading-relaxed text-lg font-light font-serif italic">
+                            "A good first impression lasts a long time. When entering a home, building, or space, the entryway console is the first thing that comes into view and has a huge role to play."
+                        </p>
+                    </div>
+                </section>
+
+                {/* BOTTOM CONTENT SECTION */}
+                <section className="py-32 px-4 sm:px-8 md:px-16 lg:px-24 bg-white border-t border-gray-100">
                     <div className="max-w-5xl mx-auto space-y-16">
                         {/* Block 1 */}
                         <div className="space-y-8">
