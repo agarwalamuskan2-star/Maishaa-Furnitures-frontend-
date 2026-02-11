@@ -10,7 +10,7 @@ import { Heart } from "lucide-react";
 const AdviCollection = () => {
     const products = [
         { name: "Vanity Circle", price: "42,000", originalPrice: "52,500", discount: "20% Off", emi: "3733", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=800" },
-        { name: "Course 4 Oval Dining Table", price: "1,25,000", originalPrice: "1,56,250", discount: "20% Off", emi: "11111", tag: "DESIGNER'S PICK", bestSeller: false, image: "https://images.unsplash.com/photo-1577145940719-0c7670d95af2?q=80&w=800" },
+        { name: "Course 4 Oval Dining Table", price: "1,25,000", originalPrice: "1,56,250", discount: "20% Off", emi: "11111", tag: "DESIGNER'S PICK", bestSeller: false, image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=800" },
         { name: "Setl Nesting Coffee Table (Set of 2)", price: "58,000", originalPrice: "72,500", discount: "20% Off", emi: "5155", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800" },
         { name: "Nestling Console Table", price: "38,500", originalPrice: "48,125", discount: "20% Off", emi: "3422", tag: "BEST SELLER", bestSeller: true, image: "https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?q=80&w=800" },
         { name: "Situate Accent Chair", price: "45,000", originalPrice: "56,250", discount: "20% Off", emi: "4000", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=800" },
