@@ -11,7 +11,7 @@ import { Heart } from "lucide-react";
 const IncurveEpisodes = () => {
     const products = [
         { name: "Preston Curved Lounge Chair - Manuka Honey", price: "92,000", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=800" },
-        { name: "Preston Curved Loveseat - Manuka Honey", price: "1,45,000", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1567016432779-094069958ad5?q=80&w=800" },
+        { name: "Preston Curved Loveseat - Manuka Honey", price: "1,45,000", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=800" },
         { name: "Preston Curved Three Seater Sofa - Manuka Honey", price: "2,10,000", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800" },
         { name: "Elena Curved Lounge Chair", price: "92,000", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=800" },
         { name: "Curva Velvet Armchair", price: "78,000", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800" },
@@ -20,8 +20,8 @@ const IncurveEpisodes = () => {
         { name: "Serpentine Bench", price: "65,000", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=800" },
         { name: "Lotus Petal Chair", price: "55,000", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=800" },
         { name: "Helix Spiral Side Table", price: "22,000", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1532372320572-cda25653a26d?q=80&w=800" },
-        { name: "Crescent Moon Headboard", price: "38,000", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1505691938895-1758d7eaa511?q=80&w=800" },
-        { name: "Wave Form Dining Table", price: "1,20,000", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1577140928440-27883bc2248b?q=80&w=800" },
+        { name: "Crescent Moon Headboard", price: "38,000", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800" },
+        { name: "Wave Form Dining Table", price: "1,20,000", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=800" },
         { name: "Pebble Stone Stool", price: "15,000", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=800" },
         { name: "Cloud Nine Sectional", price: "3,20,000", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=800" },
         { name: "Aura Round Mirror", price: "12,000", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=800" },
@@ -79,7 +79,7 @@ const IncurveEpisodes = () => {
                         </div>
                         <div className="relative h-[400px] md:h-full min-h-[500px]">
                             <Image
-                                src="https://images.unsplash.com/photo-1583847268964-b28dc2f51ac9?q=80&w=1000&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000&auto=format&fit=crop"
                                 alt="Tess Curved Sofa"
                                 fill
                                 className="object-cover"
