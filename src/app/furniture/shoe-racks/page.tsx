@@ -23,8 +23,21 @@ const ShoeRackCollection = () => {
             <Header />
 
             <main className="flex-1">
+                {/* Breadcrumbs */}
+                <div className="pt-6 pb-4 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <nav className="flex items-center gap-2 text-gray-400 text-[11px] tracking-wide">
+                        <Link href="/" className="hover:text-black transition-colors">Home</Link>
+                        <ChevronRight size={12} />
+                        <Link href="/furniture" className="hover:text-black transition-colors">Furniture</Link>
+                        <ChevronRight size={12} />
+                        <Link href="/furniture/entryway" className="hover:text-black transition-colors">Entryway</Link>
+                        <ChevronRight size={12} />
+                        <span className="text-black">Shoe Racks</span>
+                    </nav>
+                </div>
+
                 {/* Main Collection Section with Sidebar */}
-                <section className="pt-24 pb-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                <section className="pb-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
                     <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row gap-12">
                         {/* Sidebar */}
                         <aside className="w-full lg:w-64 flex-shrink-0 space-y-12">
