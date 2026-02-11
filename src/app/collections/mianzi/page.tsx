@@ -1,33 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
-import { Heart, ChevronLeft, ChevronRight } from "lucide-react";
+import { Heart } from "lucide-react";
 
 const MianziCollection = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-
-    const featuredProducts = [
-        {
-            name: "Mianzi Bamboo Floor Lamp",
-            description: "A testament to sustainable elegance, the Mianzi Floor Lamp is hand-woven from ethically sourced bamboo. Its intricate lattice design creates a mesmerizing play of light and shadow, bringing a soft, organic warmth to any contemporary interior.",
-            image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=2000"
-        },
-        {
-            name: "Mianzi Woven Pendant",
-            description: "Lightweight yet structurally bold, the Mianzi Woven Pendant is a sculptural masterpiece. Each strand of bamboo is carefully selected and woven by hand, resulting in a unique lighting fixture that celebrates the natural beauty of grass fibers.",
-            image: "https://images.unsplash.com/photo-1543196614-e046c7d3d82e?q=80&w=2000"
-        }
-    ];
-
-    const toggleSlide = () => {
-        setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
-    };
-
     const products = [
         { name: "Bamboo Lattice Pendant", price: "8,500", originalPrice: "10,625", discount: "20% Off", emi: "755", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=1000" },
         { name: "Mianzi Desk Lamp", price: "5,800", originalPrice: "7,250", discount: "20% Off", emi: "515", tag: "READY TO SHIP", bestSeller: true, image: "https://images.unsplash.com/photo-1534073828943-f801091bb18c?q=80&w=1000" },
@@ -75,7 +55,7 @@ const MianziCollection = () => {
                                 initial={{ y: 30, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ duration: 0.8, delay: 0.2 }}
-                                className="text-sm md:text-xl font-light tracking-[0.4em] uppercase text-gray-700 max-w-2xl bg-white/40 backdrop-blur-md p-4 rounded-sm border border-white/20"
+                                className="text-sm md:text-xl font-light tracking-[0.4em] uppercase text-gray-700 max-w-2xl bg-white/40 backdrop-blur-sm p-4 rounded-sm border border-white/20"
                             >
                                 CONSCIOUS DESIGN, WOVEN BY NATURE
                             </motion.p>
@@ -100,77 +80,6 @@ const MianziCollection = () => {
                             designed to bring a sense of natural harmony and ethnic elegance to your sanctuary.
                         </p>
                     </motion.div>
-                </section>
-
-                {/* Featured Product Slider Section */}
-                <section className="pb-24 pt-0 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
-                    <div className="max-w-[1920px] mx-auto bg-[#f1f8e9] rounded-sm overflow-hidden border border-green-50/50">
-                        <div className="flex flex-col lg:flex-row h-full">
-
-                            {/* Content Side (Left) */}
-                            <div className="w-full lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center relative bg-white lg:bg-[#f1f8e9]">
-                                <AnimatePresence mode="wait">
-                                    <motion.div
-                                        key={currentSlide}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        exit={{ opacity: 0, x: 20 }}
-                                        transition={{ duration: 0.5 }}
-                                        className="space-y-8"
-                                    >
-                                        <span className="text-xs font-bold tracking-[0.5em] text-green-700 uppercase">Sustainable Luxury</span>
-                                        <h3 className="text-4xl md:text-5xl font-light text-gray-900">
-                                            {featuredProducts[currentSlide].name}
-                                        </h3>
-                                        <p className="text-gray-600 leading-relaxed text-lg font-light max-w-xl">
-                                            {featuredProducts[currentSlide].description}
-                                        </p>
-                                        <div>
-                                            <button className="px-10 py-4 bg-green-800 text-white text-sm font-medium hover:bg-green-900 transition-all uppercase tracking-[0.2em] shadow-lg">
-                                                Explore sustainable +
-                                            </button>
-                                        </div>
-                                    </motion.div>
-                                </AnimatePresence>
-
-                                {/* Slider Navigation */}
-                                <div className="flex items-center gap-6 mt-16 md:absolute md:bottom-12 md:right-12">
-                                    <button onClick={toggleSlide} className="p-2 bg-white/50 hover:bg-white rounded-full transition-colors border border-green-100 shadow-sm">
-                                        <ChevronLeft size={20} className="text-green-800" />
-                                    </button>
-                                    <span className="text-sm font-bold tracking-[0.3em] text-green-900/40">
-                                        {currentSlide + 1} / {featuredProducts.length}
-                                    </span>
-                                    <button onClick={toggleSlide} className="p-2 bg-white/50 hover:bg-white rounded-full transition-colors border border-green-100 shadow-sm">
-                                        <ChevronRight size={20} className="text-green-800" />
-                                    </button>
-                                </div>
-                            </div>
-
-                            {/* Image Side (Right) */}
-                            <div className="w-full lg:w-1/2 relative h-[50vh] lg:h-auto min-h-[500px]">
-                                <AnimatePresence mode="wait">
-                                    <motion.div
-                                        key={currentSlide}
-                                        initial={{ opacity: 0, filter: "blur(10px)" }}
-                                        animate={{ opacity: 1, filter: "blur(0px)" }}
-                                        exit={{ opacity: 0, filter: "blur(10px)" }}
-                                        transition={{ duration: 0.8 }}
-                                        className="absolute inset-0"
-                                    >
-                                        <Image
-                                            src={featuredProducts[currentSlide].image}
-                                            alt={featuredProducts[currentSlide].name}
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    </motion.div>
-                                </AnimatePresence>
-                                <div className="absolute inset-0 bg-green-900/5 pointer-events-none"></div>
-                            </div>
-
-                        </div>
-                    </div>
                 </section>
 
                 {/* Explore More - Product Grid */}
