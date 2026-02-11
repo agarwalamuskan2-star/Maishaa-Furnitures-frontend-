@@ -4,10 +4,20 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { ShoppingBag, Menu, X, User, Search, Heart, ChevronDown } from "lucide-react";
 import Link from "next/link";
+import AuthModal from "@/components/modals/AuthModal";
+import SearchOverlay from "@/components/modals/SearchOverlay";
+import CartSidebar from "@/components/modals/CartSidebar";
+import WishlistSidebar from "@/components/modals/WishlistSidebar";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  // Modal States
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isWishlistOpen, setIsWishlistOpen] = useState(false);
 
   // Main Header Links
   const mainHeaderLinks = [
@@ -114,32 +124,61 @@ const Header = () => {
             </button>
 
             <div className="hidden sm:flex items-center space-x-6">
-              <Link href="/login" className="flex items-center text-gray-700 hover:text-black transition-colors gap-2 text-sm font-medium">
+              <button
+                onClick={() => setIsAuthOpen(true)}
+                className="flex items-center text-gray-700 hover:text-black transition-colors gap-2 text-sm font-medium"
+              >
                 <User size={20} />
                 <span>Login</span>
-              </Link>
-              <button className="text-gray-700 hover:text-black transition-colors" aria-label="Search">
+              </button>
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                className="text-gray-700 hover:text-black transition-colors"
+                aria-label="Search"
+              >
                 <Search size={20} />
               </button>
-              <button className="text-gray-700 hover:text-black transition-colors" aria-label="Wishlist">
+              <button
+                onClick={() => setIsWishlistOpen(true)}
+                className="text-gray-700 hover:text-black transition-colors"
+                aria-label="Wishlist"
+              >
                 <Heart size={20} />
               </button>
-              <button className="text-gray-700 hover:text-black transition-colors relative" aria-label="Cart">
+              <button
+                onClick={() => setIsCartOpen(true)}
+                className="text-gray-700 hover:text-black transition-colors relative"
+                aria-label="Cart"
+              >
                 <ShoppingBag size={20} />
               </button>
             </div>
             {/* Mobile Only Icons (simplified for space) */}
             <div className="flex sm:hidden items-center space-x-4">
-              <button className="text-gray-700 hover:text-black transition-colors" aria-label="Search">
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                className="text-gray-700 hover:text-black transition-colors"
+                aria-label="Search"
+              >
                 <Search size={20} />
               </button>
-              <button className="text-gray-700 hover:text-black transition-colors relative" aria-label="Cart">
+              <button
+                onClick={() => setIsCartOpen(true)}
+                className="text-gray-700 hover:text-black transition-colors relative"
+                aria-label="Cart"
+              >
                 <ShoppingBag size={20} />
               </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Modals and Overlays */}
+      <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} />
+      <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      <CartSidebar isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+      <WishlistSidebar isOpen={isWishlistOpen} onClose={() => setIsWishlistOpen(false)} />
 
       {/* 3. Secondary Navigation Bar with Dropdowns - Hidden on Mobile */}
       <div className="hidden lg:block w-full bg-white border-b border-gray-100">
@@ -228,22 +267,26 @@ const Header = () => {
             </div>
 
             <div className="border-t border-gray-100 pt-6 space-y-4">
-              <Link
-                href="/login"
-                className="flex items-center gap-2 text-base font-medium text-gray-800"
-                onClick={() => setIsMenuOpen(false)}
+              <button
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  setIsAuthOpen(true);
+                }}
+                className="flex items-center gap-2 text-base font-medium text-gray-800 w-full text-left"
               >
                 <User size={20} />
                 Login / Register
-              </Link>
-              <Link
-                href="/wishlist"
-                className="flex items-center gap-2 text-base font-medium text-gray-800"
-                onClick={() => setIsMenuOpen(false)}
+              </button>
+              <button
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  setIsWishlistOpen(true);
+                }}
+                className="flex items-center gap-2 text-base font-medium text-gray-800 w-full text-left"
               >
                 <Heart size={20} />
                 Wishlist
-              </Link>
+              </button>
             </div>
           </div>
         </div>
