@@ -26,14 +26,6 @@ const ApartmentLiving = () => {
         { name: "Crest Bookcase", price: "44,800", originalPrice: "56,000", discount: "20% Off", emi: "3982", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=800" },
         { name: "Vista Mirror Small", price: "9,600", originalPrice: "12,000", discount: "20% Off", emi: "853", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=800" },
         { name: "Zenith Bench", price: "24,000", originalPrice: "30,000", discount: "20% Off", emi: "2133", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=800" },
-        { name: "Compact Wardrobe", price: "68,000", originalPrice: "85,000", discount: "20% Off", emi: "6044", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800" },
-        { name: "Pivot Floor Lamp", price: "18,400", originalPrice: "23,000", discount: "20% Off", emi: "1635", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=800" },
-        { name: "Nest Bar Stool", price: "11,200", originalPrice: "14,000", discount: "20% Off", emi: "995", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=800" },
-        { name: "Corner Ease Armchair", price: "38,500", originalPrice: "48,125", discount: "20% Off", emi: "3422", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800" },
-        { name: "Sleek Media Console", price: "41,200", originalPrice: "51,500", discount: "20% Off", emi: "3662", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=800" },
-        { name: "Minimal Daybed", price: "72,800", originalPrice: "91,000", discount: "20% Off", emi: "6471", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800" },
-        { name: "Eco Rug 5x7", price: "14,400", originalPrice: "18,000", discount: "20% Off", emi: "1280", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1531835551805-16d864c8d311?q=80&w=800" },
-        { name: "Aura Pendant Light", price: "7,200", originalPrice: "9,000", discount: "20% Off", emi: "640", tag: "READY TO SHIP", bestSeller: true, image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?q=80&w=800" },
     ];
 
     return (

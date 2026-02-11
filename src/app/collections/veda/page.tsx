@@ -26,10 +26,6 @@ const VedaSangrah = () => {
         { name: "Sanskrit Side Credenza", price: "45,000", originalPrice: "56,250", discount: "20% Off", emi: "4000", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=800" },
         { name: "Veda Tall Bookcase", price: "88,900", originalPrice: "1,11,125", discount: "20% Off", emi: "7902", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=800" },
         { name: "Temple Carved Pedestal", price: "15,000", originalPrice: "18,750", discount: "20% Off", emi: "1333", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=800" },
-        { name: "Dharma Study Suite", price: "1,45,000", originalPrice: "1,81,250", discount: "20% Off", emi: "12888", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800" },
-        { name: "Karma Compact Stool", price: "6,800", originalPrice: "8,500", discount: "20% Off", emi: "604", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=800" },
-        { name: "Veda Archive Cabinet", price: "52,400", originalPrice: "65,500", discount: "20% Off", emi: "4657", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=800" },
-        { name: "Om Sacred Nook", price: "28,900", originalPrice: "36,125", discount: "20% Off", emi: "2568", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800" },
     ];
 
     return (
