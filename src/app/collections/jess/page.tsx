@@ -20,7 +20,7 @@ const JessDesign = () => {
         { name: "Jess Earl Low Armchair", price: "1,85,000", originalPrice: "2,31,250", discount: "20% Off", emi: "16444", tag: "IMPORT", bestSeller: true, image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=800" },
         { name: "Jess Norman Dining Chair", price: "52,000", originalPrice: "65,000", discount: "20% Off", emi: "4622", tag: "IMPORT", bestSeller: false, image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=800" },
         { name: "Jess Shuffle Side Table", price: "48,000", originalPrice: "60,000", discount: "20% Off", emi: "4266", tag: "IMPORT", bestSeller: false, image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800" },
-        { name: "Zoro High-Back Lounge", price: "2,15,000", originalPrice: "2,68,750", discount: "20% Off", emi: "19111", tag: "IMPORT", bestSeller: true, image: "https://images.unsplash.com/photo-1550583724-b26cc28df5f1?q=80&w=800" },
+        { name: "Zoro High-Back Lounge", price: "2,15,000", originalPrice: "2,68,750", discount: "20% Off", emi: "19111", tag: "IMPORT", bestSeller: true, image: "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=800" },
         { name: "Dutch Craft Coffee Table", price: "82,000", originalPrice: "1,02,500", discount: "20% Off", emi: "7288", tag: "IMPORT", bestSeller: false, image: "https://images.unsplash.com/photo-1532372320572-cda25653a26d?q=80&w=800" },
         { name: "荷兰 Series Bench", price: "74,000", originalPrice: "92,500", discount: "20% Off", emi: "6577", tag: "IMPORT", bestSeller: false, image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=800" },
         { name: "Vintage Lux Ottoman", price: "32,000", originalPrice: "40,000", discount: "20% Off", emi: "2844", tag: "IMPORT", bestSeller: true, image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=800" },
@@ -297,19 +297,7 @@ const JessDesign = () => {
                         fill
                         className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/10 transition-colors hover:bg-black/5 duration-700" />
-
-                    {/* Watch Video Button Overlay */}
-                    <div className="absolute bottom-12 left-12 md:bottom-24 md:left-24">
-                        <button className="flex items-center gap-4 group">
-                            <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-white flex items-center justify-center backdrop-blur-sm group-hover:bg-white transition-all duration-500">
-                                <Plus size={24} className="text-white group-hover:text-black transition-colors" />
-                            </div>
-                            <span className="text-white text-lg md:text-2xl font-serif tracking-wide border-b border-white pb-1 group-hover:translate-x-2 transition-transform duration-500">
-                                Watch Our Video
-                            </span>
-                        </button>
-                    </div>
+                    <div className="absolute inset-0 bg-black/5" />
                 </section>
             </main>
 
