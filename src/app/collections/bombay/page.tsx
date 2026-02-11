@@ -23,7 +23,7 @@ const BombayClubCollection = () => {
         { name: "Bombay Club Ottoman", price: "28,000", originalPrice: "35,000", discount: "20% Off", emi: "2488", tag: "READY TO SHIP", bestSeller: true, image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=800" },
         { name: "Colonial High-Back Settee", price: "1,25,000", originalPrice: "1,56,250", discount: "20% Off", emi: "11111", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800" },
         { name: "Heritage Writing Desk", price: "72,000", originalPrice: "90,000", discount: "20% Off", emi: "6400", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800" },
-        { name: "Bombay Club Floor Lamp", price: "18,500", originalPrice: "23,125", discount: "20% Off", emi: "1644", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1507473885765-e6ed657f99be?q=80&w=800" },
+        { name: "Bombay Club Floor Lamp", price: "18,500", originalPrice: "23,125", discount: "20% Off", emi: "1644", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?q=80&w=800" },
         { name: "Victoria Plush Rug", price: "45,000", originalPrice: "56,250", discount: "20% Off", emi: "4000", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1575414003591-ece8d0416c7a?q=80&w=800" },
     ];
 
