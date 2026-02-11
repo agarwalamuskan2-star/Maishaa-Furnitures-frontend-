@@ -33,23 +33,25 @@ const VedaSangrah = () => {
             <Header />
 
             <main className="flex-1">
-                {/* Hero Section */}
-                <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
-                    <Image
-                        src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?q=80&w=2000&auto=format&fit=crop"
-                        alt="Veda Sangrah Hero"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-black/5" />
-                    <div className="absolute bottom-20 left-1/2 -translate-x-1/2 text-center text-white">
-                        <h1 className="text-5xl md:text-8xl font-serif mb-4 leading-tight lowercase">
-                            veda sangrah
-                        </h1>
-                        <p className="text-sm md:text-xl font-light tracking-[0.4em] uppercase opacity-90">
-                            modular sanctuary for inspired minds
-                        </p>
+                {/* Hero Section with Padding */}
+                <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden rounded-sm">
+                        <Image
+                            src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?q=80&w=2000&auto=format&fit=crop"
+                            alt="Veda Sangrah Hero"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-black/5" />
+                        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 text-center text-white">
+                            <h1 className="text-5xl md:text-8xl mb-4 leading-tight lowercase font-light italic">
+                                veda sangrah
+                            </h1>
+                            <p className="text-sm md:text-xl font-light tracking-[0.4em] uppercase opacity-90">
+                                modular sanctuary for inspired minds
+                            </p>
+                        </div>
                     </div>
                 </section>
 

@@ -33,24 +33,26 @@ const ApartmentLiving = () => {
             <Header />
 
             <main className="flex-1">
-                {/* Hero Section */}
-                <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
-                    <Image
-                        src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
-                        alt="Apartment Living Hero"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-black/5" />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
-                        <span className="text-sm md:text-xl font-light tracking-[0.3em] uppercase mb-4 opacity-90">apartment living</span>
-                        <h1 className="text-4xl md:text-8xl font-serif mb-6 leading-tight">
-                            Small Space, Big Desires
-                        </h1>
-                        <p className="text-xs md:text-lg font-light tracking-[0.4em] uppercase opacity-80">
-                            good things come to those who desire
-                        </p>
+                {/* Hero Section with Padding */}
+                <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden rounded-sm">
+                        <Image
+                            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
+                            alt="Apartment Living Hero"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-black/5" />
+                        <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
+                            <span className="text-sm md:text-xl font-light tracking-[0.3em] uppercase mb-4 opacity-90">apartment living</span>
+                            <h1 className="text-4xl md:text-8xl mb-6 leading-tight font-light italic">
+                                Small Space, Big Desires
+                            </h1>
+                            <p className="text-xs md:text-lg font-light tracking-[0.4em] uppercase opacity-80">
+                                good things come to those who desire
+                            </p>
+                        </div>
                     </div>
                 </section>
 
