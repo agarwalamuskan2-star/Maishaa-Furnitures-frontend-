@@ -23,26 +23,12 @@ const BenchesCollection = () => {
             <Header />
 
             <main className="flex-1">
-                {/* Hero Section */}
-                <section className="relative h-[40vh] md:h-[50vh] overflow-hidden">
-                    <Image
-                        src="https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=2000"
-                        alt="Benches Collection Hero"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center px-4">
-                        <motion.h1
-                            initial={{ y: 30, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.8 }}
-                            className="text-4xl md:text-6xl font-serif text-white uppercase tracking-widest"
-                        >
-                            Benches
-                        </motion.h1>
-                    </div>
-                </section>
+                {/* Header Title Section */}
+                <div className="pt-32 pb-8 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <h1 className="text-4xl md:text-5xl font-serif text-gray-900 uppercase tracking-widest">
+                        Benches
+                    </h1>
+                </div>
 
                 {/* Breadcrumbs Section - RIGHT UNDER HERO */}
                 <div className="py-6 px-4 sm:px-8 md:px-16 lg:px-20 bg-white border-b border-gray-100">
