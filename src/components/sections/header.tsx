@@ -258,65 +258,67 @@ const Header = () => {
       <WishlistSidebar isOpen={isWishlistOpen} onClose={() => setIsWishlistOpen(false)} />
 
       {/* 3. Secondary Navigation Bar with Dropdowns - Hidden on Mobile */}
-      <div className="hidden lg:block w-full bg-white border-b border-gray-100">
+      <div className="hidden lg:block w-full bg-white border-b border-gray-100 relative group/nav">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex items-center justify-center h-[50px]">
           <nav className="flex items-center space-x-8 xl:space-x-10">
             {secondaryNavLinks.map((link) => (
               <div
                 key={link.name}
-                className="relative group"
+                className="group"
                 onMouseEnter={() => (link.dropdown || link.megaMenu) && setActiveDropdown(link.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <Link
-                  href={link.href}
-                  className={`text-sm hover:text-black transition-colors flex items-center gap-1 py-4 ${link.className || "text-gray-600"}`}
-                >
-                  {link.name}
-                  {(link.dropdown || link.megaMenu) && <ChevronDown size={14} className={`mt-0.5 transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />}
-                </Link>
-
-                {/* Standard Dropdown Menu */}
-                {link.dropdown && activeDropdown === link.name && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    className="absolute top-full left-0 mt-[1px] bg-white shadow-lg border border-gray-100 rounded-b-md py-4 min-w-[200px] z-50"
+                <div className="relative">
+                  <Link
+                    href={link.href}
+                    className={`text-sm hover:text-black transition-colors flex items-center gap-1 py-4 ${link.className || "text-gray-600"}`}
                   >
-                    {link.dropdown.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="block px-6 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-black transition-colors"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
+                    {link.name}
+                    {(link.dropdown || link.megaMenu) && <ChevronDown size={14} className={`mt-0.5 transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />}
+                  </Link>
 
-                {/* Mega Menu */}
+                  {/* Standard Dropdown Menu */}
+                  {link.dropdown && activeDropdown === link.name && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      className="absolute top-full left-0 mt-[1px] bg-white shadow-lg border border-gray-100 rounded-b-md py-4 min-w-[200px] z-50"
+                    >
+                      {link.dropdown.map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="block px-6 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-black transition-colors"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </div>
+
+                {/* Mega Menu - Positioned relative to the full nav row */}
                 {link.megaMenu && activeDropdown === link.name && (
                   <motion.div
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 5 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-[1px] w-[90vw] max-w-[1280px] bg-white shadow-2xl border-t border-gray-100 z-50 overflow-hidden"
+                    className="absolute top-full left-0 right-0 w-full bg-white shadow-2xl border-t border-gray-100 z-50 overflow-hidden"
                   >
-                    <div className="grid grid-cols-4 gap-8 p-12">
-                      <div className="col-span-3 grid grid-cols-3 gap-12">
+                    <div className="max-w-[1920px] mx-auto px-8 sm:px-12 md:px-16 lg:px-20 py-12 grid grid-cols-4 gap-12">
+                      <div className="col-span-3 grid grid-cols-3 gap-16">
                         {link.megaMenu.columns.map((column, idx) => (
                           <div key={idx} className="space-y-6">
-                            <h4 className="text-[10px] text-gray-400 uppercase tracking-[0.4em] font-bold border-b border-gray-50 pb-2">
+                            <h4 className="text-[11px] text-gray-400 uppercase tracking-[0.4em] font-bold border-b border-gray-50 pb-3">
                               {column.title}
                             </h4>
-                            <ul className="space-y-3">
+                            <ul className="space-y-3.5">
                               {column.links.map((item, i) => (
                                 <li key={i}>
                                   <Link
                                     href={item.href}
-                                    className="text-[13px] text-gray-600 hover:text-black transition-colors font-light block"
+                                    className="text-[14px] text-gray-600 hover:text-black transition-colors font-light block tracking-wide"
                                   >
                                     {item.name}
                                   </Link>
@@ -326,17 +328,17 @@ const Header = () => {
                           </div>
                         ))}
                       </div>
-                      <div className="relative h-full min-h-[350px] bg-gray-50 overflow-hidden group/img">
+                      <div className="relative h-full min-h-[400px] bg-gray-50 overflow-hidden group/img">
                         <Image
                           src={link.megaMenu.image.src}
                           alt={link.megaMenu.image.alt}
                           fill
-                          className="object-cover transition-transform duration-700 group-hover/img:scale-110"
+                          className="object-cover transition-transform duration-1000 group-hover/img:scale-110"
                         />
                         <div className="absolute inset-0 bg-black/10 group-hover/img:bg-black/0 transition-colors duration-500" />
-                        <div className="absolute bottom-6 left-6 right-6 text-white text-center">
-                          <p className="text-[10px] uppercase tracking-[0.3em] font-medium opacity-90 mb-1">New Arrival</p>
-                          <h5 className="text-xl font-serif">Curated Collections</h5>
+                        <div className="absolute bottom-10 left-0 right-0 text-white text-center px-6">
+                          <p className="text-[10px] uppercase tracking-[0.4em] font-medium opacity-80 mb-2">Selected</p>
+                          <h5 className="text-2xl font-serif">Curated Collections</h5>
                         </div>
                       </div>
                     </div>
