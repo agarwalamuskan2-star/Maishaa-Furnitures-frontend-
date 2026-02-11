@@ -33,21 +33,23 @@ const FrenchCountryCollection = () => {
             <Header />
 
             <main className="flex-1">
-                {/* Hero Section */}
-                <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
-                    <Image
-                        src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=2000&auto=format&fit=crop"
-                        alt="French Country Collection Hero"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-black/5" />
-                    <div className="absolute inset-0 flex flex-col items-center justify-end pb-20 text-white text-center px-4">
-                        <span className="text-sm md:text-xl font-light tracking-[0.4em] mb-2 opacity-90 lowercase italic">a time & style edition</span>
-                        <h1 className="text-4xl md:text-8xl font-serif leading-tight">
-                            french country collection
-                        </h1>
+                {/* Hero Section with Padding */}
+                <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden rounded-sm">
+                        <Image
+                            src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=2000&auto=format&fit=crop"
+                            alt="French Country Collection Hero"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-black/5" />
+                        <div className="absolute inset-0 flex flex-col items-center justify-end pb-20 text-white text-center px-4">
+                            <span className="text-sm md:text-xl font-light tracking-[0.4em] mb-2 opacity-90 lowercase italic">a time & style edition</span>
+                            <h1 className="text-4xl md:text-8xl leading-tight font-light italic">
+                                french country collection
+                            </h1>
+                        </div>
                     </div>
                 </section>
 

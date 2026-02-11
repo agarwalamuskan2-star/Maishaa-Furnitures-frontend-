@@ -48,7 +48,7 @@ const SaturnCollection = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8 }}
-                                className="text-white text-5xl md:text-8xl font-serif tracking-tighter"
+                                className="text-white text-5xl md:text-8xl tracking-tight font-light"
                             >
                                 Saturn Table Collection
                             </motion.h1>
@@ -58,7 +58,7 @@ const SaturnCollection = () => {
 
                 {/* Narrative Section - Updated to match screenshot */}
                 <section className="py-24 px-4 max-w-5xl mx-auto text-center space-y-10">
-                    <h2 className="text-4xl md:text-5xl font-serif text-gray-900">Saturn Table Collection</h2>
+                    <h2 className="text-4xl md:text-5xl">Saturn Table Collection</h2>
                     <p className="text-gray-600 leading-relaxed text-lg md:text-xl font-medium max-w-4xl mx-auto">
                         Introducing our Saturn Table Collection, inspired by the captivating beauty of the Saturn planet.
                         With mesmerizing wooden ring-like designs, these tables bring celestial elegance to any space.
@@ -74,7 +74,7 @@ const SaturnCollection = () => {
                         <div className="p-12 md:p-32 flex flex-col justify-center space-y-12 bg-white">
                             <div className="space-y-4">
                                 <span className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase">DESIGNER'S CHOICE</span>
-                                <h2 className="text-4xl md:text-7xl font-serif text-gray-900 leading-tight">
+                                <h2 className="text-4xl md:text-7xl text-gray-900 leading-tight">
                                     Saturn Rectangle Coffee Table
                                 </h2>
                             </div>
@@ -115,7 +115,7 @@ const SaturnCollection = () => {
                 <section className="py-32 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
                     <div className="max-w-[1920px] mx-auto">
                         <div className="text-center mb-24 space-y-4">
-                            <h2 className="text-4xl md:text-5xl font-serif text-gray-900">Explore more</h2>
+                            <h2 className="text-4xl md:text-5xl text-gray-900">Explore more</h2>
                             <p className="text-gray-400 font-light tracking-[0.2em] uppercase text-xs">
                                 Furniture to choose from our most promising range of artistries.
                             </p>

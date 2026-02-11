@@ -65,7 +65,7 @@ const TravancoreRootsCollection = () => {
                 <section className="py-24 px-4 max-w-6xl mx-auto text-center space-y-12">
                     <div className="space-y-4">
                         <span className="text-xs font-bold tracking-[0.5em] text-amber-800 uppercase">Legacy in Wood</span>
-                        <h2 className="text-4xl md:text-6xl font-serif text-gray-900 tracking-tight">The Teak Story</h2>
+                        <h2 className="text-4xl md:text-6xl text-gray-900 tracking-tight">The Teak Story</h2>
                     </div>
                     <p className="text-gray-600 leading-relaxed text-lg md:text-2xl font-light max-w-4xl mx-auto">
                         "Travancore Roots is an emotional journey back to the lush landscapes and architectural
@@ -82,7 +82,7 @@ const TravancoreRootsCollection = () => {
                         <div className="p-12 md:p-32 flex flex-col justify-center space-y-12 bg-white lg:order-2">
                             <div className="space-y-4">
                                 <span className="text-xs font-bold tracking-[0.3em] text-amber-800 uppercase">DESIGNER'S CHOICE</span>
-                                <h2 className="text-4xl md:text-7xl font-serif text-gray-900 leading-[1.1]">
+                                <h2 className="text-4xl md:text-7xl text-gray-900 leading-[1.1]">
                                     Travancore Teak Lounge
                                 </h2>
                             </div>
@@ -125,7 +125,7 @@ const TravancoreRootsCollection = () => {
                 <section className="py-32 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
                     <div className="max-w-[1920px] mx-auto">
                         <div className="text-center mb-24 space-y-4">
-                            <h2 className="text-4xl md:text-6xl font-serif text-gray-900 lowercase italic">Shop the Roots</h2>
+                            <h2 className="text-4xl md:text-6xl text-gray-900 lowercase italic">Shop the Roots</h2>
                             <p className="text-gray-400 font-light tracking-[0.4em] uppercase text-[10px]">
                                 CRAFTED IN TEAK . INSPIRED BY TRADITION .
                             </p>
@@ -161,7 +161,7 @@ const TravancoreRootsCollection = () => {
 
                                     <div className="space-y-4">
                                         <span className="text-[10px] text-amber-800 font-bold tracking-[0.3em] uppercase">{product.tag}</span>
-                                        <h4 className="text-[20px] text-gray-800 font-serif lowercase italic group-hover:text-amber-900 transition-colors min-h-[54px] leading-snug px-4">
+                                        <h4 className="text-[20px] text-gray-800 lowercase italic group-hover:text-amber-900 transition-colors min-h-[54px] leading-snug px-4">
                                             {product.name}
                                         </h4>
                                         <div className="pt-3 border-t border-gray-50 max-w-[40%] mx-auto">

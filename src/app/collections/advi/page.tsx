@@ -63,7 +63,7 @@ const AdviCollection = () => {
 
                 {/* Narrative Section */}
                 <section className="py-24 px-4 max-w-6xl mx-auto text-center space-y-10">
-                    <h2 className="text-4xl md:text-5xl font-serif text-gray-900 tracking-[0.2em] uppercase">A D V I Series</h2>
+                    <h2 className="text-4xl md:text-5xl tracking-[0.2em] uppercase">A D V I Series</h2>
                     <p className="text-gray-500 leading-relaxed text-lg md:text-2xl font-light max-w-5xl mx-auto">
                         Defined by the poise and balance of stance, Advi collection is an ode to the craftsmanship in
                         furniture. It's raw and sophisticated at the same time – exuding warmth, invoking memories of
@@ -77,7 +77,7 @@ const AdviCollection = () => {
                         <div className="p-12 md:p-32 flex flex-col justify-center space-y-12 bg-white">
                             <div className="space-y-4">
                                 <span className="text-xs font-bold tracking-[0.3em] text-gray-300 uppercase">DESIGNER'S CHOICE</span>
-                                <h2 className="text-4xl md:text-7xl font-serif text-gray-900 tracking-[0.1em] uppercase">
+                                <h2 className="text-4xl md:text-7xl text-gray-900 tracking-[0.1em] uppercase">
                                     SITUATE
                                 </h2>
                             </div>
@@ -109,7 +109,7 @@ const AdviCollection = () => {
                 <section className="py-32 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
                     <div className="max-w-[1920px] mx-auto">
                         <div className="text-center mb-24 space-y-4">
-                            <h2 className="text-4xl md:text-6xl font-serif text-gray-900 tracking-[0.1em] uppercase">Explore</h2>
+                            <h2 className="text-4xl md:text-6xl text-gray-900 tracking-[0.1em] uppercase">Explore</h2>
                             <p className="text-gray-400 font-light tracking-[0.3em] uppercase text-xs">
                                 YOUR STORIES , OUR FURNITURE .
                             </p>

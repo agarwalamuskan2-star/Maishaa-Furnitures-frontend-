@@ -58,7 +58,7 @@ const BombayClubCollection = () => {
 
                 {/* Narrative Section */}
                 <section className="py-24 px-4 max-w-6xl mx-auto text-center space-y-10">
-                    <h2 className="text-3xl md:text-4xl font-serif text-gray-900 leading-tight">Heritage Reimagined</h2>
+                    <h2 className="text-3xl md:text-4xl leading-tight">Heritage Reimagined</h2>
                     <p className="text-gray-500 leading-relaxed text-lg md:text-2xl font-light max-w-5xl mx-auto italic">
                         "The Bombay Club Collection is a tribute to the timeless elegance of colonial craftsmanship.
                         Inspired by the grand architecture and warm textures of historic landmarks, each piece
@@ -73,7 +73,7 @@ const BombayClubCollection = () => {
                         <div className="p-12 md:p-32 flex flex-col justify-center space-y-12 bg-white">
                             <div className="space-y-4">
                                 <span className="text-xs font-bold tracking-[0.3em] text-gray-400 uppercase">DESIGNER'S CHOICE</span>
-                                <h2 className="text-4xl md:text-7xl font-serif text-gray-900 leading-tight">
+                                <h2 className="text-4xl md:text-7xl text-gray-900 leading-tight">
                                     Bombay Club Lounge
                                 </h2>
                             </div>
@@ -116,7 +116,7 @@ const BombayClubCollection = () => {
                 <section className="py-32 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
                     <div className="max-w-[1920px] mx-auto">
                         <div className="text-center mb-24 space-y-4">
-                            <h2 className="text-4xl md:text-6xl font-serif text-gray-900 tracking-tight">Shop the Collection</h2>
+                            <h2 className="text-4xl md:text-6xl text-gray-900 tracking-tight">Shop the Collection</h2>
                             <p className="text-gray-400 font-light tracking-[0.3em] uppercase text-xs">
                                 EXQUISITE CRAFTMANSHIP FOR STATELY LIVING
                             </p>
@@ -152,7 +152,7 @@ const BombayClubCollection = () => {
 
                                     <div className="space-y-4">
                                         <span className="text-[10px] text-gray-400 font-bold tracking-[0.2em] uppercase">{product.tag}</span>
-                                        <h4 className="text-[19px] text-gray-900 font-serif lowercase italic group-hover:text-amber-800 transition-colors min-h-[54px] leading-snug">
+                                        <h4 className="text-[19px] text-gray-900 lowercase italic group-hover:text-amber-800 transition-colors min-h-[54px] leading-snug">
                                             {product.name}
                                         </h4>
                                         <div className="pt-2 border-t border-gray-100 w-1/3 mx-auto">

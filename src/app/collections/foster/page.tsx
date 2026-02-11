@@ -33,24 +33,25 @@ const FosterLiving = () => {
             <Header />
 
             <main className="flex-1">
-                {/* Hero Section */}
-                <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
-                    <Image
-                        src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2000&auto=format&fit=crop"
-                        alt="Foster Living Hero"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-black/10" />
-                    <div className="absolute inset-x-0 bottom-24 flex flex-col items-center text-white text-center px-4">
-                        <span className="text-sm md:text-xl font-light tracking-[0.5em] uppercase mb-4 opacity-90">MODERN AND MODULAR</span>
-                        <h1 className="text-4xl md:text-8xl font-serif mb-4 leading-tight uppercase font-bold tracking-tighter">
-                            A DESIGNER TOUCH
-                        </h1>
-                        <p className="text-xs md:text-lg font-light tracking-[0.4em] uppercase opacity-80 max-w-2xl">
-                            OUR EXCLUSIVE FOSTER COLLECTION
-                        </p>
+                {/* Hero Section with Padding */}
+                <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden rounded-sm">
+                        <Image
+                            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2000&auto=format&fit=crop"
+                            alt="Foster Living Hero"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                        <div className="absolute inset-x-0 bottom-24 flex flex-col items-center text-white text-center px-4">
+                            <span className="text-sm md:text-xl font-light tracking-[0.5em] uppercase mb-4 opacity-90">MODERN AND MODULAR</span>
+                            <h1 className="text-4xl md:text-8xl mb-4 leading-tight uppercase font-bold tracking-tighter">
+                                A DESIGNER TOUCH
+                            </h1>
+                            <p className="text-xs md:text-lg font-light tracking-[0.4em] uppercase opacity-80 max-w-2xl">
+                                OUR EXCLUSIVE FOSTER COLLECTION
+                            </p>
+                        </div>
                     </div>
                 </section>
 

@@ -33,28 +33,30 @@ const MonocraftCollection = () => {
             <Header />
 
             <main className="flex-1">
-                {/* Hero Section */}
-                <section className="relative w-full h-[60vh] md:h-[80vh] bg-black overflow-hidden">
-                    <Image
-                        src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
-                        alt="Monocraft Collection Hero"
-                        fill
-                        className="object-cover opacity-60"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                    <div className="absolute bottom-20 left-1/2 -translate-x-1/2 text-center text-white w-full px-4">
-                        <div className="inline-block border border-white/40 px-8 py-4 mb-6 backdrop-blur-sm">
-                            <h1 className="text-3xl md:text-5xl font-light tracking-[0.2em] uppercase">
-                                MONOCRAFT
-                            </h1>
+                {/* Hero Section with Padding */}
+                <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <div className="relative w-full h-[60vh] md:h-[80vh] bg-black overflow-hidden rounded-sm">
+                        <Image
+                            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
+                            alt="Monocraft Collection Hero"
+                            fill
+                            className="object-cover opacity-60"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 text-center text-white w-full px-4">
+                            <div className="inline-block border border-white/40 px-8 py-4 mb-6 backdrop-blur-sm">
+                                <h1 className="text-3xl md:text-5xl font-light tracking-[0.2em] uppercase">
+                                    MONOCRAFT
+                                </h1>
+                            </div>
+                            <h2 className="text-4xl md:text-7xl tracking-tight mb-4 font-light italic">
+                                Accent Table Collection
+                            </h2>
+                            <p className="text-sm md:text-lg font-light tracking-[0.4em] uppercase opacity-80">
+                                One shade, endless form
+                            </p>
                         </div>
-                        <h2 className="text-4xl md:text-7xl font-serif tracking-tight mb-4">
-                            Accent Table Collection
-                        </h2>
-                        <p className="text-sm md:text-lg font-light tracking-[0.4em] uppercase opacity-80">
-                            One shade, endless form
-                        </p>
                     </div>
                 </section>
 

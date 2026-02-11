@@ -33,24 +33,26 @@ const CopenhagenCurves = () => {
             <Header />
 
             <main className="flex-1">
-                {/* Hero Section - Full Width, No Padding */}
-                <section className="relative w-full h-[60vh] md:h-[90vh] overflow-hidden">
-                    <Image
-                        src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2000"
-                        alt="Copenhagen Curves Hero"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-white/20" />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-                        <span className="text-sm md:text-xl font-light tracking-[0.5em] text-gray-800 uppercase mb-4">SIGNATURE LINE</span>
-                        <h1 className="text-6xl md:text-[10rem] font-bold text-gray-900 leading-tight tracking-tighter lowercase mb-4">
-                            copenhagen curves
-                        </h1>
-                        <p className="text-sm md:text-xl font-light tracking-[0.3em] text-gray-700 uppercase max-w-4xl border-t border-gray-400 pt-4">
-                            THE NEW LANGUAGE OF SCANDINAVIAN SCULPTURAL COMFORT
-                        </p>
+                {/* Hero Section with Padding */}
+                <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden rounded-sm">
+                        <Image
+                            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2000"
+                            alt="Copenhagen Curves Hero"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-white/20" />
+                        <div className="absolute inset-x-0 inset-y-0 flex flex-col items-center justify-center text-center px-4">
+                            <span className="text-sm md:text-xl font-light tracking-[0.5em] text-gray-800 uppercase mb-4">SIGNATURE LINE</span>
+                            <h1 className="text-6xl md:text-[8rem] font-bold text-gray-900 leading-tight tracking-tighter lowercase mb-4 font-light italic">
+                                copenhagen curves
+                            </h1>
+                            <p className="text-sm md:text-xl font-light tracking-[0.3em] text-gray-700 uppercase max-w-4xl border-t border-gray-400 pt-4">
+                                THE NEW LANGUAGE OF SCANDINAVIAN SCULPTURAL COMFORT
+                            </p>
+                        </div>
                     </div>
                 </section>
 
