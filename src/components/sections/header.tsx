@@ -270,7 +270,19 @@ const Header = () => {
         ]
       }
     },
-    { name: "Shop By Style", href: "/shop-by-style" },
+    {
+      name: "Shop By Style",
+      href: "/shop-by-style",
+      megaMenu: {
+        columns: [
+          { title: "Coastal Farmhouse", links: [] },
+          { title: "Contemporary Modern", links: [] },
+          { title: "Tropical Modern", links: [] },
+          { title: "Classic Modern", links: [] },
+          { title: "Mid-century Modern", links: [] },
+        ]
+      }
+    },
     { name: "Stores", href: "/stores" },
     { name: "Warehouse Sale", href: "/warehouse-sale", className: "text-red-500 font-medium" },
   ];
