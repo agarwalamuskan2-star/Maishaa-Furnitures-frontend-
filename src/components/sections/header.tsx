@@ -161,11 +161,33 @@ const Header = () => {
     {
       name: "Outdoor",
       href: "/outdoor",
-      dropdown: [
-        { name: "Outdoor Seating", href: "/outdoor/seating" },
-        { name: "Outdoor Dining", href: "/outdoor/dining" },
-        { name: "Outdoor Accessories", href: "/outdoor/accessories" },
-      ]
+      megaMenu: {
+        columns: [
+          {
+            title: "Outdoor Lounge",
+            links: [
+              { name: "Outdoor Sofas & Sectionals", href: "/outdoor/sofas-sectionals" },
+              { name: "Outdoor Lounge Chairs", href: "/outdoor/lounge-chairs" },
+              { name: "Outdoor Gazebo Daybed", href: "/outdoor/gazebo-daybed" },
+              { name: "Outdoor Coffee Tables", href: "/outdoor/coffee-tables" },
+              { name: "Outdoor Ottomans", href: "/outdoor/ottomans" },
+            ]
+          },
+          {
+            title: "Outdoor Dining",
+            links: [
+              { name: "Outdoor Tables", href: "/outdoor/tables" },
+              { name: "Outdoor Chairs & Benches", href: "/outdoor/chairs-benches" },
+            ],
+            subTitle: "Outdoor Patio | Balcony",
+            subLinks: []
+          },
+          {
+            title: "Outdoor Decor",
+            links: []
+          }
+        ]
+      }
     },
     {
       name: "Decor",
