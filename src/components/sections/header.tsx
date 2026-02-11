@@ -84,13 +84,79 @@ const Header = () => {
     {
       name: "Furniture",
       href: "/furniture",
-      dropdown: [
-        { name: "Sofas", href: "/furniture/sofas" },
-        { name: "Chairs", href: "/furniture/chairs" },
-        { name: "Tables", href: "/furniture/tables" },
-        { name: "Storage", href: "/furniture/storage" },
-        { name: "Beds", href: "/furniture/beds" },
-      ]
+      megaMenu: {
+        columns: [
+          {
+            title: "Entryway",
+            links: [
+              { name: "Shoe Racks", href: "/furniture/shoe-racks" },
+              { name: "Console Tables", href: "/furniture/console-tables" },
+              { name: "Benches", href: "/furniture/benches" },
+              { name: "Swing", href: "/furniture/swing" },
+            ]
+          },
+          {
+            title: "Living",
+            links: [
+              { name: "Sofas & Sectionals", href: "/furniture/sofas-sectionals" },
+              { name: "Chairs & Loveseats", href: "/furniture/chairs-loveseats" },
+              { name: "Accent | Lounge Chairs", href: "/furniture/accent-chairs" },
+              { name: "Daybeds & Diwans", href: "/furniture/daybeds" },
+              { name: "Coffee Tables", href: "/furniture/coffee-tables" },
+              { name: "End Tables", href: "/furniture/end-tables" },
+              { name: "Ottomans | Stools & Benches", href: "/furniture/living-stools" },
+              { name: "Loungers", href: "/furniture/loungers" },
+              { name: "Consoles", href: "/furniture/living-consoles" },
+            ]
+          },
+          {
+            title: "Dining",
+            links: [
+              { name: "Dining Collections", href: "/furniture/dining-collections" },
+              { name: "Dining Tables", href: "/furniture/dining-tables" },
+              { name: "Dining Chairs", href: "/furniture/dining-chairs" },
+              { name: "Dining Benches", href: "/furniture/dining-benches" },
+              { name: "Bar & Counter Stools", href: "/furniture/bar-stools" },
+              { name: "Buffet Consoles", href: "/furniture/buffet-consoles" },
+              { name: "Bar Cabinets", href: "/furniture/bar-cabinets" },
+            ]
+          },
+          {
+            title: "Bedroom",
+            links: [
+              { name: "Beds", href: "/furniture/beds" },
+              { name: "Nightstands", href: "/furniture/nightstands" },
+              { name: "Chest of Drawers", href: "/furniture/bedroom-drawers" },
+              { name: "Armoires | Wardrobes", href: "/furniture/wardrobes" },
+              { name: "Ottomans & Benches", href: "/furniture/bedroom-benches" },
+            ],
+            subTitle: "Home Office",
+            subLinks: [
+              { name: "Writing Desk", href: "/furniture/writing-desk" },
+              { name: "Writing Chair", href: "/furniture/writing-chair" },
+            ]
+          },
+          {
+            title: "Storage & Modular Furniture",
+            links: [
+              { name: "Media Consoles", href: "/furniture/media-consoles" },
+              { name: "Bookcases & Shelves", href: "/furniture/bookcases" },
+              { name: "Buffet & Sideboard Consoles", href: "/furniture/buffets" },
+              { name: "Chest of Drawers", href: "/furniture/storage-drawers" },
+              { name: "Bedside Tables", href: "/furniture/bedside-tables" },
+              { name: "Console Tables", href: "/furniture/storage-consoles" },
+              { name: "Wardrobes", href: "/furniture/storage-wardrobes" },
+              { name: "Modular Storage Units", href: "/furniture/modular-storage" },
+            ]
+          },
+          {
+            title: "Ready to Ship",
+            links: [
+              { name: "In Stock Furniture", href: "/furniture/ready-to-ship" },
+            ]
+          }
+        ]
+      }
     },
     {
       name: "Outdoor",
@@ -306,15 +372,15 @@ const Header = () => {
                     exit={{ opacity: 0, y: 5 }}
                     className="absolute top-full left-0 right-0 w-full bg-white shadow-2xl border-t border-gray-100 z-50 overflow-hidden"
                   >
-                    <div className="max-w-[1920px] mx-auto px-8 sm:px-12 md:px-16 lg:px-20 py-12 grid grid-cols-4 gap-12">
-                      <div className="col-span-3 grid grid-cols-3 gap-16">
-                        {link.megaMenu.columns.map((column, idx) => (
+                    <div className={`max-w-[1920px] mx-auto px-8 sm:px-12 md:px-16 lg:px-20 py-12 grid ${link.megaMenu.image ? 'grid-cols-4' : 'grid-cols-6'} gap-12`}>
+                      <div className={`${link.megaMenu.image ? 'col-span-3 grid grid-cols-3' : 'col-span-6 grid grid-cols-6'} gap-x-12 gap-y-16`}>
+                        {(link.megaMenu.columns as any[]).map((column, idx) => (
                           <div key={idx} className="space-y-6">
                             <h4 className="text-[11px] text-gray-400 uppercase tracking-[0.4em] font-bold border-b border-gray-50 pb-3">
                               {column.title}
                             </h4>
                             <ul className="space-y-3.5">
-                              {column.links.map((item, i) => (
+                              {column.links.map((item: any, i: number) => (
                                 <li key={i}>
                                   <Link
                                     href={item.href}
@@ -325,22 +391,45 @@ const Header = () => {
                                 </li>
                               ))}
                             </ul>
+
+                            {column.subTitle && (
+                              <div className="pt-4 space-y-6">
+                                <h4 className="text-[11px] text-gray-400 uppercase tracking-[0.4em] font-bold border-b border-gray-50 pb-3">
+                                  {column.subTitle}
+                                </h4>
+                                <ul className="space-y-3.5">
+                                  {column.subLinks?.map((item: any, i: number) => (
+                                    <li key={i}>
+                                      <Link
+                                        href={item.href}
+                                        className="text-[14px] text-gray-600 hover:text-black transition-colors font-light block tracking-wide"
+                                      >
+                                        {item.name}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
                           </div>
                         ))}
                       </div>
-                      <div className="relative h-full min-h-[400px] bg-gray-50 overflow-hidden group/img">
-                        <Image
-                          src={link.megaMenu.image.src}
-                          alt={link.megaMenu.image.alt}
-                          fill
-                          className="object-cover transition-transform duration-1000 group-hover/img:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-black/10 group-hover/img:bg-black/0 transition-colors duration-500" />
-                        <div className="absolute bottom-10 left-0 right-0 text-white text-center px-6">
-                          <p className="text-[10px] uppercase tracking-[0.4em] font-medium opacity-80 mb-2">Selected</p>
-                          <h5 className="text-2xl font-serif">Curated Collections</h5>
+
+                      {link.megaMenu.image && (
+                        <div className="relative h-full min-h-[400px] bg-gray-50 overflow-hidden group/img">
+                          <Image
+                            src={link.megaMenu.image.src}
+                            alt={link.megaMenu.image.alt}
+                            fill
+                            className="object-cover transition-transform duration-1000 group-hover/img:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-black/10 transition-colors duration-500" />
+                          <div className="absolute bottom-10 left-0 right-0 text-white text-center px-6">
+                            <p className="text-[10px] uppercase tracking-[0.4em] font-medium opacity-80 mb-2">Selected</p>
+                            <h5 className="text-2xl font-serif">Curated Collections</h5>
+                          </div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   </motion.div>
                 )}
@@ -395,11 +484,11 @@ const Header = () => {
                   )}
                   {link.megaMenu && (
                     <div className="ml-4 mt-3 space-y-6">
-                      {link.megaMenu.columns.map((column, idx) => (
+                      {(link.megaMenu.columns as any[]).map((column, idx) => (
                         <div key={idx} className="space-y-2">
                           <p className="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-bold">{column.title}</p>
                           <div className="space-y-2">
-                            {column.links.map((item, i) => (
+                            {column.links.map((item: any, i: number) => (
                               <Link
                                 key={i}
                                 href={item.href}
@@ -410,6 +499,24 @@ const Header = () => {
                               </Link>
                             ))}
                           </div>
+
+                          {column.subTitle && (
+                            <div className="pt-2 space-y-2">
+                              <p className="text-[9px] text-gray-400 uppercase tracking-[0.2em] font-bold">{column.subTitle}</p>
+                              <div className="space-y-2">
+                                {column.subLinks?.map((item: any, i: number) => (
+                                  <Link
+                                    key={i}
+                                    href={item.href}
+                                    className="block text-sm text-gray-500"
+                                    onClick={() => setIsMenuOpen(false)}
+                                  >
+                                    {item.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
                       ))}
                     </div>
