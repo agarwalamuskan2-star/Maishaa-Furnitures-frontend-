@@ -1,0 +1,232 @@
+"use client";
+
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import Header from "@/components/sections/header";
+import Footer from "@/components/sections/footer";
+import { Heart, ChevronRight } from "lucide-react";
+
+const ShoeRackCollection = () => {
+    const products = [
+        { name: "Vivo Slatted Shoe Rack", price: "51,920", originalPrice: "64,900", discount: "20% Off", emi: "3279", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=1000" },
+        { name: "Vivo Slatted Shoe Console", price: "99,920", originalPrice: "124,900", discount: "20% Off", emi: "5444", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=1000" },
+        { name: "Vivo Slatted Shoe Chest", price: "75,520", originalPrice: "94,400", discount: "20% Off", emi: "4211", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=1000" },
+        { name: "Rio Rattan Shoe Rack", price: "47,920", originalPrice: "59,900", discount: "20% Off", emi: "5024", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1000" },
+        { name: "Rio Rattan Shoe Console", price: "95,920", originalPrice: "119,900", discount: "20% Off", emi: "10056", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000" },
+        { name: "Rio Rattan Shoe Chest", price: "71,920", originalPrice: "89,900", discount: "20% Off", emi: "7540", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000" },
+    ];
+
+    return (
+        <div className="flex min-h-screen flex-col bg-white">
+            <Header />
+
+            <main className="flex-1">
+                {/* Hero Section */}
+                <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
+                    <Image
+                        src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=2000"
+                        alt="Shoe Rack Collection Hero"
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-center px-4">
+                        <motion.h1
+                            initial={{ y: 30, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 0.8 }}
+                            className="text-4xl md:text-7xl font-serif text-white mb-6"
+                        >
+                            Shoe Racks
+                        </motion.h1>
+                        <nav className="flex items-center gap-2 text-white/80 text-sm tracking-widest uppercase">
+                            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                            <ChevronRight size={14} />
+                            <Link href="/furniture" className="hover:text-white transition-colors">Furniture</Link>
+                            <ChevronRight size={14} />
+                            <Link href="/furniture/entryway" className="hover:text-white transition-colors">Entryway</Link>
+                            <ChevronRight size={14} />
+                            <span className="text-white">Shoe Rack</span>
+                        </nav>
+                    </div>
+                </section>
+
+                {/* Narrative Section */}
+                <section className="py-24 px-4 max-w-5xl mx-auto text-center">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="space-y-10"
+                    >
+                        <h2 className="text-3xl md:text-5xl font-serif text-gray-900 leading-tight">
+                            Get the Perfect Wooden Shoe Rack for Your Home
+                        </h2>
+                        <div className="w-20 h-px bg-gray-300 mx-auto"></div>
+                        <p className="text-gray-600 leading-relaxed text-lg md:text-xl font-light font-serif">
+                            A shoe cabinet, especially a wooden one, is a piece of furniture particularly designed to store and organise shoes neatly. They create an aesthetic appeal in entryways, closets, or mudrooms by keeping footwear accessible while preventing clutter. These racks come in various styles, materials, and sizes, catering to different needs and spaces.
+                        </p>
+                        <p className="text-gray-500 leading-relaxed text-md md:text-lg font-light">
+                            At Maishaa, we offer a great selection of premium shoe racks that not only keep your space tidy but also enhance your home decor. Whether you’re working with a cosy nook or a spacious foyer, we have the perfect shoe rack that offers a complete storage solution.
+                        </p>
+                    </motion.div>
+                </section>
+
+                {/* Product Grid */}
+                <section className="py-20 px-4 sm:px-8 md:px-16 lg:px-20 bg-[#fafafa]">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                        <div className="space-y-4">
+                            <h2 className="text-4xl font-serif text-gray-900">The Collection</h2>
+                            <p className="text-gray-400 font-light tracking-[0.2em] uppercase text-xs">
+                                19 RESULTS FOUND
+                            </p>
+                        </div>
+                        <div className="flex items-center gap-4 text-xs font-bold tracking-widest uppercase text-gray-400">
+                            <span>SORT BY: FEATURED</span>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {products.map((product, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: (idx % 4) * 0.1 }}
+                                viewport={{ once: true }}
+                                className="group cursor-pointer flex flex-col bg-white border border-gray-100"
+                            >
+                                <div className="relative aspect-[4/5] overflow-hidden">
+                                    <Image
+                                        src={product.image}
+                                        alt={product.name}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                    <button className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-sm hover:text-red-500 transition-colors z-10">
+                                        <Heart size={18} strokeWidth={1.5} />
+                                    </button>
+
+                                    {product.bestSeller && (
+                                        <div className="absolute top-0 left-0 bg-[#1a1a1a] text-white px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase z-10">
+                                            BEST SELLER
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className="p-6 flex flex-col flex-1">
+                                    <div className="mb-4">
+                                        <span className="inline-block bg-[#f5f5f5] text-[#888] px-3 py-1 text-[9px] font-bold tracking-widest uppercase mb-3">
+                                            {product.tag}
+                                        </span>
+                                        <h4 className="text-[15px] font-medium text-gray-900 group-hover:text-orange-600 transition-colors leading-snug">
+                                            {product.name}
+                                        </h4>
+                                    </div>
+
+                                    <div className="mt-auto space-y-2">
+                                        <p className="text-[18px] font-bold text-gray-900">₹{product.price}</p>
+
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-[13px] text-gray-400 line-through">₹{product.originalPrice}</span>
+                                            <span className="text-[13px] text-orange-500 font-bold">{product.discount}</span>
+                                        </div>
+
+                                        <p className="text-[11px] text-orange-500 font-medium tracking-wide">
+                                            EMI starts from ₹ {product.emi}
+                                        </p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Detailed Information Sections */}
+                <section className="py-24 px-4 sm:px-8 md:px-16 lg:px-20 bg-white border-t border-gray-100">
+                    <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+                        <div className="space-y-12">
+                            <div className="space-y-6">
+                                <h3 className="text-2xl md:text-3xl font-serif text-gray-900 leading-tight">
+                                    What Are Some Important Points to Remember While Shopping for a Shoe Rack for Home?
+                                </h3>
+                                <div className="w-12 h-px bg-gray-900"></div>
+                            </div>
+
+                            <div className="space-y-8">
+                                <div className="space-y-3">
+                                    <h4 className="text-lg font-bold text-gray-900 tracking-tight uppercase">Size and Space</h4>
+                                    <p className="text-gray-500 font-light leading-relaxed">
+                                        Measure the entryway is wide enough for the shoe rack to fit comfortably without overcrowding the area. While in large spaces, you can go for multi-tiered options, compact designs are ideal for limited space. Vertical designs that maximise storage without taking up too much floor space is also worth considering.
+                                    </p>
+                                </div>
+
+                                <div className="space-y-3">
+                                    <h4 className="text-lg font-bold text-gray-900 tracking-tight uppercase">Material</h4>
+                                    <p className="text-gray-500 font-light leading-relaxed">
+                                        Choose a wooden shoe rack made from strong and durable materials that can withstand daily use. Solid wood options provide longevity and aesthetic appeal. Look for racks made from materials like temperature treated East European Ashwood which are known for their strength and resistance to wear.
+                                    </p>
+                                </div>
+
+                                <div className="space-y-3">
+                                    <h4 className="text-lg font-bold text-gray-900 tracking-tight uppercase">Design and Style</h4>
+                                    <p className="text-gray-500 font-light leading-relaxed">
+                                        Go for a design that matches the interiors of your space. From modern minimalist styles to traditional rustic looks, the right shoe rack can enhance your decor. Consider finishes like Carbon Black and Burnt Amber that complement your existing furniture.
+                                    </p>
+                                </div>
+
+                                <div className="space-y-3">
+                                    <h4 className="text-lg font-bold text-gray-900 tracking-tight uppercase">Capacity</h4>
+                                    <p className="text-gray-500 font-light leading-relaxed">
+                                        Consider how many pairs of shoes you need to store. Look for racks with adjustable shelves for flexibility. Some racks also feature compartments for boots, sandals, heels, wedges, flip-flops, and sneakers.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="space-y-12">
+                            <div className="bg-[#fafafa] p-10 space-y-8 rounded-sm">
+                                <h3 className="text-2xl font-serif text-gray-900">
+                                    Why Shop for Shoe Racks from Maishaa?
+                                </h3>
+                                <p className="text-gray-600 font-light leading-relaxed">
+                                    At Maishaa, one of the top premium furniture providers in the industry, we are highly committed to offering our customers high quality, durable furniture while adhering to sustainability and environmental responsibility.
+                                </p>
+                                <ul className="space-y-4">
+                                    {[
+                                        "Highly skilled craftsmen each piece to ensure it stands the test of time",
+                                        "Extensive inventory of racks, from modern, sleek lines to intricate designs",
+                                        "Wide variety of customisation options to fit your personal taste",
+                                        "Diverse collections that fit seamlessly into any space"
+                                    ].map((benefit, i) => (
+                                        <li key={i} className="flex gap-4 text-sm text-gray-500 font-light">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-gray-900 mt-2 shrink-0" />
+                                            {benefit}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <div className="space-y-6 px-4">
+                                <h4 className="text-xl font-serif text-gray-900 italic">Practicality met with Elegance</h4>
+                                <p className="text-gray-500 font-light leading-relaxed">
+                                    A wooden shoe rack is an essential addition to any space. They are not just limited to homes; they can also enhance offices, entryways, and other areas. These racks offer both practicality and a stylish touch, allowing you to keep your footwear organised while elevating the overall decor of your environment.
+                                </p>
+                                <button className="px-10 py-4 bg-gray-900 text-white text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-black transition-colors">
+                                    EXPLORE FULL COLLECTION
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <Footer />
+        </div>
+    );
+};
+
+export default ShoeRackCollection;
