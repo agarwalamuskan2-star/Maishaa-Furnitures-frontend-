@@ -60,7 +60,7 @@ const Header = () => {
         { name: "Accessories", href: "/decor/accessories" },
       ]
     },
-    { name: "Catalog", href: "/catalog" },
+    { name: "Catalogs", href: "/catalogs" },
     { name: "Projects", href: "/projects" },
     { name: "Ready to Ship", href: "/ready-to-ship" },
     { name: "Shop By Style", href: "/shop-by-style" },
