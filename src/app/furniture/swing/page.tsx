@@ -194,25 +194,6 @@ const SwingsCollection = () => {
                     </div>
                 </section>
 
-                {/* Narrative Intro Section - MOVED BELOW */}
-                <section className="py-24 px-4 max-w-5xl mx-auto text-center border-t border-gray-100">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="space-y-10"
-                    >
-                        <h2 className="text-3xl md:text-5xl font-serif text-gray-900 leading-tight">
-                            Transform Your Outdoor Space with Premium Swings
-                        </h2>
-                        <div className="w-20 h-px bg-gray-300 mx-auto"></div>
-                        <p className="text-gray-600 leading-relaxed text-lg md:text-xl font-light font-serif italic">
-                            Experience the perfect blend of relaxation and elegance with our handcrafted collection of swings, designed to bring comfort and style to your home.
-                        </p>
-                    </motion.div>
-                </section>
-
                 {/* BOTTOM CONTENT SECTION */}
                 <section className="py-32 px-4 sm:px-8 md:px-16 lg:px-24 bg-white border-t border-gray-100">
                     <div className="max-w-5xl mx-auto space-y-16">
