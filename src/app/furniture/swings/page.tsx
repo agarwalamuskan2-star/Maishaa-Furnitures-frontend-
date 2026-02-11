@@ -24,7 +24,7 @@ const SwingsCollection = () => {
 
             <main className="flex-1">
                 {/* Main Collection Section with Sidebar */}
-                <section className="pt-32 pb-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                <section className="pt-24 pb-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
                     <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row gap-12">
                         {/* Sidebar */}
                         <aside className="w-full lg:w-64 flex-shrink-0 space-y-12">
