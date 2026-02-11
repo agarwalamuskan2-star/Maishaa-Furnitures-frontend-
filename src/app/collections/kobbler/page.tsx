@@ -219,18 +219,7 @@ const KobblerCollection = () => {
                     </div>
                 </section>
 
-                {/* Brand Banner */}
-                <section className="py-28 bg-[#2c1e14] text-center text-white/90">
-                    <div className="max-w-3xl mx-auto px-4 space-y-8">
-                        <h2 className="text-3xl md:text-4xl font-light tracking-[0.4em] uppercase">
-                            MAISHAA
-                        </h2>
-                        <div className="w-12 h-px bg-white/30 mx-auto"></div>
-                        <p className="text-white/60 font-light italic text-lg leading-relaxed">
-                            "True luxury is in the details you can feel."
-                        </p>
-                    </div>
-                </section>
+
 
             </main>
 

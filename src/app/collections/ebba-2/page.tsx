@@ -217,18 +217,7 @@ const Ebba2Collection = () => {
                     </div>
                 </section>
 
-                {/* Brand Banner */}
-                <section className="py-24 bg-[#f9f9f9] text-center">
-                    <div className="max-w-3xl mx-auto px-4 space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-light tracking-widest uppercase text-gray-900">
-                            MAISHAA
-                        </h2>
-                        <div className="w-16 h-px bg-gray-300 mx-auto"></div>
-                        <p className="text-gray-500 font-light italic text-lg">
-                            "Timeless design for the modern era."
-                        </p>
-                    </div>
-                </section>
+
 
             </main>
 

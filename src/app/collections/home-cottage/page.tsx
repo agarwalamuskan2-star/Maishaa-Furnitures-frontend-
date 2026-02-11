@@ -129,18 +129,7 @@ const HomeCottageCollection = () => {
                     </div>
                 </section>
 
-                {/* Brand Banner */}
-                <section className="py-24 bg-[#faf7f2] text-center">
-                    <div className="max-w-3xl mx-auto px-4 space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-light tracking-widest uppercase text-gray-900">
-                            MAISHAA
-                        </h2>
-                        <div className="w-16 h-px bg-gray-300 mx-auto"></div>
-                        <p className="text-gray-500 font-light italic text-lg">
-                            "Bringing the soul of the country to your urban dwelling."
-                        </p>
-                    </div>
-                </section>
+
 
             </main>
 

@@ -231,19 +231,7 @@ const ChandigarhCollection = () => {
                     </div>
                 </section>
 
-                {/* Brand Banner */}
-                <section className="py-28 bg-[#1a1a1a] text-center text-white">
-                    <div className="max-w-3xl mx-auto px-4 space-y-8">
-                        <span className="text-[10px] tracking-[0.8em] font-medium opacity-50 uppercase">The Legacy Continues</span>
-                        <h2 className="text-4xl md:text-5xl font-light tracking-widest uppercase mb-4">
-                            MAISHAA
-                        </h2>
-                        <div className="w-20 h-px bg-white/20 mx-auto"></div>
-                        <p className="text-gray-400 font-light italic text-xl leading-relaxed">
-                            "Preserving architectural heritage through modern craftsmanship."
-                        </p>
-                    </div>
-                </section>
+
 
             </main>
 

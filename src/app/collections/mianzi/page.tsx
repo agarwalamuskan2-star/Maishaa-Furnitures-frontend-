@@ -134,18 +134,7 @@ const MianziCollection = () => {
                     </div>
                 </section>
 
-                {/* Brand Banner */}
-                <section className="py-28 bg-[#2e342a] text-center text-white/90">
-                    <div className="max-w-3xl mx-auto px-4 space-y-8">
-                        <h2 className="text-3xl md:text-5xl font-light tracking-[0.5em] uppercase">
-                            MAISHAA
-                        </h2>
-                        <div className="w-16 h-px bg-white/20 mx-auto"></div>
-                        <p className="text-white/60 font-light italic text-xl leading-relaxed">
-                            "Rooted in nature, designed for the conscious modern soul."
-                        </p>
-                    </div>
-                </section>
+
 
             </main>
 
