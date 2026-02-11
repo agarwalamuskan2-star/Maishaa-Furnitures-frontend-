@@ -192,12 +192,56 @@ const Header = () => {
     {
       name: "Decor",
       href: "/decor",
-      dropdown: [
-        { name: "Lighting", href: "/decor/lighting" },
-        { name: "Rugs", href: "/decor/rugs" },
-        { name: "Wall Art", href: "/decor/wall-art" },
-        { name: "Accessories", href: "/decor/accessories" },
-      ]
+      megaMenu: {
+        columns: [
+          {
+            title: "Mirrors",
+            links: [
+              { name: "Wall Mirrors", href: "/decor/mirrors/wall" },
+              { name: "Floor Mirrors", href: "/decor/mirrors/floor" },
+              { name: "Decorative Mirrors", href: "/decor/mirrors/decorative" },
+            ]
+          },
+          {
+            title: "Decorative Objects",
+            links: [
+              { name: "Decor Pieces", href: "/decor/objects/pieces" },
+              { name: "Bookends", href: "/decor/objects/bookends" },
+              { name: "Lanterns & Candle Holders", href: "/decor/objects/lanterns" },
+              { name: "Cushions & Runners", href: "/decor/objects/cushions" },
+              { name: "Planters", href: "/decor/objects/planters" },
+            ]
+          },
+          {
+            title: "Storages",
+            links: [
+              { name: "Fabric Racks", href: "/decor/storage/fabric-racks" },
+              { name: "Bags & Baskets", href: "/decor/storage/bags-baskets" },
+            ],
+            subTitle: "Clock",
+            subLinks: []
+          },
+          {
+            title: "Home Fragrance",
+            links: [],
+            subTitle: "Pots",
+            subLinks: [
+              { name: "Candles", href: "/decor/home-fragrance/candles" }
+            ],
+            // Note: Our current component architecture supports one subTitle. 
+            // I will implement candles as a link or a secondary sub-section if needed.
+          },
+          {
+            title: "Art",
+            links: [
+              { name: "Paintings", href: "/decor/art/paintings" },
+              { name: "Sculptures", href: "/decor/art/sculptures" },
+              { name: "Decor", href: "/decor/art/decor" },
+              { name: "Wall Decor", href: "/decor/art/wall-decor" },
+            ]
+          }
+        ]
+      }
     },
     { name: "Catalogs", href: "/catalogs" },
     { name: "Projects", href: "/projects" },
