@@ -13,7 +13,7 @@ const SwingsCollection = () => {
         { name: "Teak Wood Porch Swing", price: "89,000", originalPrice: "111,250", discount: "20% Off", emi: "7,417", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1000" },
         { name: "Rattan Hanging Swing Chair", price: "52,000", originalPrice: "65,000", discount: "20% Off", emi: "4,333", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1000" },
         { name: "Outdoor Garden Swing Bench", price: "1,25,000", originalPrice: "1,56,250", discount: "20% Off", emi: "10,417", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1000" },
-        { name: "Indoor Jhula Swing", price: "78,000", originalPrice: "97,500", discount: "20% Off", emi: "6,500", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?q=80&w=1000" },
+        { name: "Indoor Jhula Swing", price: "78,000", originalPrice: "97,500", discount: "20% Off", emi: "6,500", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1000" },
         { name: "Macrame Hanging Swing", price: "45,000", originalPrice: "56,250", discount: "20% Off", emi: "3,750", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1000" },
         { name: "Wooden Patio Swing with Canopy", price: "1,65,000", originalPrice: "2,06,250", discount: "20% Off", emi: "13,750", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1000" },
     ];
