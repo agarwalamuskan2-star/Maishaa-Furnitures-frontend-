@@ -245,7 +245,31 @@ const Header = () => {
     },
     { name: "Catalogs", href: "/catalogs" },
     { name: "Projects", href: "/projects" },
-    { name: "Ready to Ship", href: "/ready-to-ship" },
+    {
+      name: "Ready to Ship",
+      href: "/ready-to-ship",
+      megaMenu: {
+        columns: [
+          {
+            title: "In stock Furniture",
+            links: [
+              { name: "Sofas & Sectionals", href: "/ready-to-ship/furniture/sofas" },
+              { name: "Chairs", href: "/ready-to-ship/furniture/chairs" },
+              { name: "Tables", href: "/ready-to-ship/furniture/tables" },
+              { name: "Storage", href: "/ready-to-ship/furniture/storage" },
+            ]
+          },
+          {
+            title: "In stock Accents",
+            links: [
+              { name: "Mirrors", href: "/ready-to-ship/accents/mirrors" },
+              { name: "Decorative Objects", href: "/ready-to-ship/accents/objects" },
+              { name: "Lighting", href: "/ready-to-ship/accents/lighting" },
+            ]
+          }
+        ]
+      }
+    },
     { name: "Shop By Style", href: "/shop-by-style" },
     { name: "Stores", href: "/stores" },
     { name: "Warehouse Sale", href: "/warehouse-sale", className: "text-red-500 font-medium" },
