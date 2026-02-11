@@ -65,7 +65,7 @@ const JessDesign = () => {
                                 <div className="w-8 h-[1px] bg-white opacity-40"></div>
                             </div>
 
-                            <h2 className="mt-8 text-3xl md:text-7xl font-bold tracking-[0.4em] uppercase">DTALEMODERN</h2>
+                            <h2 className="mt-8 text-3xl md:text-7xl font-bold tracking-[0.4em] uppercase">MAISHAA</h2>
                         </div>
                     </div>
                 </section>
@@ -75,7 +75,7 @@ const JessDesign = () => {
                     <p className="text-2xl md:text-5xl font-serif text-gray-900 leading-[1.3] font-normal">
                         Welcome to the intriguing world of Jess. Immerse yourself in the informal ambience
                         of our furniture. Jess, a design icon from the Netherlands,
-                        now exclusively in India with Dtale.
+                        now exclusively in India with Maishaa.
                     </p>
                 </section>
 
