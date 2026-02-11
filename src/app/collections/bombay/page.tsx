@@ -32,25 +32,27 @@ const BombayClubCollection = () => {
             <Header />
 
             <main className="flex-1">
-                {/* Hero Section */}
-                <section className="relative w-full h-[60vh] md:h-[85vh] overflow-hidden">
-                    <Image
-                        src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=2000"
-                        alt="Bombay Club Hero"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-black/20" />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-                        <motion.h1
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1 }}
-                            className="text-white text-5xl md:text-8xl font-serif tracking-tight"
-                        >
-                            Bombay Club Collection
-                        </motion.h1>
+                {/* Hero Section with Padding */}
+                <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden rounded-sm">
+                        <Image
+                            src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=2000"
+                            alt="Bombay Club Hero"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-black/20" />
+                        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+                            <motion.h1
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1 }}
+                                className="text-white text-5xl md:text-8xl tracking-tight font-light"
+                            >
+                                Bombay Club Collection
+                            </motion.h1>
+                        </div>
                     </div>
                 </section>
 

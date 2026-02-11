@@ -39,32 +39,34 @@ const JessDesign = () => {
             <Header />
 
             <main className="flex-1">
-                {/* Hero Section - Full Width Image */}
-                <section className="relative w-full h-[65vh] md:h-[95vh] overflow-hidden">
-                    <Image
-                        src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000"
-                        alt="Jess Hero"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                    <div className="absolute inset-x-0 inset-y-0 flex flex-col items-center justify-center text-white px-4">
-                        <span className="text-xs md:text-sm font-bold tracking-[0.6em] uppercase mb-8 opacity-80">INTRODUCING</span>
+                {/* Hero Section with Padding */}
+                <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden rounded-sm">
+                        <Image
+                            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000"
+                            alt="Jess Hero"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                        <div className="absolute inset-x-0 inset-y-0 flex flex-col items-center justify-center text-white px-4">
+                            <span className="text-xs md:text-sm font-bold tracking-[0.6em] uppercase mb-8 opacity-80">INTRODUCING</span>
 
-                        {/* Custom Brand Logo Overlay */}
-                        <div className="relative mb-8">
-                            <div className="w-32 h-32 md:w-56 md:h-56 bg-[#f15a24] rounded-full flex items-center justify-center shadow-2xl">
-                                <span className="text-4xl md:text-8xl font-serif font-bold italic tracking-tighter">Jess</span>
+                            {/* Custom Brand Logo Overlay */}
+                            <div className="relative mb-8">
+                                <div className="w-32 h-32 md:w-56 md:h-56 bg-[#f15a24] rounded-full flex items-center justify-center shadow-2xl">
+                                    <span className="text-4xl md:text-8xl font-bold italic tracking-tighter font-light">Jess</span>
+                                </div>
                             </div>
-                        </div>
 
-                        <div className="flex items-center gap-6">
-                            <div className="w-8 h-[1px] bg-white opacity-40"></div>
-                            <span className="text-2xl md:text-4xl font-light tracking-[0.2em] font-serif">X</span>
-                            <div className="w-8 h-[1px] bg-white opacity-40"></div>
-                        </div>
+                            <div className="flex items-center gap-6">
+                                <div className="w-8 h-[1px] bg-white opacity-40"></div>
+                                <span className="text-2xl md:text-4xl font-light tracking-[0.2em] italic">X</span>
+                                <div className="w-8 h-[1px] bg-white opacity-40"></div>
+                            </div>
 
-                        <h2 className="mt-8 text-3xl md:text-7xl font-bold tracking-[0.4em] uppercase">DTALEMODERN</h2>
+                            <h2 className="mt-8 text-3xl md:text-7xl font-bold tracking-[0.4em] uppercase">DTALEMODERN</h2>
+                        </div>
                     </div>
                 </section>
 

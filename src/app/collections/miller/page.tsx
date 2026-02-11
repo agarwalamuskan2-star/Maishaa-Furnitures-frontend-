@@ -32,15 +32,17 @@ const MillerLoungeSeries = () => {
             <Header />
 
             <main className="flex-1">
-                {/* Hero Section */}
-                <section className="relative w-full h-[60vh] md:h-[85vh] overflow-hidden">
-                    <Image
-                        src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2000"
-                        alt="Miller Lounge Series Hero"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
+                {/* Hero Section with Padding */}
+                <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden rounded-sm">
+                        <Image
+                            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2000"
+                            alt="Miller Lounge Series Hero"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                    </div>
                 </section>
 
                 {/* Narrative Section */}

@@ -18,7 +18,7 @@ const TravancoreRootsCollection = () => {
         { name: "Anamudi Cane Armchair", price: "52,000", originalPrice: "65,000", discount: "20% Off", emi: "4622", tag: "READY TO SHIP", bestSeller: true, image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800" },
         { name: "Periyar Teak Console", price: "68,000", originalPrice: "85,000", discount: "20% Off", emi: "6044", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=800" },
         { name: "Wayanad Teak Bookshelf", price: "88,000", originalPrice: "1,10,000", discount: "20% Off", emi: "7822", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=800" },
-        { name: "Kumarakom Daybed", price: "1,25,000", originalPrice: "1,56,250", discount: "20% Off", emi: "11111", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1505691938895-1758d7eaa511?q=80&w=800" },
+        { name: "Kumarakom Daybed", price: "1,25,000", originalPrice: "1,56,250", discount: "20% Off", emi: "11111", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1593170511425-22d7744a5092?q=80&w=800" },
         { name: "Munnar Writing Desk", price: "62,000", originalPrice: "77,500", discount: "20% Off", emi: "5511", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800" },
         { name: "Cochin Heritage Stool", price: "18,500", originalPrice: "23,125", discount: "20% Off", emi: "1644", tag: "READY TO SHIP", bestSeller: true, image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=800" },
         { name: "Cardamom Teak Bench", price: "45,000", originalPrice: "56,250", discount: "20% Off", emi: "4000", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=800" },
@@ -32,30 +32,32 @@ const TravancoreRootsCollection = () => {
             <Header />
 
             <main className="flex-1">
-                {/* Hero Section */}
-                <section className="relative w-full h-[60vh] md:h-[85vh] overflow-hidden">
-                    <Image
-                        src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=2000"
-                        alt="Travancore Roots Hero"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-black/30" />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1.2 }}
-                            className="space-y-6"
-                        >
-                            <h1 className="text-white text-5xl md:text-9xl font-serif tracking-tight leading-[0.8] lowercase italic">
-                                Travancore
-                            </h1>
-                            <span className="block text-white text-lg md:text-3xl font-light tracking-[0.4em] uppercase">
-                                roots of heritage
-                            </span>
-                        </motion.div>
+                {/* Hero Section with Padding */}
+                <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden rounded-sm">
+                        <Image
+                            src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=2000"
+                            alt="Travancore Roots Hero"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-black/30" />
+                        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 1.2 }}
+                                className="space-y-6"
+                            >
+                                <h1 className="text-white text-5xl md:text-9xl tracking-tight leading-[0.8] lowercase italic font-light">
+                                    Travancore
+                                </h1>
+                                <span className="block text-white text-lg md:text-3xl font-light tracking-[0.4em] uppercase">
+                                    roots of heritage
+                                </span>
+                            </motion.div>
+                        </div>
                     </div>
                 </section>
 
