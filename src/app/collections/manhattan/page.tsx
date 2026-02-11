@@ -128,52 +128,55 @@ const ManhattanCollection = () => {
                         </Link>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-24">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {products.map((product, idx) => (
                             <motion.div
                                 key={idx}
-                                initial={{ opacity: 0, y: 40 }}
+                                initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: (idx % 4) * 0.1 }}
+                                transition={{ duration: 0.5, delay: (idx % 4) * 0.1 }}
                                 viewport={{ once: true }}
-                                className="group"
+                                className="group cursor-pointer flex flex-col bg-white border border-gray-100"
                             >
-                                <div className="relative aspect-square overflow-hidden mb-10 bg-gray-50">
+                                <div className="relative aspect-[4/5] overflow-hidden">
                                     <Image
                                         src={product.image}
                                         alt={product.name}
                                         fill
-                                        className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
                                     />
-                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
-                                    <button className="absolute bottom-6 right-6 p-4 bg-white/95 backdrop-blur-md rounded-full shadow-2xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 hover:text-red-500">
-                                        <Heart size={22} strokeWidth={1.5} />
+                                    <button className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-sm hover:text-red-500 transition-colors z-10">
+                                        <Heart size={18} strokeWidth={1.5} />
                                     </button>
+
                                     {product.bestSeller && (
-                                        <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm text-black text-[9px] px-4 py-2 font-bold tracking-[0.3em] shadow-sm uppercase">
+                                        <div className="absolute top-0 left-0 bg-[#1a1a1a] text-white px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase z-10">
                                             BEST SELLER
                                         </div>
                                     )}
                                 </div>
 
-                                <div className="space-y-4 px-2">
-                                    <div className="flex justify-between items-start">
-                                        <span className="text-[10px] text-gray-400 font-bold tracking-[0.3em] uppercase">{product.tag}</span>
-                                        <p className="text-orange-600 text-[11px] font-bold tracking-widest">{product.discount}</p>
+                                <div className="p-6 flex flex-col flex-1">
+                                    <div className="mb-4">
+                                        <span className="inline-block bg-[#f5f5f5] text-[#888] px-3 py-1 text-[9px] font-bold tracking-widest uppercase mb-3">
+                                            {product.tag}
+                                        </span>
+                                        <h4 className="text-[16px] font-medium text-gray-900 group-hover:text-gray-500 transition-colors leading-snug font-serif">
+                                            {product.name}
+                                        </h4>
                                     </div>
-                                    <h4 className="text-[18px] font-serif text-gray-900 group-hover:text-gray-500 transition-colors min-h-[54px] leading-snug">
-                                        {product.name}
-                                    </h4>
-                                    <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
-                                        <div className="space-y-1">
-                                            <p className="text-[19px] font-bold text-gray-900 tabular-nums">₹{product.price}</p>
-                                            <p className="text-[14px] text-gray-400 line-through font-light tabular-nums">₹{product.originalPrice}</p>
+
+                                    <div className="mt-auto space-y-2">
+                                        <p className="text-[18px] font-bold text-gray-900">₹{product.price}</p>
+
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-[13px] text-gray-400 line-through">₹{product.originalPrice}</span>
+                                            <span className="text-[13px] text-orange-500 font-bold">{product.discount}</span>
                                         </div>
-                                        <div className="text-right">
-                                            <p className="text-[11px] text-gray-400 font-light italic leading-tight">
-                                                EMI starts from<br /><span className="text-gray-700 font-medium font-sans">₹ {product.emi} p.m.</span>
-                                            </p>
-                                        </div>
+
+                                        <p className="text-[11px] text-orange-500 font-medium tracking-wide">
+                                            EMI starts from ₹ {product.emi}
+                                        </p>
                                     </div>
                                 </div>
                             </motion.div>
