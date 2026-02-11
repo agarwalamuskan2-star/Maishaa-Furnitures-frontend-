@@ -44,62 +44,60 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                     </button>
 
                     <div className="px-8 py-12 md:px-12">
-                        <h2 className="text-3xl font-light text-black tracking-widest uppercase mb-10 text-center font-serif">
+                        <h2 className="text-2xl font-medium text-black mb-8 text-left">
                             {isLogin ? 'Login' : 'Sign Up'}
                         </h2>
 
-                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                             {/* Email/Mobile Field */}
-                            <div className="relative border-b border-gray-200 py-3 group focus-within:border-black transition-colors">
+                            <div className="relative">
                                 <input
                                     type="text"
                                     placeholder="Email/Mobile Number*"
-                                    className="w-full bg-transparent outline-none text-sm md:text-base placeholder:text-gray-400 font-light"
+                                    className="w-full h-12 px-4 border border-gray-200 outline-none text-sm placeholder:text-gray-400 focus:border-black transition-colors"
                                 />
                             </div>
 
                             {/* Password Field */}
-                            <div className="relative border-b border-gray-200 py-3 group focus-within:border-black transition-colors">
+                            <div className="relative">
                                 <input
                                     type={showPassword ? "text" : "password"}
                                     placeholder="Password*"
-                                    className="w-full bg-transparent outline-none text-sm md:text-base placeholder:text-gray-400 font-light"
+                                    className="w-full h-12 px-4 border border-gray-200 outline-none text-sm placeholder:text-gray-400 focus:border-black transition-colors"
                                 />
                                 <button
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-0 top-1/2 -translate-y-1/2 text-xs font-medium uppercase tracking-widest text-gray-500 hover:text-black"
+                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-medium text-black hover:text-gray-600"
                                 >
                                     {showPassword ? 'Hide' : 'Show'}
                                 </button>
                             </div>
 
-                            {isLogin && (
-                                <div className="text-right">
-                                    <button className="text-xs text-gray-500 hover:text-black uppercase tracking-widest transition-colors">
-                                        Forgot Password?
-                                    </button>
-                                </div>
-                            )}
-
-                            {/* Buttons */}
-                            <div className="space-y-4 pt-4">
-                                <button className="w-full h-[54px] bg-black text-white text-[13px] uppercase tracking-[0.2em] font-medium hover:bg-gray-900 transition-colors">
-                                    {isLogin ? 'Sign In' : 'Sign Up'}
+                            <div className="flex justify-end pt-1">
+                                <button className="text-[11px] text-gray-500 hover:text-black transition-colors">
+                                    Forgot Password?
                                 </button>
-                                <button className="w-full h-[54px] border border-gray-200 text-black text-[13px] uppercase tracking-[0.2em] font-medium hover:bg-gray-50 transition-all duration-300">
+                            </div>
+
+                            {/* Buttons Row */}
+                            <div className="flex gap-4 pt-4">
+                                <button className="flex-1 h-12 bg-black text-white text-[13px] font-medium hover:bg-gray-900 transition-colors">
+                                    {isLogin ? 'Sign in' : 'Sign Up'}
+                                </button>
+                                <button className="flex-1 h-12 border border-gray-200 text-black text-[13px] font-medium hover:bg-gray-50 transition-all duration-300">
                                     Request OTP
                                 </button>
                             </div>
                         </form>
 
                         {/* Shift Case */}
-                        <div className="mt-10 text-center">
-                            <p className="text-sm text-gray-500 font-light">
+                        <div className="mt-8 text-center">
+                            <p className="text-[13px] text-black">
                                 {isLogin ? "Don't have an account?" : "Already have an account?"}{' '}
                                 <button
                                     onClick={() => setIsLogin(!isLogin)}
-                                    className="text-orange-500 font-medium hover:underline"
+                                    className="text-orange-500 font-medium hover:underline ml-1"
                                 >
                                     {isLogin ? 'Sign Up' : 'Login'}
                                 </button>
@@ -107,22 +105,22 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                         </div>
 
                         {/* Social Login */}
-                        <div className="mt-12">
+                        <div className="mt-8">
                             <div className="relative flex items-center justify-center mb-8">
                                 <div className="absolute inset-0 flex items-center">
                                     <div className="w-full border-t border-gray-100"></div>
                                 </div>
-                                <span className="relative px-4 text-[10px] text-gray-400 bg-white uppercase tracking-[0.3em]">Or</span>
+                                <span className="relative px-4 text-xs text-gray-400 bg-white">Or</span>
                             </div>
 
                             <div className="grid grid-cols-2 gap-4">
-                                <button className="flex items-center justify-center gap-3 h-12 border border-gray-100 text-sm font-medium hover:bg-gray-50 transition-colors">
-                                    <Image src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width={18} height={18} />
-                                    Google
-                                </button>
-                                <button className="flex items-center justify-center gap-3 h-12 border border-gray-100 text-sm font-medium hover:bg-gray-50 transition-colors">
+                                <button className="flex items-center justify-center gap-3 h-12 border border-gray-100 text-[13px] font-medium hover:bg-gray-50 transition-colors">
                                     <Image src="https://www.svgrepo.com/show/475647/facebook-color.svg" alt="Facebook" width={18} height={18} />
                                     Facebook
+                                </button>
+                                <button className="flex items-center justify-center gap-3 h-12 border border-gray-100 text-[13px] font-medium hover:bg-gray-50 transition-colors">
+                                    <Image src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width={18} height={18} />
+                                    Google
                                 </button>
                             </div>
                         </div>
