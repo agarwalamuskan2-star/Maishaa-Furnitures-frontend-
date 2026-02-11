@@ -9,9 +9,9 @@ import { Heart, ChevronLeft, ChevronRight } from "lucide-react";
 
 const SaturnCollection = () => {
     const products = [
-        { name: "Saturn Single Pillar Dining", price: "1,42,000", originalPrice: "1,77,500", discount: "20% Off", emi: "12622", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1577145940719-0c7670d95af2?q=80&w=800" },
+        { name: "Saturn Single Pillar Dining", price: "1,42,000", originalPrice: "1,77,500", discount: "20% Off", emi: "12622", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=800" },
         { name: "Saturn Tri Pillar Dining Table", price: "1,65,000", originalPrice: "2,06,250", discount: "20% Off", emi: "14666", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800" },
-        { name: "Saturn Dining Table", price: "1,25,000", originalPrice: "1,56,250", discount: "20% Off", emi: "11111", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1577145940719-0c7670d95af2?q=80&w=800" },
+        { name: "Saturn Dining Table", price: "1,25,000", originalPrice: "1,56,250", discount: "20% Off", emi: "11111", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=800" },
         { name: "Saturn Rectangle Coffee", price: "58,000", originalPrice: "72,500", discount: "20% Off", emi: "5155", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1581404476143-fb31d742929f?q=80&w=800" },
         { name: "Saturn Orbital Side Table", price: "24,500", originalPrice: "30,625", discount: "20% Off", emi: "2177", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800" },
         { name: "Saturn Rings Coffee Table", price: "58,000", originalPrice: "72,500", discount: "20% Off", emi: "5155", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1581404476143-fb31d742929f?q=80&w=800" },
