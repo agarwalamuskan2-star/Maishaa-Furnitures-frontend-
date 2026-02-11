@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
-import { Heart, ChevronRight } from "lucide-react";
+import { Heart, ChevronRight, ChevronDown } from "lucide-react";
 
 const ConsoleTableCollection = () => {
     const products = [
@@ -53,7 +53,7 @@ const ConsoleTableCollection = () => {
                     </div>
                 </section>
 
-                {/* Narrow Narrative Section */}
+                {/* Narrative Section */}
                 <section className="py-24 px-4 max-w-4xl mx-auto text-center">
                     <div className="space-y-8">
                         <h2 className="text-3xl md:text-5xl font-serif text-gray-900 leading-tight">
@@ -66,70 +66,146 @@ const ConsoleTableCollection = () => {
                     </div>
                 </section>
 
-                {/* Product Grid */}
+                {/* Main Collection Section with Sidebar */}
                 <section className="py-20 px-4 sm:px-8 md:px-16 lg:px-20 bg-[#fafafa]">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                        <div className="space-y-4">
-                            <h2 className="text-4xl font-serif text-gray-900">Premium Consoles</h2>
-                            <p className="text-gray-400 font-light tracking-[0.2em] uppercase text-xs">
-                                CURATED PIECES FOR YOUR ENTRYWAY
-                            </p>
+                    <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row gap-12">
+                        {/* Sidebar */}
+                        <aside className="w-full lg:w-64 flex-shrink-0 space-y-12">
+                            <div>
+                                <h3 className="text-xl font-serif text-gray-900 mb-8">Browse by</h3>
+
+                                <div className="space-y-10">
+                                    {/* Product Type */}
+                                    <div className="space-y-6">
+                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
+                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Product Type</span>
+                                            <span className="text-gray-400 text-lg">−</span>
+                                        </div>
+                                        <ul className="space-y-3">
+                                            {["Console Tables (8)", "Media Units (4)", "Hall Tables (2)"].map((type) => (
+                                                <li key={type} className="flex items-center gap-3 group cursor-pointer text-gray-500 hover:text-black transition-colors">
+                                                    <div className="w-4 h-4 border border-gray-300 rounded-sm group-hover:border-black transition-colors"></div>
+                                                    <span className="text-[14px] font-light">{type}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+
+                                    {/* Price */}
+                                    <div className="space-y-6">
+                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
+                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Price</span>
+                                            <span className="text-gray-400 text-lg">−</span>
+                                        </div>
+                                        <div className="px-1 pt-2">
+                                            <div className="h-0.5 bg-gray-200 relative mb-6">
+                                                <div className="absolute left-0 right-0 h-full bg-black"></div>
+                                                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
+                                                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
+                                            </div>
+                                            <div className="flex items-center gap-4">
+                                                <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-500">
+                                                    <span>Min</span>
+                                                    <ChevronDown size={14} />
+                                                </div>
+                                                <span className="text-gray-400">to</span>
+                                                <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-900">
+                                                    <span>₹ 120000</span>
+                                                    <ChevronDown size={14} />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Discount */}
+                                    <div className="space-y-6">
+                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
+                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Discount</span>
+                                            <span className="text-gray-400 text-lg">−</span>
+                                        </div>
+                                        <ul className="space-y-3">
+                                            {["10% and above", "20% and above", "40% and above"].map((disc) => (
+                                                <li key={disc} className="flex items-center gap-3 text-gray-500 cursor-pointer">
+                                                    <div className="w-4 h-4 border border-gray-300 rounded-sm"></div>
+                                                    <span className="text-[14px] font-light">{disc}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+
+                        {/* Product Grid Content */}
+                        <div className="flex-1">
+                            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                                <div className="space-y-4">
+                                    <h2 className="text-4xl font-serif text-gray-900">The Collection</h2>
+                                    <p className="text-gray-400 font-light tracking-[0.2em] uppercase text-[10px]">
+                                        12 RESULTS FOUND
+                                    </p>
+                                </div>
+                                <div className="flex items-center gap-8 text-[11px] font-bold tracking-[0.2em] uppercase text-gray-950 border-b border-black pb-1 cursor-pointer">
+                                    SORT: FEATURED
+                                    <ChevronDown size={14} />
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                                {products.map((product, idx) => (
+                                    <motion.div
+                                        key={idx}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
+                                        viewport={{ once: true }}
+                                        className="group cursor-pointer flex flex-col bg-white border border-gray-100"
+                                    >
+                                        <div className="relative aspect-[4/5] overflow-hidden">
+                                            <Image
+                                                src={product.image}
+                                                alt={product.name}
+                                                fill
+                                                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                                            />
+                                            <button className="absolute top-4 right-4 p-2.5 bg-white rounded-full shadow-sm hover:text-red-500 transition-all duration-300 z-10 group/heart">
+                                                <Heart size={18} strokeWidth={1.5} className="group-hover/heart:fill-red-500 group-hover/heart:text-red-500 transition-colors" />
+                                            </button>
+
+                                            {product.bestSeller && (
+                                                <div className="absolute top-0 left-0 bg-[#1a1a1a] text-white px-4 py-2 text-[10px] font-bold tracking-[0.2em] uppercase z-10">
+                                                    BEST SELLER
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        <div className="p-8 flex flex-col flex-1" style={{ position: 'relative' }}>
+                                            <div className="mb-6">
+                                                <span className="inline-block bg-[#f5f5f5] text-[#999] px-3.5 py-1.5 text-[9px] font-bold tracking-[0.2em] uppercase mb-4">
+                                                    {product.tag}
+                                                </span>
+                                                <h4 className="text-[17px] font-medium text-gray-900 group-hover:text-orange-600 transition-all duration-500 leading-snug font-serif">
+                                                    {product.name}
+                                                </h4>
+                                            </div>
+
+                                            <div className="mt-auto space-y-3">
+                                                <p className="text-[20px] font-bold text-gray-900">₹{product.price}</p>
+
+                                                <div className="flex items-center gap-3">
+                                                    <span className="text-[14px] text-gray-400 line-through">₹{product.originalPrice}</span>
+                                                    <span className="text-[14px] text-orange-600 font-bold whitespace-nowrap">{product.discount}</span>
+                                                </div>
+
+                                                <p className="text-[12px] text-orange-600 font-medium tracking-wide border-t border-gray-50 pt-3">
+                                                    EMI starts from ₹ {product.emi}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {products.map((product, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: (idx % 4) * 0.1 }}
-                                viewport={{ once: true }}
-                                className="group cursor-pointer flex flex-col bg-white border border-gray-100"
-                            >
-                                <div className="relative aspect-[4/5] overflow-hidden">
-                                    <Image
-                                        src={product.image}
-                                        alt={product.name}
-                                        fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                    />
-                                    <button className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-sm hover:text-red-500 transition-colors z-10">
-                                        <Heart size={18} strokeWidth={1.5} />
-                                    </button>
-
-                                    {product.bestSeller && (
-                                        <div className="absolute top-0 left-0 bg-[#1a1a1a] text-white px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase z-10">
-                                            BEST SELLER
-                                        </div>
-                                    )}
-                                </div>
-
-                                <div className="p-6 flex flex-col flex-1">
-                                    <div className="mb-4">
-                                        <span className="inline-block bg-[#f5f5f5] text-[#888] px-3 py-1 text-[9px] font-bold tracking-widest uppercase mb-3">
-                                            {product.tag}
-                                        </span>
-                                        <h4 className="text-[15px] font-medium text-gray-900 group-hover:text-orange-600 transition-colors leading-snug">
-                                            {product.name}
-                                        </h4>
-                                    </div>
-
-                                    <div className="mt-auto space-y-2">
-                                        <p className="text-[18px] font-bold text-gray-900">₹{product.price}</p>
-
-                                        <div className="flex items-center gap-2">
-                                            <span className="text-[13px] text-gray-400 line-through">₹{product.originalPrice}</span>
-                                            <span className="text-[13px] text-orange-500 font-bold">{product.discount}</span>
-                                        </div>
-
-                                        <p className="text-[11px] text-orange-500 font-medium tracking-wide">
-                                            EMI starts from ₹ {product.emi}
-                                        </p>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
                     </div>
                 </section>
 
