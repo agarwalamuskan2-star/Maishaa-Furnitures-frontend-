@@ -3,15 +3,17 @@
 import { motion } from "framer-motion";
 import AllProjects from "@/components/sections/all-projects";
 import ProjectContactForm from "@/components/sections/project-contact-form";
+import ProjectsHero from "@/components/sections/projects-hero";
 
 export default function ProjectsClientWrapper() {
     return (
         <motion.main
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex-1 mt-20"
+            className="flex-1"
         >
+            <ProjectsHero />
             <AllProjects />
             <ProjectContactForm />
         </motion.main>

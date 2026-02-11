@@ -121,15 +121,8 @@ const projects: Project[] = [
 
 export default function AllProjects() {
     return (
-        <section className="bg-[#fafafa] py-16 md:py-24">
+        <section id="all-projects" className="bg-[#fafafa] pb-16 md:pb-24 pt-8 md:pt-12">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Page Title */}
-                <div className="text-center mb-16 md:mb-24">
-                    <h1 className="text-3xl md:text-4xl font-light text-black tracking-[0.2em] uppercase mb-4 font-serif">
-                        ALL PROJECTS
-                    </h1>
-                    <div className="w-20 h-[1px] bg-black mx-auto mt-6"></div>
-                </div>
 
                 {/* Projects Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 md:gap-y-20">
