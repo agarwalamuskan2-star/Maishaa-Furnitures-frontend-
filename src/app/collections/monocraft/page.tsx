@@ -11,7 +11,7 @@ import { Heart } from "lucide-react";
 const MonocraftCollection = () => {
     const products = [
         { name: "Obra Sculpted End Table", price: "45,500", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=800", emi: "4043" },
-        { name: "Obel Accent End Table", price: "33,500", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1565412850626-25f07b72982d?q=80&w=800", emi: "2977" },
+        { name: "Obel Accent End Table", price: "33,500", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=800", emi: "2977" },
         { name: "Voro Accent End Table", price: "33,000", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?q=80&w=800", emi: "2932" },
         { name: "Moro Pedestal End Table", price: "36,000", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1532372320572-cda25653a26d?q=80&w=800", emi: "3199" },
         { name: "Orbital Round Coffee Table", price: "45,000", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800", emi: "3999" },
@@ -25,7 +25,7 @@ const MonocraftCollection = () => {
         { name: "Basalt Textured Stand", price: "22,500", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=800", emi: "2000" },
         { name: "Carbon Fiber Coffee Table", price: "88,000", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=800", emi: "7821" },
         { name: "Soot Grey Side Cube", price: "12,000", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=800", emi: "1066" },
-        { name: "Ink Geometric Pedestal", price: "42,000", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1505144675310-9b00a5d016ee?q=80&w=800", emi: "3733" },
+        { name: "Ink Geometric Pedestal", price: "42,000", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=800", emi: "3733" },
     ];
 
     return (
