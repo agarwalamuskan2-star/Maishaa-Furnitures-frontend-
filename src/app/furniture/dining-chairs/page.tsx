@@ -46,7 +46,7 @@ const DiningChairCollection = () => {
             tag: "MADE TO ORDER",
             description: "Plush velvet upholstery in rich tones, bringing luxury to your dining space.",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1594913785162-e6783295c6f0?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1582234033036-749e70196726?q=80&w=1000"
         },
         {
             name: "Creston Leather Chair",
@@ -55,7 +55,7 @@ const DiningChairCollection = () => {
             tag: "MADE TO ORDER",
             description: "Top-grain leather and solid wood construction for a sophisticated dining experience.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1580480055273-228ff50d8ebe?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1506332088442-9e0024864f5d?q=80&w=1000"
         },
         {
             name: "Calissa Sculptural Chair",
