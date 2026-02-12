@@ -15,90 +15,99 @@ const CoffeeTablesCollection = () => {
             price: "1,85,000",
             originalPrice: "2,15,000",
             discount: "14% Off",
-            emi: "16200",
+            emi: "16,200",
             tag: "BEST SELLER",
+            description: "A monolithic slab of Nero Marquina marble supported by a minimalist brushed brass frame.",
             bestSeller: true,
             image: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=1000"
         },
         {
-            name: "Solstice Bronze & Smoked Glass Table",
-            price: "85,000",
-            originalPrice: "98,000",
-            discount: "13% Off",
-            emi: "7450",
+            name: "Zephyr Smoked Glass Table",
+            price: "1,45,000",
+            originalPrice: "1,70,000",
+            discount: "15% Off",
+            emi: "13,200",
             tag: "READY TO SHIP",
+            description: "Architectural tempered glass top that creates an illusion of space for modern, airy interiors.",
             bestSeller: false,
             image: "https://images.unsplash.com/photo-1565402170291-8115293c61bd?q=80&w=1000"
         },
         {
-            name: "Lumiere Polished Brass Table",
-            price: "1,25,000",
-            originalPrice: "1,45,000",
-            discount: "14% Off",
-            emi: "10900",
-            tag: "MADE TO ORDER",
-            bestSeller: false,
+            name: "The Gilded Orb Coffee Table",
+            price: "2,25,000",
+            originalPrice: "2,60,000",
+            discount: "13% Off",
+            emi: "21,500",
+            tag: "ARTISAN MADE",
+            description: "A sculptural masterpiece featuring a hand-hammered gold leaf base and crystal-clear glass.",
+            bestSeller: true,
             image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=1000"
         },
         {
-            name: "Veridian Live-Edge Walnut Table",
-            price: "2,45,000",
-            originalPrice: "2,80,000",
-            discount: "13% Off",
-            emi: "21500",
-            tag: "ARTISAN MADE",
-            bestSeller: true,
-            image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000"
-        },
-        {
-            name: "Onyx Ascend Translucent Table",
-            price: "3,15,000",
-            originalPrice: "3,50,000",
-            discount: "10% Off",
-            emi: "27600",
-            tag: "EXCLUSIVE",
-            bestSeller: false,
-            image: "https://images.unsplash.com/photo-1574634534894-89d7576c8259?q=80&w=1000"
-        },
-        {
-            name: "Minimalist Ashwood Coffee Table",
-            price: "42,000",
-            originalPrice: "48,000",
-            discount: "13% Off",
-            emi: "3680",
+            name: "Heritage Reclaimed Oak Table",
+            price: "95,000",
+            originalPrice: "1,15,000",
+            discount: "17% Off",
+            emi: "10,200",
             tag: "READY TO SHIP",
+            description: "Sustainable luxury featuring century-old oak with unique grains and a natural oil finish.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=1000"
         },
         {
-            name: "Cube Concrete Industrial Table",
-            price: "65,000",
-            originalPrice: "75,000",
-            discount: "13% Off",
-            emi: "5700",
-            tag: "READY TO SHIP",
+            name: "Solstice Bronze Table",
+            price: "1,65,000",
+            originalPrice: "1,95,000",
+            discount: "15% Off",
+            emi: "16,800",
+            tag: "MADE TO ORDER",
+            description: "A heavy cast-bronze base with organic textures, topped with a custom-etched metal surface.",
             bestSeller: false,
             image: "https://images.unsplash.com/photo-1519452635265-74a4dd926b7b?q=80&w=1000"
         },
         {
-            name: "Rattan & Ashwood Round Table",
-            price: "58,500",
-            originalPrice: "68,000",
-            discount: "14% Off",
-            emi: "5120",
-            tag: "MADE TO ORDER",
+            name: "Obsidian Slate Square Table",
+            price: "1,35,000",
+            originalPrice: "1,55,000",
+            discount: "13% Off",
+            emi: "14,200",
+            tag: "READY TO SHIP",
+            description: "Dense, polished Italian slate that brings a moody, sophisticated weight to contemporary living rooms.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000"
         },
         {
-            name: "Brutalist Steel Coffee Table",
-            price: "1,10,000",
-            originalPrice: "1,30,000",
-            discount: "15% Off",
-            emi: "9650",
+            name: "Aurelia Gold & White Marble",
+            price: "1,95,000",
+            originalPrice: "2,25,000",
+            discount: "13% Off",
+            emi: "20,200",
             tag: "MADE TO ORDER",
-            bestSeller: true,
-            image: "https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=1000"
+            description: "Calacatta marble paired with champagne gold accents for the ultimate in classical luxury.",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000"
+        },
+        {
+            name: "Nordic Ash Nesting Tables",
+            price: "75,000",
+            originalPrice: "88,000",
+            discount: "15% Off",
+            emi: "7,800",
+            tag: "READY TO SHIP",
+            description: "Versatile set of three tables in light European ash, offering flexible arrangement possibilities.",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=1000"
+        },
+        {
+            name: "Industrial Rivet Coffee Table",
+            price: "1,15,000",
+            originalPrice: "1,35,000",
+            discount: "15% Off",
+            emi: "12,200",
+            tag: "HANDCRAFTED",
+            description: "Hand-forged iron with exposed rivets and a distressed leather-look metal finish.",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1538688549216-a9ecfd2bbd8e?q=80&w=1000"
         },
     ];
 
@@ -136,7 +145,7 @@ const CoffeeTablesCollection = () => {
                                             <span className="text-gray-400 text-lg">−</span>
                                         </div>
                                         <ul className="space-y-3">
-                                            {["Marble Tables (32)", "Wooden Tables (45)", "Glass Tables (18)", "Metal Tables (12)"].map((type) => (
+                                            {["Marble Top (22)", "Glass Top (18)", "Solid Wood (15)", "Metal & Inlay (12)"].map((type) => (
                                                 <li key={type} className="flex items-center gap-3 group cursor-pointer text-gray-500 hover:text-black transition-colors">
                                                     <div className="w-4 h-4 border border-gray-300 rounded-sm group-hover:border-black transition-colors"></div>
                                                     <span className="text-[14px] font-light">{type}</span>
@@ -153,9 +162,9 @@ const CoffeeTablesCollection = () => {
                                         </div>
                                         <div className="px-1 pt-2">
                                             <div className="h-0.5 bg-gray-200 relative mb-6">
-                                                <div className="absolute left-0 right-[20%] h-full bg-black"></div>
+                                                <div className="absolute left-0 right-[40%] h-full bg-black"></div>
                                                 <div className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
-                                                <div className="absolute left-[80%] top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
+                                                <div className="absolute left-[60%] top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
                                             </div>
                                             <div className="flex items-center gap-4">
                                                 <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-500">
@@ -164,7 +173,7 @@ const CoffeeTablesCollection = () => {
                                                 </div>
                                                 <span className="text-gray-400">to</span>
                                                 <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-900">
-                                                    <span>₹ 400000</span>
+                                                    <span>₹ 300000</span>
                                                     <ChevronDown size={14} />
                                                 </div>
                                             </div>
@@ -195,7 +204,7 @@ const CoffeeTablesCollection = () => {
                             <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-6">
                                 <div className="space-y-2">
                                     <p className="text-gray-400 font-light tracking-[0.1em] text-sm italic font-serif uppercase">
-                                        112 RESULTS FOUND
+                                        62 RESULTS FOUND
                                     </p>
                                 </div>
                                 <div className="flex items-center gap-8 text-[11px] font-bold tracking-[0.2em] uppercase text-gray-950 border-b border-black pb-1 cursor-pointer">
@@ -204,7 +213,7 @@ const CoffeeTablesCollection = () => {
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-12">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16">
                                 {products.map((product, idx) => (
                                     <motion.div
                                         key={idx}
@@ -232,31 +241,42 @@ const CoffeeTablesCollection = () => {
                                             )}
                                         </div>
 
-                                        <div className="flex flex-col gap-2">
+                                        <div className="flex flex-col gap-2 flex-grow">
                                             <div className="flex">
                                                 <span className="bg-[#f5f5f5] text-gray-500 px-2 py-1 text-[9px] font-bold tracking-[0.2em] uppercase">
                                                     {product.tag}
                                                 </span>
                                             </div>
 
-                                            <h4 className="text-[15px] font-medium text-gray-900 group-hover:text-orange-600 transition-colors duration-300 leading-snug">
+                                            <h4 className="text-[15px] font-medium text-gray-900 group-hover:text-orange-600 transition-colors duration-300 leading-snug h-10 line-clamp-2">
                                                 {product.name}
                                             </h4>
 
-                                            <div className="space-y-1 mt-1">
+                                            <div className="space-y-4 mt-1">
                                                 <div className="flex items-baseline gap-3">
                                                     <span className="text-[16px] font-bold text-gray-900">₹{product.price}</span>
                                                     <span className="text-[13px] text-gray-400 line-through">₹{product.originalPrice}</span>
                                                     <span className="text-[13px] text-orange-600 font-bold">{product.discount}</span>
                                                 </div>
 
-                                                <p className="text-[10px] text-gray-500 font-light">
-                                                    Price inclusive of all taxes | Pan India Shipping
-                                                </p>
+                                                <div className="space-y-1">
+                                                    <p className="text-[10px] text-gray-500 font-light">
+                                                        Price inclusive of all taxes | Pan India Shipping
+                                                    </p>
+                                                    <p className="text-[11px] text-orange-600 font-medium tracking-wide">
+                                                        EMI starts from ₹ {product.emi}
+                                                    </p>
+                                                </div>
 
-                                                <p className="text-[11px] text-orange-600 font-medium tracking-wide">
-                                                    EMI starts from ₹ {product.emi}
-                                                </p>
+                                                <div className="pt-2">
+                                                    <p className="text-[12px] text-gray-600 font-light leading-relaxed mb-4 line-clamp-2">
+                                                        {product.description}
+                                                    </p>
+
+                                                    <button className="w-full bg-black text-white py-3 text-[10px] font-bold tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-orange-600">
+                                                        BUY NOW
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </motion.div>

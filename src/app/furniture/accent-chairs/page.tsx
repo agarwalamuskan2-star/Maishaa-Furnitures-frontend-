@@ -15,90 +15,99 @@ const AccentChairsCollection = () => {
             price: "89,910",
             originalPrice: "99,900",
             discount: "10% Off",
-            emi: "9426",
+            emi: "9,426",
             tag: "MADE TO ORDER",
+            description: "A natural rattan weave paired with a sturdy wooden frame for an airy, tropical feel.",
             bestSeller: false,
             image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1000"
         },
         {
-            name: "Dyuthi High-back Lounge Chair - Slink Green",
-            price: "57,960",
-            originalPrice: "64,400",
-            discount: "10% Off",
-            emi: "6077",
-            tag: "READY TO SHIP",
+            name: "Lumina Lounge Chair",
+            price: "1,25,000",
+            originalPrice: "1,50,000",
+            discount: "17% Off",
+            emi: "13,200",
+            tag: "BEST SELLER",
+            description: "Sculptural silhouette featuring premium boucle upholstery and high-density foam comfort.",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000"
-        },
-        {
-            name: "Dyuthi High-back Lounge Chair - Slink Saddle",
-            price: "57,960",
-            originalPrice: "64,400",
-            discount: "10% Off",
-            emi: "6077",
-            tag: "READY TO SHIP",
-            bestSeller: true,
-            image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=1000"
-        },
-        {
-            name: "Lumina Velvet Lounge Chair",
-            price: "72,500",
-            originalPrice: "85,000",
-            discount: "15% Off",
-            emi: "7610",
-            tag: "MADE TO ORDER",
-            bestSeller: false,
             image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1000"
         },
         {
             name: "Avalon Grand Armchair",
-            price: "1,15,000",
-            originalPrice: "1,25,000",
-            discount: "8% Off",
-            emi: "12050",
+            price: "1,45,000",
+            originalPrice: "1,75,000",
+            discount: "17% Off",
+            emi: "15,200",
+            tag: "READY TO SHIP",
+            description: "Deep-seated comfort with exquisite velvet quilting and hand-finished walnut legs.",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000"
+        },
+        {
+            name: "Ethereal Swivel Chair",
+            price: "72,000",
+            originalPrice: "85,000",
+            discount: "15% Off",
+            emi: "7,500",
             tag: "MADE TO ORDER",
+            description: "360-degree swivel functionality meets contemporary aesthetic in soft premium linen.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1519947486511-46149fa0a254?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=1000"
         },
         {
-            name: "Seraph Swivel Lounge",
-            price: "64,800",
-            originalPrice: "72,000",
-            discount: "10% Off",
-            emi: "6800",
+            name: "Slink Green Velvet Chair",
+            price: "95,000",
+            originalPrice: "1,15,000",
+            discount: "17% Off",
+            emi: "10,200",
             tag: "READY TO SHIP",
-            bestSeller: false,
-            image: "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?q=80&w=1000"
-        },
-        {
-            name: "Zora Minimalist Lounge Chair",
-            price: "45,000",
-            originalPrice: "52,000",
-            discount: "13% Off",
-            emi: "4720",
-            tag: "READY TO SHIP",
-            bestSeller: false,
+            description: "Bold emerald velvet with gold-finished accents for a touch of refined architectural opulence.",
+            bestSeller: true,
             image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=1000"
         },
         {
-            name: "Vibe Modern Accent Chair",
-            price: "32,900",
-            originalPrice: "38,000",
-            discount: "13% Off",
-            emi: "3450",
-            tag: "READY TO SHIP",
+            name: "The Sovereign Wingback",
+            price: "1,85,000",
+            originalPrice: "2,20,000",
+            discount: "16% Off",
+            emi: "19,500",
+            tag: "ARTISAN MADE",
+            description: "A modern take on the classic wingback, featuring orthopaedic support and rich top-grain leather.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000"
         },
         {
-            name: "Heritage Wood Accent Chair",
-            price: "98,000",
-            originalPrice: "1,10,000",
-            discount: "11% Off",
-            emi: "10280",
+            name: "Marrakesh Bone Inlay Chair",
+            price: "2,10,000",
+            originalPrice: "2,50,000",
+            discount: "16% Off",
+            emi: "22,200",
+            tag: "HANDCRAFTED",
+            description: "Intricate hand-carved bone inlay patterns that make every piece a unique work of art.",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1565402170291-8115293c61bd?q=80&w=1000"
+        },
+        {
+            name: "Nordic Minimalist Stool",
+            price: "45,000",
+            originalPrice: "52,000",
+            discount: "13% Off",
+            emi: "4,800",
             tag: "MADE TO ORDER",
-            bestSeller: true,
-            image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1000"
+            description: "Clean lines and light ashwood construction, perfect for contemporary nooks and minimalist spaces.",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=1000"
+        },
+        {
+            name: "Zenith Occasional Chair",
+            price: "65,000",
+            originalPrice: "78,000",
+            discount: "17% Off",
+            emi: "6,900",
+            tag: "READY TO SHIP",
+            description: "A versatile accent piece with a slim profile and durable, stain-resistant performance fabric.",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1519452635265-74a4dd926b7b?q=80&w=1000"
         },
     ];
 
@@ -136,7 +145,7 @@ const AccentChairsCollection = () => {
                                             <span className="text-gray-400 text-lg">−</span>
                                         </div>
                                         <ul className="space-y-3">
-                                            {["Accent Chairs (68)", "Lounge Chairs (42)", "Armchairs (15)"].map((type) => (
+                                            {["Lounge Chairs (42)", "Armchairs (28)", "Swivel Chairs (15)", "Accent Stools (10)"].map((type) => (
                                                 <li key={type} className="flex items-center gap-3 group cursor-pointer text-gray-500 hover:text-black transition-colors">
                                                     <div className="w-4 h-4 border border-gray-300 rounded-sm group-hover:border-black transition-colors"></div>
                                                     <span className="text-[14px] font-light">{type}</span>
@@ -204,7 +213,7 @@ const AccentChairsCollection = () => {
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-12">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16">
                                 {products.map((product, idx) => (
                                     <motion.div
                                         key={idx}
@@ -232,31 +241,42 @@ const AccentChairsCollection = () => {
                                             )}
                                         </div>
 
-                                        <div className="flex flex-col gap-2">
+                                        <div className="flex flex-col gap-2 flex-grow">
                                             <div className="flex">
                                                 <span className="bg-[#f5f5f5] text-gray-500 px-2 py-1 text-[9px] font-bold tracking-[0.2em] uppercase">
                                                     {product.tag}
                                                 </span>
                                             </div>
 
-                                            <h4 className="text-[15px] font-medium text-gray-900 group-hover:text-orange-600 transition-colors duration-300 leading-snug">
+                                            <h4 className="text-[15px] font-medium text-gray-900 group-hover:text-orange-600 transition-colors duration-300 leading-snug h-10 line-clamp-2">
                                                 {product.name}
                                             </h4>
 
-                                            <div className="space-y-1 mt-1">
+                                            <div className="space-y-4 mt-1">
                                                 <div className="flex items-baseline gap-3">
                                                     <span className="text-[16px] font-bold text-gray-900">₹{product.price}</span>
                                                     <span className="text-[13px] text-gray-400 line-through">₹{product.originalPrice}</span>
                                                     <span className="text-[13px] text-orange-600 font-bold">{product.discount}</span>
                                                 </div>
 
-                                                <p className="text-[10px] text-gray-500 font-light">
-                                                    Price inclusive of all taxes | Pan India Shipping
-                                                </p>
+                                                <div className="space-y-1">
+                                                    <p className="text-[10px] text-gray-500 font-light">
+                                                        Price inclusive of all taxes | Pan India Shipping
+                                                    </p>
+                                                    <p className="text-[11px] text-orange-600 font-medium tracking-wide">
+                                                        EMI starts from ₹ {product.emi}
+                                                    </p>
+                                                </div>
 
-                                                <p className="text-[11px] text-orange-600 font-medium tracking-wide">
-                                                    EMI starts from ₹ {product.emi}
-                                                </p>
+                                                <div className="pt-2">
+                                                    <p className="text-[12px] text-gray-600 font-light leading-relaxed mb-4 line-clamp-2">
+                                                        {product.description}
+                                                    </p>
+
+                                                    <button className="w-full bg-black text-white py-3 text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-orange-600">
+                                                        BUY NOW
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </motion.div>
