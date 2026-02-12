@@ -266,7 +266,82 @@ const AccentChairsCollection = () => {
                     </div>
                 </section>
 
+                {/* Narrative Intro Section */}
+                <section className="py-24 px-4 max-w-5xl mx-auto text-center border-t border-gray-100">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="space-y-10"
+                    >
+                        <h2 className="text-3xl md:text-5xl font-serif text-gray-900 leading-tight">
+                            Elevate Your Home with Luxury Accent Chairs
+                        </h2>
+                        <div className="w-20 h-px bg-gray-300 mx-auto"></div>
+                        <p className="text-gray-600 leading-relaxed text-lg md:text-xl font-light font-serif italic text-center">
+                            A well-chosen accent chair is more than just a seat; it's a statement piece that defines the character of your room. From sophisticated rattan designs to plush velvet armchairs, our collection brings together artistry and comfort to transform any space into a premium retreat.
+                        </p>
+                    </motion.div>
+                </section>
 
+                {/* BOTTOM CONTENT SECTION */}
+                <section className="py-32 px-4 sm:px-8 md:px-16 lg:px-24 bg-white border-t border-gray-100">
+                    <div className="max-w-5xl mx-auto space-y-16">
+                        {/* Block 1 */}
+                        <div className="space-y-8">
+                            <h2 className="text-3xl md:text-[32px] font-serif text-[#1a1a1a] leading-tight font-medium">
+                                Discover the Art of Lounging
+                            </h2>
+                            <div className="space-y-6">
+                                <p className="text-[#666] leading-relaxed text-[17px] font-light">
+                                    Accent chairs and lounge chairs serve as the perfect marriage of form and function in modern interior design. They offer an opportunity to introduce new textures, colors, and silhouettes into your living space, creating focal points that draw the eye and invite relaxation.
+                                </p>
+                                <p className="text-[#666] leading-relaxed text-[17px] font-light">
+                                    At Maishaa, we believe that every corner of your home should reflect your personal style. Our curated selection of accent chairs features premium materials like solid Ashwood, rich Italian leather, and high-performance tactile fabrics, ensuring each piece is as durable as it is beautiful.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Block 2 */}
+                        <div className="space-y-8">
+                            <h3 className="text-2xl md:text-[28px] font-serif text-[#1a1a1a] leading-tight font-medium">
+                                Choosing the Perfect Accent Chair for Your Space
+                            </h3>
+                            <div className="space-y-10 pt-4">
+                                <div className="space-y-3">
+                                    <p className="text-[#1a1a1a] leading-relaxed text-[17px] font-light">
+                                        <span className="font-bold uppercase tracking-wider text-sm block mb-1">Scale and Proportion:</span> Consider the size of your existing furniture. A large wingback chair can command a spacious room, while a minimalist rattan chair like the Thinnai is ideal for smaller nooks or as a secondary seating option.
+                                    </p>
+                                </div>
+
+                                <div className="space-y-3">
+                                    <p className="text-[#1a1a1a] leading-relaxed text-[17px] font-light">
+                                        <span className="font-bold uppercase tracking-wider text-sm block mb-1">The Material Story:</span> Choose materials that complement your lifestyle. Our Slink Green velvet offers a touch of opulence, while Rattan brings a natural, airy feel to entryways and sunrooms.
+                                    </p>
+                                </div>
+
+                                <div className="space-y-3">
+                                    <p className="text-[#1a1a1a] leading-relaxed text-[17px] font-light">
+                                        <span className="font-bold uppercase tracking-wider text-sm block mb-1">Color and Contrast:</span> Use your accent chair to introduce a pop of color or a contrasting texture. A saddle leather chair can ground a brightly colored room, while a vibrant velvet piece can serve as the primary artistic element in a neutral space.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Block 3 */}
+                        <div className="space-y-8">
+                            <h3 className="text-2xl md:text-[28px] font-serif text-[#1a1a1a] leading-tight font-medium">
+                                Why Choose Maishaa Furnitures?
+                            </h3>
+                            <div className="space-y-6">
+                                <p className="text-[#666] leading-relaxed text-[17px] font-light">
+                                    Maishaa stands at the intersection of traditional craftsmanship and contemporary aesthetics. Each accent chair in our collection is meticulously crafted by skilled artisans who understand the nuances of wood, fabric, and ergonomics. We are committed to using sustainably sourced materials, ensuring that your investment in style is also an investment in the environment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
 
             <Footer />
