@@ -19,12 +19,39 @@ const FloorLampsCollection = () => {
 
     const products = [
         {
+            name: "Ciana Floor Lamp Nox - Set of 3",
+            price: "74,400",
+            originalPrice: "93,000",
+            emi: "10673",
+            tag: "MADE TO ORDER",
+            status: "MADE TO ORDER",
+            image: "/images/outdoor/seating-cat.png"
+        },
+        {
+            name: "Ciana Floor Lamp - Set of 3",
+            price: "74,400",
+            originalPrice: "93,000",
+            emi: "10673",
+            tag: "MADE TO ORDER",
+            status: "MADE TO ORDER",
+            image: "/images/outdoor/accessories-cat.png"
+        },
+        {
+            name: "Ciana Floor Lamp - M",
+            price: "25,600",
+            originalPrice: "32,000",
+            emi: "3444",
+            tag: "MADE TO ORDER",
+            status: "MADE TO ORDER",
+            image: "/images/outdoor/dining-cat.png"
+        },
+        {
             name: "Arching Nickel Floor Lamp",
             price: "24,500",
             emi: "2161",
             tag: "READY TO SHIP",
             status: "READY TO SHIP",
-            image: "/images/outdoor/seating-cat.png"
+            image: "/images/outdoor/hero.png"
         },
         {
             name: "Tripod Walnut & Linen Floor Lamp",
@@ -32,22 +59,14 @@ const FloorLampsCollection = () => {
             emi: "1747",
             tag: "READY TO SHIP",
             status: "READY TO SHIP",
-            image: "/images/outdoor/accessories-cat.png"
+            image: "/images/outdoor/wren-chair.png"
         },
         {
             name: "Minimalist LED Slim Floor Lamp",
             price: "15,900",
             tag: "SOLD OUT",
             status: "SOLD OUT",
-            image: "/images/outdoor/dining-cat.png"
-        },
-        {
-            name: "Industrial Edison Bulb Floor Lamp",
-            price: "12,900",
-            emi: "1138",
-            tag: "READY TO SHIP",
-            status: "READY TO SHIP",
-            image: "/images/outdoor/hero.png"
+            image: "/images/outdoor/seating-cat.png"
         }
     ];
 
@@ -73,7 +92,9 @@ const FloorLampsCollection = () => {
                         <aside className="w-full lg:w-64 flex-shrink-0 space-y-12">
                             <div>
                                 <h3 className="text-xl font-serif text-gray-900 mb-8 border-b border-gray-100 pb-4">Browse by</h3>
+
                                 <div className="space-y-10">
+                                    {/* Product Type */}
                                     <div className="space-y-6">
                                         <div className="flex items-center justify-between border-b border-gray-200 pb-2">
                                             <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Product Type</span>
@@ -84,8 +105,64 @@ const FloorLampsCollection = () => {
                                                 <div className="w-4 h-4 border border-black rounded-sm flex items-center justify-center">
                                                     <div className="w-2 h-2 bg-black"></div>
                                                 </div>
-                                                <span className="text-[14px]">Floor Lamps (4)</span>
+                                                <span className="text-[14px]">Floor Lamps (18)</span>
                                             </li>
+                                        </ul>
+                                    </div>
+
+                                    {/* Price */}
+                                    <div className="space-y-6">
+                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
+                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Price</span>
+                                            <Link href="#" className="text-[10px] text-gray-400 font-bold hover:text-black hover:underline transition-all">Clear</Link>
+                                        </div>
+                                        <div className="px-1 pt-2">
+                                            <div className="h-0.5 bg-gray-200 relative mb-6">
+                                                <div className="absolute left-0 right-0 h-full bg-black"></div>
+                                                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
+                                                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
+                                            </div>
+                                            <div className="flex items-center gap-4">
+                                                <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-500">
+                                                    <span>Min</span>
+                                                    <ChevronDown size={14} />
+                                                </div>
+                                                <span className="text-gray-400 uppercase text-[10px] font-bold">to</span>
+                                                <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-900">
+                                                    <span>₹ 300000</span>
+                                                    <ChevronDown size={14} />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Size */}
+                                    <div className="space-y-6">
+                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
+                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Size</span>
+                                            <span className="text-gray-400 text-lg">−</span>
+                                        </div>
+                                        <ul className="space-y-3">
+                                            <li className="flex items-center gap-3 text-gray-500 cursor-pointer hover:text-black transition-colors">
+                                                <div className="w-4 h-4 border border-gray-300 rounded-sm"></div>
+                                                <span className="text-[14px] font-light">L (1)</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    {/* Discount */}
+                                    <div className="space-y-6">
+                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
+                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Discount</span>
+                                            <span className="text-gray-400 text-lg">−</span>
+                                        </div>
+                                        <ul className="space-y-3">
+                                            {["10% and above", "20% and above", "30% and above", "40% and above"].map((disc) => (
+                                                <li key={disc} className="flex items-center gap-3 text-gray-500 cursor-pointer hover:text-black transition-colors">
+                                                    <div className="w-4 h-4 border border-gray-300 rounded-sm"></div>
+                                                    <span className="text-[14px] font-light">{disc}</span>
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
                                 </div>
@@ -94,7 +171,7 @@ const FloorLampsCollection = () => {
 
                         <div className="flex-1">
                             <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-6">
-                                <p className="text-gray-900 font-medium tracking-[0.1em] text-sm uppercase">4 Results</p>
+                                <p className="text-gray-900 font-medium tracking-[0.1em] text-sm uppercase">18 Results</p>
                                 <div className="flex items-center gap-6 text-[11px] font-bold tracking-[0.2em] uppercase text-gray-950 border-b border-black pb-1 cursor-pointer">
                                     Sort: Featured <ChevronDown size={14} />
                                 </div>
@@ -124,7 +201,12 @@ const FloorLampsCollection = () => {
                                         <div className="flex flex-col gap-2 pt-2 px-1">
                                             <h4 className="text-[15px] font-medium text-gray-800 transition-colors duration-300 leading-snug tracking-wide uppercase">{product.name}</h4>
                                             <div className="space-y-2">
-                                                <span className="text-[17px] font-bold text-gray-900 tracking-tight">₹{product.price}</span>
+                                                <div className="flex items-baseline gap-3">
+                                                    <span className="text-[17px] font-bold text-gray-900 tracking-tight">₹{product.price}</span>
+                                                    {product.originalPrice && (
+                                                        <span className="text-[13px] text-gray-400 line-through">₹{product.originalPrice}</span>
+                                                    )}
+                                                </div>
                                                 <p className="text-[10px] text-gray-400 font-light tracking-wide italic">Price inclusive of all taxes | Pan India Shipping</p>
                                                 {product.emi && <p className="text-[11px] text-orange-600 font-bold tracking-wider uppercase pt-1">EMI starts from ₹ {product.emi}</p>}
                                             </div>
