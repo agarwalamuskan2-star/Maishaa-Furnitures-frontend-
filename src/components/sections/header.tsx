@@ -303,7 +303,7 @@ const Header = () => {
       href: "/shop-by-style",
       megaMenu: {
         columns: [
-          { title: "Coastal Farmhouse", links: [] },
+          { title: "Coastal Farmhouse", links: [{ name: "View Collection", href: "/collections/coastal-farmhouse" }] },
           { title: "Contemporary Modern", links: [] },
           { title: "Tropical Modern", links: [] },
           { title: "Classic Modern", links: [] },
