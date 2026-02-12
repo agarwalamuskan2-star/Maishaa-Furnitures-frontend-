@@ -11,29 +11,29 @@ import { ChevronRight } from "lucide-react";
 const DiningCollections = () => {
     const heroImages = [
         {
-            src: "https://images.unsplash.com/photo-1617806118233-f8e1074010b6?q=80&w=2000",
-            title: "The Artisan Series",
-            subtitle: "Where Tradition Meets Modernity"
+            src: "/images/outdoor/dining-cat.png",
+            title: "The Artisan Dining Series",
+            subtitle: "Exquisite Hand-Carved Masterpieces"
         },
         {
-            src: "https://images.unsplash.com/photo-1577174881658-0f30ed549adc?q=80&w=2000",
-            title: "Minimalist Elegance",
-            subtitle: "Curated for the Contemporary Home"
+            src: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=2000",
+            title: "The Curated Chair",
+            subtitle: "Ergonomic Comfort in Every Silhouette"
         },
         {
-            src: "https://images.unsplash.com/photo-1530018607912-eff2df114fbe?q=80&w=2000",
-            title: "Heritage Oak Collection",
-            subtitle: "Timeless Durability for Generations"
+            src: "https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?q=80&w=2000",
+            title: "Grand Reclaimed Tables",
+            subtitle: "Nature's Texture in Your Dining Space"
         },
         {
-            src: "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?q=80&w=2000",
-            title: "Urban Loft Dining",
-            subtitle: "Sophisticated Industrial Aesthetics"
+            src: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=2000",
+            title: "Industrial Chic Sets",
+            subtitle: "Steel Meets Hand-Finished Oak"
         },
         {
-            src: "https://images.unsplash.com/photo-1622396481328-9b1b78cdd9fd?q=80&w=2000",
-            title: "Sculptural Forms",
-            subtitle: "Functional Art for Your Dining Space"
+            src: "https://images.unsplash.com/photo-1565412850110-2347209930f7?q=80&w=2000",
+            title: "Sculptural Credenzas",
+            subtitle: "The Perfect Companion to Your Dining Set"
         },
     ];
 
