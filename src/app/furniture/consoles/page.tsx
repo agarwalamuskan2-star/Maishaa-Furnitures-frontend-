@@ -302,40 +302,7 @@ const ConsolesCollection = () => {
                     </div>
                 </section>
 
-                {/* Brand Story Section */}
-                <section className="py-24 px-4 max-w-5xl mx-auto text-center border-t border-gray-100">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="space-y-10"
-                    >
-                        <h2 className="text-3xl md:text-5xl font-serif text-gray-900 leading-tight">
-                            Command the Room with <br />
-                            <span className="italic">Maishaa Masterpieces</span>
-                        </h2>
-                        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
-                            <div className="text-center group cursor-pointer">
-                                <div className="text-4xl font-serif text-orange-600 mb-2 group-hover:scale-110 transition-transform">01</div>
-                                <div className="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-400 group-hover:text-black transition-colors">Artisan Sourced</div>
-                            </div>
-                            <div className="h-12 w-px bg-gray-200 hidden md:block"></div>
-                            <div className="text-center group cursor-pointer">
-                                <div className="text-4xl font-serif text-orange-600 mb-2 group-hover:scale-110 transition-transform">02</div>
-                                <div className="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-400 group-hover:text-black transition-colors">Bespoke Finishes</div>
-                            </div>
-                            <div className="h-12 w-px bg-gray-200 hidden md:block"></div>
-                            <div className="text-center group cursor-pointer">
-                                <div className="text-4xl font-serif text-orange-600 mb-2 group-hover:scale-110 transition-transform">03</div>
-                                <div className="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-400 group-hover:text-black transition-colors">Lifetime Heritage</div>
-                            </div>
-                        </div>
-                        <p className="text-gray-500 font-light leading-relaxed max-w-2xl mx-auto text-sm md:text-lg">
-                            More than just storage, our consoles are the anchors of your living space. Handcrafted from rare hardwoods and finished with surgical precision, they represent the perfect marriage of form and function.
-                        </p>
-                    </motion.div>
-                </section>
+
             </main>
 
             <Footer />
