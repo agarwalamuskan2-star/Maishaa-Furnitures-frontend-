@@ -10,6 +10,34 @@ import SearchOverlay from "@/components/modals/SearchOverlay";
 import CartSidebar from "@/components/modals/CartSidebar";
 import WishlistSidebar from "@/components/modals/WishlistSidebar";
 
+interface NavItem {
+  name: string;
+  href: string;
+}
+
+interface MegaMenuColumn {
+  title: string;
+  links: NavItem[];
+  subTitle?: string;
+  subLinks?: NavItem[];
+}
+
+interface MegaMenu {
+  columns: MegaMenuColumn[];
+  image?: {
+    src: string;
+    alt: string;
+  };
+}
+
+interface NavLink {
+  name: string;
+  href: string;
+  className?: string;
+  dropdown?: NavItem[];
+  megaMenu?: MegaMenu;
+}
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -22,7 +50,7 @@ const Header = () => {
   const [isSearchActive, setIsSearchActive] = useState(false);
 
   // Main Header Links
-  const mainHeaderLinks = [
+  const mainHeaderLinks: NavLink[] = [
     { name: "Best Sellers", href: "/best-sellers" },
     { name: "Design Masters", href: "/design-masters" },
     { name: "Free Design Services", href: "/design-services" },
@@ -30,7 +58,7 @@ const Header = () => {
   ];
 
   // Secondary Navigation Links with Dropdowns
-  const secondaryNavLinks = [
+  const secondaryNavLinks: NavLink[] = [
     { name: "New", href: "/new" },
     {
       name: "Collections",
@@ -453,7 +481,7 @@ const Header = () => {
                       exit={{ opacity: 0, y: 10 }}
                       className="absolute top-full left-0 mt-[1px] bg-white shadow-lg border border-gray-100 rounded-b-md py-4 min-w-[200px] z-50"
                     >
-                      {link.dropdown.map((item) => (
+                      {link.dropdown.map((item: NavItem) => (
                         <Link
                           key={item.name}
                           href={item.href}
@@ -476,13 +504,13 @@ const Header = () => {
                   >
                     <div className={`max-w-[1920px] mx-auto px-8 sm:px-12 md:px-16 lg:px-20 py-12 grid ${link.megaMenu.image ? 'grid-cols-4' : 'grid-cols-6'} gap-12`}>
                       <div className={`${link.megaMenu.image ? 'col-span-3 grid grid-cols-3' : 'col-span-6 grid grid-cols-6'} gap-x-12 gap-y-16`}>
-                        {(link.megaMenu.columns as any[]).map((column, idx) => (
+                        {link.megaMenu.columns.map((column: MegaMenuColumn, idx: number) => (
                           <div key={idx} className="space-y-6">
                             <h4 className="text-[11px] text-gray-400 uppercase tracking-[0.4em] font-bold border-b border-gray-50 pb-3">
                               {column.title}
                             </h4>
                             <ul className="space-y-3.5">
-                              {column.links.map((item: any, i: number) => (
+                              {column.links.map((item: NavItem, i: number) => (
                                 <li key={i}>
                                   <Link
                                     href={item.href}
@@ -500,7 +528,7 @@ const Header = () => {
                                   {column.subTitle}
                                 </h4>
                                 <ul className="space-y-3.5">
-                                  {column.subLinks?.map((item: any, i: number) => (
+                                  {column.subLinks?.map((item: NavItem, i: number) => (
                                     <li key={i}>
                                       <Link
                                         href={item.href}
@@ -572,7 +600,7 @@ const Header = () => {
                   </Link>
                   {link.dropdown && (
                     <div className="ml-4 mt-2 space-y-2">
-                      {link.dropdown.map((item) => (
+                      {link.dropdown.map((item: NavItem) => (
                         <Link
                           key={item.name}
                           href={item.href}
@@ -586,11 +614,11 @@ const Header = () => {
                   )}
                   {link.megaMenu && (
                     <div className="ml-4 mt-3 space-y-6">
-                      {(link.megaMenu.columns as any[]).map((column, idx) => (
+                      {link.megaMenu.columns.map((column: MegaMenuColumn, idx: number) => (
                         <div key={idx} className="space-y-2">
                           <p className="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-bold">{column.title}</p>
                           <div className="space-y-2">
-                            {column.links.map((item: any, i: number) => (
+                            {column.links.map((item: NavItem, i: number) => (
                               <Link
                                 key={i}
                                 href={item.href}
@@ -606,7 +634,7 @@ const Header = () => {
                             <div className="pt-2 space-y-2">
                               <p className="text-[9px] text-gray-400 uppercase tracking-[0.2em] font-bold">{column.subTitle}</p>
                               <div className="space-y-2">
-                                {column.subLinks?.map((item: any, i: number) => (
+                                {column.subLinks?.map((item: NavItem, i: number) => (
                                   <Link
                                     key={i}
                                     href={item.href}
