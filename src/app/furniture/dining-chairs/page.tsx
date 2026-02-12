@@ -9,98 +9,98 @@ import Footer from "@/components/sections/footer";
 import { Heart, ChevronRight, ChevronDown } from "lucide-react";
 
 /**
- * DINING TABLES COLLECTION PAGE
+ * DINING CHAIRS COLLECTION PAGE
  * 
  * Features a sidebar for filtering and a grid for product display.
  * Implements the premium look as per the user's reference images.
  */
 
-const DiningTableCollection = () => {
+const DiningChairCollection = () => {
     useEffect(() => {
-        document.title = "Buy Stylish Dining Tables Online | Maishaa";
+        document.title = "Buy Stylish Dining Chairs Online | Maishaa";
     }, []);
 
     const products = [
         {
-            name: "Kansho Dining Table",
-            price: "1,62,400 – ₹1,80,000",
-            emi: "18871",
+            name: "Kansho Dining Chair",
+            price: "32,400",
+            emi: "3421",
             tag: "MADE TO ORDER",
-            description: "A minimalist masterpiece blending traditional joinery with modern design language.",
-            bestSeller: false,
-            image: "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1000"
-        },
-        {
-            name: "Monolith Dining Table",
-            price: "1,38,000",
-            emi: "14468",
-            tag: "MADE TO ORDER",
-            description: "A solid presence in any dining room, featuring architectural lines and premium finishes.",
-            bestSeller: false,
-            image: "https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=1000"
-        },
-        {
-            name: "Julien Dining Table",
-            price: "1,23,210 – ₹1,57,410",
-            emi: "16503",
-            tag: "MADE TO ORDER",
-            description: "Graceful proportions and refined details make this a timeless anchor for family gatherings.",
+            description: "Ergonomic comfort meets minimalist design, crafted for enduring support.",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=1000"
         },
         {
-            name: "Creston Oval Dining Table",
-            price: "1,49,900",
-            emi: "15715",
-            tag: "MADE TO ORDER",
-            description: "The soft curves of the Creston oval table bring a flowing, organic feel to contemporary spaces.",
+            name: "Monolith Cane Chair",
+            price: "28,000",
+            emi: "2956",
+            tag: "READY TO SHIP",
+            description: "Classic cane weaving paired with a robust wooden frame for a timeless appeal.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1544457070-4cd773b4d71e?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1000"
         },
         {
-            name: "Calissa Dining Table",
-            price: "1,49,850 – ₹1,90,260",
-            emi: "19947",
+            name: "Julien Velvet Dining Chair",
+            price: "42,000",
+            emi: "4433",
             tag: "MADE TO ORDER",
-            description: "Sculptural base meets a wide top, creating a balance of stability and airy elegance.",
+            description: "Plush velvet upholstery in rich tones, bringing luxury to your dining space.",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1594913785162-e6783295c6f0?q=80&w=1000"
         },
         {
-            name: "Nakashi Dining Table",
-            price: "1,65,600 – ₹2,05,200",
-            emi: "21513",
+            name: "Creston Leather Chair",
+            price: "48,500",
+            emi: "5120",
             tag: "MADE TO ORDER",
-            description: "Inspired by traditional Nakashi woodcraft, this table is a true artisan centerpiece.",
-            bestSeller: true,
-            image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000"
-        },
-        {
-            name: "Course 4 Round Table",
-            price: "92,000",
-            emi: "9680",
-            tag: "MADE TO ORDER",
-            description: "Perfect for intimate dinners and circular conversations, highlighting the beauty of round forms.",
+            description: "Top-grain leather and solid wood construction for a sophisticated dining experience.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1634712282287-14ed57b9cc89?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1580480055273-228ff50d8ebe?q=80&w=1000"
         },
         {
-            name: "Sinag Dining Table",
-            price: "1,75,000",
-            emi: "18336",
+            name: "Calissa Sculptural Chair",
+            price: "38,850",
+            emi: "4102",
+            tag: "MADE TO ORDER",
+            description: "A piece of functional art, featuring bold lines and a comfortable curved back.",
+            bestSeller: true,
+            image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1000"
+        },
+        {
+            name: "Nakashi Carver Chair",
+            price: "35,600",
+            emi: "3758",
+            tag: "MADE TO ORDER",
+            description: "Inspired by heritage craftsmanship, with intricate details and armrests for added comfort.",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?q=80&w=1000"
+        },
+        {
+            name: "Sinag Modern Armchair",
+            price: "45,000",
+            emi: "4752",
             tag: "MADE TO ORDER",
             description: "Radiant designs and surgical precision in every joint, a hallmark of the Sinag collection.",
-            bestSeller: false,
-            image: "https://images.unsplash.com/photo-1622396481328-9b1b78cdd9fd?q=80&w=1000"
+            bestSeller: true,
+            image: "/images/outdoor/seating-cat.png"
         },
         {
-            name: "X-atura Live Edge Dining Table",
-            price: "2,10,000",
-            emi: "21980",
+            name: "Wren Dining Chair",
+            price: "34,500",
+            emi: "3641",
             tag: "MADE TO ORDER",
-            description: "Live edge wood brings a natural beauty that looks raw yet very refined.",
+            description: "Sculptural form meets functional art, perfectly complementing any modern dining table.",
             bestSeller: true,
-            image: "/images/outdoor/dining-cat.png"
+            image: "/images/outdoor/wren-chair.png"
+        },
+        {
+            name: "Orbit Swivel Chair",
+            price: "52,000",
+            emi: "5488",
+            tag: "MADE TO ORDER",
+            description: "Versatile and stylish, featuring a 360-degree swivel and premium fabric options.",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000"
         },
     ];
 
@@ -118,7 +118,7 @@ const DiningTableCollection = () => {
                         <ChevronRight size={12} />
                         <Link href="/furniture/dining-collections" className="hover:text-black transition-colors">Dining</Link>
                         <ChevronRight size={12} />
-                        <span className="text-black font-semibold">Dining Tables</span>
+                        <span className="text-black font-semibold">Dining Chairs</span>
                     </nav>
                 </div>
 
@@ -138,7 +138,7 @@ const DiningTableCollection = () => {
                                             <span className="text-gray-400 text-lg">−</span>
                                         </div>
                                         <ul className="space-y-3">
-                                            {["Tables (21)", "0 (1)"].map((type) => (
+                                            {["Chairs (18)", "Armchairs (6)", "Stools (2)"].map((type) => (
                                                 <li key={type} className="flex items-center gap-3 group cursor-pointer text-gray-500 hover:text-black transition-colors">
                                                     <div className="w-4 h-4 border border-gray-300 rounded-sm group-hover:border-black transition-colors"></div>
                                                     <span className="text-[14px] font-light">{type}</span>
@@ -166,43 +166,11 @@ const DiningTableCollection = () => {
                                                 </div>
                                                 <span className="text-gray-400 uppercase text-[10px] font-bold">to</span>
                                                 <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-900">
-                                                    <span>₹ 200000</span>
+                                                    <span>₹ 80000</span>
                                                     <ChevronDown size={14} />
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    {/* Size */}
-                                    <div className="space-y-6">
-                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
-                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Size</span>
-                                            <span className="text-gray-400 text-lg">−</span>
-                                        </div>
-                                        <ul className="space-y-3">
-                                            {["8 feet (12)", "7 feet (11)", "6 feet (9)", "10 feet (4)", "5 feet (1)", "9 feet (1)"].map((size) => (
-                                                <li key={size} className="flex items-center gap-3 group cursor-pointer text-gray-500 hover:text-black transition-colors">
-                                                    <div className="w-4 h-4 border border-gray-300 rounded-sm group-hover:border-black transition-colors"></div>
-                                                    <span className="text-[14px] font-light">{size}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-
-                                    {/* Shapes */}
-                                    <div className="space-y-6">
-                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
-                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Shapes</span>
-                                            <span className="text-gray-400 text-lg">−</span>
-                                        </div>
-                                        <ul className="space-y-3">
-                                            {["Rectangle (7)", "Round (3)", "Oval (1)"].map((shape) => (
-                                                <li key={shape} className="flex items-center gap-3 group cursor-pointer text-gray-500 hover:text-black transition-colors">
-                                                    <div className="w-4 h-4 border border-gray-300 rounded-sm group-hover:border-black transition-colors"></div>
-                                                    <span className="text-[14px] font-light">{shape}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
                                     </div>
 
                                     {/* Discount */}
@@ -229,7 +197,7 @@ const DiningTableCollection = () => {
                             <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-6">
                                 <div className="space-y-2">
                                     <p className="text-black font-medium tracking-[0.1em] text-sm uppercase">
-                                        26 Results
+                                        24 Results
                                     </p>
                                 </div>
                                 <div className="flex items-center gap-8 text-[11px] font-bold tracking-[0.2em] uppercase text-gray-950 border-b border-black pb-1 cursor-pointer">
@@ -265,7 +233,6 @@ const DiningTableCollection = () => {
                                                 </div>
                                             )}
 
-                                            {/* Tag at bottom of image area like reference */}
                                             <div className="absolute bottom-4 left-4">
                                                 <span className="bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase">
                                                     {product.tag}
@@ -313,4 +280,4 @@ const DiningTableCollection = () => {
     );
 };
 
-export default DiningTableCollection;
+export default DiningChairCollection;
