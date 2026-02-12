@@ -104,24 +104,7 @@ const DiningCollections = () => {
                     ))}
                 </div>
 
-                {/* Narrative Section */}
-                <section className="mt-32 py-24 px-4 max-w-5xl mx-auto text-center border-t border-gray-100">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="space-y-10"
-                    >
-                        <h2 className="text-3xl md:text-5xl font-serif text-gray-900 leading-tight">
-                            Dining with <br />
-                            <span className="italic">Maishaa Soul</span>
-                        </h2>
-                        <p className="text-gray-500 font-light leading-relaxed max-w-2xl mx-auto text-sm md:text-lg">
-                            The dining room is the heart of the home, where conversations flow and memories are forged. Our collections are designed to celebrate these moments, bringing together exquisite craftsmanship and modern comfort.
-                        </p>
-                    </motion.div>
-                </section>
+
             </main>
 
             <Footer />

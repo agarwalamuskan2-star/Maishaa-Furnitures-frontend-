@@ -253,24 +253,7 @@ const ConsoleTableCollection = () => {
                     </div>
                 </section>
 
-                {/* Narrative Section */}
-                <section className="py-24 px-4 max-w-5xl mx-auto text-center border-t border-gray-100">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="space-y-10"
-                    >
-                        <h2 className="text-3xl md:text-5xl font-serif text-gray-900 leading-tight">
-                            The Entryway Anchor <br />
-                            <span className="italic">First Impressions, Redefined</span>
-                        </h2>
-                        <p className="text-gray-500 font-light leading-relaxed max-w-2xl mx-auto text-sm md:text-lg">
-                            An entryway console is more than just a table; it is the opening chapter of your home&apos;s story. At Maishaa, we design these anchors to balance airy elegance with grounded functionality, ensuring your first step inside is always a beautiful one.
-                        </p>
-                    </motion.div>
-                </section>
+
             </main>
 
             <Footer />
