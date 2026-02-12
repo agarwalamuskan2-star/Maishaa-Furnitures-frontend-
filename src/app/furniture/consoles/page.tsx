@@ -8,73 +8,106 @@ import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import { Heart, ChevronRight, ChevronDown } from "lucide-react";
 
-const ConsoleTableCollection = () => {
+const ConsolesCollection = () => {
     const products = [
         {
-            name: "Capitol Complex Console",
-            price: "52,000",
-            originalPrice: "65,000",
-            discount: "20% Off",
-            emi: "4,622",
+            name: "Kansas Sideboard Console",
+            price: "1,26,900",
+            originalPrice: "1,41,000",
+            discount: "10% Off",
+            emi: "13,304",
             tag: "MADE TO ORDER",
-            description: "A tribute to Pierre Jeanneret's Chandigarh architecture, featuring a robust V-leg structure and tempered glass.",
-            bestSeller: true,
+            description: "A mid-century masterpiece in solid walnut, featuring clean lines and spacious storage for modern dining spaces.",
+            bestSeller: false,
             image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=1000"
         },
         {
-            name: "Vivo Slatted Shoe Console",
-            price: "99,920",
-            originalPrice: "1,24,900",
-            discount: "20% Off",
-            emi: "5,444",
+            name: "Thanjavur Chiseled Buffet Console",
+            price: "1,74,900",
+            originalPrice: "1,95,000",
+            discount: "10% Off",
+            emi: "18,336",
             tag: "MADE TO ORDER",
-            description: "A functional entryway statement with vertical slats and hidden storage, balancing privacy and airflow.",
+            description: "Hand-chiseled textured facade inspired by temple carvings, bringing an artisanal soul to your home.",
             bestSeller: true,
+            image: "https://images.unsplash.com/photo-1544457070-4cd773b4d71e?q=80&w=1000"
+        },
+        {
+            name: "Zigzag Sideboard Console-M",
+            price: "1,15,560",
+            originalPrice: "1,28,400",
+            discount: "10% Off",
+            emi: "12,115",
+            tag: "MADE TO ORDER",
+            description: "Modern geometric chevron patterns across the front panels create a dynamic visual rhythm in any room.",
+            bestSeller: true,
+            image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000"
+        },
+        {
+            name: "Zigzag Sideboard Console-S",
+            price: "92,400",
+            originalPrice: "1,05,000",
+            discount: "12% Off",
+            emi: "9,680",
+            tag: "MADE TO ORDER",
+            description: "The compact version of our signature Zigzag console, perfect for entryways or small corridor accents.",
+            bestSeller: true,
+            image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1000"
+        },
+        {
+            name: "Malibu Buffet Console - Cherry Red",
+            price: "1,42,000",
+            originalPrice: "1,65,000",
+            discount: "14% Off",
+            emi: "14,880",
+            tag: "MADE TO ORDER",
+            description: "Striking high-gloss cherry red finish with gold-tipped legs, a bold statement piece for eclectic interiors.",
+            bestSeller: true,
+            image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51ac9?q=80&w=1000"
+        },
+        {
+            name: "Petika Chiseled Buffet Console",
+            price: "1,68,000",
+            originalPrice: "1,88,000",
+            discount: "11% Off",
+            emi: "17,610",
+            tag: "MADE TO ORDER",
+            description: "Intricately hand-chiseled wood patterns that showcase the pinnacle of Indian artisan craftsmanship.",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1567016432779-094069958bc5?q=80&w=1000"
+        },
+        {
+            name: "Obsidian Marble Hall Console",
+            price: "85,000",
+            originalPrice: "98,000",
+            discount: "13% Off",
+            emi: "8,910",
+            tag: "READY TO SHIP",
+            description: "A slim hall table with a polished black marble top and a minimalist black powder-coated steel frame.",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1000"
+        },
+        {
+            name: "Regency Inlay Sideboard",
+            price: "2,25,000",
+            originalPrice: "2,60,000",
+            discount: "13% Off",
+            emi: "23,580",
+            tag: "HANDCRAFTED",
+            description: "Exquisite bone inlay work in classical motifs, requiring over 200 hours of artisanal labor to complete.",
+            bestSeller: false,
             image: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=1000"
         },
         {
-            name: "Rio Rattan Shoe Console",
-            price: "95,920",
-            originalPrice: "1,19,900",
-            discount: "20% Off",
-            emi: "10,056",
-            tag: "MADE TO ORDER",
-            description: "Natural rattan weaving meets a solid mahogany frame, offering a warm tropical welcome to your guests.",
-            bestSeller: false,
-            image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000"
-        },
-        {
-            name: "Manhattan Console - Ash Wood",
-            price: "48,400",
-            originalPrice: "60,500",
-            discount: "20% Off",
-            emi: "4,302",
-            tag: "MADE TO ORDER",
-            description: "Minimalist Scandinavian design in light-finished Ashwood, perfect for tight corridors and modern nooks.",
-            bestSeller: false,
-            image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1000"
-        },
-        {
-            name: "Urban Organic Console Table",
-            price: "38,000",
-            originalPrice: "47,500",
-            discount: "20% Off",
-            emi: "3,377",
+            name: "Aurelia Gold Leaf Console",
+            price: "1,10,000",
+            originalPrice: "1,35,000",
+            discount: "18% Off",
+            emi: "11,520",
             tag: "READY TO SHIP",
-            description: "Smooth, rounded edges and a soft matte finish make this table a child-friendly yet sophisticated choice.",
-            bestSeller: true,
-            image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=1000"
-        },
-        {
-            name: "Jeanneret Media Unit",
-            price: "58,000",
-            originalPrice: "72,500",
-            discount: "20% Off",
-            emi: "5,155",
-            tag: "MADE TO ORDER",
-            description: "Low-profile media console with ventilated rear panels and a signature cross-woven rattan front.",
+            description: "Opulent gold leaf finish on a sculptural base, topped with a tempered glass surface for maximum impact.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=1000"
         },
     ];
 
@@ -90,9 +123,9 @@ const ConsoleTableCollection = () => {
                         <ChevronRight size={12} />
                         <Link href="/furniture" className="hover:text-black transition-colors">Furniture</Link>
                         <ChevronRight size={12} />
-                        <Link href="/furniture/entryway" className="hover:text-black transition-colors">Entryway</Link>
+                        <Link href="/furniture/living" className="hover:text-black transition-colors">Living</Link>
                         <ChevronRight size={12} />
-                        <span className="text-black font-medium">Console Tables</span>
+                        <span className="text-black font-medium">Consoles</span>
                     </nav>
                 </div>
 
@@ -112,7 +145,7 @@ const ConsoleTableCollection = () => {
                                             <span className="text-gray-400 text-lg">−</span>
                                         </div>
                                         <ul className="space-y-3">
-                                            {["Console Tables (8)", "Media Units (4)", "Hall Tables (2)"].map((type) => (
+                                            {["Sideboards (27)", "Consoles (11)", "Chest of Drawers (1)"].map((type) => (
                                                 <li key={type} className="flex items-center gap-3 group cursor-pointer text-gray-500 hover:text-black transition-colors">
                                                     <div className="w-4 h-4 border border-gray-300 rounded-sm group-hover:border-black transition-colors"></div>
                                                     <span className="text-[14px] font-light">{type}</span>
@@ -140,11 +173,27 @@ const ConsoleTableCollection = () => {
                                                 </div>
                                                 <span className="text-gray-400">to</span>
                                                 <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-900">
-                                                    <span>₹ 150000</span>
+                                                    <span>₹ 200000</span>
                                                     <ChevronDown size={14} />
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+
+                                    {/* Size */}
+                                    <div className="space-y-6">
+                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
+                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Size</span>
+                                            <span className="text-gray-400 text-lg">−</span>
+                                        </div>
+                                        <ul className="space-y-3">
+                                            {["L (4)", "M (4)", "S (1)"].map((size) => (
+                                                <li key={size} className="flex items-center gap-3 group cursor-pointer text-gray-500 hover:text-black transition-colors">
+                                                    <div className="w-4 h-4 border border-gray-300 rounded-sm group-hover:border-black transition-colors"></div>
+                                                    <span className="text-[14px] font-light">{size}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </div>
 
                                     {/* Discount */}
@@ -171,7 +220,7 @@ const ConsoleTableCollection = () => {
                             <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-6">
                                 <div className="space-y-2">
                                     <p className="text-gray-400 font-light tracking-[0.1em] text-sm italic font-serif uppercase">
-                                        12 RESULTS FOUND
+                                        42 RESULTS FOUND
                                     </p>
                                 </div>
                                 <div className="flex items-center gap-8 text-[11px] font-bold tracking-[0.2em] uppercase text-gray-950 border-b border-black pb-1 cursor-pointer">
@@ -253,7 +302,7 @@ const ConsoleTableCollection = () => {
                     </div>
                 </section>
 
-                {/* Narrative Section */}
+                {/* Brand Story Section */}
                 <section className="py-24 px-4 max-w-5xl mx-auto text-center border-t border-gray-100">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -263,11 +312,27 @@ const ConsoleTableCollection = () => {
                         className="space-y-10"
                     >
                         <h2 className="text-3xl md:text-5xl font-serif text-gray-900 leading-tight">
-                            The Entryway Anchor <br />
-                            <span className="italic">First Impressions, Redefined</span>
+                            Command the Room with <br />
+                            <span className="italic">Maishaa Masterpieces</span>
                         </h2>
+                        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+                            <div className="text-center group cursor-pointer">
+                                <div className="text-4xl font-serif text-orange-600 mb-2 group-hover:scale-110 transition-transform">01</div>
+                                <div className="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-400 group-hover:text-black transition-colors">Artisan Sourced</div>
+                            </div>
+                            <div className="h-12 w-px bg-gray-200 hidden md:block"></div>
+                            <div className="text-center group cursor-pointer">
+                                <div className="text-4xl font-serif text-orange-600 mb-2 group-hover:scale-110 transition-transform">02</div>
+                                <div className="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-400 group-hover:text-black transition-colors">Bespoke Finishes</div>
+                            </div>
+                            <div className="h-12 w-px bg-gray-200 hidden md:block"></div>
+                            <div className="text-center group cursor-pointer">
+                                <div className="text-4xl font-serif text-orange-600 mb-2 group-hover:scale-110 transition-transform">03</div>
+                                <div className="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-400 group-hover:text-black transition-colors">Lifetime Heritage</div>
+                            </div>
+                        </div>
                         <p className="text-gray-500 font-light leading-relaxed max-w-2xl mx-auto text-sm md:text-lg">
-                            An entryway console is more than just a table; it is the opening chapter of your home&apos;s story. At Maishaa, we design these anchors to balance airy elegance with grounded functionality, ensuring your first step inside is always a beautiful one.
+                            More than just storage, our consoles are the anchors of your living space. Handcrafted from rare hardwoods and finished with surgical precision, they represent the perfect marriage of form and function.
                         </p>
                     </motion.div>
                 </section>
@@ -278,4 +343,4 @@ const ConsoleTableCollection = () => {
     );
 };
 
-export default ConsoleTableCollection;
+export default ConsolesCollection;

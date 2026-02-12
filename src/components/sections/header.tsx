@@ -106,7 +106,7 @@ const Header = () => {
               { name: "End Tables", href: "/furniture/end-tables" },
               { name: "Ottomans | Stools & Benches", href: "/furniture/living-stools" },
               { name: "Loungers", href: "/furniture/loungers" },
-              { name: "Consoles", href: "/furniture/living-consoles" },
+              { name: "Consoles", href: "/furniture/consoles" },
             ]
           },
           {
