@@ -8,18 +8,102 @@ import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import { Heart, ChevronRight, ChevronDown } from "lucide-react";
 
-const SofasCollection = () => {
+const CoffeeTablesCollection = () => {
     const products = [
-        { name: "Modern Velvet 3-Seater Sofa", price: "1,45,000", originalPrice: "1,81,250", discount: "20% Off", emi: "12,083", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000" },
-        { name: "Leather Chesterfield Sofa", price: "2,10,000", originalPrice: "2,62,500", discount: "20% Off", emi: "17,500", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000" },
-        { name: "Scandinavian Fabric Sofa", price: "98,000", originalPrice: "1,22,500", discount: "20% Off", emi: "8,167", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=1000" },
-        { name: "Mid-Century Modern Sofa", price: "1,25,000", originalPrice: "1,56,250", discount: "20% Off", emi: "10,417", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1000" },
-        { name: "Tufted Linen Sofa", price: "1,35,000", originalPrice: "1,68,750", discount: "20% Off", emi: "11,250", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1550254478-ead40cc54513?q=80&w=1000" },
-        { name: "Contemporary L-Shape Sofa", price: "1,85,000", originalPrice: "2,31,250", discount: "20% Off", emi: "15,417", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1567016432779-094069958ad5?q=80&w=1000" },
+        {
+            name: "Aethel Marble Coffee Table",
+            price: "1,85,000",
+            originalPrice: "2,15,000",
+            discount: "14% Off",
+            emi: "16200",
+            tag: "BEST SELLER",
+            bestSeller: true,
+            image: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=1000"
+        },
+        {
+            name: "Solstice Bronze & Smoked Glass Table",
+            price: "85,000",
+            originalPrice: "98,000",
+            discount: "13% Off",
+            emi: "7450",
+            tag: "READY TO SHIP",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1565402170291-8115293c61bd?q=80&w=1000"
+        },
+        {
+            name: "Lumiere Polished Brass Table",
+            price: "1,25,000",
+            originalPrice: "1,45,000",
+            discount: "14% Off",
+            emi: "10900",
+            tag: "MADE TO ORDER",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=1000"
+        },
+        {
+            name: "Veridian Live-Edge Walnut Table",
+            price: "2,45,000",
+            originalPrice: "2,80,000",
+            discount: "13% Off",
+            emi: "21500",
+            tag: "ARTISAN MADE",
+            bestSeller: true,
+            image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000"
+        },
+        {
+            name: "Onyx Ascend Translucent Table",
+            price: "3,15,000",
+            originalPrice: "3,50,000",
+            discount: "10% Off",
+            emi: "27600",
+            tag: "EXCLUSIVE",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1574634534894-89d7576c8259?q=80&w=1000"
+        },
+        {
+            name: "Minimalist Ashwood Coffee Table",
+            price: "42,000",
+            originalPrice: "48,000",
+            discount: "13% Off",
+            emi: "3680",
+            tag: "READY TO SHIP",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=1000"
+        },
+        {
+            name: "Cube Concrete Industrial Table",
+            price: "65,000",
+            originalPrice: "75,000",
+            discount: "13% Off",
+            emi: "5700",
+            tag: "READY TO SHIP",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1519452635265-74a4dd926b7b?q=80&w=1000"
+        },
+        {
+            name: "Rattan & Ashwood Round Table",
+            price: "58,500",
+            originalPrice: "68,000",
+            discount: "14% Off",
+            emi: "5120",
+            tag: "MADE TO ORDER",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1000"
+        },
+        {
+            name: "Brutalist Steel Coffee Table",
+            price: "1,10,000",
+            originalPrice: "1,30,000",
+            discount: "15% Off",
+            emi: "9650",
+            tag: "MADE TO ORDER",
+            bestSeller: true,
+            image: "https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=1000"
+        },
     ];
 
     return (
-        <div className="flex min-h-screen flex-col bg-white font-sans">
+        <div className="flex min-h-screen flex-col bg-white font-sans text-black">
             <Header />
 
             <main className="flex-1">
@@ -30,9 +114,9 @@ const SofasCollection = () => {
                         <ChevronRight size={12} />
                         <Link href="/furniture" className="hover:text-black transition-colors">Furniture</Link>
                         <ChevronRight size={12} />
-                        <Link href="/furniture/living-room" className="hover:text-black transition-colors">Living Room</Link>
+                        <Link href="/furniture/living" className="hover:text-black transition-colors">Living</Link>
                         <ChevronRight size={12} />
-                        <span className="text-black">Sofas</span>
+                        <span className="text-black font-medium">Coffee Tables</span>
                     </nav>
                 </div>
 
@@ -52,7 +136,7 @@ const SofasCollection = () => {
                                             <span className="text-gray-400 text-lg">−</span>
                                         </div>
                                         <ul className="space-y-3">
-                                            {["3-Seater Sofas (12)", "2-Seater Sofas (8)", "Loveseats (5)", "Sofa Beds (4)"].map((type) => (
+                                            {["Marble Tables (32)", "Wooden Tables (45)", "Glass Tables (18)", "Metal Tables (12)"].map((type) => (
                                                 <li key={type} className="flex items-center gap-3 group cursor-pointer text-gray-500 hover:text-black transition-colors">
                                                     <div className="w-4 h-4 border border-gray-300 rounded-sm group-hover:border-black transition-colors"></div>
                                                     <span className="text-[14px] font-light">{type}</span>
@@ -69,9 +153,9 @@ const SofasCollection = () => {
                                         </div>
                                         <div className="px-1 pt-2">
                                             <div className="h-0.5 bg-gray-200 relative mb-6">
-                                                <div className="absolute left-0 right-0 h-full bg-black"></div>
+                                                <div className="absolute left-0 right-[20%] h-full bg-black"></div>
                                                 <div className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
-                                                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
+                                                <div className="absolute left-[80%] top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
                                             </div>
                                             <div className="flex items-center gap-4">
                                                 <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-500">
@@ -80,27 +164,11 @@ const SofasCollection = () => {
                                                 </div>
                                                 <span className="text-gray-400">to</span>
                                                 <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-900">
-                                                    <span>₹ 300000</span>
+                                                    <span>₹ 400000</span>
                                                     <ChevronDown size={14} />
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    {/* Material */}
-                                    <div className="space-y-6">
-                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
-                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Material</span>
-                                            <span className="text-gray-400 text-lg">−</span>
-                                        </div>
-                                        <ul className="space-y-3">
-                                            {["Velvet (8)", "Leather (6)", "Linen (5)", "Fabric (10)"].map((material) => (
-                                                <li key={material} className="flex items-center gap-3 text-gray-500 cursor-pointer">
-                                                    <div className="w-4 h-4 border border-gray-300 rounded-sm"></div>
-                                                    <span className="text-[14px] font-light">{material}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
                                     </div>
 
                                     {/* Discount */}
@@ -127,7 +195,7 @@ const SofasCollection = () => {
                             <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-6">
                                 <div className="space-y-2">
                                     <p className="text-gray-400 font-light tracking-[0.1em] text-sm italic font-serif uppercase">
-                                        29 RESULTS FOUND
+                                        112 RESULTS FOUND
                                     </p>
                                 </div>
                                 <div className="flex items-center gap-8 text-[11px] font-bold tracking-[0.2em] uppercase text-gray-950 border-b border-black pb-1 cursor-pointer">
@@ -165,7 +233,6 @@ const SofasCollection = () => {
                                         </div>
 
                                         <div className="flex flex-col gap-2">
-                                            {/* Tag */}
                                             <div className="flex">
                                                 <span className="bg-[#f5f5f5] text-gray-500 px-2 py-1 text-[9px] font-bold tracking-[0.2em] uppercase">
                                                     {product.tag}
@@ -198,6 +265,83 @@ const SofasCollection = () => {
                         </div>
                     </div>
                 </section>
+
+                {/* Narrative Intro Section */}
+                <section className="py-24 px-4 max-w-5xl mx-auto text-center border-t border-gray-100">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="space-y-10"
+                    >
+                        <h2 className="text-3xl md:text-5xl font-serif text-gray-900 leading-tight">
+                            The Centerpiece of Your Living Narrative
+                        </h2>
+                        <div className="w-20 h-px bg-gray-300 mx-auto"></div>
+                        <p className="text-gray-600 leading-relaxed text-lg md:text-xl font-light font-serif italic text-center">
+                            A coffee table is more than a surface; it's the anchor of your living room's social landscape. From the architectural presence of Grigio Carnico marble to the organic warmth of live-edge walnut, our curated collection defines modern luxury through material and form.
+                        </p>
+                    </motion.div>
+                </section>
+
+                {/* BOTTOM CONTENT SECTION */}
+                <section className="py-32 px-4 sm:px-8 md:px-16 lg:px-24 bg-white border-t border-gray-100">
+                    <div className="max-w-5xl mx-auto space-y-16">
+                        {/* Block 1 */}
+                        <div className="space-y-8">
+                            <h2 className="text-3xl md:text-[32px] font-serif text-[#1a1a1a] leading-tight font-medium">
+                                Artistry in Material and Silhouette
+                            </h2>
+                            <div className="space-y-6">
+                                <p className="text-[#666] leading-relaxed text-[17px] font-light">
+                                    The selection of a coffee table offers a unique opportunity to introduce contrasting textures and architectural silhouettes into your interior. Whether you gravitate towards the minimalist reflective surfaces of smoked glass or the brutalist weight of industrial steel, our designs are crafted to provoke conversation and admiration.
+                                </p>
+                                <p className="text-[#666] leading-relaxed text-[17px] font-light">
+                                    At Maishaa, we source rare minerals and sustainable woods to create pieces that are as unique as they are functional. Each "Aethel" marble slab is hand-selected for its veining, while our walnut tables are handcrafted to preserve the natural lifecycle of the timber.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Block 2 */}
+                        <div className="space-y-8">
+                            <h3 className="text-2xl md:text-[28px] font-serif text-[#1a1a1a] leading-tight font-medium">
+                                Designing Around Your Coffee Table
+                            </h3>
+                            <div className="space-y-10 pt-4">
+                                <div className="space-y-3">
+                                    <p className="text-[#1a1a1a] leading-relaxed text-[17px] font-light">
+                                        <span className="font-bold uppercase tracking-wider text-sm block mb-1">Scale and Flow:</span> Ensure there is ample space between your table and seating. A circular table like the "Solstice" is ideal for tight spaces or modular sectionals, facilitating a natural flow of movement.
+                                    </p>
+                                </div>
+
+                                <div className="space-y-3">
+                                    <p className="text-[#1a1a1a] leading-relaxed text-[17px] font-light">
+                                        <span className="font-bold uppercase tracking-wider text-sm block mb-1">Curated Styling:</span> Use your table as a stage for curated objects. A stack of design monographs and a single sculptural candleholder can transform a functional surface into a gallery-worthy display.
+                                    </p>
+                                </div>
+
+                                <div className="space-y-3">
+                                    <p className="text-[#1a1a1a] leading-relaxed text-[17px] font-light">
+                                        <span className="font-bold uppercase tracking-wider text-sm block mb-1">Mixing Textures:</span> Don't be afraid to pair a cold material like marble with plush velvet upholstery or a warm wooden rug. The interplay of materials creates a sophisticated, layered environment.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Block 3 */}
+                        <div className="space-y-8">
+                            <h3 className="text-2xl md:text-[28px] font-serif text-[#1a1a1a] leading-tight font-medium">
+                                Investment in Timeless Design
+                            </h3>
+                            <div className="space-y-6">
+                                <p className="text-[#666] leading-relaxed text-[17px] font-light">
+                                    Maishaa coffee tables are designed to transcend trends. By combining timeless materials with forward-thinking architectural forms, we create furniture that remains relevant through changing interior styles. Our commitment to heavy-duty construction means your centerpiece will remain a focal point for decades to come.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
 
             <Footer />
@@ -205,4 +349,4 @@ const SofasCollection = () => {
     );
 };
 
-export default SofasCollection;
+export default CoffeeTablesCollection;

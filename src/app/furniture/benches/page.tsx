@@ -146,7 +146,7 @@ const BenchesCollection = () => {
                                         viewport={{ once: true }}
                                         className="group cursor-pointer flex flex-col bg-white"
                                     >
-                                        <div className="relative aspect-[4/5] overflow-hidden bg-[#f9f9f9]">
+                                        <div className="relative aspect-[4/5] overflow-hidden bg-[#f9f9f9] mb-4">
                                             <Image
                                                 src={product.image}
                                                 alt={product.name}
@@ -164,23 +164,27 @@ const BenchesCollection = () => {
                                             )}
                                         </div>
 
-                                        <div className="pt-8 flex flex-col flex-1">
-                                            <div className="mb-6">
-                                                <span className="inline-block bg-[#f5f5f5] text-[#999] px-3 py-1.5 text-[9px] font-bold tracking-[0.2em] uppercase mb-4">
+                                        <div className="flex flex-col gap-2">
+                                            <div className="flex">
+                                                <span className="bg-[#f5f5f5] text-gray-500 px-2 py-1 text-[9px] font-bold tracking-[0.2em] uppercase">
                                                     {product.tag}
                                                 </span>
-                                                <h4 className="text-[16px] font-medium text-gray-900 group-hover:text-orange-600 transition-all duration-500 leading-snug">
-                                                    {product.name}
-                                                </h4>
                                             </div>
 
-                                            <div className="mt-auto space-y-2">
-                                                <p className="text-[18px] font-bold text-gray-900">₹{product.price}</p>
+                                            <h4 className="text-[15px] font-medium text-gray-900 group-hover:text-orange-600 transition-colors duration-300 leading-snug">
+                                                {product.name}
+                                            </h4>
 
-                                                <div className="flex items-center gap-3">
+                                            <div className="space-y-1 mt-1">
+                                                <div className="flex items-baseline gap-3">
+                                                    <span className="text-[16px] font-bold text-gray-900">₹{product.price}</span>
                                                     <span className="text-[13px] text-gray-400 line-through">₹{product.originalPrice}</span>
-                                                    <span className="text-[13px] text-orange-600 font-bold whitespace-nowrap">{product.discount}</span>
+                                                    <span className="text-[13px] text-orange-600 font-bold">{product.discount}</span>
                                                 </div>
+
+                                                <p className="text-[10px] text-gray-500 font-light">
+                                                    Price inclusive of all taxes | Pan India Shipping
+                                                </p>
 
                                                 <p className="text-[11px] text-orange-600 font-medium tracking-wide">
                                                     EMI starts from ₹ {product.emi}
@@ -202,7 +206,7 @@ const BenchesCollection = () => {
                         </h2>
                         <div className="w-20 h-px bg-gray-300 mx-auto"></div>
                         <p className="text-gray-500 leading-relaxed text-lg font-light font-serif italic">
-                            "More than just a place to sit, a premium bench is a statement of style and functionality. It bridges the gap between decor and utility, offering a welcoming touch to any space."
+                            &quot;More than just a place to sit, a premium bench is a statement of style and functionality. It bridges the gap between decor and utility, offering a welcoming touch to any space.&quot;
                         </p>
                     </div>
                 </section>
@@ -220,7 +224,7 @@ const BenchesCollection = () => {
                                     A premium bench is an incredibly versatile piece of furniture that can transform the functionality and aesthetic of any room. Whether placed in an entryway to provide a convenient spot for putting on shoes, at the foot of a bed for an extra layer of luxury, or along a dining table for a more communal feel, a well-crafted bench is both practical and beautiful.
                                 </p>
                                 <p className="text-[#666] leading-relaxed text-[17px] font-light">
-                                    At Maishaa, we've curated a collection of benches that celebrate exceptional craftsmanship and timeless design. From the delicate weave of natural rattan to the robust elegance of hand-chiseled solid wood, each piece is designed to be a focal point in your home, reflecting your personal style while offering enduring value.
+                                    At Maishaa, we&apos;ve curated a collection of benches that celebrate exceptional craftsmanship and timeless design. From the delicate weave of natural rattan to the robust elegance of hand-chiseled solid wood, each piece is designed to be a focal point in your home, reflecting your personal style while offering enduring value.
                                 </p>
                             </div>
                         </div>
@@ -254,7 +258,7 @@ const BenchesCollection = () => {
                         {/* Block 3 */}
                         <div className="space-y-8">
                             <h3 className="text-2xl md:text-[28px] font-serif text-[#1a1a1a] leading-tight font-medium">
-                                Why Choose Maishaa's Benches?
+                                Why Choose Maishaa&apos;s Benches?
                             </h3>
                             <div className="space-y-6">
                                 <p className="text-[#666] leading-relaxed text-[17px] font-light">

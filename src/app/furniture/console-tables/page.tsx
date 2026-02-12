@@ -128,45 +128,49 @@ const ConsoleTableCollection = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
                                         viewport={{ once: true }}
-                                        className="group cursor-pointer flex flex-col bg-white"
+                                        className="group cursor-pointer flex flex-col"
                                     >
-                                        <div className="relative aspect-[4/5] overflow-hidden bg-[#f9f9f9]">
+                                        <div className="relative aspect-[4/5] overflow-hidden bg-[#f9f9f9] mb-4">
                                             <Image
                                                 src={product.image}
                                                 alt={product.name}
                                                 fill
-                                                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                                                className="object-cover transition-transform duration-700 group-hover:scale-105"
                                             />
-                                            <button className="absolute top-4 right-4 p-2.5 bg-white rounded-full shadow-sm hover:text-red-500 transition-all duration-300 z-10 group/heart">
-                                                <Heart size={18} strokeWidth={1.5} className="group-hover/heart:fill-red-500 group-hover/heart:text-red-500 transition-colors" />
+                                            <button className="absolute top-3 right-3 p-2 bg-white rounded-full shadow-sm hover:text-red-500 transition-all duration-300 z-10 group/heart">
+                                                <Heart size={16} strokeWidth={1.5} className="group-hover/heart:fill-red-500 group-hover/heart:text-red-500 transition-colors" />
                                             </button>
 
                                             {product.bestSeller && (
-                                                <div className="absolute top-0 left-0 bg-[#1a1a1a] text-white px-4 py-2 text-[10px] font-bold tracking-[0.2em] uppercase z-10">
+                                                <div className="absolute top-0 left-0 bg-[#1a1a1a] text-white px-3 py-1.5 text-[9px] font-bold tracking-[0.2em] uppercase z-10">
                                                     BEST SELLER
                                                 </div>
                                             )}
                                         </div>
 
-                                        <div className="pt-8 flex flex-col flex-1">
-                                            <div className="mb-6">
-                                                <span className="inline-block bg-[#f5f5f5] text-[#999] px-3 py-1.5 text-[9px] font-bold tracking-[0.2em] uppercase mb-4">
+                                        <div className="flex flex-col gap-2">
+                                            <div className="flex">
+                                                <span className="bg-[#f5f5f5] text-gray-500 px-2 py-1 text-[9px] font-bold tracking-[0.2em] uppercase">
                                                     {product.tag}
                                                 </span>
-                                                <h4 className="text-[17px] font-medium text-gray-900 group-hover:text-orange-600 transition-all duration-500 leading-snug">
-                                                    {product.name}
-                                                </h4>
                                             </div>
 
-                                            <div className="mt-auto space-y-3">
-                                                <p className="text-[20px] font-bold text-gray-900">₹{product.price}</p>
+                                            <h4 className="text-[15px] font-medium text-gray-900 group-hover:text-orange-600 transition-colors duration-300 leading-snug">
+                                                {product.name}
+                                            </h4>
 
-                                                <div className="flex items-center gap-3">
-                                                    <span className="text-[14px] text-gray-400 line-through">₹{product.originalPrice}</span>
-                                                    <span className="text-[14px] text-orange-600 font-bold whitespace-nowrap">{product.discount}</span>
+                                            <div className="space-y-1 mt-1">
+                                                <div className="flex items-baseline gap-3">
+                                                    <span className="text-[16px] font-bold text-gray-900">₹{product.price}</span>
+                                                    <span className="text-[13px] text-gray-400 line-through">₹{product.originalPrice}</span>
+                                                    <span className="text-[13px] text-orange-600 font-bold">{product.discount}</span>
                                                 </div>
 
-                                                <p className="text-[12px] text-orange-600 font-medium tracking-wide">
+                                                <p className="text-[10px] text-gray-500 font-light">
+                                                    Price inclusive of all taxes | Pan India Shipping
+                                                </p>
+
+                                                <p className="text-[11px] text-orange-600 font-medium tracking-wide">
                                                     EMI starts from ₹ {product.emi}
                                                 </p>
                                             </div>
@@ -182,11 +186,11 @@ const ConsoleTableCollection = () => {
                 <section className="py-24 px-4 max-w-4xl mx-auto text-center border-t border-gray-100">
                     <div className="space-y-8">
                         <h2 className="text-3xl md:text-5xl font-serif text-gray-900 leading-tight">
-                            Create a Welcoming Entry in Style: Check Out Maishaa's Chic Entryway Consoles
+                            Create a Welcoming Entry in Style: Check Out Maishaa&apos;s Chic Entryway Consoles
                         </h2>
                         <div className="w-20 h-px bg-gray-300 mx-auto"></div>
                         <p className="text-gray-500 leading-relaxed text-lg font-light font-serif italic">
-                            "A good first impression lasts a long time. When entering a home, building, or space, the entryway console is the first thing that comes into view and has a huge role to play."
+                            &quot;A good first impression lasts a long time. When entering a home, building, or space, the entryway console is the first thing that comes into view and has a huge role to play.&quot;
                         </p>
                     </div>
                 </section>
@@ -197,7 +201,7 @@ const ConsoleTableCollection = () => {
                         {/* Block 1 */}
                         <div className="space-y-8">
                             <h2 className="text-3xl md:text-[32px] font-serif text-[#1a1a1a] leading-tight font-medium">
-                                Create a Welcoming Entry in Style: Check Out Maishaa's Chic Entryway Consoles
+                                Create a Welcoming Entry in Style: Check Out Maishaa&apos;s Chic Entryway Consoles
                             </h2>
                             <div className="space-y-6">
                                 <p className="text-[#666] leading-relaxed text-[17px] font-light">
