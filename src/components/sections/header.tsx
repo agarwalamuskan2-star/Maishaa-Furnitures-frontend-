@@ -143,10 +143,10 @@ const Header = () => {
               { name: "Dining Collections", href: "/furniture/dining-collections" },
               { name: "Dining Tables", href: "/furniture/dining-tables" },
               { name: "Dining Chairs", href: "/furniture/dining-chairs" },
-              { name: "Dining Benches", href: "/furniture/dining-benches" },
-              { name: "Bar & Counter Stools", href: "/furniture/bar-stools" },
+              { name: "Dining Benches", href: "/furniture/dining/dining-benches" },
+              { name: "Bar & Counter Stools", href: "/furniture/dining/bar-stools" },
               { name: "Buffet Consoles", href: "/furniture/dining/buffet-consoles" },
-              { name: "Bar Cabinets", href: "/furniture/bar-cabinets" },
+              { name: "Bar Cabinets", href: "/furniture/dining/bar-cabinets" },
             ]
           },
           {
