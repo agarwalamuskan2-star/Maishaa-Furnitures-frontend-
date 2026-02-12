@@ -305,7 +305,7 @@ const Header = () => {
         columns: [
           { title: "Coastal Farmhouse", links: [{ name: "View Collection", href: "/collections/coastal-farmhouse" }] },
           { title: "Contemporary Modern", links: [{ name: "View Collection", href: "/collections/contemporary-modern" }] },
-          { title: "Tropical Modern", links: [] },
+          { title: "Tropical Modern", links: [{ name: "View Collection", href: "/collections/tropical-modern" }] },
           { title: "Classic Modern", links: [] },
           { title: "Mid-century Modern", links: [] },
         ]
