@@ -78,20 +78,9 @@ const CoastalFarmhouseCollection = () => {
             <Header />
 
             <main className="flex-1">
-                {/* Breadcrumbs */}
-                <div className="pt-6 pb-4 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
-                    <nav className="flex items-center gap-2 text-gray-400 text-[12px] tracking-wide">
-                        <Link href="/" className="hover:text-black transition-colors">Home</Link>
-                        <ChevronRight size={10} />
-                        <Link href="/collections" className="hover:text-black transition-colors">Collections</Link>
-                        <ChevronRight size={10} />
-                        <span className="text-gray-900">Coastal Farmhouse</span>
-                    </nav>
-                </div>
-
-                {/* Hero Section with Side Padding */}
-                <section className="px-4 sm:px-8 md:px-16 lg:px-20 mb-20">
-                    <div className="relative h-[65vh] w-full overflow-hidden group">
+                {/* Hero Section - Full Width, No Side Padding */}
+                <section className="w-full mb-20">
+                    <div className="relative h-[70vh] w-full overflow-hidden group">
                         <Image
                             src="/images/outdoor/hero.png"
                             alt="Coastal Farmhouse Collection"
@@ -101,22 +90,22 @@ const CoastalFarmhouseCollection = () => {
                         />
                         <div className="absolute inset-0 bg-black/5" />
 
-                        {/* Text Overlay - Realigned and Styled to match reference */}
-                        <div className="absolute inset-0 flex flex-col justify-center items-center md:items-end px-8 md:px-16 lg:px-32 pointer-events-none">
+                        {/* Text Overlay - Sophisticated, lighter typography to match reference */}
+                        <div className="absolute inset-0 flex flex-col justify-center items-center md:items-end px-8 md:px-16 lg:px-40 pointer-events-none">
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8 }}
-                                className="bg-white/90 backdrop-blur-md p-10 md:p-14 text-center space-y-6 max-w-lg shadow-xl pointer-events-auto"
+                                className="bg-white/95 backdrop-blur-md p-12 md:p-16 text-center space-y-6 max-w-lg shadow-lg border border-white/20 pointer-events-auto"
                             >
-                                <p className="text-[11px] md:text-[13px] font-medium tracking-[0.4em] text-gray-500 uppercase">
+                                <p className="text-[10px] md:text-[12px] font-medium tracking-[0.5em] text-gray-400 uppercase">
                                     Rustic & Nautical
                                 </p>
-                                <h1 className="text-4xl md:text-6xl font-serif text-gray-800 leading-tight uppercase tracking-normal font-light">
+                                <h1 className="text-3xl md:text-5xl font-serif text-gray-700 leading-[1.2] uppercase tracking-[0.05em] font-light">
                                     Coastal<br />Farmhouse
                                 </h1>
-                                <div className="pt-6">
-                                    <button className="border-b border-black pb-1.5 text-[11px] font-bold tracking-[0.3em] uppercase hover:text-orange-600 hover:border-orange-600 transition-all">
+                                <div className="pt-8">
+                                    <button className="border-b border-gray-400 pb-2 text-[10px] font-bold tracking-[0.4em] uppercase hover:text-orange-600 hover:border-orange-600 transition-all text-gray-600">
                                         EXPLORE NOW
                                     </button>
                                 </div>
@@ -125,17 +114,15 @@ const CoastalFarmhouseCollection = () => {
                     </div>
                 </section>
 
-                {/* Narrative Section */}
+                {/* Narrative Section - No redundant title */}
                 <section className="py-24 px-4 max-w-4xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="space-y-8"
                     >
-                        <h2 className="text-3xl md:text-4xl font-serif text-gray-900">Coastal Farmhouse</h2>
-                        <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed font-light italic">
+                        <p className="text-gray-500 text-[16px] md:text-[19px] leading-[1.8] font-light italic tracking-wide">
                             Coastal Farmhouse is all about creating a harmonious blend of elements from both worlds,
                             bringing the best of seaside and countryside aesthetics into your living space. The result is a home
                             that captures the easygoing spirit of coastal living and the enduring charm of farmhouse style—a
