@@ -152,7 +152,7 @@ const Header = () => {
           {
             title: "Bedroom",
             links: [
-              { name: "Beds", href: "/furniture/beds" },
+              { name: "Beds", href: "/furniture/bedroom/beds" },
               { name: "Nightstands", href: "/furniture/bedroom/nightstands" },
               { name: "Chest of Drawers", href: "/furniture/bedroom-drawers" },
               { name: "Armoires | Wardrobes", href: "/furniture/wardrobes" },
