@@ -16,24 +16,24 @@ const DiningCollections = () => {
             subtitle: "Exquisite Hand-Carved Masterpieces"
         },
         {
-            src: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=2000",
-            title: "The Curated Chair",
+            src: "/images/outdoor/seating-cat.png",
+            title: "Premium Seating Collection",
             subtitle: "Ergonomic Comfort in Every Silhouette"
         },
         {
-            src: "https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?q=80&w=2000",
-            title: "Grand Reclaimed Tables",
-            subtitle: "Nature's Texture in Your Dining Space"
+            src: "/images/outdoor/hero.png",
+            title: "Grand Furniture Masterpieces",
+            subtitle: "Nature's Texture in Your Living Space"
         },
         {
-            src: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=2000",
-            title: "Industrial Chic Sets",
-            subtitle: "Steel Meets Hand-Finished Oak"
+            src: "/images/outdoor/accessories-cat.png",
+            title: "Refined Accents & Decor",
+            subtitle: "The Finishing Touch to Your Interiors"
         },
         {
-            src: "https://images.unsplash.com/photo-1565412850110-2347209930f7?q=80&w=2000",
-            title: "Sculptural Credenzas",
-            subtitle: "The Perfect Companion to Your Dining Set"
+            src: "/images/outdoor/wren-chair.png",
+            title: "The Iconic Wren Chair",
+            subtitle: "Sculptural Form Meets Functional Art"
         },
     ];
 
