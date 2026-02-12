@@ -46,7 +46,7 @@ const DiningChairCollection = () => {
             tag: "MADE TO ORDER",
             description: "Plush velvet upholstery in rich tones, bringing luxury to your dining space.",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000"
+            image: "/images/outdoor/wren-chair.png"
         },
         {
             name: "Creston Leather Chair",
@@ -55,7 +55,7 @@ const DiningChairCollection = () => {
             tag: "MADE TO ORDER",
             description: "Top-grain leather and solid wood construction for a sophisticated dining experience.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=1000"
+            image: "/images/outdoor/seating-cat.png"
         },
         {
             name: "Calissa Sculptural Chair",
@@ -64,7 +64,7 @@ const DiningChairCollection = () => {
             tag: "MADE TO ORDER",
             description: "A piece of functional art, featuring bold lines and a comfortable curved back.",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1000"
+            image: "/images/outdoor/wren-chair.png"
         },
         {
             name: "Nakashi Carver Chair",
@@ -73,7 +73,7 @@ const DiningChairCollection = () => {
             tag: "MADE TO ORDER",
             description: "Inspired by heritage craftsmanship, with intricate details and armrests for added comfort.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?q=80&w=1000"
+            image: "/images/outdoor/seating-cat.png"
         },
         {
             name: "Sinag Modern Armchair",
@@ -100,7 +100,7 @@ const DiningChairCollection = () => {
             tag: "MADE TO ORDER",
             description: "Versatile and stylish, featuring a 360-degree swivel and premium fabric options.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000"
+            image: "/images/outdoor/wren-chair.png"
         },
     ];
 

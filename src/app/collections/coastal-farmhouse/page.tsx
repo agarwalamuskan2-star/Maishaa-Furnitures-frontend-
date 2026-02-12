@@ -36,7 +36,7 @@ const CoastalFarmhouseCollection = () => {
             emi: "3608",
             tag: "READY TO SHIP",
             bestSeller: false,
-            image: "/images/outdoor/living-cat.png"
+            image: "/images/outdoor/accessories-cat.png"
         },
         {
             name: "Kobbler Tan Bed Cot",

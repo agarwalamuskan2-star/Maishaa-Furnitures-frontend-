@@ -46,7 +46,7 @@ const DiningTableCollection = () => {
             tag: "MADE TO ORDER",
             description: "Graceful proportions and refined details make this a timeless anchor for family gatherings.",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?q=80&w=1000"
+            image: "/images/outdoor/dining-cat.png"
         },
         {
             name: "Creston Oval Dining Table",
@@ -55,7 +55,7 @@ const DiningTableCollection = () => {
             tag: "MADE TO ORDER",
             description: "The soft curves of the Creston oval table bring a flowing, organic feel to contemporary spaces.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1544457070-4cd773b4d71e?q=80&w=1000"
+            image: "/images/outdoor/hero.png"
         },
         {
             name: "Calissa Dining Table",
@@ -64,7 +64,7 @@ const DiningTableCollection = () => {
             tag: "MADE TO ORDER",
             description: "Sculptural base meets a wide top, creating a balance of stability and airy elegance.",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=1000"
+            image: "/images/outdoor/accessories-cat.png"
         },
         {
             name: "Nakashi Dining Table",
@@ -73,7 +73,7 @@ const DiningTableCollection = () => {
             tag: "MADE TO ORDER",
             description: "Inspired by traditional Nakashi woodcraft, this table is a true artisan centerpiece.",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000"
+            image: "/images/outdoor/dining-cat.png"
         },
         {
             name: "Course 4 Round Table",
@@ -82,7 +82,7 @@ const DiningTableCollection = () => {
             tag: "MADE TO ORDER",
             description: "Perfect for intimate dinners and circular conversations, highlighting the beauty of round forms.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1000"
+            image: "/images/outdoor/seating-cat.png"
         },
         {
             name: "Sinag Dining Table",
@@ -91,7 +91,7 @@ const DiningTableCollection = () => {
             tag: "MADE TO ORDER",
             description: "Radiant designs and surgical precision in every joint, a hallmark of the Sinag collection.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1622396481328-9b1b78cdd9fd?q=80&w=1000"
+            image: "/images/outdoor/dining-cat.png"
         },
         {
             name: "X-atura Live Edge Dining Table",
