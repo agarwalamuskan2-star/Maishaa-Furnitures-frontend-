@@ -36,7 +36,7 @@ const CoastalFarmhouseCollection = () => {
             emi: "3608",
             tag: "READY TO SHIP",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1507473885765-e6ed657f895b?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1513519245088-0e12902e35ca?q=80&w=1000"
         },
         {
             name: "Kobbler Tan Bed Cot",
@@ -44,7 +44,7 @@ const CoastalFarmhouseCollection = () => {
             emi: "9603",
             tag: "MADE TO ORDER",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1505691938895-1758d7eaa511?q=80&w=1000"
+            image: "/images/outdoor/hero.png"
         },
         {
             name: "Kobbler Tan Nightstand",
@@ -80,44 +80,48 @@ const CoastalFarmhouseCollection = () => {
             <main className="flex-1">
                 {/* Breadcrumbs */}
                 <div className="pt-6 pb-4 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
-                    <nav className="flex items-center gap-2 text-gray-400 text-[11px] tracking-wide uppercase">
+                    <nav className="flex items-center gap-2 text-gray-400 text-[12px] tracking-wide">
                         <Link href="/" className="hover:text-black transition-colors">Home</Link>
-                        <ChevronRight size={12} />
+                        <ChevronRight size={10} />
                         <Link href="/collections" className="hover:text-black transition-colors">Collections</Link>
-                        <ChevronRight size={12} />
-                        <span className="text-black font-semibold">Coastal Farmhouse</span>
+                        <ChevronRight size={10} />
+                        <span className="text-gray-900">Coastal Farmhouse</span>
                     </nav>
                 </div>
 
-                {/* Hero Section */}
-                <section className="relative h-[80vh] w-full overflow-hidden">
-                    <Image
-                        src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2000"
-                        alt="Coastal Farmhouse Collection"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-black/5" />
-                    <div className="absolute right-0 top-0 h-full w-full md:w-1/2 flex flex-col justify-center items-center md:items-start px-8 md:px-12 lg:px-24 text-center md:text-left">
-                        <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 1, delay: 0.2 }}
-                            className="bg-white/80 backdrop-blur-sm p-12 md:p-16 space-y-4 max-w-xl"
-                        >
-                            <p className="text-[12px] md:text-[14px] font-medium tracking-[0.4em] text-gray-500 uppercase">
-                                Rustic & Nautical
-                            </p>
-                            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-gray-900 leading-[1.1] uppercase tracking-tighter">
-                                Coastal<br />Farmhouse
-                            </h1>
-                            <div className="pt-8">
-                                <button className="border-b-2 border-black pb-2 text-[12px] font-bold tracking-[0.3em] uppercase hover:text-orange-600 hover:border-orange-600 transition-all">
-                                    EXPLORE NOW
-                                </button>
-                            </div>
-                        </motion.div>
+                {/* Hero Section with Side Padding */}
+                <section className="px-4 sm:px-8 md:px-16 lg:px-20 mb-20">
+                    <div className="relative h-[65vh] w-full overflow-hidden group">
+                        <Image
+                            src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2000"
+                            alt="Coastal Farmhouse Collection"
+                            fill
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-black/5" />
+
+                        {/* Text Overlay - Realigned and Styled to match reference */}
+                        <div className="absolute inset-0 flex flex-col justify-center items-center md:items-end px-8 md:px-16 lg:px-32 pointer-events-none">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8 }}
+                                className="bg-white/90 backdrop-blur-md p-10 md:p-14 text-center space-y-6 max-w-lg shadow-xl pointer-events-auto"
+                            >
+                                <p className="text-[11px] md:text-[13px] font-medium tracking-[0.4em] text-gray-500 uppercase">
+                                    Rustic & Nautical
+                                </p>
+                                <h1 className="text-4xl md:text-6xl font-serif text-gray-800 leading-tight uppercase tracking-normal font-light">
+                                    Coastal<br />Farmhouse
+                                </h1>
+                                <div className="pt-6">
+                                    <button className="border-b border-black pb-1.5 text-[11px] font-bold tracking-[0.3em] uppercase hover:text-orange-600 hover:border-orange-600 transition-all">
+                                        EXPLORE NOW
+                                    </button>
+                                </div>
+                            </motion.div>
+                        </div>
                     </div>
                 </section>
 
