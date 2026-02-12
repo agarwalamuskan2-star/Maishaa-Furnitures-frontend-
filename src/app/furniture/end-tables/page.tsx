@@ -30,7 +30,7 @@ const EndTablesCollection = () => {
             tag: "MADE TO ORDER",
             description: "Ultra-clear artisan acrylic with polished edges, designed to blend seamlessly into modern living spaces.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1565402170291-8115293c61bd?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1544457070-4cd773b4d71e?q=80&w=1000"
         },
         {
             name: "The Gilded Bamboo End Table",
@@ -63,7 +63,7 @@ const EndTablesCollection = () => {
             tag: "ARTISAN MADE",
             description: "Hand-hammered brass with a vintage patina, offering a warm and soulful textural accent.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1519452635265-74a4dd926b7b?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=1000"
         },
         {
             name: "Obsidian Marble C-Table",
@@ -85,7 +85,7 @@ const EndTablesCollection = () => {
             tag: "MADE TO ORDER",
             description: "Mid-century inspired pedestal table with a lacquered white top and a slim chrome base.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1538688549216-a9ecfd2bbd8e?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1000"
         },
         {
             name: "Sovereign Inlay End Table",

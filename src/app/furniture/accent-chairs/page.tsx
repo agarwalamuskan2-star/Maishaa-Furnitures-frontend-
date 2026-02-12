@@ -85,7 +85,7 @@ const AccentChairsCollection = () => {
             tag: "HANDCRAFTED",
             description: "Intricate hand-carved bone inlay patterns that make every piece a unique work of art.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1565402170291-8115293c61bd?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=1000"
         },
         {
             name: "Nordic Minimalist Stool",

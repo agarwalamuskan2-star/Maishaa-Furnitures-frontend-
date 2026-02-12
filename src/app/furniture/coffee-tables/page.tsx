@@ -30,7 +30,7 @@ const CoffeeTablesCollection = () => {
             tag: "READY TO SHIP",
             description: "Architectural tempered glass top that creates an illusion of space for modern, airy interiors.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1565402170291-8115293c61bd?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000"
         },
         {
             name: "The Gilded Orb Coffee Table",
@@ -63,7 +63,7 @@ const CoffeeTablesCollection = () => {
             tag: "MADE TO ORDER",
             description: "A heavy cast-bronze base with organic textures, topped with a custom-etched metal surface.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1519452635265-74a4dd926b7b?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=1000"
         },
         {
             name: "Obsidian Slate Square Table",
