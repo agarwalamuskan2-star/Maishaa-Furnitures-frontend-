@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
@@ -9,46 +10,51 @@ import { Heart } from "lucide-react";
 
 /**
  * CLASSIC MODERN COLLECTION PAGE
- * 
- * Features a timeless, sophisticated aesthetic with architectural details and rich textures.
  */
 
-const ClassicModernCollection = () => {
+const ClassicModernPage = () => {
     useEffect(() => {
-        document.title = "Classic Modern Collection | Maishaa";
+        document.title = "Classic Modern Furniture Collection | Maishaa";
     }, []);
 
     const products = [
         {
-            name: "Augustus Wingback Chair",
-            price: "56,000",
-            emi: "4811",
+            name: "Classic Console Table",
+            price: "45,900",
+            originalPrice: "52,000",
+            emi: "4080",
             tag: "MADE TO ORDER",
-            bestSeller: true,
+            status: "MADE TO ORDER",
+            badge: "DESIGNER'S PICK",
             image: "/images/outdoor/seating-cat.png"
         },
         {
-            name: "Palladian Marble Table",
-            price: "2,15,400",
-            emi: "18971",
+            name: "Chesterfield Tufted Sofa",
+            price: "1,24,500",
+            originalPrice: "1,45,000",
+            emi: "11066",
             tag: "MADE TO ORDER",
-            bestSeller: true,
-            image: "/images/outdoor/dining-cat.png"
-        },
-        {
-            name: "Legacy Wall Sconce",
-            price: "14,900",
-            emi: "1250",
-            tag: "READY TO SHIP",
-            bestSeller: false,
+            status: "MADE TO ORDER",
+            badge: "BEST SELLER",
             image: "/images/outdoor/accessories-cat.png"
         },
         {
-            name: "Versailles Oak Chest",
-            price: "1,32,000",
-            emi: "11611",
+            name: "Vintage Cane Accent Chair",
+            price: "32,400",
+            originalPrice: "38,000",
+            emi: "2880",
+            tag: "READY TO SHIP",
+            status: "READY TO SHIP",
+            image: "/images/outdoor/wren-chair.png"
+        },
+        {
+            name: "Ornate White Cabinet",
+            price: "68,200",
+            originalPrice: "75,000",
+            emi: "6062",
             tag: "MADE TO ORDER",
-            bestSeller: false,
+            status: "MADE TO ORDER",
+            badge: "BEST SELLER",
             image: "/images/outdoor/hero.png"
         }
     ];
@@ -58,158 +64,133 @@ const ClassicModernCollection = () => {
             <Header />
 
             <main className="flex-1">
-                {/* Hero Section - Grand & Timeless */}
-                <section className="w-full mb-20 relative h-[80vh] overflow-hidden group">
+                {/* Breadcrumbs */}
+                <div className="pt-6 pb-4 px-4 sm:px-8 md:px-16 lg:px-20 bg-white border-b border-gray-50">
+                    <nav className="flex items-center gap-2 text-gray-400 text-[11px] tracking-wide uppercase">
+                        <Link href="/" className="hover:text-black transition-colors">Home</Link>
+                        <span className="text-gray-300">/</span>
+                        <Link href="/collections" className="hover:text-black transition-colors">Collections</Link>
+                        <span className="text-gray-300">/</span>
+                        <span className="text-black font-semibold">Classic Modern</span>
+                    </nav>
+                </div>
+
+                {/* Hero Section */}
+                <section className="relative h-[500px] overflow-hidden">
                     <Image
-                        src="/images/outdoor/dining-cat.png"
+                        src="/images/outdoor/accessories-cat.png"
                         alt="Classic Modern Collection"
                         fill
-                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        className="object-cover"
                         priority
                     />
-                    <div className="absolute inset-0 bg-black/20" />
-
-                    {/* Text Overlay - Replicating "Timeless & Architectural" style */}
-                    <div className="absolute inset-0 flex flex-col justify-end items-start px-8 md:px-16 lg:px-40 pb-24">
-                        <motion.div
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="bg-white p-12 md:p-16 max-w-2xl border-l-[12px] border-black shadow-2xl"
-                        >
-                            <p className="text-[12px] md:text-[14px] font-bold tracking-[0.6em] text-gray-400 uppercase mb-4">
-                                Heritage & Symmetry
-                            </p>
-                            <h1 className="text-5xl md:text-7xl font-serif text-gray-900 leading-[0.9] uppercase tracking-tighter">
-                                Classic<br />Modern
+                    <div className="absolute inset-0 bg-gradient-to-l from-black/20 to-transparent"></div>
+                    <div className="absolute inset-0 flex items-center justify-end px-4 sm:px-8 md:px-16 lg:px-20">
+                        <div className="text-right text-white max-w-xl">
+                            <p className="text-sm tracking-[0.3em] uppercase mb-4 font-light">Minimal & Sophisticated</p>
+                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif mb-6 leading-tight">
+                                CLASSIC<br />MODERN
                             </h1>
-                            <div className="pt-12">
-                                <button className="border-b-2 border-black pb-2 text-[11px] font-black tracking-[0.4em] uppercase hover:text-gray-500 hover:border-gray-500 transition-all">
-                                    THE HERITAGE COLLECTION
-                                </button>
-                            </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </section>
 
-                {/* Narrative Section */}
-                <section className="py-24 px-4 bg-[#f9f9f9]">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="max-w-4xl mx-auto text-center space-y-10"
-                    >
-                        <h2 className="text-4xl md:text-5xl font-serif text-gray-900 uppercase tracking-widest">Timeless Elegance</h2>
-                        <div className="w-24 h-0.5 bg-black mx-auto"></div>
-                        <p className="text-gray-700 text-[18px] md:text-[21px] leading-[1.8] font-light max-w-3xl mx-auto italic">
-                            Classic Modern is a dialogue between the grandeur of the past and the precision of the present.
-                            It celebrates architectural symmetry, rich hardwoods, and heirloom craftsmanship,
-                            refined through a minimalist lens for the contemporary connoisseur.
+                {/* Description Section */}
+                <section className="py-16 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <div className="max-w-4xl mx-auto text-center">
+                        <h2 className="text-3xl md:text-4xl font-serif mb-6 text-gray-900">CLASSIC MODERN</h2>
+                        <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+                            If you're looking for a refined style that embraces the elegance of 18th-century European interior design, then Classic Modern is the perfect style for you. Stained woods and sumptuous fabrics create a space where comfort meets sophistication. Matching pairs such as table lamps, accent chairs, and sofas, keep the Classic design structured and balanced.
                         </p>
-                    </motion.div>
+                    </div>
                 </section>
 
-                {/* Pro Tip Section - Symmetrical Balance */}
-                <section className="py-32 overflow-hidden bg-white">
-                    <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-16 lg:px-20">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.98 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 1 }}
-                                viewport={{ once: true }}
-                                className="relative aspect-[4/5] w-full order-2 lg:order-1"
-                            >
-                                <Image
-                                    src="/images/outdoor/hero.png"
-                                    alt="Classic Style Library"
-                                    fill
-                                    className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                                />
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, x: 30 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.8 }}
-                                viewport={{ once: true }}
-                                className="space-y-10 order-1 lg:order-2"
-                            >
-                                <div className="space-y-4">
-                                    <span className="text-[12px] font-black text-gray-400 tracking-[0.4em] uppercase">Pro Tip 1</span>
-                                    <h2 className="text-4xl md:text-5xl font-serif text-gray-900 leading-tight uppercase">Symmetrical Balance</h2>
-                                </div>
-                                <p className="text-gray-600 text-[18px] leading-relaxed font-light">
-                                    In Classic Modern design, symmetry creates a sense of order and serenity.
-                                    Anchor your room with a central focal point—like a grand fireplace or a statement console—and
-                                    pair elements on either side to reflect a mirror-like harmony.
+                {/* Pro Tips Section */}
+                <section className="py-16 px-4 sm:px-8 md:px-16 lg:px-20 bg-gray-50">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div className="space-y-6">
+                                <h3 className="text-2xl font-serif text-gray-900">Pro Tip 1</h3>
+                                <h4 className="text-4xl md:text-5xl font-light text-gray-900">Maximize</h4>
+                                <p className="text-base text-gray-700 leading-relaxed">
+                                    A common characteristic of classic styles are patterns and motifs- florals, paisleys or stripes, chesterfield tufted sofas or intricate welded patterns over minimal grounded base to add on to that 18-century classic feel while still keeping it modern
                                 </p>
-                                <div className="pt-8 flex gap-8">
-                                    <button className="bg-black text-white px-10 py-5 text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-gray-800 transition-all">
-                                        Explore Projects
-                                    </button>
-                                </div>
-                            </motion.div>
+                            </div>
+                            <div className="relative h-[400px] lg:h-[500px] overflow-hidden rounded-lg shadow-lg">
+                                <Image
+                                    src="/images/outdoor/seating-cat.png"
+                                    alt="Maximize patterns and motifs"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                {/* Product Grid Section */}
-                <section className="py-32 px-4 sm:px-8 md:px-16 lg:px-20 bg-[#111] text-white">
-                    <div className="max-w-[1920px] mx-auto">
-                        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8 border-b border-white/10 pb-12">
-                            <div className="space-y-4">
-                                <h2 className="text-4xl md:text-6xl font-serif">The Curation</h2>
-                                <p className="text-gray-400 text-[14px] font-light tracking-[0.3em] uppercase">
-                                    Investment pieces for generations.
-                                </p>
-                            </div>
-                            <button className="text-[11px] font-bold tracking-[0.4em] uppercase border-b border-white pb-2 hover:text-gray-400 hover:border-gray-400 transition-all">
-                                VIEW ALL CLASSICS
-                            </button>
+                {/* Explore More Section */}
+                <section className="py-16 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-4xl font-serif mb-4 text-gray-900">Explore more</h2>
+                            <p className="text-base text-gray-600">
+                                Pick your furniture style from our artful curations to build your dream home.
+                            </p>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                             {products.map((product, idx) => (
                                 <motion.div
                                     key={idx}
-                                    initial={{ opacity: 0, y: 30 }}
+                                    initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6, delay: idx * 0.1 }}
+                                    transition={{ duration: 0.5, delay: idx * 0.1 }}
                                     viewport={{ once: true }}
-                                    className="group cursor-pointer flex flex-col"
+                                    className="group cursor-pointer flex flex-col bg-white border border-gray-100 hover:shadow-xl transition-all duration-300"
                                 >
-                                    <div className="relative aspect-[10/13] overflow-hidden bg-white/5 mb-8">
+                                    <div className="relative aspect-square overflow-hidden bg-[#f9f9f9]">
                                         <Image
                                             src={product.image}
                                             alt={product.name}
                                             fill
-                                            className="object-cover opacity-80 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105"
+                                            className="object-cover transition-transform duration-700 group-hover:scale-105"
                                         />
-
-                                        {product.bestSeller && (
-                                            <div className="absolute top-0 right-0 bg-white text-black px-4 py-2 text-[9px] font-black tracking-[0.2em] uppercase z-10">
-                                                ICONIC
-                                            </div>
-                                        )}
-
-                                        <button className="absolute bottom-8 right-8 p-4 bg-white text-black rounded-full shadow-2xl scale-0 group-hover:scale-100 transition-transform duration-500 hover:bg-black hover:text-white">
-                                            <Heart size={20} strokeWidth={1} />
+                                        <button className="absolute top-4 right-4 p-2.5 bg-white/90 backdrop-blur-sm rounded-full shadow-sm hover:text-red-500 transition-all duration-300 z-10 group/heart">
+                                            <Heart size={18} strokeWidth={1} className="group-hover/heart:fill-red-500 transition-colors" />
                                         </button>
+
+                                        <div className="absolute top-4 left-4">
+                                            {product.badge && (
+                                                <span className="px-3 py-1 text-[10px] font-bold tracking-widest uppercase bg-black text-white">
+                                                    {product.badge}
+                                                </span>
+                                            )}
+                                        </div>
+
+                                        <div className="absolute bottom-4 left-4">
+                                            <span className="px-4 py-1.5 text-[10px] font-bold tracking-widest uppercase rounded-sm shadow-sm bg-gray-100 text-gray-600">
+                                                {product.tag}
+                                            </span>
+                                        </div>
                                     </div>
 
-                                    <div className="space-y-4 px-2">
-                                        <p className="text-[10px] text-gray-500 font-bold tracking-[0.4em] uppercase">{product.tag}</p>
-                                        <h4 className="text-[18px] font-serif text-white leading-snug tracking-wide">
+                                    <div className="flex flex-col gap-3 p-4">
+                                        <h4 className="text-[14px] font-medium text-gray-800 leading-snug tracking-wide">
                                             {product.name}
                                         </h4>
-                                        <div className="flex items-center justify-between pt-2">
-                                            <span className="text-[18px] font-light tracking-tighter">₹{product.price}</span>
-                                            <div className="w-8 h-[1px] bg-white/20"></div>
-                                            <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">
-                                                EMI {product.emi}
-                                            </span>
+
+                                        <div className="space-y-1">
+                                            <div className="flex items-baseline gap-2">
+                                                <span className="text-[16px] font-bold text-gray-900">₹{product.price}</span>
+                                                {product.originalPrice !== product.price && (
+                                                    <span className="text-[13px] text-gray-400 line-through">₹{product.originalPrice}</span>
+                                                )}
+                                            </div>
+                                            {product.emi && (
+                                                <p className="text-[10px] text-orange-600 font-bold tracking-wider uppercase">
+                                                    EMI starts from ₹ {product.emi}
+                                                </p>
+                                            )}
                                         </div>
                                     </div>
                                 </motion.div>
@@ -224,4 +205,4 @@ const ClassicModernCollection = () => {
     );
 };
 
-export default ClassicModernCollection;
+export default ClassicModernPage;
