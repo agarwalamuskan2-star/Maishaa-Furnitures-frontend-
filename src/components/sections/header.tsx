@@ -153,7 +153,7 @@ const Header = () => {
             title: "Bedroom",
             links: [
               { name: "Beds", href: "/furniture/beds" },
-              { name: "Nightstands", href: "/furniture/nightstands" },
+              { name: "Nightstands", href: "/furniture/bedroom/nightstands" },
               { name: "Chest of Drawers", href: "/furniture/bedroom-drawers" },
               { name: "Armoires | Wardrobes", href: "/furniture/wardrobes" },
               { name: "Ottomans & Benches", href: "/furniture/bedroom-benches" },
@@ -171,7 +171,7 @@ const Header = () => {
               { name: "Bookcases & Shelves", href: "/furniture/bookcases" },
               { name: "Buffet & Sideboard Consoles", href: "/furniture/buffets" },
               { name: "Chest of Drawers", href: "/furniture/storage-drawers" },
-              { name: "Bedside Tables", href: "/furniture/bedside-tables" },
+              { name: "Bedside Tables", href: "/furniture/bedroom/nightstands" },
               { name: "Console Tables", href: "/furniture/storage-consoles" },
               { name: "Wardrobes", href: "/furniture/storage-wardrobes" },
               { name: "Modular Storage Units", href: "/furniture/modular-storage" },
