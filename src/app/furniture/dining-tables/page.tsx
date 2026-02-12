@@ -28,7 +28,7 @@ const DiningTableCollection = () => {
             tag: "MADE TO ORDER",
             description: "A minimalist masterpiece blending traditional joinery with modern design language.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1000"
+            image: "/images/outdoor/dining-cat.png"
         },
         {
             name: "Monolith Dining Table",
@@ -37,7 +37,7 @@ const DiningTableCollection = () => {
             tag: "MADE TO ORDER",
             description: "A solid presence in any dining room, featuring architectural lines and premium finishes.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=1000"
+            image: "/images/outdoor/hero.png"
         },
         {
             name: "Julien Dining Table",
@@ -82,7 +82,7 @@ const DiningTableCollection = () => {
             tag: "MADE TO ORDER",
             description: "Perfect for intimate dinners and circular conversations, highlighting the beauty of round forms.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1634712282287-14ed57b9cc89?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1000"
         },
         {
             name: "Sinag Dining Table",

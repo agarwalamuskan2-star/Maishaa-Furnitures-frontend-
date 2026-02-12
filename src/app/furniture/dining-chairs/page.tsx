@@ -28,7 +28,7 @@ const DiningChairCollection = () => {
             tag: "MADE TO ORDER",
             description: "Ergonomic comfort meets minimalist design, crafted for enduring support.",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=1000"
+            image: "/images/outdoor/wren-chair.png"
         },
         {
             name: "Monolith Cane Chair",
@@ -37,7 +37,7 @@ const DiningChairCollection = () => {
             tag: "READY TO SHIP",
             description: "Classic cane weaving paired with a robust wooden frame for a timeless appeal.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1000"
+            image: "/images/outdoor/seating-cat.png"
         },
         {
             name: "Julien Velvet Dining Chair",
@@ -46,7 +46,7 @@ const DiningChairCollection = () => {
             tag: "MADE TO ORDER",
             description: "Plush velvet upholstery in rich tones, bringing luxury to your dining space.",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1582234033036-749e70196726?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000"
         },
         {
             name: "Creston Leather Chair",
@@ -55,7 +55,7 @@ const DiningChairCollection = () => {
             tag: "MADE TO ORDER",
             description: "Top-grain leather and solid wood construction for a sophisticated dining experience.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1506332088442-9e0024864f5d?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=1000"
         },
         {
             name: "Calissa Sculptural Chair",
