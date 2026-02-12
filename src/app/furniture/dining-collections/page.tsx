@@ -13,7 +13,7 @@ const DiningCollections = () => {
         {
             src: "/images/outdoor/dining-cat.png",
             title: "X-ATURA",
-            description: "Live edge wood brings a natural beauty that looks raw yet very refined. A mid-century style time traveled and placed in your home with a touch of modernism, an uncomplicated elegance.",
+            description: "Live edge wood brings a natural beauty that looks raw yet very refined.\n\nAl mid-century style time traveled and placed in your home with a touch of modernism, an uncomplicated elegance.",
         },
         {
             src: "/images/outdoor/wren-chair.png",
@@ -41,69 +41,71 @@ const DiningCollections = () => {
         <div className="flex min-h-screen flex-col bg-white">
             <Header />
 
-            <main className="flex-1 pb-32">
-                {/* Breadcrumbs */}
-                <div className="pt-6 pb-12 px-4 sm:px-8 md:px-16 lg:px-20">
-                    <nav className="flex items-center gap-2 text-gray-400 text-[11px] tracking-wide uppercase font-bold">
+            <main className="flex-1 pb-24">
+                {/* Breadcrumbs - Tightened and aligned like reference */}
+                <div className="pt-4 pb-8 px-4 sm:px-8 md:px-12 lg:px-16">
+                    <nav className="flex items-center gap-1.5 text-gray-400 text-[10px] tracking-widest uppercase">
                         <Link href="/" className="hover:text-black transition-colors">Home</Link>
-                        <ChevronRight size={12} />
+                        <ChevronRight size={10} />
                         <Link href="/furniture" className="hover:text-black transition-colors">Furniture</Link>
-                        <ChevronRight size={12} />
-                        <span className="text-black font-extrabold">Dining Collections</span>
+                        <ChevronRight size={10} />
+                        <span className="text-black font-semibold">Dining Room Collection</span>
                     </nav>
                 </div>
 
-                {/* Hero Sections Grid */}
-                <div className="space-y-32 md:space-y-48 px-4 sm:px-8 md:px-16 lg:px-20 overflow-hidden">
+                {/* Hero Sections Grid - Adjusted ratio for image-heavy layout */}
+                <div className="space-y-16 md:space-y-24 px-4 sm:px-8 md:px-12 lg:px-16 overflow-hidden">
                     {heroImages.map((hero, idx) => (
                         <motion.section
                             key={idx}
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 1 }}
-                            viewport={{ once: true, margin: "-100px" }}
+                            viewport={{ once: true, margin: "-50px" }}
                             className="bg-white"
                         >
-                            <div className="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
-                                {/* Left: Image Column */}
+                            <div className="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-[1.6fr_1fr] items-center gap-0">
+                                {/* Left: Larger Image Column */}
                                 <motion.div
-                                    initial={{ x: -50, opacity: 0 }}
-                                    whileInView={{ x: 0, opacity: 1 }}
-                                    transition={{ duration: 0.8, delay: 0.2 }}
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    transition={{ duration: 0.8 }}
                                     viewport={{ once: true }}
-                                    className="relative aspect-[4/3] md:aspect-[3/4] lg:aspect-square overflow-hidden bg-[#fafafa] group"
+                                    className="relative aspect-[16/10] overflow-hidden bg-[#fafafa]"
                                 >
                                     <Image
                                         src={hero.src}
                                         alt={hero.title}
                                         fill
-                                        className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                                        className="object-cover transition-transform duration-1000"
                                         priority={idx === 0}
                                     />
                                 </motion.div>
 
-                                {/* Right: Content Column */}
+                                {/* Right: Written Content - More compact and correctly spaced */}
                                 <motion.div
-                                    initial={{ x: 50, opacity: 0 }}
-                                    whileInView={{ x: 0, opacity: 1 }}
-                                    transition={{ duration: 0.8, delay: 0.4 }}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.8, delay: 0.3 }}
                                     viewport={{ once: true }}
-                                    className="flex flex-col items-start space-y-10 md:pr-12 lg:pr-24"
+                                    className="flex flex-col items-center md:items-start text-center md:text-left px-8 md:px-16 lg:px-24 py-12"
                                 >
-                                    <h2 className="text-6xl md:text-7xl lg:text-[100px] font-extralight tracking-[0.15em] text-[#1a1a1a] leading-none uppercase font-serif">
+                                    <h2 className="text-5xl md:text-6xl lg:text-[80px] font-extralight tracking-[0.1em] text-[#333] leading-tight uppercase font-serif mb-12">
                                         {hero.title}
                                     </h2>
 
-                                    <div className="space-y-8 max-w-lg">
-                                        <p className="text-gray-500 font-light leading-relaxed text-sm md:text-[17px] tracking-wide">
-                                            {hero.description}
-                                        </p>
+                                    <div className="space-y-6 max-w-md">
+                                        {hero.description.split('\n\n').map((para, i) => (
+                                            <p key={i} className="text-gray-500 font-light leading-relaxed text-sm md:text-base tracking-[0.02em]">
+                                                {para}
+                                            </p>
+                                        ))}
                                     </div>
 
-                                    <div className="pt-4">
+                                    <div className="pt-12">
                                         <Link
                                             href={`/furniture/dining-collections/item-${idx}`}
-                                            className="inline-block border border-[#1a1a1a] text-[#1a1a1a] px-12 py-5 text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-black hover:text-white transition-all duration-500 rounded-sm"
+                                            className="inline-block border border-gray-300 text-gray-700 px-10 py-4 text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-black hover:text-white transition-all duration-500"
                                         >
                                             SHOP THE COLLECTION
                                         </Link>
