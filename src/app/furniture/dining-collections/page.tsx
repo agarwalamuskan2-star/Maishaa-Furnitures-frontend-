@@ -12,28 +12,28 @@ const DiningCollections = () => {
     const heroImages = [
         {
             src: "/images/outdoor/dining-cat.png",
-            title: "The Artisan Dining Series",
-            subtitle: "Exquisite Hand-Carved Masterpieces"
-        },
-        {
-            src: "/images/outdoor/seating-cat.png",
-            title: "Premium Seating Collection",
-            subtitle: "Ergonomic Comfort in Every Silhouette"
-        },
-        {
-            src: "/images/outdoor/hero.png",
-            title: "Grand Furniture Masterpieces",
-            subtitle: "Nature's Texture in Your Living Space"
-        },
-        {
-            src: "/images/outdoor/accessories-cat.png",
-            title: "Refined Accents & Decor",
-            subtitle: "The Finishing Touch to Your Interiors"
+            title: "X-ATURA",
+            description: "Live edge wood brings a natural beauty that looks raw yet very refined. A mid-century style time traveled and placed in your home with a touch of modernism, an uncomplicated elegance.",
         },
         {
             src: "/images/outdoor/wren-chair.png",
-            title: "The Iconic Wren Chair",
-            subtitle: "Sculptural Form Meets Functional Art"
+            title: "WREN",
+            description: "Sculptural form meets functional art. The Wren chair is a testament to the beauty of minimalist curves and artisanal craftsmanship, designed to elevate every dining experience.",
+        },
+        {
+            src: "/images/outdoor/seating-cat.png",
+            title: "ARTISAN",
+            description: "Exquisite hand-carved masterpieces. Each piece tells a story of heritage and surgical precision in every joint, blending traditional soul with contemporary lines.",
+        },
+        {
+            src: "/images/outdoor/hero.png",
+            title: "HERITAGE",
+            description: "Nature's texture redefined. Grand furniture masterpieces that serve as anchors for your most cherished living spaces, crafted from the finest sustainably sourced hardwoods.",
+        },
+        {
+            src: "/images/outdoor/accessories-cat.png",
+            title: "REFINED",
+            description: "The finishing touch. Our curated accessories and decor accents are designed to complement the sophisticated soul of your home, adding layers of personality and warmth.",
         },
     ];
 
@@ -41,7 +41,7 @@ const DiningCollections = () => {
         <div className="flex min-h-screen flex-col bg-white">
             <Header />
 
-            <main className="flex-1 pb-24">
+            <main className="flex-1 pb-32">
                 {/* Breadcrumbs */}
                 <div className="pt-6 pb-12 px-4 sm:px-8 md:px-16 lg:px-20">
                     <nav className="flex items-center gap-2 text-gray-400 text-[11px] tracking-wide uppercase font-bold">
@@ -53,58 +53,66 @@ const DiningCollections = () => {
                     </nav>
                 </div>
 
-                {/* Hero Images Section */}
-                <div className="space-y-24 px-4 sm:px-8 md:px-16 lg:px-20">
+                {/* Hero Sections Grid */}
+                <div className="space-y-32 md:space-y-48 px-4 sm:px-8 md:px-16 lg:px-20 overflow-hidden">
                     {heroImages.map((hero, idx) => (
                         <motion.section
                             key={idx}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ duration: 1 }}
                             viewport={{ once: true, margin: "-100px" }}
-                            className="relative group w-full aspect-[21/9] overflow-hidden bg-gray-100 shadow-2xl"
+                            className="bg-white"
                         >
-                            <Image
-                                src={hero.src}
-                                alt={hero.title}
-                                fill
-                                className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                                priority={idx === 0}
-                            />
-
-                            {/* Overlay Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700" />
-
-                            {/* Content */}
-                            <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-16 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+                            <div className="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
+                                {/* Left: Image Column */}
                                 <motion.div
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    transition={{ delay: 0.3 }}
+                                    initial={{ x: -50, opacity: 0 }}
+                                    whileInView={{ x: 0, opacity: 1 }}
+                                    transition={{ duration: 0.8, delay: 0.2 }}
+                                    viewport={{ once: true }}
+                                    className="relative aspect-[4/3] md:aspect-[3/4] lg:aspect-square overflow-hidden bg-[#fafafa] group"
                                 >
-                                    <h2 className="text-3xl md:text-6xl font-serif mb-4 tracking-tight">
+                                    <Image
+                                        src={hero.src}
+                                        alt={hero.title}
+                                        fill
+                                        className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                                        priority={idx === 0}
+                                    />
+                                </motion.div>
+
+                                {/* Right: Content Column */}
+                                <motion.div
+                                    initial={{ x: 50, opacity: 0 }}
+                                    whileInView={{ x: 0, opacity: 1 }}
+                                    transition={{ duration: 0.8, delay: 0.4 }}
+                                    viewport={{ once: true }}
+                                    className="flex flex-col items-start space-y-10 md:pr-12 lg:pr-24"
+                                >
+                                    <h2 className="text-6xl md:text-7xl lg:text-[100px] font-extralight tracking-[0.15em] text-[#1a1a1a] leading-none uppercase font-serif">
                                         {hero.title}
                                     </h2>
-                                    <p className="text-[10px] md:text-sm font-bold tracking-[0.4em] uppercase text-gray-200">
-                                        {hero.subtitle}
-                                    </p>
 
-                                    <div className="mt-8 flex items-center gap-6">
+                                    <div className="space-y-8 max-w-lg">
+                                        <p className="text-gray-500 font-light leading-relaxed text-sm md:text-[17px] tracking-wide">
+                                            {hero.description}
+                                        </p>
+                                    </div>
+
+                                    <div className="pt-4">
                                         <Link
                                             href={`/furniture/dining-collections/item-${idx}`}
-                                            className="bg-white text-black px-8 py-3 text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-orange-600 hover:text-white transition-all duration-300"
+                                            className="inline-block border border-[#1a1a1a] text-[#1a1a1a] px-12 py-5 text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-black hover:text-white transition-all duration-500 rounded-sm"
                                         >
-                                            View Collection
+                                            SHOP THE COLLECTION
                                         </Link>
-                                        <div className="hidden md:block h-px w-24 bg-white/30 group-hover:w-48 transition-all duration-700" />
                                     </div>
                                 </motion.div>
                             </div>
                         </motion.section>
                     ))}
                 </div>
-
-
             </main>
 
             <Footer />
