@@ -1,25 +1,114 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import { Heart, ChevronRight, ChevronDown } from "lucide-react";
+import { useProductFilter, Product } from "@/hooks/use-product-filter";
+import ProductFilterSidebar from "@/components/product/product-filter-sidebar";
 
 const BenchesCollection = () => {
-    const products = [
-        { name: "Moon Rattan Two-Seater Bench", price: "53,000", originalPrice: "66,250", discount: "20% Off", emi: "5,557", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?q=80&w=1000" },
-        { name: "Moon Rattan Three-Seater Bench", price: "72,900", originalPrice: "91,125", discount: "20% Off", emi: "7,643", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1000" },
-        { name: "Moon Rattan Four-Seater Bench", price: "98,900", originalPrice: "123,625", discount: "20% Off", emi: "10,369", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=1000" },
-        { name: "Nakashi Hand Chiseled Bench", price: "83,160", originalPrice: "92,400", discount: "10% Off", emi: "6,930", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1616489953149-623830209425?q=80&w=1000" },
-        { name: "Nakashi Dining Bench", price: "55,000", originalPrice: "68,750", discount: "20% Off", emi: "4,583", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1540304453527-62f979142a17?q=80&w=1000" },
-        { name: "Calypso Bolster Diwan", price: "1,15,000", originalPrice: "1,43,750", discount: "20% Off", emi: "9,583", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1550586678-f7225f03c44b?q=80&w=1000" },
+    useEffect(() => {
+        document.title = "Designer Benches & Daybeds | Maishaa";
+    }, []);
+
+    const products: Product[] = [
+        {
+            name: "Moon Rattan Two-Seater Bench",
+            price: "53,000",
+            originalPrice: "66,250",
+            discount: "20% Off",
+            emi: "5,557",
+            tag: "MADE TO ORDER",
+            bestSeller: true,
+            image: "https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?q=80&w=1000",
+            type: "Benches",
+            size: ["Two-Seater"]
+        },
+        {
+            name: "Moon Rattan Three-Seater Bench",
+            price: "72,900",
+            originalPrice: "91,125",
+            discount: "20% Off",
+            emi: "7,643",
+            tag: "MADE TO ORDER",
+            bestSeller: true,
+            image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1000",
+            type: "Benches",
+            size: ["Three-Seater"]
+        },
+        {
+            name: "Moon Rattan Four-Seater Bench",
+            price: "98,900",
+            originalPrice: "123,625",
+            discount: "20% Off",
+            emi: "10,369",
+            tag: "MADE TO ORDER",
+            bestSeller: true,
+            image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=1000",
+            type: "Benches",
+            size: ["Four-Seater"]
+        },
+        {
+            name: "Nakashi Hand Chiseled Bench",
+            price: "83,160",
+            originalPrice: "92,400",
+            discount: "10% Off",
+            emi: "6,930",
+            tag: "MADE TO ORDER",
+            bestSeller: true,
+            image: "https://images.unsplash.com/photo-1616489953149-623830209425?q=80&w=1000",
+            type: "Benches"
+        },
+        {
+            name: "Nakashi Dining Bench",
+            price: "55,000",
+            originalPrice: "68,750",
+            discount: "20% Off",
+            emi: "4,583",
+            tag: "MADE TO ORDER",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1540304453527-62f979142a17?q=80&w=1000",
+            type: "Benches"
+        },
+        {
+            name: "Calypso Bolster Diwan",
+            price: "1,15,000",
+            originalPrice: "1,43,750",
+            discount: "20% Off",
+            emi: "9,583",
+            tag: "MADE TO ORDER",
+            bestSeller: true,
+            image: "https://images.unsplash.com/photo-1550586678-f7225f03c44b?q=80&w=1000",
+            type: "Daybeds & Diwans"
+        },
     ];
 
+    const {
+        selectedTypes, setSelectedTypes,
+        priceRange, setPriceRange,
+        selectedSizes, setSelectedSizes,
+        selectedDiscounts, setSelectedDiscounts,
+        filteredProducts
+    } = useProductFilter(products);
+
+    const availableTypes = [
+        { label: "Benches", value: "Benches", count: products.filter(p => p.type === "Benches").length },
+        { label: "Daybeds & Diwans", value: "Daybeds & Diwans", count: products.filter(p => p.type === "Daybeds & Diwans").length },
+        { label: "Outdoor", value: "Outdoor", count: products.filter(p => p.type === "Outdoor").length }
+    ].filter(t => t.count > 0);
+
+    const availableSizes = [
+        { label: "Two-Seater", value: "Two-Seater", count: products.filter(p => p.size?.includes("Two-Seater")).length },
+        { label: "Three-Seater", value: "Three-Seater", count: products.filter(p => p.size?.includes("Three-Seater")).length },
+        { label: "Four-Seater", value: "Four-Seater", count: products.filter(p => p.size?.includes("Four-Seater")).length }
+    ].filter(s => s.count > 0);
+
     return (
-        <div className="flex min-h-screen flex-col bg-white font-sans">
+        <div className="flex min-h-screen flex-col bg-white font-sans text-black">
             <Header />
 
             <main className="flex-1">
@@ -32,102 +121,34 @@ const BenchesCollection = () => {
                         <ChevronRight size={12} />
                         <Link href="/furniture/entryway" className="hover:text-black transition-colors">Entryway</Link>
                         <ChevronRight size={12} />
-                        <span className="text-black">Benches</span>
+                        <span className="text-black font-medium">Benches</span>
                     </nav>
                 </div>
 
                 {/* Main Collection Section with Sidebar */}
                 <section className="pb-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
                     <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row gap-12">
-                        {/* Sidebar */}
-                        <aside className="w-full lg:w-64 flex-shrink-0 space-y-12">
-                            <div>
-                                <h3 className="text-xl font-serif text-gray-900 mb-8 border-b border-gray-100 pb-4">Browse by</h3>
-
-                                <div className="space-y-10">
-                                    {/* Product Type */}
-                                    <div className="space-y-6">
-                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
-                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Product Type</span>
-                                            <span className="text-gray-400 text-lg">−</span>
-                                        </div>
-                                        <ul className="space-y-3">
-                                            {["Benches (16)", "Daybeds & Diwans (2)", "Outdoor (1)", "Center Tables (1)"].map((type) => (
-                                                <li key={type} className="flex items-center gap-3 group cursor-pointer text-gray-500 hover:text-black transition-colors">
-                                                    <div className="w-4 h-4 border border-gray-300 rounded-sm group-hover:border-black transition-colors"></div>
-                                                    <span className="text-[14px] font-light">{type}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-
-                                    {/* Price */}
-                                    <div className="space-y-6">
-                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
-                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Price</span>
-                                            <span className="text-gray-400 text-lg">−</span>
-                                        </div>
-                                        <div className="px-1 pt-2">
-                                            <div className="h-0.5 bg-gray-200 relative mb-6">
-                                                <div className="absolute left-0 right-0 h-full bg-black"></div>
-                                                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
-                                                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
-                                            </div>
-                                            <div className="flex items-center gap-4">
-                                                <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-500">
-                                                    <span>Min</span>
-                                                    <ChevronDown size={14} />
-                                                </div>
-                                                <span className="text-gray-400">to</span>
-                                                <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-900">
-                                                    <span>₹ 100000</span>
-                                                    <ChevronDown size={14} />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Size */}
-                                    <div className="space-y-6">
-                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
-                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Size</span>
-                                            <span className="text-gray-400 text-lg">−</span>
-                                        </div>
-                                        <ul className="space-y-3">
-                                            {["L (1)", "M (1)", "8 feet (1)", "9 feet (1)"].map((size) => (
-                                                <li key={size} className="flex items-center gap-3 text-gray-500 cursor-pointer">
-                                                    <div className="w-4 h-4 border border-gray-300 rounded-sm"></div>
-                                                    <span className="text-[14px] font-light">{size}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-
-                                    {/* Discount */}
-                                    <div className="space-y-6">
-                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
-                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Discount</span>
-                                            <span className="text-gray-400 text-lg">−</span>
-                                        </div>
-                                        <ul className="space-y-3">
-                                            {["10% and above", "20% and above", "40% and above"].map((disc) => (
-                                                <li key={disc} className="flex items-center gap-3 text-gray-500 cursor-pointer">
-                                                    <div className="w-4 h-4 border border-gray-300 rounded-sm"></div>
-                                                    <span className="text-[14px] font-light">{disc}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </aside>
+                        <ProductFilterSidebar
+                            availableTypes={availableTypes}
+                            selectedTypes={selectedTypes}
+                            setSelectedTypes={setSelectedTypes}
+                            priceRange={priceRange}
+                            setPriceRange={setPriceRange}
+                            minPrice={0}
+                            maxPrice={150000}
+                            availableSizes={availableSizes}
+                            selectedSizes={selectedSizes}
+                            setSelectedSizes={setSelectedSizes}
+                            selectedDiscounts={selectedDiscounts}
+                            setSelectedDiscounts={setSelectedDiscounts}
+                        />
 
                         {/* Product Grid Content */}
                         <div className="flex-1">
                             <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-6">
                                 <div className="space-y-2">
                                     <p className="text-gray-400 font-light tracking-[0.1em] text-sm italic font-serif uppercase">
-                                        16 RESULTS FOUND
+                                        {filteredProducts.length} RESULTS FOUND
                                     </p>
                                 </div>
                                 <div className="flex items-center gap-8 text-[11px] font-bold tracking-[0.2em] uppercase text-gray-950 border-b border-black pb-1 cursor-pointer">
@@ -137,7 +158,7 @@ const BenchesCollection = () => {
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-12">
-                                {products.map((product, idx) => (
+                                {filteredProducts.map((product, idx) => (
                                     <motion.div
                                         key={idx}
                                         initial={{ opacity: 0, y: 20 }}

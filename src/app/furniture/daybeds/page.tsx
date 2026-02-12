@@ -1,15 +1,21 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import { Heart, ChevronRight, ChevronDown } from "lucide-react";
+import { useProductFilter, Product } from "@/hooks/use-product-filter";
+import ProductFilterSidebar from "@/components/product/product-filter-sidebar";
 
 const DaybedsCollection = () => {
-    const products = [
+    useEffect(() => {
+        document.title = "Luxury Daybeds & Diwans | Maishaa";
+    }, []);
+
+    const products: Product[] = [
         {
             name: "The Serenity Chaise Daybed",
             price: "1,45,000",
@@ -19,7 +25,8 @@ const DaybedsCollection = () => {
             tag: "MADE TO ORDER",
             description: "A sweeping, ergonomic chaise design that offers the perfect angle for afternoon repose.",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000",
+            type: "Chaise Lounges"
         },
         {
             name: "The Maharaja Royal Diwan",
@@ -30,7 +37,8 @@ const DaybedsCollection = () => {
             tag: "ARTISAN MADE",
             description: "Intricately hand-carved solid teak frame with regal velvet upholstery and bolster pillows.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=1000",
+            type: "Diwans"
         },
         {
             name: "Lumina Button-Tufted Daybed",
@@ -41,7 +49,8 @@ const DaybedsCollection = () => {
             tag: "READY TO SHIP",
             description: "Contemporary minimalist silhouette featuring deep button tufting and tapered walnut legs.",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1567016432779-094069958bc5?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1567016432779-094069958bc5?q=80&w=1000",
+            type: "Daybeds"
         },
         {
             name: "Aethelred Leather Daybed",
@@ -52,7 +61,8 @@ const DaybedsCollection = () => {
             tag: "MADE TO ORDER",
             description: "Rich Italian saddle leather over a heavy-duty steel frame, aging beautifully over time.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1505693419173-42b925b2f27a?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1505693419173-42b925b2f27a?q=80&w=1000",
+            type: "Daybeds"
         },
         {
             name: "Zenith Fabric Daybed",
@@ -63,7 +73,8 @@ const DaybedsCollection = () => {
             tag: "READY TO SHIP",
             description: "Soft, durable performance-weave fabric in a neutral slate gray, perfect for modern studies.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1000",
+            type: "Daybeds"
         },
         {
             name: "Marrakesh Bone Inlay Diwan",
@@ -74,7 +85,8 @@ const DaybedsCollection = () => {
             tag: "HANDCRAFTED",
             description: "Exquisite handmade bone inlay patterns on a sturdy wooden base, a true statement piece.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1583847268964-b28dc2f51ac9?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1583847268964-b28dc2f51ac9?q=80&w=1000",
+            type: "Diwans"
         },
         {
             name: "Regency Velvet Chaise",
@@ -85,7 +97,8 @@ const DaybedsCollection = () => {
             tag: "MADE TO ORDER",
             description: "Plush emerald velvet with a scalloped backrest and gold-finished metal feet.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=1000",
+            type: "Chaise Lounges"
         },
         {
             name: "Nordic Minimalist Daybed",
@@ -96,7 +109,8 @@ const DaybedsCollection = () => {
             tag: "READY TO SHIP",
             description: "Light-finished Ashwood frame with a comfortable firm mattress for both seating and sleep.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000",
+            type: "Daybeds"
         },
         {
             name: "The Imperial Bolster Diwan",
@@ -107,9 +121,24 @@ const DaybedsCollection = () => {
             tag: "ARTISAN MADE",
             description: "A traditional low-profile diwan updated with modern high-density foam for superior support.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000",
+            type: "Diwans"
         },
     ];
+
+    const {
+        selectedTypes, setSelectedTypes,
+        priceRange, setPriceRange,
+        selectedSizes, setSelectedSizes,
+        selectedDiscounts, setSelectedDiscounts,
+        filteredProducts
+    } = useProductFilter(products);
+
+    const availableTypes = [
+        { label: "Daybeds", value: "Daybeds", count: products.filter(p => p.type === "Daybeds").length },
+        { label: "Diwans", value: "Diwans", count: products.filter(p => p.type === "Diwans").length },
+        { label: "Chaise Lounges", value: "Chaise Lounges", count: products.filter(p => p.type === "Chaise Lounges").length }
+    ].filter(t => t.count > 0);
 
     return (
         <div className="flex min-h-screen flex-col bg-white font-sans text-black">
@@ -132,79 +161,24 @@ const DaybedsCollection = () => {
                 {/* Main Collection Section with Sidebar */}
                 <section className="pb-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
                     <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row gap-12">
-                        {/* Sidebar */}
-                        <aside className="w-full lg:w-64 flex-shrink-0 space-y-12">
-                            <div>
-                                <h3 className="text-xl font-serif text-gray-900 mb-8 border-b border-gray-100 pb-4">Browse by</h3>
-
-                                <div className="space-y-10">
-                                    {/* Product Type */}
-                                    <div className="space-y-6">
-                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
-                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Product Type</span>
-                                            <span className="text-gray-400 text-lg">−</span>
-                                        </div>
-                                        <ul className="space-y-3">
-                                            {["Daybeds (18)", "Diwans (12)", "Chaise Lounges (14)"].map((type) => (
-                                                <li key={type} className="flex items-center gap-3 group cursor-pointer text-gray-500 hover:text-black transition-colors">
-                                                    <div className="w-4 h-4 border border-gray-300 rounded-sm group-hover:border-black transition-colors"></div>
-                                                    <span className="text-[14px] font-light">{type}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-
-                                    {/* Price */}
-                                    <div className="space-y-6">
-                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
-                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Price</span>
-                                            <span className="text-gray-400 text-lg">−</span>
-                                        </div>
-                                        <div className="px-1 pt-2">
-                                            <div className="h-0.5 bg-gray-200 relative mb-6">
-                                                <div className="absolute left-0 right-[40%] h-full bg-black"></div>
-                                                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
-                                                <div className="absolute left-[60%] top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
-                                            </div>
-                                            <div className="flex items-center gap-4">
-                                                <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-500">
-                                                    <span>Min</span>
-                                                    <ChevronDown size={14} />
-                                                </div>
-                                                <span className="text-gray-400">to</span>
-                                                <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-900">
-                                                    <span>₹ 400000</span>
-                                                    <ChevronDown size={14} />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Discount */}
-                                    <div className="space-y-6">
-                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
-                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Discount</span>
-                                            <span className="text-gray-400 text-lg">−</span>
-                                        </div>
-                                        <ul className="space-y-3">
-                                            {["10% and above", "20% and above", "30% and above"].map((disc) => (
-                                                <li key={disc} className="flex items-center gap-3 text-gray-500 cursor-pointer">
-                                                    <div className="w-4 h-4 border border-gray-300 rounded-sm"></div>
-                                                    <span className="text-[14px] font-light">{disc}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </aside>
+                        <ProductFilterSidebar
+                            availableTypes={availableTypes}
+                            selectedTypes={selectedTypes}
+                            setSelectedTypes={setSelectedTypes}
+                            priceRange={priceRange}
+                            setPriceRange={setPriceRange}
+                            minPrice={0}
+                            maxPrice={400000}
+                            selectedDiscounts={selectedDiscounts}
+                            setSelectedDiscounts={setSelectedDiscounts}
+                        />
 
                         {/* Product Grid Content */}
                         <div className="flex-1">
                             <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-6">
                                 <div className="space-y-2">
                                     <p className="text-gray-400 font-light tracking-[0.1em] text-sm italic font-serif uppercase">
-                                        44 RESULTS FOUND
+                                        {filteredProducts.length} RESULTS FOUND
                                     </p>
                                 </div>
                                 <div className="flex items-center gap-8 text-[11px] font-bold tracking-[0.2em] uppercase text-gray-950 border-b border-black pb-1 cursor-pointer">
@@ -214,7 +188,7 @@ const DaybedsCollection = () => {
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16">
-                                {products.map((product, idx) => (
+                                {filteredProducts.map((product, idx) => (
                                     <motion.div
                                         key={idx}
                                         initial={{ opacity: 0, y: 20 }}

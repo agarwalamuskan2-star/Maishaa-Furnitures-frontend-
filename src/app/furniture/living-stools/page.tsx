@@ -1,115 +1,144 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import { Heart, ChevronRight, ChevronDown } from "lucide-react";
+import { useProductFilter, Product } from "@/hooks/use-product-filter";
+import ProductFilterSidebar from "@/components/product/product-filter-sidebar";
 
-const OttomansBenchesCollection = () => {
-    const products = [
+const OttomansCollection = () => {
+    useEffect(() => {
+        document.title = "Luxury Ottomans, Stools & Benches | Maishaa";
+    }, []);
+
+    const products: Product[] = [
         {
             name: "Atelier Upholstered Hall Bench",
-            price: "58,500",
-            originalPrice: "68,000",
-            discount: "14% Off",
-            emi: "6,150",
-            tag: "BEST SELLER",
-            description: "A tailored entryway bench featuring high-density foam upholstery and a solid kiln-dried oak frame.",
-            bestSeller: true,
-            image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000"
+            price: "48,500",
+            originalPrice: "56,000",
+            discount: "13% Off",
+            emi: "4,200",
+            tag: "MADE TO ORDER",
+            description: "A sleek, long bench perfect for hallways, featuring durable linen upholstery and steel legs.",
+            bestSeller: false,
+            image: "https://images.unsplash.com/photo-1550586678-f7225f03c44b?q=80&w=1000",
+            type: "Benches"
         },
         {
             name: "Sitar Velvet Tufted Ottoman",
-            price: "28,000",
-            originalPrice: "35,000",
-            discount: "20% Off",
-            emi: "2,950",
+            price: "24,000",
+            originalPrice: "29,500",
+            discount: "18% Off",
+            emi: "2,200",
             tag: "READY TO SHIP",
-            description: "Deep hand-tufted velvet with a classic circular silhouette, serving as both seating and a luxe footrest.",
-            bestSeller: false,
-            image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=1000"
+            description: "Round, deep-tufted velvet ottoman that serves as a plush footrest or extra seating.",
+            bestSeller: true,
+            image: "https://images.unsplash.com/photo-1544457078-69411a1b0a8e?q=80&w=1000",
+            type: "Ottomans"
         },
         {
             name: "Zephyr Transparent Stool",
-            price: "18,500",
-            originalPrice: "22,000",
-            discount: "16% Off",
-            emi: "1,950",
-            tag: "MADE TO ORDER",
-            description: "A minimalist masterpiece in crystal-clear acrylic, designed to vanish in small spaces while adding utility.",
+            price: "16,000",
+            originalPrice: "19,000",
+            discount: "15% Off",
+            emi: "1,500",
+            tag: "READY TO SHIP",
+            description: "Modern acrylic stool that adds functionality without visual clutter.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=1000",
+            type: "Stools"
         },
         {
             name: "Heritage Reclaimed Teak Bench",
-            price: "45,000",
-            originalPrice: "52,000",
-            discount: "13% Off",
-            emi: "4,720",
-            tag: "READY TO SHIP",
-            description: "Sustainably sourced reclaimed teak with an organic live edge, celebrating the natural beauty of wood.",
+            price: "68,000",
+            originalPrice: "85,000",
+            discount: "20% Off",
+            emi: "6,900",
+            tag: "ARTISAN MADE",
+            description: "Solid reclaimed teak wood bench with a rich history and rugged, natural charm.",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1560185127-6a6a68750801?q=80&w=1000",
+            type: "Benches"
         },
         {
             name: "Seraphina Grand Ottoman",
-            price: "72,000",
-            originalPrice: "85,000",
-            discount: "15% Off",
-            emi: "7,540",
+            price: "42,000",
+            originalPrice: "52,000",
+            discount: "19% Off",
+            emi: "3,800",
             tag: "MADE TO ORDER",
-            description: "An oversized statement piece in premium performance fabric, ideal for large living room configurations.",
+            description: "Oversized square ottoman that functions perfectly as a coffee table substitute.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=1000",
+            type: "Ottomans"
         },
         {
             name: "Tanmay Rattan Bench",
-            price: "32,900",
-            originalPrice: "38,000",
+            price: "34,500",
+            originalPrice: "40,000",
             discount: "13% Off",
-            emi: "3,450",
-            tag: "READY TO SHIP",
-            description: "Light and airy natural rattan weaving over a scorched ashwood frame, bringing a colonial charm.",
+            emi: "3,200",
+            tag: "MADE TO ORDER",
+            description: "Lightweight rattan weave bench, ideal for tropical-inspired interiors and bedrooms.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1616489953149-623830209425?q=80&w=1000",
+            type: "Benches"
         },
         {
             name: "Aethelred Leather Ottoman",
-            price: "42,500",
-            originalPrice: "48,000",
-            discount: "11% Off",
-            emi: "4,460",
+            price: "56,000",
+            originalPrice: "68,000",
+            discount: "17% Off",
+            emi: "5,100",
             tag: "ARTISAN MADE",
-            description: "Rich top-grain leather with baseball-stitch detailing and a hidden storage compartment.",
+            description: "Hand-stitched top-grain leather ottoman that gains character with age.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1000",
+            type: "Ottomans"
         },
         {
             name: "Nordic Minimalist Bench",
-            price: "38,000",
-            originalPrice: "45,000",
-            discount: "16% Off",
-            emi: "4,000",
-            tag: "MADE TO ORDER",
-            description: "Clean lines and light wood, this versatile bench works equally well in dining or hallway settings.",
-            bestSeller: false,
-            image: "https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=1000"
+            price: "29,000",
+            originalPrice: "35,000",
+            discount: "17% Off",
+            emi: "2,700",
+            tag: "READY TO SHIP",
+            description: "Simple Ashwood bench with clean lines, suitable for dining tables or entryways.",
+            bestSeller: true,
+            image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1000",
+            type: "Benches"
         },
         {
             name: "The Imperial Footstool",
-            price: "15,500",
-            originalPrice: "18,000",
-            discount: "14% Off",
-            emi: "1,620",
-            tag: "READY TO SHIP",
-            description: "A traditional low-profile footstool with hand-turned legs and breathable linen upholstery.",
+            price: "18,500",
+            originalPrice: "22,000",
+            discount: "15% Off",
+            emi: "1,800",
+            tag: "MADE TO ORDER",
+            description: "Classic design with intricately turned legs and premium fabric upholstery.",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1519947486511-46149fa0a254?q=80&w=1000",
+            type: "Stools"
         },
     ];
+
+    const {
+        selectedTypes, setSelectedTypes,
+        priceRange, setPriceRange,
+        selectedSizes, setSelectedSizes,
+        selectedDiscounts, setSelectedDiscounts,
+        filteredProducts
+    } = useProductFilter(products);
+
+    const availableTypes = [
+        { label: "Ottomans", value: "Ottomans", count: products.filter(p => p.type === "Ottomans").length },
+        { label: "Benches", value: "Benches", count: products.filter(p => p.type === "Benches").length },
+        { label: "Stools", value: "Stools", count: products.filter(p => p.type === "Stools").length }
+    ].filter(t => t.count > 0);
 
     return (
         <div className="flex min-h-screen flex-col bg-white font-sans text-black">
@@ -125,86 +154,31 @@ const OttomansBenchesCollection = () => {
                         <ChevronRight size={12} />
                         <Link href="/furniture/living" className="hover:text-black transition-colors">Living</Link>
                         <ChevronRight size={12} />
-                        <span className="text-black font-medium">Ottomans & Benches</span>
+                        <span className="text-black font-medium">Ottomans & Stools</span>
                     </nav>
                 </div>
 
                 {/* Main Collection Section with Sidebar */}
                 <section className="pb-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
                     <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row gap-12">
-                        {/* Sidebar */}
-                        <aside className="w-full lg:w-64 flex-shrink-0 space-y-12">
-                            <div>
-                                <h3 className="text-xl font-serif text-gray-900 mb-8 border-b border-gray-100 pb-4">Browse by</h3>
-
-                                <div className="space-y-10">
-                                    {/* Product Type */}
-                                    <div className="space-y-6">
-                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
-                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Product Type</span>
-                                            <span className="text-gray-400 text-lg">−</span>
-                                        </div>
-                                        <ul className="space-y-3">
-                                            {["Ottomans (28)", "Benches (32)", "Stools (15)"].map((type) => (
-                                                <li key={type} className="flex items-center gap-3 group cursor-pointer text-gray-500 hover:text-black transition-colors">
-                                                    <div className="w-4 h-4 border border-gray-300 rounded-sm group-hover:border-black transition-colors"></div>
-                                                    <span className="text-[14px] font-light">{type}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-
-                                    {/* Price */}
-                                    <div className="space-y-6">
-                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
-                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Price</span>
-                                            <span className="text-gray-400 text-lg">−</span>
-                                        </div>
-                                        <div className="px-1 pt-2">
-                                            <div className="h-0.5 bg-gray-200 relative mb-6">
-                                                <div className="absolute left-0 right-[40%] h-full bg-black"></div>
-                                                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
-                                                <div className="absolute left-[60%] top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-black rounded-full cursor-pointer shadow-sm"></div>
-                                            </div>
-                                            <div className="flex items-center gap-4">
-                                                <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-500">
-                                                    <span>Min</span>
-                                                    <ChevronDown size={14} />
-                                                </div>
-                                                <span className="text-gray-400">to</span>
-                                                <div className="flex-1 border border-gray-200 p-3 flex justify-between items-center text-[13px] text-gray-900">
-                                                    <span>₹ 150000</span>
-                                                    <ChevronDown size={14} />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Discount */}
-                                    <div className="space-y-6">
-                                        <div className="flex items-center justify-between border-b border-gray-200 pb-2">
-                                            <span className="text-[13px] font-bold tracking-widest text-gray-900 uppercase">Discount</span>
-                                            <span className="text-gray-400 text-lg">−</span>
-                                        </div>
-                                        <ul className="space-y-3">
-                                            {["10% and above", "20% and above", "30% and above"].map((disc) => (
-                                                <li key={disc} className="flex items-center gap-3 text-gray-500 cursor-pointer">
-                                                    <div className="w-4 h-4 border border-gray-300 rounded-sm"></div>
-                                                    <span className="text-[14px] font-light">{disc}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </aside>
+                        <ProductFilterSidebar
+                            availableTypes={availableTypes}
+                            selectedTypes={selectedTypes}
+                            setSelectedTypes={setSelectedTypes}
+                            priceRange={priceRange}
+                            setPriceRange={setPriceRange}
+                            minPrice={0}
+                            maxPrice={100000}
+                            selectedDiscounts={selectedDiscounts}
+                            setSelectedDiscounts={setSelectedDiscounts}
+                        />
 
                         {/* Product Grid Content */}
                         <div className="flex-1">
                             <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-6">
                                 <div className="space-y-2">
                                     <p className="text-gray-400 font-light tracking-[0.1em] text-sm italic font-serif uppercase">
-                                        75 RESULTS FOUND
+                                        {filteredProducts.length} RESULTS FOUND
                                     </p>
                                 </div>
                                 <div className="flex items-center gap-8 text-[11px] font-bold tracking-[0.2em] uppercase text-gray-950 border-b border-black pb-1 cursor-pointer">
@@ -214,7 +188,7 @@ const OttomansBenchesCollection = () => {
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16">
-                                {products.map((product, idx) => (
+                                {filteredProducts.map((product, idx) => (
                                     <motion.div
                                         key={idx}
                                         initial={{ opacity: 0, y: 20 }}
@@ -285,8 +259,6 @@ const OttomansBenchesCollection = () => {
                         </div>
                     </div>
                 </section>
-
-
             </main>
 
             <Footer />
@@ -294,4 +266,4 @@ const OttomansBenchesCollection = () => {
     );
 };
 
-export default OttomansBenchesCollection;
+export default OttomansCollection;
