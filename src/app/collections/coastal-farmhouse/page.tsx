@@ -28,7 +28,7 @@ const CoastalFarmhouseCollection = () => {
             emi: "2711",
             tag: "READY TO SHIP",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?q=80&w=1000"
+            image: "/images/outdoor/seating-cat.png"
         },
         {
             name: "Verity Table Lamp",
@@ -36,7 +36,7 @@ const CoastalFarmhouseCollection = () => {
             emi: "3608",
             tag: "READY TO SHIP",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1513519245088-0e12902e35ca?q=80&w=1000"
+            image: "/images/outdoor/living-cat.png"
         },
         {
             name: "Kobbler Tan Bed Cot",
@@ -53,7 +53,7 @@ const CoastalFarmhouseCollection = () => {
             emi: "2171",
             tag: "MADE TO ORDER",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1532372320572-cda25653a26d?q=80&w=1000"
+            image: "/images/outdoor/wren-chair.png"
         },
         {
             name: "Nautical Rope Mirror",
@@ -61,7 +61,7 @@ const CoastalFarmhouseCollection = () => {
             emi: "1150",
             tag: "READY TO SHIP",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000"
+            image: "/images/outdoor/dining-cat.png"
         },
         {
             name: "Driftwood Coffee Table",
@@ -69,7 +69,7 @@ const CoastalFarmhouseCollection = () => {
             emi: "5120",
             tag: "MADE TO ORDER",
             bestSeller: true,
-            image: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=1000"
+            image: "/images/outdoor/hero.png"
         }
     ];
 
@@ -93,7 +93,7 @@ const CoastalFarmhouseCollection = () => {
                 <section className="px-4 sm:px-8 md:px-16 lg:px-20 mb-20">
                     <div className="relative h-[65vh] w-full overflow-hidden group">
                         <Image
-                            src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2000"
+                            src="/images/outdoor/hero.png"
                             alt="Coastal Farmhouse Collection"
                             fill
                             className="object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -176,7 +176,7 @@ const CoastalFarmhouseCollection = () => {
                                 className="lg:col-span-8 relative aspect-[16/9] w-full"
                             >
                                 <Image
-                                    src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2000"
+                                    src="/images/outdoor/dining-cat.png"
                                     alt="Coastal Farmhouse Living Room"
                                     fill
                                     className="object-cover shadow-2xl"
