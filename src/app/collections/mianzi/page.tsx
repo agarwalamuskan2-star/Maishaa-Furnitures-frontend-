@@ -9,89 +9,107 @@ import { Heart } from "lucide-react";
 
 const MianziCollection = () => {
     const products = [
-        { name: "Bamboo Lattice Pendant", price: "8,500", originalPrice: "10,625", discount: "20% Off", emi: "755", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=1000" },
-        { name: "Mianzi Desk Lamp", price: "5,800", originalPrice: "7,250", discount: "20% Off", emi: "515", tag: "READY TO SHIP", bestSeller: true, image: "https://images.unsplash.com/photo-1534073828943-f801091bb18c?q=80&w=1000" },
-        { name: "Woven Bamboo Stool", price: "12,000", originalPrice: "15,000", discount: "20% Off", emi: "1066", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1000" },
-        { name: "Mianzi Storage Basket Set", price: "4,500", originalPrice: "5,625", discount: "20% Off", emi: "400", tag: "READY TO SHIP", bestSeller: true, image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=1000" },
-        { name: "Linear Bamboo Shelving", price: "28,000", originalPrice: "35,000", discount: "20% Off", emi: "2488", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1000" },
-        { name: "Bamboo Mirror - Round", price: "9,200", originalPrice: "11,500", discount: "20% Off", emi: "817", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000" },
-        { name: "Eco-Friendly Side Table", price: "18,000", originalPrice: "22,500", discount: "20% Off", emi: "1600", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=1000" },
-        { name: "Mianzi Coffee Table", price: "32,000", originalPrice: "40,000", discount: "20% Off", emi: "2844", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1532372320572-cda25653a26d?q=80&w=1000" },
-        { name: "Woven Room Divider", price: "45,000", originalPrice: "56,250", discount: "20% Off", emi: "4000", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1000" },
-        { name: "Bamboo Magazine Rack", price: "3,800", originalPrice: "4,750", discount: "20% Off", emi: "337", tag: "READY TO SHIP", bestSeller: true, image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=1000" },
-        { name: "Sustainably Sourced Armchair", price: "55,000", originalPrice: "68,750", discount: "20% Off", emi: "4888", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=1000" },
-        { name: "Mianzi Wall Sconce", price: "4,200", originalPrice: "5,250", discount: "20% Off", emi: "373", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=1000" },
-        { name: "Bamboo Bath Mat", price: "2,500", originalPrice: "3,125", discount: "20% Off", emi: "222", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1000" },
-        { name: "Mianzi Entryway Console", price: "24,000", originalPrice: "30,000", discount: "20% Off", emi: "2133", tag: "MADE TO ORDER", bestSeller: true, image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=1000" },
-        { name: "Woven Bamboo Tray Set", price: "3,200", originalPrice: "4,000", discount: "20% Off", emi: "284", tag: "READY TO SHIP", bestSeller: false, image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1000" },
-        { name: "Mianzi Dining Chair", price: "15,500", originalPrice: "19,375", discount: "20% Off", emi: "1377", tag: "MADE TO ORDER", bestSeller: false, image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=1000" },
+        {
+            name: "Metamorphosis Linear Pendant Lamp H-001",
+            price: "26,490",
+            originalPrice: "26,990",
+            emi: "2354",
+            tag: "READY TO SHIP",
+            image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/7afecfaa-1d29-4229-8a38-47bf00b11636-maishaafurnitures-com/assets/images/mianzi-1.jpg"
+        },
+        {
+            name: "Metamorphosis Linear Pendant Lamp H-001S",
+            price: "23,490",
+            originalPrice: "26,990",
+            emi: "2087",
+            tag: "READY TO SHIP",
+            image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/7afecfaa-1d29-4229-8a38-47bf00b11636-maishaafurnitures-com/assets/images/mianzi-2.jpg"
+        },
+        {
+            name: "Metamorphosis Linear Pendant Lamp H-002",
+            price: "26,490",
+            originalPrice: "26,990",
+            emi: "2354",
+            tag: "READY TO SHIP",
+            image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/7afecfaa-1d29-4229-8a38-47bf00b11636-maishaafurnitures-com/assets/images/mianzi-3.jpg"
+        },
+        {
+            name: "Metamorphosis Linear Pendant Lamp H-02S",
+            price: "23,490",
+            originalPrice: "26,990",
+            emi: "2087",
+            tag: "READY TO SHIP",
+            image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/7afecfaa-1d29-4229-8a38-47bf00b11636-maishaafurnitures-com/assets/images/mianzi-4.jpg"
+        },
+        {
+            name: "Woven Bamboo Pendant Large",
+            price: "28,500",
+            originalPrice: "32,000",
+            emi: "2533",
+            tag: "READY TO SHIP",
+            image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=1000"
+        },
+        {
+            name: "Ethical Bamboo Sconce H-05",
+            price: "12,490",
+            originalPrice: "14,990",
+            emi: "1110",
+            tag: "READY TO SHIP",
+            image: "https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=1000"
+        }
     ];
+
+    const heroImage = "https://dtalemodern.com/media/wysiwyg/Mianzi_Banner_1.jpg"; // Placeholder or direct link if possible, using unsplash as fallback
+    const mianziLogo = "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/7afecfaa-1d29-4229-8a38-47bf00b11636-maishaafurnitures-com/assets/images/mianzi-logo.png";
 
     return (
         <div className="flex min-h-screen flex-col bg-white">
             <Header />
 
             <main className="flex-1">
-                {/* Hero Section with Padding */}
-                <section className="py-12 px-4 sm:px-8 md:px-16 lg:px-20 bg-white">
-                    <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden rounded-sm bg-[#e8f5e9]">
-                        <Image
-                            src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=2000&auto=format&fit=crop"
-                            alt="Mianzi Collection Hero"
-                            fill
-                            className="object-cover opacity-80"
-                            priority
-                        />
-                        <div className="absolute inset-x-0 inset-y-0 flex flex-col items-center justify-center text-center px-4 bg-green-900/10">
-                            <motion.h1
-                                initial={{ y: 30, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 0.8 }}
-                                className="text-5xl md:text-9xl leading-none font-light tracking-wide uppercase text-gray-800 mb-4"
-                            >
-                                MIANZI
-                            </motion.h1>
-                            <motion.p
-                                initial={{ y: 30, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                className="text-sm md:text-xl font-light tracking-[0.4em] uppercase text-gray-700 max-w-2xl bg-white/40 backdrop-blur-sm p-4 rounded-sm border border-white/20"
-                            >
-                                CONSCIOUS DESIGN, WOVEN BY NATURE
-                            </motion.p>
-                        </div>
+                {/* Hero Section */}
+                <section className="w-full relative h-[60vh] md:h-[90vh] overflow-hidden bg-[#222]">
+                    <Image
+                        src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?q=80&w=2000&auto=format&fit=crop"
+                        alt="Mianzi Hero"
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                    {/* Hero Overlay Text */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-end pb-20">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1 }}
+                            className="flex items-center gap-4 bg-white/10 backdrop-blur-sm px-8 py-4 rounded-sm border border-white/20"
+                        >
+                            <span className="text-white text-3xl font-serif tracking-tighter uppercase font-bold">MIANZI</span>
+                            <span className="text-white text-2xl font-light scale-x-125 mx-2">X</span>
+                            <span className="text-white text-2xl font-sans tracking-[0.2em] uppercase font-medium">MAISHAA</span>
+                        </motion.div>
                     </div>
                 </section>
 
-                {/* Narrative Section */}
-                <section className="py-24 px-4 max-w-4xl mx-auto text-center">
+                {/* Title Section */}
+                <section className="py-24 px-4 text-center max-w-4xl mx-auto space-y-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="space-y-8"
+                        className="space-y-6"
                     >
-                        <h2 className="text-4xl md:text-5xl font-light text-gray-900">Mianzi Collection</h2>
-                        <p className="text-gray-500 leading-relaxed text-lg md:text-xl font-light max-w-3xl mx-auto">
-                            Mianzi is a zero-waste initiative that explores the incredible versatility of bamboo.
-                            Combining traditional weaving techniques with modern engineering, this collection
-                            redefines sustainable luxury. Every piece is a celebration of the planet,
-                            designed to bring a sense of natural harmony and ethnic elegance to your sanctuary.
+                        <h1 className="text-3xl md:text-5xl font-serif text-[#1a1a1a] tracking-wide font-normal">Timeless Designs</h1>
+                        <p className="text-[#666] leading-relaxed text-lg md:text-xl font-light font-serif px-4">
+                            Crafted with intention. Rooted in tradition. Defined by design. Connecting you to a world-class Indian Artisans
                         </p>
                     </motion.div>
                 </section>
 
-                {/* Explore More - Product Grid */}
-                <section className="py-20 px-4 sm:px-8 md:px-16 lg:px-20 bg-white border-t border-gray-50">
-                    <div className="text-center mb-20 space-y-4">
-                        <h2 className="text-4xl md:text-5xl font-light text-gray-900 tracking-tight">The Mianzi Edit</h2>
-                        <p className="text-gray-500 font-light text-lg">
-                            Conscious pieces for a mindful home.
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* Product Grid */}
+                <section className="pb-32 px-4 sm:px-8 md:px-16 lg:px-24 bg-white">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
                         {products.map((product, idx) => (
                             <motion.div
                                 key={idx}
@@ -99,52 +117,42 @@ const MianziCollection = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: (idx % 4) * 0.1 }}
                                 viewport={{ once: true }}
-                                className="group cursor-pointer flex flex-col bg-white border border-gray-100"
+                                className="group cursor-pointer flex flex-col"
                             >
-                                <div className="relative aspect-[4/5] overflow-hidden">
+                                {/* Image Container */}
+                                <div className="relative aspect-[3/4] overflow-hidden bg-[#f7f7f7] mb-6">
                                     <Image
                                         src={product.image}
                                         alt={product.name}
                                         fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
                                     />
-                                    {/* Top-Right Heart Icon */}
-                                    <button className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-sm hover:text-red-500 transition-colors z-10">
-                                        <Heart size={18} strokeWidth={1.5} />
+
+                                    {/* Wishlist Button */}
+                                    <button className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-md hover:text-red-500 transition-all duration-300 z-10 group/heart">
+                                        <Heart size={18} strokeWidth={1.5} className="group-hover/heart:fill-red-500 group-hover/heart:text-red-500" />
                                     </button>
 
-                                    {/* Top-Left Status Tag */}
-                                    {product.bestSeller && (
-                                        <div className="absolute top-0 left-0 bg-[#1a1a1a] text-white px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase z-10">
-                                            BEST SELLER
+                                    {/* Ready to Ship Badge */}
+                                    <div className="absolute bottom-4 left-6 right-6">
+                                        <div className="bg-white/90 backdrop-blur-sm text-[#888] py-2 px-4 text-[10px] font-bold tracking-[0.2em] uppercase text-center border-t border-gray-100">
+                                            {product.tag}
                                         </div>
-                                    )}
-                                    {!product.bestSeller && product.tag === "READY TO SHIP" && (
-                                        <div className="absolute top-0 left-0 bg-[#2d5a27] text-white px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase z-10">
-                                            RECOMMENDED
-                                        </div>
-                                    )}
+                                    </div>
                                 </div>
 
-                                <div className="p-6 flex flex-col flex-1">
-                                    <div className="mb-4">
-                                        <span className="inline-block bg-[#f5f5f5] text-[#888] px-3 py-1 text-[9px] font-bold tracking-widest uppercase mb-3">
-                                            {product.tag}
-                                        </span>
-                                        <h4 className="text-[15px] font-medium text-gray-900 group-hover:text-green-800 transition-colors leading-snug">
-                                            {product.name}
-                                        </h4>
-                                    </div>
+                                {/* Product Details */}
+                                <div className="space-y-4 px-2">
+                                    <h3 className="text-[15px] font-medium text-[#1a1a1a] leading-snug h-10 line-clamp-2 transition-colors group-hover:text-orange-600">
+                                        {product.name}
+                                    </h3>
 
-                                    <div className="mt-auto space-y-2">
-                                        <p className="text-[18px] font-bold text-gray-900">₹{product.price}</p>
-
-                                        <div className="flex items-center gap-2">
-                                            <span className="text-[13px] text-gray-400 line-through">₹{product.originalPrice}</span>
-                                            <span className="text-[13px] text-orange-500 font-bold">{product.discount} Off</span>
+                                    <div className="space-y-1.5">
+                                        <div className="flex items-center gap-3">
+                                            <span className="text-[17px] font-bold text-[#1a1a1a]">₹{product.price}</span>
+                                            <span className="text-[14px] text-gray-400 line-through">₹{product.originalPrice}</span>
                                         </div>
-
-                                        <p className="text-[11px] text-orange-500 font-medium tracking-wide">
+                                        <p className="text-[12px] text-orange-600 font-medium tracking-wide">
                                             EMI starts from ₹ {product.emi}
                                         </p>
                                     </div>
@@ -154,8 +162,33 @@ const MianziCollection = () => {
                     </div>
                 </section>
 
-
-
+                {/* Narrative / About Section */}
+                <section className="py-32 bg-[#faf9f6]">
+                    <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-16">
+                        <div className="w-full md:w-1/2 relative aspect-[4/5]">
+                            <Image
+                                src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=1000"
+                                alt="Mianzi Craftsmanship"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                        <div className="w-full md:w-1/2 space-y-10">
+                            <h2 className="text-4xl font-serif text-[#1a1a1a] leading-tight font-light">The Soul of Bamboo</h2>
+                            <p className="text-lg text-[#666] leading-relaxed font-light font-serif italic">
+                                "Our collaboration with Mianzi explores the intersection of linear geometry and organic textures. We've taken the humble bamboo and transformed it into architectural lighting that defines modern living spaces."
+                            </p>
+                            <div className="space-y-6 text-[#666] font-light leading-relaxed">
+                                <p>
+                                    Sustainable design isn't just a choice; it's our philosophy. The Mianzi collection at Maishaa represents our commitment to eco-friendly luxury without compromising on the high-end aesthetic our clients expect.
+                                </p>
+                                <p>
+                                    Each piece is meticulously hand-woven by skilled artisans, ensuring that every lamp carries a unique fingerprint of human touch and natural character.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
 
             <Footer />
