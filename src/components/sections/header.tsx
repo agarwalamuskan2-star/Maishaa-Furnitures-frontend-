@@ -167,7 +167,7 @@ const Header = () => {
           {
             title: "Storage & Modular Furniture",
             links: [
-              { name: "Media Consoles", href: "/furniture/media-consoles" },
+              { name: "TV Units", href: "/furniture/storage/tv-units" },
               { name: "Bookcases & Shelves", href: "/furniture/bookcases" },
               { name: "Buffet & Sideboard Consoles", href: "/furniture/buffets" },
               { name: "Chest of Drawers", href: "/furniture/storage-drawers" },
