@@ -78,7 +78,7 @@ const EndTablesCollection = () => {
             emi: "4380",
             tag: "MADE TO ORDER",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1565402170291-8115293c61bd?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1538688549216-a9ecfd2bbd8e?q=80&w=1000"
         },
         {
             name: "Sovereign Inlay End Table",
@@ -98,7 +98,7 @@ const EndTablesCollection = () => {
             emi: "3680",
             tag: "READY TO SHIP",
             bestSeller: false,
-            image: "https://images.unsplash.com/photo-1519452635265-74a4dd926b7b?q=80&w=1000"
+            image: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1000"
         },
     ];
 
