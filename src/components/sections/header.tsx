@@ -156,7 +156,7 @@ const Header = () => {
               { name: "Nightstands", href: "/furniture/bedroom/nightstands" },
               { name: "Chest of Drawers", href: "/furniture/bedroom-drawers" },
               { name: "Armoires | Wardrobes", href: "/furniture/wardrobes" },
-              { name: "Ottomans & Benches", href: "/furniture/bedroom-benches" },
+              { name: "Ottomans & Benches", href: "/furniture/bedroom/ottomans-benches" },
             ],
             subTitle: "Home Office",
             subLinks: [
