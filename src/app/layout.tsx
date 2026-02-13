@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { VisualEditsMessenger } from "orchids-visual-edits";
 import { AuthProvider } from "@/components/auth-provider";
+import { CartProvider } from "@/context/cart-context";
+import { FavoritesProvider } from "@/context/favorites-context";
 
 export const metadata: Metadata = {
   title: "Maishaa | Premium Furniture & Furnishing",
@@ -22,9 +24,13 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <AuthProvider>
-          {children}
-          <FloatingContactButtons />
-          <VisualEditsMessenger />
+          <CartProvider>
+            <FavoritesProvider>
+              {children}
+              <FloatingContactButtons />
+              <VisualEditsMessenger />
+            </FavoritesProvider>
+          </CartProvider>
         </AuthProvider>
       </body>
     </html>
