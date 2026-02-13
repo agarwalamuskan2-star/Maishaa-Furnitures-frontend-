@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
-import NewPageSidebar from "@/components/sections/new-page-sidebar";
+import NewPageSidebar, { NewPageFilterState } from "@/components/sections/new-page-sidebar";
 import NewPageGrid from "@/components/sections/new-page-grid";
 import SEOContent from "@/components/sections/seo-content";
 import AboutYears from "@/components/sections/about-years";
@@ -20,7 +20,13 @@ import Link from "next/link";
  */
 
 export default function NewLaunchPage() {
-    const [isMobileFilterOpen, setIsMobileFilterOpen] = React.useState(false);
+    const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+    const [filters, setFilters] = useState<NewPageFilterState>({
+        productTypes: [],
+        priceRange: [0, 400000],
+        sizes: [],
+        discounts: [],
+    });
 
     return (
         <div className="flex min-h-screen flex-col bg-white">
@@ -39,9 +45,12 @@ export default function NewLaunchPage() {
                     <NewPageSidebar
                         isOpen={isMobileFilterOpen}
                         onClose={() => setIsMobileFilterOpen(false)}
+                        filters={filters}
+                        onFiltersChange={setFilters}
                     />
                     <NewPageGrid
                         onFilterClick={() => setIsMobileFilterOpen(true)}
+                        filters={filters}
                     />
                 </div>
             </main>

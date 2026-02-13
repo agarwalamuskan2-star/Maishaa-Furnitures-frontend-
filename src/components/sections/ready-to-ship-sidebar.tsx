@@ -3,12 +3,63 @@
 import React from "react";
 import { X } from "lucide-react";
 
+export interface ReadyToShipFilterState {
+    productTypes: string[];
+    priceRange: [number, number];
+    discounts: number[];
+}
+
 interface ReadyToShipSidebarProps {
     isOpen?: boolean;
     onClose?: () => void;
+    filters: ReadyToShipFilterState;
+    onFiltersChange: (filters: ReadyToShipFilterState) => void;
 }
 
-export default function ReadyToShipSidebar({ isOpen = false, onClose }: ReadyToShipSidebarProps) {
+const productTypes = [
+    { name: "Table Lamps", count: 24 },
+    { name: "Side Table", count: 21 },
+    { name: "Dining Chairs", count: 21 },
+    { name: "Outdoor Furniture", count: 16 },
+    { name: "Accent | Lounge Chairs", count: 12 },
+    { name: "Decor", count: 11 },
+    { name: "Center Tables", count: 11 },
+    { name: "Pendant Lights", count: 6 },
+    { name: "Cushion", count: 5 },
+    { name: "Floor Lamps", count: 4 },
+];
+
+const discountOptions = [10, 20, 30, 40];
+
+export default function ReadyToShipSidebar({ isOpen = false, onClose, filters, onFiltersChange }: ReadyToShipSidebarProps) {
+    const handleProductTypeChange = (typeName: string) => {
+        const newTypes = filters.productTypes.includes(typeName)
+            ? filters.productTypes.filter(t => t !== typeName)
+            : [...filters.productTypes, typeName];
+        onFiltersChange({ ...filters, productTypes: newTypes });
+    };
+
+    const handleDiscountChange = (discount: number) => {
+        const newDiscounts = filters.discounts.includes(discount)
+            ? filters.discounts.filter(d => d !== discount)
+            : [...filters.discounts, discount];
+        onFiltersChange({ ...filters, discounts: newDiscounts });
+    };
+
+    const handlePriceChange = (min: number, max: number) => {
+        onFiltersChange({ ...filters, priceRange: [min, max] });
+    };
+
+    const clearAllFilters = () => {
+        onFiltersChange({
+            productTypes: [],
+            priceRange: [0, 300000],
+            discounts: [],
+        });
+    };
+
+    const hasActiveFilters = filters.productTypes.length > 0 || filters.discounts.length > 0;
+
     return (
         <>
             {/* Mobile Overlay */}
@@ -42,7 +93,17 @@ export default function ReadyToShipSidebar({ isOpen = false, onClose }: ReadyToS
 
                 {/* Browse By Header */}
                 <div className="mb-8">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">Browse by</h3>
+                    <div className="flex items-center justify-between">
+                        <h3 className="text-lg font-bold text-gray-900 mb-1">Browse by</h3>
+                        {hasActiveFilters && (
+                            <button
+                                onClick={clearAllFilters}
+                                className="text-xs text-gray-500 hover:text-black underline"
+                            >
+                                Clear all
+                            </button>
+                        )}
+                    </div>
                     <p className="text-sm text-gray-500">199 Results</p>
                 </div>
 
@@ -54,24 +115,15 @@ export default function ReadyToShipSidebar({ isOpen = false, onClose }: ReadyToS
                     </button>
 
                     <div className="space-y-3">
-                        {[
-                            { name: "Table Lamps", count: 24 },
-                            { name: "Side Table", count: 21 },
-                            { name: "Dining Chairs", count: 21 },
-                            { name: "Outdoor Furniture", count: 16 },
-                            { name: "Accent | Lounge Chairs", count: 12 },
-                            { name: "Decor", count: 11 },
-                            { name: "Center Tables", count: 11 },
-                            { name: "Pendant Lights", count: 6 },
-                            { name: "Cushion", count: 5 },
-                            { name: "Floor Lamps", count: 4 },
-                        ].map((type) => (
+                        {productTypes.map((type) => (
                             <label key={type.name} className="flex items-center gap-3 cursor-pointer group">
                                 <input
                                     type="checkbox"
-                                    className="w-4 h-4 border-2 border-gray-300 rounded focus:ring-2 focus:ring-black"
+                                    checked={filters.productTypes.includes(type.name)}
+                                    onChange={() => handleProductTypeChange(type.name)}
+                                    className="w-4 h-4 border-2 border-gray-300 rounded focus:ring-2 focus:ring-black accent-black"
                                 />
-                                <span className="text-sm text-gray-700 group-hover:text-black transition-colors">
+                                <span className={`text-sm ${filters.productTypes.includes(type.name) ? 'font-bold text-black' : 'text-gray-700 group-hover:text-black'} transition-colors`}>
                                     {type.name} <span className="text-gray-400">({type.count})</span>
                                 </span>
                             </label>
@@ -88,22 +140,34 @@ export default function ReadyToShipSidebar({ isOpen = false, onClose }: ReadyToS
 
                     <div className="space-y-4">
                         <div className="flex items-center gap-3">
-                            <select className="flex-1 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-black">
-                                <option>Min</option>
-                                <option>₹ 0</option>
-                                <option>₹ 10,000</option>
-                                <option>₹ 25,000</option>
-                                <option>₹ 50,000</option>
+                            <select
+                                className="flex-1 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-black"
+                                value={filters.priceRange[0]}
+                                onChange={(e) => handlePriceChange(Number(e.target.value), filters.priceRange[1])}
+                            >
+                                <option value={0}>Min</option>
+                                <option value={10000}>₹ 10,000</option>
+                                <option value={25000}>₹ 25,000</option>
+                                <option value={50000}>₹ 50,000</option>
                             </select>
                             <span className="text-gray-500 text-sm">to</span>
-                            <select className="flex-1 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-black">
-                                <option>₹ 300000</option>
-                                <option>₹ 50,000</option>
-                                <option>₹ 100,000</option>
-                                <option>₹ 200,000</option>
+                            <select
+                                className="flex-1 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-black"
+                                value={filters.priceRange[1]}
+                                onChange={(e) => handlePriceChange(filters.priceRange[0], Number(e.target.value))}
+                            >
+                                <option value={50000}>₹ 50,000</option>
+                                <option value={100000}>₹ 100,000</option>
+                                <option value={200000}>₹ 200,000</option>
+                                <option value={300000}>₹ 300,000</option>
                             </select>
                         </div>
-                        <button className="text-sm text-blue-600 hover:underline">Clear</button>
+                        <button
+                            onClick={clearAllFilters}
+                            className="text-sm text-blue-600 hover:underline"
+                        >
+                            Clear
+                        </button>
                     </div>
                 </div>
 
@@ -115,19 +179,16 @@ export default function ReadyToShipSidebar({ isOpen = false, onClose }: ReadyToS
                     </button>
 
                     <div className="space-y-3">
-                        {[
-                            { name: "10% and above" },
-                            { name: "20% and above" },
-                            { name: "30% and above" },
-                            { name: "40% and above" },
-                        ].map((discount) => (
-                            <label key={discount.name} className="flex items-center gap-3 cursor-pointer group">
+                        {discountOptions.map((discount) => (
+                            <label key={discount} className="flex items-center gap-3 cursor-pointer group">
                                 <input
                                     type="checkbox"
-                                    className="w-4 h-4 border-2 border-gray-300 rounded focus:ring-2 focus:ring-black"
+                                    checked={filters.discounts.includes(discount)}
+                                    onChange={() => handleDiscountChange(discount)}
+                                    className="w-4 h-4 border-2 border-gray-300 rounded focus:ring-2 focus:ring-black accent-black"
                                 />
-                                <span className="text-sm text-gray-700 group-hover:text-black transition-colors">
-                                    {discount.name}
+                                <span className={`text-sm ${filters.discounts.includes(discount) ? 'font-bold text-black' : 'text-gray-700 group-hover:text-black'} transition-colors`}>
+                                    {discount}% and above
                                 </span>
                             </label>
                         ))}

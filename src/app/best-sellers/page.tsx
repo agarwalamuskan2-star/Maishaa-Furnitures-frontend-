@@ -4,11 +4,16 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
-import BestSellersSidebar from "@/components/sections/best-sellers-sidebar";
+import BestSellersSidebar, { FilterState } from "@/components/sections/best-sellers-sidebar";
 import BestSellersGrid from "@/components/sections/best-sellers-grid";
 
 export default function BestSellersPage() {
     const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+    const [filters, setFilters] = useState<FilterState>({
+        categories: [],
+        priceRange: [0, 300000],
+        availability: [],
+    });
 
     return (
         <div className="flex min-h-screen flex-col bg-white">
@@ -40,12 +45,15 @@ export default function BestSellersPage() {
                             <BestSellersSidebar
                                 isOpen={isMobileSidebarOpen}
                                 onClose={() => setIsMobileSidebarOpen(false)}
+                                filters={filters}
+                                onFiltersChange={setFilters}
                             />
                         </div>
 
                         {/* Product Grid Area */}
                         <BestSellersGrid
                             onFilterClick={() => setIsMobileSidebarOpen(true)}
+                            filters={filters}
                         />
                     </div>
                 </div>

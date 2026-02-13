@@ -4,11 +4,18 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
-import WarehouseSaleSidebar from "@/components/sections/warehouse-sale-sidebar";
+import WarehouseSaleSidebar, { WarehouseSaleFilterState } from "@/components/sections/warehouse-sale-sidebar";
 import WarehouseSaleGrid from "@/components/sections/warehouse-sale-grid";
 
 export default function WarehouseSalePage() {
     const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+    const [filters, setFilters] = useState<WarehouseSaleFilterState>({
+        productTypes: [],
+        priceRange: [0, 300000],
+        sizes: [],
+        shapes: [],
+        discounts: [],
+    });
 
     return (
         <div className="flex min-h-screen flex-col bg-white">
@@ -32,12 +39,15 @@ export default function WarehouseSalePage() {
                             <WarehouseSaleSidebar
                                 isOpen={isMobileSidebarOpen}
                                 onClose={() => setIsMobileSidebarOpen(false)}
+                                filters={filters}
+                                onFiltersChange={setFilters}
                             />
                         </div>
 
                         {/* Product Grid Area */}
                         <WarehouseSaleGrid
                             onFilterClick={() => setIsMobileSidebarOpen(true)}
+                            filters={filters}
                         />
                     </div>
                 </div>

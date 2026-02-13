@@ -3,12 +3,42 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp, Minus, Plus, X } from "lucide-react";
 
+export interface NewPageFilterState {
+    productTypes: string[];
+    priceRange: [number, number];
+    sizes: string[];
+    discounts: number[];
+}
+
 interface NewPageSidebarProps {
     isOpen: boolean;
     onClose: () => void;
+    filters: NewPageFilterState;
+    onFiltersChange: (filters: NewPageFilterState) => void;
 }
 
-const NewPageSidebar: React.FC<NewPageSidebarProps> = ({ isOpen, onClose }) => {
+const productTypes = [
+    { name: "Accent | Lounge Chairs", count: 21 },
+    { name: "Dining Chairs", count: 11 },
+    { name: "Center Tables", count: 10 },
+    { name: "Corner Sofas", count: 10 },
+    { name: "Pendant Lights", count: 9 },
+    { name: "Side Table", count: 8 },
+    { name: "3-Seater Sofas", count: 8 },
+    { name: "Floor Lamps", count: 8 },
+];
+
+const sizeOptions = [
+    { name: "L", count: 2 },
+    { name: "M", count: 2 },
+    { name: "8 feet", count: 2 },
+    { name: "7 feet", count: 2 },
+    { name: "6 feet", count: 1 },
+];
+
+const discountOptions = [10, 20, 30];
+
+const NewPageSidebar: React.FC<NewPageSidebarProps> = ({ isOpen, onClose, filters, onFiltersChange }) => {
     // State for collapsible sections
     const [openSections, setOpenSections] = useState({
         productType: true,
@@ -20,6 +50,42 @@ const NewPageSidebar: React.FC<NewPageSidebarProps> = ({ isOpen, onClose }) => {
     const toggleSection = (section: keyof typeof openSections) => {
         setOpenSections((prev) => ({ ...prev, [section]: !prev[section] }));
     };
+
+    const handleProductTypeChange = (typeName: string) => {
+        const newTypes = filters.productTypes.includes(typeName)
+            ? filters.productTypes.filter(t => t !== typeName)
+            : [...filters.productTypes, typeName];
+        onFiltersChange({ ...filters, productTypes: newTypes });
+    };
+
+    const handleSizeChange = (size: string) => {
+        const newSizes = filters.sizes.includes(size)
+            ? filters.sizes.filter(s => s !== size)
+            : [...filters.sizes, size];
+        onFiltersChange({ ...filters, sizes: newSizes });
+    };
+
+    const handleDiscountChange = (discount: number) => {
+        const newDiscounts = filters.discounts.includes(discount)
+            ? filters.discounts.filter(d => d !== discount)
+            : [...filters.discounts, discount];
+        onFiltersChange({ ...filters, discounts: newDiscounts });
+    };
+
+    const handlePriceChange = (min: number, max: number) => {
+        onFiltersChange({ ...filters, priceRange: [min, max] });
+    };
+
+    const clearAllFilters = () => {
+        onFiltersChange({
+            productTypes: [],
+            priceRange: [0, 400000],
+            sizes: [],
+            discounts: [],
+        });
+    };
+
+    const hasActiveFilters = filters.productTypes.length > 0 || filters.sizes.length > 0 || filters.discounts.length > 0;
 
     const sidebarClasses = isOpen
         ? "fixed inset-0 z-50 bg-white w-full h-full overflow-y-auto p-6 md:p-8" // Mobile Open
@@ -40,7 +106,17 @@ const NewPageSidebar: React.FC<NewPageSidebarProps> = ({ isOpen, onClose }) => {
 
                 {/* Browse By Header (Desktop) */}
                 <div className="hidden lg:block mb-6">
-                    <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Browse by</h3>
+                    <div className="flex items-center justify-between">
+                        <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider">Browse by</h3>
+                        {hasActiveFilters && (
+                            <button
+                                onClick={clearAllFilters}
+                                className="text-xs text-gray-500 hover:text-black underline"
+                            >
+                                Clear all
+                            </button>
+                        )}
+                    </div>
                 </div>
 
                 {/* 1. Product Type Filter */}
@@ -55,19 +131,15 @@ const NewPageSidebar: React.FC<NewPageSidebarProps> = ({ isOpen, onClose }) => {
 
                     {openSections.productType && (
                         <div className="mt-4 space-y-2">
-                            {[
-                                { name: "Accent | Lounge Chairs", count: 21 },
-                                { name: "Dining Chairs", count: 11 },
-                                { name: "Center Tables", count: 10 },
-                                { name: "Corner Sofas", count: 10 },
-                                { name: "Pendant Lights", count: 9 },
-                                { name: "Side Table", count: 8 },
-                                { name: "3-Seater Sofas", count: 8 },
-                                { name: "Floor Lamps", count: 8 },
-                            ].map((item, idx) => (
-                                <label key={idx} className="flex items-center gap-3 cursor-pointer group">
-                                    <input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-black focus:ring-black" />
-                                    <span className="text-sm text-gray-600 group-hover:text-black transition-colors">
+                            {productTypes.map((item) => (
+                                <label key={item.name} className="flex items-center gap-3 cursor-pointer group">
+                                    <input
+                                        type="checkbox"
+                                        checked={filters.productTypes.includes(item.name)}
+                                        onChange={() => handleProductTypeChange(item.name)}
+                                        className="w-4 h-4 rounded border-gray-300 text-black focus:ring-black"
+                                    />
+                                    <span className={`text-sm ${filters.productTypes.includes(item.name) ? 'font-bold text-black' : 'text-gray-600 group-hover:text-black'} transition-colors`}>
                                         {item.name} <span className="text-gray-400">({item.count})</span>
                                     </span>
                                 </label>
@@ -87,7 +159,12 @@ const NewPageSidebar: React.FC<NewPageSidebarProps> = ({ isOpen, onClose }) => {
                             <span className="text-sm font-semibold text-gray-800">Price</span>
                             {openSections.price ? <Minus size={14} /> : <Plus size={14} />}
                         </button>
-                        <button className="text-xs text-gray-400 font-medium underline hover:text-black ml-2">Clear</button>
+                        <button
+                            onClick={clearAllFilters}
+                            className="text-xs text-gray-400 font-medium underline hover:text-black ml-2"
+                        >
+                            Clear
+                        </button>
                     </div>
 
                     {openSections.price && (
@@ -101,13 +178,27 @@ const NewPageSidebar: React.FC<NewPageSidebarProps> = ({ isOpen, onClose }) => {
 
                             {/* Inputs */}
                             <div className="flex items-center gap-2">
-                                <div className="flex-1 bg-white border border-gray-200 px-3 py-2 rounded-sm flex items-center gap-1">
-                                    <span className="text-xs text-gray-400">Min</span>
-                                </div>
+                                <select
+                                    className="flex-1 bg-white border border-gray-200 px-3 py-2 rounded-sm flex items-center gap-1"
+                                    value={filters.priceRange[0]}
+                                    onChange={(e) => handlePriceChange(Number(e.target.value), filters.priceRange[1])}
+                                >
+                                    <option value={0}>Min</option>
+                                    <option value={10000}>₹ 10,000</option>
+                                    <option value={25000}>₹ 25,000</option>
+                                    <option value={50000}>₹ 50,000</option>
+                                </select>
                                 <span className="text-gray-400 text-xs">to</span>
-                                <div className="flex-1 bg-white border border-gray-200 px-3 py-2 rounded-sm flex items-center gap-1">
-                                    <span className="text-xs text-gray-900 font-medium">₹ 400000</span>
-                                </div>
+                                <select
+                                    className="flex-1 bg-white border border-gray-200 px-3 py-2 rounded-sm flex items-center gap-1"
+                                    value={filters.priceRange[1]}
+                                    onChange={(e) => handlePriceChange(filters.priceRange[0], Number(e.target.value))}
+                                >
+                                    <option value={100000}>₹ 100,000</option>
+                                    <option value={200000}>₹ 200,000</option>
+                                    <option value={300000}>₹ 300,000</option>
+                                    <option value={400000}>₹ 400,000</option>
+                                </select>
                             </div>
                         </div>
                     )}
@@ -125,16 +216,15 @@ const NewPageSidebar: React.FC<NewPageSidebarProps> = ({ isOpen, onClose }) => {
 
                     {openSections.size && (
                         <div className="mt-4 space-y-2">
-                            {[
-                                { name: "L", count: 2 },
-                                { name: "M", count: 2 },
-                                { name: "8 feet", count: 2 },
-                                { name: "7 feet", count: 2 },
-                                { name: "6 feet", count: 1 },
-                            ].map((item, idx) => (
-                                <label key={idx} className="flex items-center gap-3 cursor-pointer group">
-                                    <input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-black focus:ring-black" />
-                                    <span className="text-sm text-gray-600 group-hover:text-black transition-colors">
+                            {sizeOptions.map((item) => (
+                                <label key={item.name} className="flex items-center gap-3 cursor-pointer group">
+                                    <input
+                                        type="checkbox"
+                                        checked={filters.sizes.includes(item.name)}
+                                        onChange={() => handleSizeChange(item.name)}
+                                        className="w-4 h-4 rounded border-gray-300 text-black focus:ring-black"
+                                    />
+                                    <span className={`text-sm ${filters.sizes.includes(item.name) ? 'font-bold text-black' : 'text-gray-600 group-hover:text-black'} transition-colors`}>
                                         {item.name} <span className="text-gray-400">({item.count})</span>
                                     </span>
                                 </label>
@@ -155,15 +245,16 @@ const NewPageSidebar: React.FC<NewPageSidebarProps> = ({ isOpen, onClose }) => {
 
                     {openSections.discount && (
                         <div className="mt-4 space-y-2">
-                            {[
-                                "10% and above",
-                                "20% and above",
-                                "30% and above",
-                            ].map((label, idx) => (
-                                <label key={idx} className="flex items-center gap-3 cursor-pointer group">
-                                    <input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-black focus:ring-black" />
-                                    <span className="text-sm text-gray-600 group-hover:text-black transition-colors">
-                                        {label}
+                            {discountOptions.map((label) => (
+                                <label key={label} className="flex items-center gap-3 cursor-pointer group">
+                                    <input
+                                        type="checkbox"
+                                        checked={filters.discounts.includes(label)}
+                                        onChange={() => handleDiscountChange(label)}
+                                        className="w-4 h-4 rounded border-gray-300 text-black focus:ring-black"
+                                    />
+                                    <span className={`text-sm ${filters.discounts.includes(label) ? 'font-bold text-black' : 'text-gray-600 group-hover:text-black'} transition-colors`}>
+                                        {label}% and above
                                     </span>
                                 </label>
                             ))}

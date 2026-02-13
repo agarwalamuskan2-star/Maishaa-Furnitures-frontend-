@@ -1,10 +1,26 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { ChevronDown, SlidersHorizontal } from "lucide-react";
 import ProductCardDetailed from "@/components/ui/product-card-detailed";
+import { ReadyToShipFilterState } from "./ready-to-ship-sidebar";
 
-const products = [
+interface ProductData {
+    id: number;
+    title: string;
+    price: string;
+    originalPrice?: string;
+    discount?: string;
+    emiStart: string;
+    priceValue: number;
+    productType: string;
+    discountValue: number;
+    isReadyToShip: boolean;
+    mainImage: string;
+    badges?: { text: string; color: "black" }[];
+}
+
+const products: ProductData[] = [
     {
         id: 1,
         title: "Rigo Solid Wood Coffee Table",
@@ -12,9 +28,12 @@ const products = [
         originalPrice: "₹111,000",
         discount: "10%OFF",
         emiStart: "10474",
-        mainImage: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800&auto=format&fit=crop",
+        priceValue: 99900,
+        productType: "Center Tables",
+        discountValue: 10,
         isReadyToShip: true,
-        badges: [{ text: "BEST SELLER", color: "black" as const }],
+        mainImage: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800&auto=format&fit=crop",
+        badges: [{ text: "BEST SELLER", color: "black" }],
     },
     {
         id: 2,
@@ -23,9 +42,12 @@ const products = [
         originalPrice: "₹32,500",
         discount: "10%OFF",
         emiStart: "3067",
-        mainImage: "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=800&auto=format&fit=crop",
+        priceValue: 29250,
+        productType: "Side Table",
+        discountValue: 10,
         isReadyToShip: true,
-        badges: [{ text: "NEW", color: "black" as const }],
+        mainImage: "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=800&auto=format&fit=crop",
+        badges: [{ text: "NEW", color: "black" }],
     },
     {
         id: 3,
@@ -34,9 +56,12 @@ const products = [
         originalPrice: "₹36,500",
         discount: "10%OFF",
         emiStart: "3444",
-        mainImage: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=800&auto=format&fit=crop",
+        priceValue: 32850,
+        productType: "Side Table",
+        discountValue: 10,
         isReadyToShip: true,
-        badges: [{ text: "NEW", color: "black" as const }],
+        mainImage: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=800&auto=format&fit=crop",
+        badges: [{ text: "NEW", color: "black" }],
     },
     {
         id: 4,
@@ -45,8 +70,11 @@ const products = [
         originalPrice: "₹32,500",
         discount: "10%OFF",
         emiStart: "3067",
-        mainImage: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=800&auto=format&fit=crop",
+        priceValue: 29250,
+        productType: "Side Table",
+        discountValue: 10,
         isReadyToShip: true,
+        mainImage: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=800&auto=format&fit=crop",
     },
     {
         id: 5,
@@ -55,8 +83,11 @@ const products = [
         originalPrice: "₹44,400",
         discount: "10%OFF",
         emiStart: "4190",
-        mainImage: "https://images.unsplash.com/photo-1532323544230-7191fd51bc1b?q=80&w=800&auto=format&fit=crop",
+        priceValue: 39960,
+        productType: "Side Table",
+        discountValue: 10,
         isReadyToShip: true,
+        mainImage: "https://images.unsplash.com/photo-1532323544230-7191fd51bc1b?q=80&w=800&auto=format&fit=crop",
     },
     {
         id: 6,
@@ -65,8 +96,48 @@ const products = [
         originalPrice: "₹179,900",
         discount: "20%OFF",
         emiStart: "15088",
-        mainImage: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=800&auto=format&fit=crop",
+        priceValue: 143920,
+        productType: "Center Tables",
+        discountValue: 20,
         isReadyToShip: true,
+        mainImage: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+        id: 7,
+        title: "Table Lamp",
+        price: "₹12,500",
+        originalPrice: "₹15,000",
+        discount: "17%OFF",
+        emiStart: "1042",
+        priceValue: 12500,
+        productType: "Table Lamps",
+        discountValue: 17,
+        isReadyToShip: true,
+        mainImage: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+        id: 8,
+        title: "Floor Lamp",
+        price: "₹22,000",
+        emiStart: "1833",
+        priceValue: 22000,
+        productType: "Floor Lamps",
+        discountValue: 0,
+        isReadyToShip: true,
+        mainImage: "https://images.unsplash.com/photo-1507473888900-52e1adad8dbf?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+        id: 9,
+        title: "Pendant Light",
+        price: "₹18,500",
+        originalPrice: "₹22,000",
+        discount: "16%OFF",
+        emiStart: "1542",
+        priceValue: 18500,
+        productType: "Pendant Lights",
+        discountValue: 16,
+        isReadyToShip: true,
+        mainImage: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?q=80&w=800&auto=format&fit=crop",
     },
 ];
 
@@ -79,19 +150,59 @@ const sortOptions = [
 
 interface ReadyToShipGridProps {
     onFilterClick?: () => void;
+    filters: ReadyToShipFilterState;
 }
 
-export default function ReadyToShipGrid({ onFilterClick }: ReadyToShipGridProps) {
+export default function ReadyToShipGrid({ onFilterClick, filters }: ReadyToShipGridProps) {
     const [sortBy, setSortBy] = useState("featured");
     const [isSortOpen, setIsSortOpen] = useState(false);
 
     const currentSort = sortOptions.find(opt => opt.value === sortBy)?.name || "Sort By";
 
+    // Apply filters and sorting
+    const filteredProducts = useMemo(() => {
+        let result = [...products];
+
+        // Filter by product type
+        if (filters.productTypes.length > 0) {
+            result = result.filter(p => filters.productTypes.includes(p.productType));
+        }
+
+        // Filter by price range
+        result = result.filter(p => p.priceValue >= filters.priceRange[0] && p.priceValue <= filters.priceRange[1]);
+
+        // Filter by discount
+        if (filters.discounts.length > 0) {
+            const minDiscount = Math.min(...filters.discounts);
+            result = result.filter(p => p.discountValue >= minDiscount);
+        }
+
+        // Sort
+        switch (sortBy) {
+            case "price-asc":
+                result.sort((a, b) => a.priceValue - b.priceValue);
+                break;
+            case "price-desc":
+                result.sort((a, b) => b.priceValue - a.priceValue);
+                break;
+            case "newest":
+                result.sort((a, b) => b.id - a.id);
+                break;
+            default:
+                // Featured - keep original order
+                break;
+        }
+
+        return result;
+    }, [filters, sortBy]);
+
     return (
         <div className="flex-1 w-full">
             {/* Header / Sort Bar */}
             <div className="flex flex-col sm:flex-row items-center justify-between mb-6 pb-4 border-b border-gray-100 relative">
-                <span className="text-sm font-medium text-gray-500 mb-4 sm:mb-0">199 Results</span>
+                <span className="text-sm font-medium text-gray-500 mb-4 sm:mb-0">
+                    {filteredProducts.length} Results
+                </span>
 
                 <div className="flex items-center gap-4">
                     {/* Filter Toggle (Mobile) */}
@@ -135,9 +246,16 @@ export default function ReadyToShipGrid({ onFilterClick }: ReadyToShipGridProps)
 
             {/* Product Grid - 3 Columns */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
-                {products.concat(products).concat(products).map((product, index) => (
-                    <ProductCardDetailed key={`${product.id}-${index}`} {...product} id={index + 1} />
-                ))}
+                {filteredProducts.length > 0 ? (
+                    filteredProducts.map((product, index) => (
+                        <ProductCardDetailed key={`${product.id}-${index}`} {...product} id={index + 1} />
+                    ))
+                ) : (
+                    <div className="col-span-full text-center py-20">
+                        <p className="text-gray-500 text-lg">No products match your filters.</p>
+                        <p className="text-gray-400 text-sm mt-2">Try adjusting your filters to see more results.</p>
+                    </div>
+                )}
             </div>
         </div>
     );

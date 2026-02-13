@@ -1,17 +1,24 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
 import DecorHero from "@/components/sections/decor-hero";
 import DecorIntro from "@/components/sections/decor-intro-text";
 import DecorCategories from "@/components/sections/decor-categories";
-import DecorSidebar from "@/components/sections/decor-sidebar";
+import DecorSidebar, { DecorFilterState } from "@/components/sections/decor-sidebar";
 import DecorGrid from "@/components/sections/decor-grid";
 
 export default function DecorPage() {
-    const [isMobileFilterOpen, setIsMobileFilterOpen] = React.useState(false);
+    const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+    const [filters, setFilters] = useState<DecorFilterState>({
+        productTypes: [],
+        priceRange: [0, 200000],
+        sizes: [],
+        discounts: [],
+    });
+
     return (
         <div className="flex min-h-screen flex-col bg-white">
             <Header />
@@ -41,6 +48,8 @@ export default function DecorPage() {
                         <DecorSidebar
                             isOpen={isMobileFilterOpen}
                             onClose={() => setIsMobileFilterOpen(false)}
+                            filters={filters}
+                            onFiltersChange={setFilters}
                         />
                         <div className="flex-1 w-full">
                             {/* Categories Section */}
@@ -49,6 +58,7 @@ export default function DecorPage() {
                             {/* Product Grid */}
                             <DecorGrid
                                 onFilterClick={() => setIsMobileFilterOpen(true)}
+                                filters={filters}
                             />
                         </div>
                     </div>

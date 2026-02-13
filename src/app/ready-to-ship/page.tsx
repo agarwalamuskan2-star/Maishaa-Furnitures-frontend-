@@ -1,14 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
-import ReadyToShipSidebar from "@/components/sections/ready-to-ship-sidebar";
+import ReadyToShipSidebar, { ReadyToShipFilterState } from "@/components/sections/ready-to-ship-sidebar";
 import ReadyToShipGrid from "@/components/sections/ready-to-ship-grid";
 
 export default function ReadyToShipPage() {
-    const [isMobileFilterOpen, setIsMobileFilterOpen] = React.useState(false);
+    const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+    const [filters, setFilters] = useState<ReadyToShipFilterState>({
+        productTypes: [],
+        priceRange: [0, 300000],
+        discounts: [],
+    });
 
     return (
         <div className="flex min-h-screen flex-col bg-white">
@@ -30,9 +35,12 @@ export default function ReadyToShipPage() {
                         <ReadyToShipSidebar
                             isOpen={isMobileFilterOpen}
                             onClose={() => setIsMobileFilterOpen(false)}
+                            filters={filters}
+                            onFiltersChange={setFilters}
                         />
                         <ReadyToShipGrid
                             onFilterClick={() => setIsMobileFilterOpen(true)}
+                            filters={filters}
                         />
                     </div>
                 </div>

@@ -34,7 +34,8 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                     initial={{ opacity: 0, scale: 0.9, y: 20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                    className="relative w-full max-w-lg bg-white shadow-2xl overflow-hidden"
+                    className="relative w-full max-w-lg bg-white shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto"
+                    onClick={(e) => e.stopPropagation()}
                 >
                     {/* Close Button */}
                     <button
@@ -123,8 +124,12 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                                     Facebook
                                 </button>
                                 <button 
-                                    onClick={() => signIn("google", { callbackUrl: "/" })}
-                                    className="flex items-center justify-center gap-3 h-12 border border-gray-100 text-[13px] font-medium hover:bg-gray-50 transition-colors cursor-pointer"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        signIn("google", { callbackUrl: "/", redirect: true });
+                                    }}
+                                    className="flex items-center justify-center gap-3 h-12 border border-gray-100 text-[13px] font-medium hover:bg-gray-50 transition-colors cursor-pointer active:scale-[0.98]"
                                 >
                                     <Image src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width={18} height={18} />
                                     Google
