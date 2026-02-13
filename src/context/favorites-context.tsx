@@ -44,7 +44,7 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
     }
   }, [favorites, isLoaded]);
 
-  const addToFavorites = (item: Omit<FavoriteItem, "quantity">) => {
+  const addToFavorites = (item: FavoriteItem) => {
     setFavorites((prev) => {
       if (prev.some((i) => i.id === item.id)) {
         return prev;
@@ -61,7 +61,7 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
     return favorites.some((i) => i.id === id);
   };
 
-  const toggleFavorite = (item: Omit<FavoriteItem, "quantity">) => {
+  const toggleFavorite = (item: FavoriteItem) => {
     if (isFavorite(item.id)) {
       removeFromFavorites(item.id);
     } else {

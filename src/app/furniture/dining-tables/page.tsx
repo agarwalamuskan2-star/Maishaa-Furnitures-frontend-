@@ -225,7 +225,7 @@ const DiningTableCollection = () => {
                                                 </div>
                                             </div>
 
-                                            <div className="flex flex-col gap-3 flex-grow pt-2">
+                                            <div className="border border-gray-200 p-4 mt-0 transition-shadow duration-300 group-hover:shadow-sm flex flex-col gap-3 flex-grow pt-2">
                                                 <h4 className="text-[17px] font-serif text-gray-800 transition-colors duration-300 leading-snug">
                                                     {product.name}
                                                 </h4>

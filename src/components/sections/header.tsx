@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useCart } from "@/context/cart-context";
+import { useFavorites } from "@/context/favorites-context";
 import Image from "next/image";
 import { ShoppingBag, Menu, X, User, Search, Heart, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -38,7 +40,25 @@ interface NavLink {
   megaMenu?: MegaMenu;
 }
 
+// Sample products for search
+const allProducts = [
+  { id: 1, title: "Iconic Velvet Sofa", price: "₹1,24,900", category: "Living Room", url: "/furniture/sofas-sectionals" },
+  { id: 2, title: "Solid Oak Dining Table", price: "₹84,900", category: "Dining Room", url: "/furniture/dining-tables" },
+  { id: 3, title: "Artisan Lounge Chair", price: "₹34,600", category: "Living Room", url: "/furniture/accent-chairs" },
+  { id: 4, title: "Minimalist Bed Frame", price: "₹72,400", category: "Bedroom", url: "/furniture/bedroom/beds" },
+  { id: 5, title: "Glass Coffee Table", price: "₹18,900", category: "Living Room", url: "/furniture/coffee-tables" },
+  { id: 6, title: "Woven Pendant Light", price: "₹12,600", category: "Lighting", url: "/decor/lighting/pendant-lights" },
+  { id: 7, title: "Modern Floor Lamp", price: "₹22,400", category: "Lighting", url: "/decor/lighting/floor-lamps" },
+  { id: 8, title: "Velvet Cushion Set", price: "₹4,500", category: "Decor", url: "/decor/objects/cushions" },
+  { id: 9, title: "Oak Nightstand", price: "₹14,900", category: "Bedroom", url: "/furniture/bedroom/nightstands" },
+  { id: 10, title: "Outdoor Seating", price: "₹45,000", category: "Outdoor", url: "/outdoor" },
+  { id: 11, title: "Bar Stools", price: "₹12,000", category: "Dining", url: "/furniture/dining/bar-stools" },
+  { id: 12, title: "Console Tables", price: "₹28,000", category: "Living", url: "/furniture/console-tables" },
+];
+
 const Header = () => {
+  const { cartCount } = useCart();
+  const { addToFavorites, favoritesCount } = useFavorites();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
@@ -48,6 +68,24 @@ const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [isSearchActive, setIsSearchActive] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState<typeof allProducts>([]);
+
+  // Search functionality
+  useEffect(() => {
+    if (searchQuery.trim() === '') {
+      setSearchResults([]);
+      return;
+    }
+
+    const searchTerms = searchQuery.toLowerCase().split(' ');
+    const filtered = allProducts.filter(product => {
+      const searchString = `${product.title} ${product.category}`.toLowerCase();
+      return searchTerms.some(term => searchString.includes(term));
+    });
+
+    setSearchResults(filtered);
+  }, [searchQuery]);
 
   // Main Header Links
   const mainHeaderLinks: NavLink[] = [
@@ -323,7 +361,7 @@ const Header = () => {
       <div className="w-full border-b border-gray-100">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 h-[70px] flex items-center justify-between gap-4 md:gap-8">
           {/* Logo (Left) */}
-          <div className={`flex-shrink-0 transition-all duration-300 ${isSearchActive ? 'opacity-0 md:opacity-100 w-0 md:w-auto overflow-hidden' : 'opacity-100'}`}>
+          <div className="flex-shrink-0 transition-all duration-300">
             <Link href="/" className="block">
               <Image
                 src={logoAsset}
@@ -358,27 +396,75 @@ const Header = () => {
                   ))}
                 </motion.div>
               ) : (
-                <motion.div
-                  key="search"
-                  initial={{ opacity: 0, width: 0 }}
-                  animate={{ opacity: 1, width: '100%' }}
-                  exit={{ opacity: 0, width: 0 }}
-                  className="flex items-center bg-transparent w-full max-w-2xl px-4"
-                >
-                  <Search size={18} className="text-gray-400 mr-3 shrink-0" />
-                  <input
-                    autoFocus
-                    type="text"
-                    placeholder="What are you looking for?"
-                    className="w-full bg-transparent outline-none h-10 text-sm md:text-base font-light placeholder:text-gray-300"
-                  />
-                  <button
-                    onClick={() => setIsSearchActive(false)}
-                    className="ml-2 p-1 text-gray-400 hover:text-black transition-colors"
+                <div className="relative w-full max-w-2xl">
+                  <motion.div
+                    key="search"
+                    initial={{ opacity: 0, width: 0 }}
+                    animate={{ opacity: 1, width: '100%' }}
+                    exit={{ opacity: 0, width: 0 }}
+                    className="flex items-center bg-white border border-gray-200 rounded-lg px-4"
                   >
-                    <X size={20} />
-                  </button>
-                </motion.div>
+                    <Search size={18} className="text-gray-400 mr-3 shrink-0" />
+                    <input
+                      autoFocus
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="What are you looking for?"
+                      className="w-full bg-transparent outline-none h-10 text-sm md:text-base font-light placeholder:text-gray-300"
+                    />
+                    <button
+                      onClick={() => {
+                        setIsSearchActive(false);
+                        setSearchQuery('');
+                      }}
+                      className="ml-2 p-1 text-gray-400 hover:text-black transition-colors"
+                    >
+                      <X size={20} />
+                    </button>
+                  </motion.div>
+                  
+                  {/* Search Results Dropdown */}
+                  {searchQuery.trim() !== '' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-80 overflow-y-auto"
+                    >
+                      {searchResults.length > 0 ? (
+                        <div className="p-2">
+                          <p className="text-xs text-gray-400 px-2 py-1">
+                            {searchResults.length} result{searchResults.length !== 1 ? 's' : ''} found
+                          </p>
+                          {searchResults.map((product) => (
+                            <Link
+                              key={product.id}
+                              href={product.url}
+                              onClick={() => {
+                                setIsSearchActive(false);
+                                setSearchQuery('');
+                              }}
+                              className="flex items-center gap-3 px-2 py-2 hover:bg-gray-50 rounded-md transition-colors"
+                            >
+                              <div className="w-10 h-10 bg-gray-100 rounded-md flex items-center justify-center">
+                                <Search size={16} className="text-gray-400" />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm font-medium text-gray-900 truncate">{product.title}</p>
+                                <p className="text-xs text-gray-500">{product.category} • {product.price}</p>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="p-4 text-center">
+                          <p className="text-sm text-gray-500">No products found for "{searchQuery}"</p>
+                          <p className="text-xs text-gray-400 mt-1">Try searching for furniture, lighting, or decor</p>
+                        </div>
+                      )}
+                    </motion.div>
+                  )}
+                </div>
               )}
             </AnimatePresence>
           </div>
@@ -413,10 +499,18 @@ const Header = () => {
               )}
               <button
                 onClick={() => setIsWishlistOpen(true)}
-                className="text-gray-700 hover:text-black transition-colors"
+                className="text-gray-700 hover:text-black transition-colors relative"
                 aria-label="Wishlist"
               >
                 <Heart size={22} strokeWidth={1.5} />
+                {favoritesCount > 0 && (
+                  <span
+                    suppressHydrationWarning
+                    className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center"
+                  >
+                    {favoritesCount}
+                  </span>
+                )}
               </button>
               <button
                 onClick={() => setIsCartOpen(true)}
@@ -424,6 +518,11 @@ const Header = () => {
                 aria-label="Cart"
               >
                 <ShoppingBag size={22} strokeWidth={1.5} />
+                {cartCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-black text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">
+                    {cartCount}
+                  </span>
+                )}
               </button>
             </div>
             {/* Mobile Only Icons (simplified for space) */}
@@ -441,6 +540,11 @@ const Header = () => {
                 aria-label="Cart"
               >
                 <ShoppingBag size={20} />
+                {cartCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-black text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
+                    {cartCount}
+                  </span>
+                )}
               </button>
             </div>
           </div>

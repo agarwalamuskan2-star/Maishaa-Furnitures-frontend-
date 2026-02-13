@@ -185,7 +185,7 @@ const BenchesCollection = () => {
                                             )}
                                         </div>
 
-                                        <div className="flex flex-col gap-2">
+                                        <div className="border border-gray-200 p-4 mt-0 transition-shadow duration-300 group-hover:shadow-sm">
                                             <div className="flex">
                                                 <span className="bg-[#f5f5f5] text-gray-500 px-2 py-1 text-[9px] font-bold tracking-[0.2em] uppercase">
                                                     {product.tag}

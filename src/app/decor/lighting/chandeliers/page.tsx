@@ -122,7 +122,7 @@ const ChandeliersCollection = () => {
                                                 </span>
                                             </div>
                                         </div>
-                                        <div className="flex flex-col gap-2 pt-2 px-1">
+                                        <div className="border border-gray-200 p-4 mt-0 transition-shadow duration-300 group-hover:shadow-sm flex flex-col gap-2 pt-2 px-1">
                                             <h4 className="text-[15px] font-medium text-gray-800 transition-colors duration-300 leading-snug tracking-wide uppercase">{product.name}</h4>
                                             <div className="space-y-2">
                                                 <div className="flex items-baseline gap-3">

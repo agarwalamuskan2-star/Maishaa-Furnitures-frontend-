@@ -56,6 +56,7 @@ export default function DecorSidebar({ isOpen = false, onClose, filters, onFilte
     };
 
     const handlePriceChange = (min: number, max: number) => {
+        console.log('Price change triggered:', min, max);
         onFiltersChange({ ...filters, priceRange: [min, max] });
     };
 

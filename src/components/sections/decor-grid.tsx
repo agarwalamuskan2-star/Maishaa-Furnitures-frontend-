@@ -160,7 +160,12 @@ export default function DecorGrid({ onFilterClick, filters }: DecorGridProps) {
         }
 
         // Filter by price range
-        result = result.filter(p => p.priceValue >= filters.priceRange[0] && p.priceValue <= filters.priceRange[1]);
+        console.log('Price filter applied:', filters.priceRange);
+        result = result.filter(p => {
+            const inRange = p.priceValue >= filters.priceRange[0] && p.priceValue <= filters.priceRange[1];
+            console.log(`Product ${p.title}: priceValue=${p.priceValue}, inRange=${inRange}`);
+            return inRange;
+        });
 
         // Filter by size
         if (filters.sizes.length > 0) {
