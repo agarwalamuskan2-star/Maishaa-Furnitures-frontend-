@@ -267,7 +267,7 @@ export default function WarehouseSaleGrid({ onFilterClick, filters }: WarehouseS
                                     )}
                                 </div>
 
-                                <ProductCardDetailed {...product} id={index + 1} badges={[]} />
+                                <ProductCardDetailed {...product} id={product.id} badges={[]} />
                             </div>
 
                             <div className="flex flex-col items-start px-1">

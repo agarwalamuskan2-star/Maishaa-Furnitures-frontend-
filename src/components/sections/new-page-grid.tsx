@@ -257,7 +257,7 @@ const NewPageGrid: React.FC<NewPageGridProps> = ({ onFilterClick, filters }) => 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
                 {filteredProducts.length > 0 ? (
                     filteredProducts.map((product) => (
-                        <ProductCardDetailed key={product.id} {...product} />
+                        <ProductCardDetailed key={product.id} {...product} id={product.id} />
                     ))
                 ) : (
                     <div className="col-span-full text-center py-20">

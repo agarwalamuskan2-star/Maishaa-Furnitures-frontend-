@@ -247,8 +247,8 @@ export default function ReadyToShipGrid({ onFilterClick, filters }: ReadyToShipG
             {/* Product Grid - 3 Columns */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
                 {filteredProducts.length > 0 ? (
-                    filteredProducts.map((product, index) => (
-                        <ProductCardDetailed key={`${product.id}-${index}`} {...product} id={index + 1} />
+                    filteredProducts.map((product) => (
+                        <ProductCardDetailed key={product.id} {...product} id={product.id} />
                     ))
                 ) : (
                     <div className="col-span-full text-center py-20">

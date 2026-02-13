@@ -228,7 +228,7 @@ export default function BestSellersGrid({ onFilterClick, filters }: BestSellersG
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
                 {filteredProducts.length > 0 ? (
                     filteredProducts.map((product, index) => (
-                        <ProductCardDetailed key={`${product.id}-${index}`} {...product} id={index + 1} />
+                        <ProductCardDetailed key={`${product.id}-${index}`} {...product} id={product.id} />
                     ))
                 ) : (
                     <div className="col-span-full text-center py-20">
