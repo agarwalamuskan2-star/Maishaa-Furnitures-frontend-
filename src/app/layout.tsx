@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { VisualEditsMessenger } from "orchids-visual-edits";
+import { AuthProvider } from "@/components/auth-provider";
 
 export const metadata: Metadata = {
   title: "Maishaa | Premium Furniture & Furnishing",
@@ -20,9 +21,11 @@ export default function RootLayout({
         className="antialiased"
         suppressHydrationWarning
       >
-        {children}
-        <FloatingContactButtons />
-        <VisualEditsMessenger />
+        <AuthProvider>
+          {children}
+          <FloatingContactButtons />
+          <VisualEditsMessenger />
+        </AuthProvider>
       </body>
     </html>
   );

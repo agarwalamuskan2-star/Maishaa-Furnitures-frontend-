@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Mail, Lock, Eye, EyeOff } from 'lucide-react';
+import { signIn } from "next-auth/react";
 
 interface AuthModalProps {
     isOpen: boolean;
@@ -114,11 +115,17 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                             </div>
 
                             <div className="grid grid-cols-2 gap-4">
-                                <button className="flex items-center justify-center gap-3 h-12 border border-gray-100 text-[13px] font-medium hover:bg-gray-50 transition-colors">
+                                <button 
+                                    className="flex items-center justify-center gap-3 h-12 border border-gray-100 text-[13px] font-medium hover:bg-gray-50 transition-colors opacity-50 cursor-not-allowed"
+                                    disabled
+                                >
                                     <Image src="https://www.svgrepo.com/show/475647/facebook-color.svg" alt="Facebook" width={18} height={18} />
                                     Facebook
                                 </button>
-                                <button className="flex items-center justify-center gap-3 h-12 border border-gray-100 text-[13px] font-medium hover:bg-gray-50 transition-colors">
+                                <button 
+                                    onClick={() => signIn("google", { callbackUrl: "/" })}
+                                    className="flex items-center justify-center gap-3 h-12 border border-gray-100 text-[13px] font-medium hover:bg-gray-50 transition-colors cursor-pointer"
+                                >
                                     <Image src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width={18} height={18} />
                                     Google
                                 </button>
