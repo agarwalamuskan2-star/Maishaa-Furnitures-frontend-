@@ -36,12 +36,20 @@ const HeroImages = () => {
 
     // Auto-play functionality
     useEffect(() => {
-        const interval = setInterval(() => {
-            nextSlide();
-        }, 5000);
+        let interval: NodeJS.Timeout;
+        
+        const startInterval = () => {
+            interval = setInterval(() => {
+                setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+            }, 5000);
+        };
 
-        return () => clearInterval(interval);
-    }, [currentSlide]);
+        startInterval();
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
 
     return (
         <section className="relative w-full h-[85vh] md:h-[90vh] overflow-hidden bg-gray-900">
