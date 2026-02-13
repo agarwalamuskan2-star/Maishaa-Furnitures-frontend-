@@ -106,16 +106,16 @@ const ProductCardDetailed: React.FC<ProductCardDetailedProps> = ({
                     <Heart size={18} className={isFavorite(id) ? "fill-current" : ""} />
                 </button>
 
-                {/* Add to Cart Button (Hidden by default, shown on hover) */}
+                {/* Add to Cart Button */}
                 <button
                     onClick={handleAddToCart}
                     disabled={isAdding || isAdded}
                     className={`absolute bottom-0 left-0 right-0 z-20 py-3 px-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2
                         ${isAdded 
                             ? "bg-green-600 text-white" 
-                            : "bg-black text-white opacity-0 group-hover:opacity-100 translate-y-full group-hover:translate-y-0"
+                            : "bg-black text-white hover:bg-gray-800"
                         }
-                        hover:bg-gray-800 disabled:opacity-100 disabled:cursor-not-allowed`}
+                        disabled:opacity-100 disabled:cursor-not-allowed`}
                 >
                     {isAdding ? (
                         "Adding..."
