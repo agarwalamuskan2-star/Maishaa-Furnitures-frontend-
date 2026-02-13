@@ -140,22 +140,28 @@
   }
 
   h1 {
-    font-size: 3.75rem;
+    font-size: clamp(2rem, 5vw, 3.75rem);
     font-weight: 700;
     line-height: 1.1;
   }
 
   h2 {
-    font-size: 3.5rem;
+    font-size: clamp(1.75rem, 4vw, 3.5rem);
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
 
   h3 {
-    font-size: 2.25rem;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
     font-weight: 400;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  h4 {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    font-weight: 500;
     letter-spacing: 0.05em;
   }
 
@@ -163,9 +169,24 @@
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
-    max-width: 1280px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    max-width: 1400px;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-right: 2rem;
+      padding-left: 2rem;
+      max-width: 1536px;
+    }
   }
 
   .nav-link {
@@ -241,5 +262,66 @@
   *:focus-visible {
     outline: 2px solid var(--color-ring);
     outline-offset: 2px;
+  }
+
+  /* Responsive Typography Helpers */
+  .text-responsive-xs {
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  }
+
+  .text-responsive-sm {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+  }
+
+  .text-responsive-base {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+  }
+
+  .text-responsive-lg {
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  }
+
+  .text-responsive-xl {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+  }
+
+  .text-responsive-2xl {
+    font-size: clamp(1.5rem, 4vw, 1.875rem);
+  }
+
+  /* Responsive Spacing Helpers */
+  .gap-responsive-sm {
+    gap: clamp(0.5rem, 1vw, 1rem);
+  }
+
+  .gap-responsive-md {
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .gap-responsive-lg {
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  /* Container responsive max-width */
+  .container-responsive {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-responsive {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-responsive {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 }

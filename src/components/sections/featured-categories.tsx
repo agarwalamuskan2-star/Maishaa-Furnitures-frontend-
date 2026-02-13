@@ -2,14 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-
-/**
- * FEATURED CATEGORIES SECTION
- * 
- * Clones the category cards with text labels ("New Arrivals", etc.)
- * and "SHOP NOW" links as seen in the reference image.
- */
 
 const FeaturedCategories = () => {
     const categories = [
@@ -34,50 +26,38 @@ const FeaturedCategories = () => {
     ];
 
     return (
-        <section className="w-full bg-transparent pt-2 md:pt-4 pb-8 md:pb-12 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 outline-none border-none">
-            <div className="max-w-[1920px] mx-auto outline-none border-none">
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 outline-none border-none">
+        <section className="w-full bg-white py-16 px-4 sm:px-8 md:px-12 lg:px-16">
+            <div className="max-w-[1800px] mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
                     {categories.map((category) => (
                         <div
                             key={category.id}
-                            className="flex flex-col space-y-4 group cursor-pointer outline-none border-none"
+                            className="flex flex-col group cursor-pointer relative overflow-hidden"
                         >
                             {/* Image Container */}
-                            <div
-                                className="relative w-full aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-sm outline-none border-none"
-                            >
+                            <div className="relative w-full aspect-[3/4] overflow-hidden">
                                 <Image
                                     src={category.image}
                                     alt={category.alt}
                                     fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-105 outline-none border-none"
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
-                                {/* Subtle Overlay */}
-                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
+                                {/* Overlay on hover */}
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                             </div>
 
-                            {/* Text Content */}
-                            <div className="space-y-1 text-left px-1">
-                                <h3 className="text-xl md:text-2xl font-normal text-[#1a1a1a] font-body tracking-tight">
+                            {/* Text Content - Positioned at bottom */}
+                            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bg-gradient-to-t from-black/50 to-transparent">
+                                <h3 className="text-white text-xl md:text-2xl font-light font-body">
                                     {category.title}
                                 </h3>
-                                <p className="text-xs md:text-sm font-medium text-gray-500 uppercase tracking-widest flex items-center gap-1 group-hover:text-black transition-colors">
-                                    SHOP NOW <span className="text-lg">+</span>
+                                <p className="text-white/80 text-xs md:text-sm mt-2 uppercase tracking-widest flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Shop Now <span className="text-lg">+</span>
                                 </p>
                             </div>
                         </div>
                     ))}
                 </div>
-
-                {/* Navigation Arrows (Optional visual flair) */}
-                <div className="hidden 2xl:block absolute top-[180vh] left-12 transform -translate-y-1/2 p-2 cursor-pointer hover:bg-gray-100 rounded-full transition-colors">
-                    <ChevronLeft size={40} className="text-gray-400" />
-                </div>
-                <div className="hidden 2xl:block absolute top-[180vh] right-12 transform -translate-y-1/2 p-2 cursor-pointer hover:bg-gray-100 rounded-full transition-colors">
-                    <ChevronRight size={40} className="text-gray-400" />
-                </div>
-
             </div>
         </section>
     );
