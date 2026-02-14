@@ -100,26 +100,24 @@ const HeroImages = () => {
                 ))}
             </div>
 
-            {/* Navigation Arrows - Left side only */}
-            <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 flex flex-col gap-3">
-                <button
-                    onClick={prevSlide}
-                    className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300"
-                    aria-label="Previous Slide"
-                >
-                    <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" strokeWidth={1.5} />
-                </button>
-                <button
-                    onClick={nextSlide}
-                    className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300"
-                    aria-label="Next Slide"
-                >
-                    <ChevronRight className="w-5 h-5 md:w-6 md:h-6" strokeWidth={1.5} />
-                </button>
-            </div>
+            {/* Navigation Arrows */}
+            <button
+                onClick={prevSlide}
+                className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300"
+                aria-label="Previous Slide"
+            >
+                <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" strokeWidth={1.5} />
+            </button>
+            <button
+                onClick={nextSlide}
+                className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300"
+                aria-label="Next Slide"
+            >
+                <ChevronRight className="w-5 h-5 md:w-6 md:h-6" strokeWidth={1.5} />
+            </button>
 
-            {/* Dots indicator - Bottom left */}
-            <div className="absolute bottom-8 left-4 md:left-20 z-10 flex gap-2">
+            {/* Dots indicator */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 md:left-20 md:translate-x-0 z-10 flex gap-2">
                 {slides.map((_, index) => (
                     <button
                         key={index}
