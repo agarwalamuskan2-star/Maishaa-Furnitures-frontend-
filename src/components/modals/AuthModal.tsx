@@ -84,7 +84,10 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
 
                             {/* Buttons Row */}
                             <div className="flex gap-4 pt-4">
-                                <button className="flex-1 h-12 bg-black text-white text-[13px] font-medium hover:bg-gray-900 transition-colors">
+                                <button
+                                    type="submit"
+                                    className="flex-1 h-12 bg-black text-white text-[13px] font-medium hover:bg-gray-900 transition-colors"
+                                >
                                     {isLogin ? 'Sign in' : 'Sign Up'}
                                 </button>
                                 <button className="flex-1 h-12 border border-gray-200 text-black text-[13px] font-medium hover:bg-gray-50 transition-all duration-300">
@@ -116,14 +119,14 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                             </div>
 
                             <div className="grid grid-cols-2 gap-4">
-                                <button 
+                                <button
                                     className="flex items-center justify-center gap-3 h-12 border border-gray-100 text-[13px] font-medium hover:bg-gray-50 transition-colors opacity-50 cursor-not-allowed"
                                     disabled
                                 >
                                     <Image src="https://www.svgrepo.com/show/475647/facebook-color.svg" alt="Facebook" width={18} height={18} />
                                     Facebook
                                 </button>
-                                <button 
+                                <button
                                     onClick={(e) => {
                                         e.preventDefault();
                                         e.stopPropagation();

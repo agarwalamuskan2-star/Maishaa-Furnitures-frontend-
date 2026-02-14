@@ -4,13 +4,14 @@ import React, { useState, useEffect } from "react";
 import { useCart } from "@/context/cart-context";
 import { useFavorites } from "@/context/favorites-context";
 import Image from "next/image";
-import { ShoppingBag, Menu, X, User, Search, Heart, ChevronDown } from "lucide-react";
+import { ShoppingBag, Menu, X, User, Search, Heart, ChevronDown, LogOut, Settings } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import AuthModal from "@/components/modals/AuthModal";
 import SearchOverlay from "@/components/modals/SearchOverlay";
 import CartSidebar from "@/components/modals/CartSidebar";
 import WishlistSidebar from "@/components/modals/WishlistSidebar";
+import { useSession, signOut } from "next-auth/react";
 
 interface NavItem {
   name: string;
@@ -57,6 +58,7 @@ const allProducts = [
 ];
 
 const Header = () => {
+  const { data: session, status } = useSession();
   const { cartCount } = useCart();
   const { addToFavorites, favoritesCount } = useFavorites();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,6 +70,7 @@ const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [isSearchActive, setIsSearchActive] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<typeof allProducts>([]);
 
@@ -482,13 +485,88 @@ const Header = () => {
           <div className="flex items-center space-x-4 sm:space-x-6 shrink-0">
             {/* Desktop Icons */}
             <div className="hidden lg:flex items-center space-x-6">
-              <button
-                onClick={() => setIsAuthOpen(true)}
-                className="flex items-center text-gray-700 hover:text-black transition-colors gap-2 text-sm font-medium"
-              >
-                <User size={20} />
-                <span className="hidden xl:inline">Login</span>
-              </button>
+              {status === "authenticated" ? (
+                <div
+                  className="relative"
+                  onMouseEnter={() => setIsUserMenuOpen(true)}
+                  onMouseLeave={() => setIsUserMenuOpen(false)}
+                >
+                  <button className="flex items-center gap-3 py-2 cursor-pointer group">
+                    <div className="relative">
+                      {session.user?.image ? (
+                        <Image
+                          src={session.user.image}
+                          alt={session.user.name || "User"}
+                          width={32}
+                          height={32}
+                          className="rounded-full ring-2 ring-transparent group-hover:ring-gray-100 transition-all border border-gray-100"
+                        />
+                      ) : (
+                        <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-all">
+                          <User size={18} className="text-gray-600" />
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex flex-col items-start leading-none pr-1">
+                      <span className="text-[13px] font-medium text-black max-w-[120px] truncate">
+                        {session.user?.name?.split(' ')[0] || 'Account'}
+                      </span>
+                      <span className="text-[10px] text-gray-400 mt-1 uppercase tracking-tight font-bold">Account</span>
+                    </div>
+                    <ChevronDown size={14} className={`text-gray-400 transition-transform duration-300 ${isUserMenuOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  <AnimatePresence>
+                    {isUserMenuOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                        className="absolute right-0 top-full pt-2 w-64 z-[60]"
+                      >
+                        <div className="bg-white shadow-2xl border border-gray-100 py-2 rounded-xl overflow-hidden">
+                          <div className="px-5 py-4 border-b border-gray-50 bg-gray-50/50">
+                            <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-1">Authenticated</p>
+                            <p className="text-sm font-semibold text-black truncate">{session.user?.name}</p>
+                            <p className="text-[11px] text-gray-500 truncate">{session.user?.email}</p>
+                          </div>
+                          <div className="py-2 px-2">
+                            <Link href="/my-orders" className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-black transition-colors rounded-lg">
+                              <ShoppingBag size={17} strokeWidth={1.5} />
+                              My Orders
+                            </Link>
+                            <Link href="/wishlist" className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-black transition-colors rounded-lg">
+                              <Heart size={17} strokeWidth={1.5} />
+                              Wishlist
+                            </Link>
+                            <Link href="/account-settings" className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-black transition-colors rounded-lg">
+                              <Settings size={17} strokeWidth={1.5} />
+                              Account Settings
+                            </Link>
+                          </div>
+                          <div className="px-2 pb-1">
+                            <button
+                              onClick={() => signOut()}
+                              className="w-full flex items-center gap-3 px-3 py-3 text-sm text-red-600 hover:bg-red-50 transition-colors text-left rounded-lg"
+                            >
+                              <LogOut size={17} strokeWidth={1.5} />
+                              <span className="font-bold">Logout</span>
+                            </button>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <button
+                  onClick={() => setIsAuthOpen(true)}
+                  className="flex items-center text-gray-700 hover:text-black transition-colors gap-2 text-sm font-medium"
+                >
+                  <User size={20} />
+                  <span className="hidden xl:inline">Login</span>
+                </button>
+              )}
               {!isSearchActive && (
                 <button
                   onClick={() => setIsSearchActive(true)}
@@ -790,28 +868,53 @@ const Header = () => {
               ))}
             </div>
 
-            <div className="border-t border-gray-100 pt-6 space-y-4">
+            {status === "authenticated" ? (
+              <div className="space-y-6">
+                <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                  {session.user?.image ? (
+                    <Image src={session.user.image} alt="Profile" width={54} height={54} className="rounded-full shadow-sm border-2 border-white" />
+                  ) : (
+                    <div className="w-[54px] h-[54px] rounded-full bg-gray-200 flex items-center justify-center text-gray-500">
+                      <User size={28} />
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <p className="text-base font-bold text-gray-900 truncate">{session.user?.name}</p>
+                    <p className="text-[11px] text-gray-500 truncate mt-0.5">{session.user?.email}</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <Link href="/my-orders" className="flex flex-col items-center justify-center gap-2.5 p-5 border border-gray-100 rounded-2xl hover:bg-gray-50 transition-all active:scale-95 shadow-sm">
+                    <ShoppingBag size={22} className="text-gray-700" strokeWidth={1.5} />
+                    <span className="text-[11px] font-bold text-gray-900 uppercase tracking-tighter">Orders</span>
+                  </Link>
+                  <Link href="/wishlist" className="flex flex-col items-center justify-center gap-2.5 p-5 border border-gray-100 rounded-2xl hover:bg-gray-50 transition-all active:scale-95 shadow-sm">
+                    <Heart size={22} className="text-gray-700" strokeWidth={1.5} />
+                    <span className="text-[11px] font-bold text-gray-900 uppercase tracking-tighter">Wishlist</span>
+                  </Link>
+                </div>
+
+                <button
+                  onClick={() => signOut()}
+                  className="flex items-center justify-center gap-3 w-full h-14 bg-red-50 text-red-600 rounded-2xl text-[13px] font-bold transition-all hover:bg-red-100 active:scale-[0.98]"
+                >
+                  <LogOut size={20} />
+                  SIGN OUT
+                </button>
+              </div>
+            ) : (
               <button
                 onClick={() => {
                   setIsMenuOpen(false);
                   setIsAuthOpen(true);
                 }}
-                className="flex items-center gap-2 text-base font-medium text-gray-800 w-full text-left"
+                className="flex items-center justify-center gap-3 h-14 bg-black text-white rounded-2xl w-full text-sm font-bold shadow-lg shadow-black/10 active:scale-[0.98] transition-transform"
               >
                 <User size={20} />
-                Login / Register
+                LOG IN / REGISTER
               </button>
-              <button
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  setIsWishlistOpen(true);
-                }}
-                className="flex items-center gap-2 text-base font-medium text-gray-800 w-full text-left"
-              >
-                <Heart size={20} />
-                Wishlist
-              </button>
-            </div>
+            )}
           </div>
         </div>
       )}
