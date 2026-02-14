@@ -9,11 +9,13 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      allowDangerousEmailAccountLinking: true,
     }),
   ],
-  basePath: "/api/auth",
-  trustHost: true,
-  secret: process.env.AUTH_SECRET,
+  pages: {
+    signIn: '/auth/signin',
+    error: '/auth/error',
+  },
   callbacks: {
     session: async ({ session, user }) => {
       if (session?.user) {
@@ -22,4 +24,5 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return session
     },
   },
+  debug: process.env.NODE_ENV === "development",
 })
