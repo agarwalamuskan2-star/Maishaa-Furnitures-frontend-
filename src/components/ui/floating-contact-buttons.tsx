@@ -5,7 +5,7 @@ import { Phone } from "lucide-react";
 
 const FloatingContactButtons = () => {
     return (
-        <div className="fixed bottom-6 right-6 z-[99999] flex flex-col gap-3 md:gap-4 pointer-events-none">
+        <div className="fixed bottom-20 md:bottom-6 right-6 z-[99999] flex flex-col gap-3 md:gap-4 pointer-events-none">
             {/* WhatsApp Button */}
             <a
                 href="https://wa.me/919999999999"

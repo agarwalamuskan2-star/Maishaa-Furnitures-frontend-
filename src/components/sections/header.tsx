@@ -357,7 +357,16 @@ const Header = () => {
 
   return (
     <header className="w-full sticky top-0 left-0 right-0 z-50 bg-white font-sans flex flex-col">
+      {/* 1. Announcement Bar */}
+      <div className="w-full bg-black text-white py-2 px-4 text-center text-[11px] font-medium tracking-widest uppercase relative">
+        Pan India Shipping
+        <button className="absolute right-4 top-1/2 -translate-y-1/2 opacity-60 hover:opacity-100 transition-opacity">
+          <X size={14} />
+        </button>
+      </div>
+
       {/* 2. Main Header */}
+
       <div className="w-full border-b border-gray-100">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 h-[70px] flex items-center justify-between gap-4 md:gap-8">
           {/* Logo (Left) */}
@@ -423,7 +432,7 @@ const Header = () => {
                       <X size={20} />
                     </button>
                   </motion.div>
-                  
+
                   {/* Search Results Dropdown */}
                   {searchQuery.trim() !== '' && (
                     <motion.div
@@ -471,16 +480,8 @@ const Header = () => {
 
           {/* Utility Icons (Right) */}
           <div className="flex items-center space-x-4 sm:space-x-6 shrink-0">
-            {/* Mobile Menu Toggle */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-1 text-gray-700 hover:text-black transition-colors"
-              aria-label="Toggle mobile menu"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-
-            <div className="hidden sm:flex items-center space-x-6">
+            {/* Desktop Icons */}
+            <div className="hidden lg:flex items-center space-x-6">
               <button
                 onClick={() => setIsAuthOpen(true)}
                 className="flex items-center text-gray-700 hover:text-black transition-colors gap-2 text-sm font-medium"
@@ -525,31 +526,61 @@ const Header = () => {
                 )}
               </button>
             </div>
-            {/* Mobile Only Icons (simplified for space) */}
-            <div className="flex sm:hidden items-center space-x-4">
+
+            {/* Mobile Icons */}
+            <div className="flex lg:hidden items-center space-x-4">
               <button
                 onClick={() => setIsSearchActive(true)}
                 className="text-gray-700 hover:text-black transition-colors"
                 aria-label="Search"
               >
-                <Search size={20} />
+                <Search size={22} strokeWidth={1.5} />
               </button>
               <button
                 onClick={() => setIsCartOpen(true)}
                 className="text-gray-700 hover:text-black transition-colors relative"
                 aria-label="Cart"
               >
-                <ShoppingBag size={20} />
+                <ShoppingBag size={22} strokeWidth={1.5} />
                 {cartCount > 0 && (
                   <span className="absolute -top-2 -right-2 bg-black text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
                     {cartCount}
                   </span>
                 )}
               </button>
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="p-1 text-gray-700 hover:text-black transition-colors"
+                aria-label="Toggle mobile menu"
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+
+      {/* Mobile Horizontal Sub-menu */}
+      <div className="lg:hidden w-full bg-white border-b border-gray-100 overflow-x-auto no-scrollbar py-3 px-4 flex items-center">
+        <div className="flex items-center space-x-6 whitespace-nowrap min-w-max">
+          {secondaryNavLinks.map((link, index) => (
+            <React.Fragment key={link.name}>
+              <Link
+                href={link.href}
+                className={`text-[11px] font-medium uppercase tracking-wider ${link.className || "text-gray-800"
+                  }`}
+              >
+                {link.name}
+              </Link>
+              {index < secondaryNavLinks.length - 1 && (
+                <span className="text-gray-300 text-[10px]">•</span>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+
 
       {/* Modals and Overlays */}
       <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} />

@@ -11,6 +11,8 @@ export const metadata: Metadata = {
 };
 
 import FloatingContactButtons from "@/components/ui/floating-contact-buttons";
+import BottomNavigation from "@/components/sections/bottom-navigation";
+
 
 export default function RootLayout({
   children,
@@ -27,6 +29,7 @@ export default function RootLayout({
           <CartProvider>
             <FavoritesProvider>
               {children}
+              <BottomNavigation />
               <FloatingContactButtons />
               <VisualEditsMessenger />
             </FavoritesProvider>
