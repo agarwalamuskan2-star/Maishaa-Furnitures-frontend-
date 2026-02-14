@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Mail, Lock, Eye, EyeOff } from 'lucide-react';
@@ -14,6 +14,19 @@ interface AuthModalProps {
 const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
     const [showPassword, setShowPassword] = React.useState(false);
     const [isLogin, setIsLogin] = React.useState(true);
+    
+    // Get callbackUrl from URL if present (for redirecting after login)
+    const [callbackUrl, setCallbackUrl] = React.useState('/');
+    
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const params = new URLSearchParams(window.location.search);
+            const callback = params.get('callbackUrl');
+            if (callback) {
+                setCallbackUrl(callback);
+            }
+        }
+    }, []);
 
     if (!isOpen) return null;
 
@@ -130,7 +143,7 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                                     onClick={(e) => {
                                         e.preventDefault();
                                         e.stopPropagation();
-                                        signIn("google", { callbackUrl: "/", redirect: true });
+                                        signIn("google", { callbackUrl: callbackUrl, redirect: true });
                                     }}
                                     className="flex items-center justify-center gap-3 h-12 border border-gray-100 text-[13px] font-medium hover:bg-gray-50 transition-colors cursor-pointer active:scale-[0.98]"
                                 >
