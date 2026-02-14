@@ -4,7 +4,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter"
 import { prisma } from "@/lib/prisma"
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  adapter: PrismaAdapter(prisma),
+  // adapter: PrismaAdapter(prisma), // Temporarily disabled for debugging
   providers: [
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID,
@@ -13,12 +13,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     }),
   ],
   callbacks: {
-    session: async ({ session, user }) => {
-      if (session?.user) {
+    session: async ({ session, user, token }) => { // Add token to params
+      if (session?.user && user?.id) {
         session.user.id = user.id
       }
       return session
     },
   },
-  debug: process.env.NODE_ENV === "development",
+  debug: true, // Force debug logs
 })
