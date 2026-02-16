@@ -171,23 +171,9 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                     </button>
 
                     <div className="px-8 py-12 md:px-12">
-                        {/* Header with Back Button */}
-                        <div className="flex items-center gap-4 mb-8">
-                            {isOtpMode && (
-                                <button
-                                    onClick={() => {
-                                        if (otpSent) setOtpSent(false);
-                                        else setIsOtpMode(false);
-                                    }}
-                                    className="p-1 -ml-1 hover:bg-gray-100 rounded-full transition-colors"
-                                >
-                                    <ArrowLeft size={20} />
-                                </button>
-                            )}
-                            <h2 className="text-2xl font-medium text-black">
-                                {isOtpMode ? (otpSent ? 'Verify OTP' : 'Login with OTP') : (isLogin ? 'Login' : 'Sign Up')}
-                            </h2>
-                        </div>
+                        <h2 className="text-2xl font-medium text-black mb-8 text-left">
+                            {isOtpMode ? (otpSent ? 'Verify OTP' : 'OTP Login') : (isLogin ? 'Login' : 'Sign Up')}
+                        </h2>
 
                         {!isOtpMode ? (
                             /* Standard Password Login Form */
@@ -210,7 +196,7 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                                         required
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        placeholder="Email Address*"
+                                        placeholder="Email/Mobile Number*"
                                         className="w-full h-12 px-4 border border-gray-200 outline-none text-sm placeholder:text-gray-400 focus:border-black transition-colors"
                                     />
                                 </div>
@@ -242,33 +228,33 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                                     </button>
                                 </div>
 
-                                <div className="flex flex-col gap-3 pt-4">
+                                {/* Buttons Row - Restored Side-by-Side */}
+                                <div className="flex gap-4 pt-4">
                                     <button
                                         type="submit"
                                         disabled={isLoading}
-                                        className="w-full h-12 bg-black text-white text-[13px] font-medium hover:bg-gray-900 transition-colors disabled:opacity-50"
+                                        className="flex-1 h-12 bg-black text-white text-[13px] font-medium hover:bg-gray-900 transition-colors disabled:opacity-50"
                                     >
-                                        {isLoading ? (isLogin ? 'Signing in...' : 'Creating Account...') : (isLogin ? 'Sign in' : 'Sign Up')}
+                                        {isLoading ? (isLogin ? 'Signing in...' : 'Registering...') : (isLogin ? 'Sign in' : 'Sign Up')}
                                     </button>
                                     {isLogin && (
                                         <button
                                             type="button"
                                             onClick={() => setIsOtpMode(true)}
-                                            className="w-full h-12 border border-gray-200 text-black text-[13px] font-medium hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+                                            className="flex-1 h-12 border border-gray-200 text-black text-[13px] font-medium hover:bg-gray-50 transition-all duration-300"
                                         >
-                                            <Smartphone size={16} />
-                                            Login with OTP
+                                            Request OTP
                                         </button>
                                     )}
                                 </div>
                             </form>
                         ) : (
-                            /* OTP Login Flow */
+                            /* OTP Login Flow - Styled to match original modal */
                             <div className="space-y-6">
                                 {!otpSent ? (
                                     <form onSubmit={handleSendOtp} className="space-y-4">
                                         <p className="text-sm text-gray-500 mb-2">
-                                            We'll send a 6-digit verification code to your email.
+                                            Verification code will be sent to your email.
                                         </p>
                                         <div className="relative">
                                             <input
@@ -276,31 +262,33 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                                                 required
                                                 value={email}
                                                 onChange={(e) => setEmail(e.target.value)}
-                                                placeholder="Enter your email address"
+                                                placeholder="Email Address*"
                                                 className="w-full h-12 px-4 border border-gray-200 outline-none text-sm placeholder:text-gray-400 focus:border-black transition-colors"
                                             />
                                         </div>
-                                        <button
-                                            disabled={isLoading}
-                                            type="submit"
-                                            className="w-full h-12 bg-black text-white text-[13px] font-medium hover:bg-gray-900 transition-colors disabled:opacity-50"
-                                        >
-                                            {isLoading ? 'Sending...' : 'Send OTP'}
-                                        </button>
+                                        <div className="flex gap-4 pt-4">
+                                            <button
+                                                disabled={isLoading}
+                                                type="submit"
+                                                className="flex-1 h-12 bg-black text-white text-[13px] font-medium hover:bg-gray-900 transition-colors disabled:opacity-50"
+                                            >
+                                                {isLoading ? 'Sending...' : 'Send OTP'}
+                                            </button>
+                                            <button
+                                                type="button"
+                                                onClick={() => setIsOtpMode(false)}
+                                                className="flex-1 h-12 border border-gray-200 text-black text-[13px] font-medium hover:bg-gray-50"
+                                            >
+                                                Cancel
+                                            </button>
+                                        </div>
                                     </form>
                                 ) : (
                                     <form onSubmit={handleVerifyOtp} className="space-y-6">
                                         <div className="space-y-2">
                                             <p className="text-sm text-gray-500">
-                                                Verification code sent to <span className="text-black font-medium">{email}</span>
+                                                Code sent to <span className="text-black font-medium">{email}</span>
                                             </p>
-                                            <button
-                                                type="button"
-                                                onClick={() => setOtpSent(false)}
-                                                className="text-[11px] text-orange-500 font-medium hover:underline"
-                                            >
-                                                Change Email
-                                            </button>
                                         </div>
 
                                         <div className="flex justify-center py-2">
@@ -332,16 +320,23 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                                                 {isLoading ? 'Verifying...' : 'Verify & Login'}
                                             </button>
 
-                                            <div className="text-center">
+                                            <div className="flex justify-between items-center px-1">
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setOtpSent(false)}
+                                                    className="text-xs text-black font-medium hover:underline"
+                                                >
+                                                    Back
+                                                </button>
                                                 {timer > 0 ? (
                                                     <p className="text-xs text-gray-400">
-                                                        Resend OTP in <span className="font-medium">{timer}s</span>
+                                                        Resend in <span className="font-medium">{timer}s</span>
                                                     </p>
                                                 ) : (
                                                     <button
                                                         type="button"
                                                         onClick={handleSendOtp}
-                                                        className="text-xs text-black font-medium hover:underline"
+                                                        className="text-xs text-orange-500 font-medium hover:underline"
                                                     >
                                                         Resend OTP
                                                     </button>
