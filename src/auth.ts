@@ -1,7 +1,9 @@
 import NextAuth from "next-auth"
 import Google from "next-auth/providers/google"
+import Credentials from "next-auth/providers/credentials"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import { prisma } from "@/lib/prisma"
+import bcrypt from "bcryptjs"
 
 // Log environment variables status at startup (won't expose values)
 console.log("=== Auth Configuration ===")
@@ -15,7 +17,7 @@ console.log("===========================")
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   trustHost: true,
-  // adapter: PrismaAdapter(prisma), // Temporarily disabled for debugging
+  adapter: PrismaAdapter(prisma),
   providers: [
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID ?? "",
@@ -29,7 +31,43 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         }
       },
     }),
+    Credentials({
+      name: "credentials",
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" }
+      },
+      async authorize(credentials) {
+        if (!credentials?.email || !credentials?.password) {
+          throw new Error('Invalid credentials');
+        }
+
+        const user = await prisma.user.findUnique({
+          where: {
+            email: credentials.email as string
+          }
+        });
+
+        if (!user || !user.password) {
+          throw new Error('Invalid credentials');
+        }
+
+        const isPasswordCorrect = await bcrypt.compare(
+          credentials.password as string,
+          user.password
+        );
+
+        if (!isPasswordCorrect) {
+          throw new Error('Invalid credentials');
+        }
+
+        return user;
+      }
+    })
   ],
+  session: {
+    strategy: "jwt",
+  },
   // Explicitly set the base URL for production
   basePath: "/api/auth",
   pages: {
@@ -37,12 +75,18 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     error: "/",
   },
   callbacks: {
-    session: async ({ session, user, token }) => {
-      if (session?.user && user?.id) {
-        session.user.id = user.id
+    session: async ({ session, token }) => {
+      if (session?.user && token?.sub) {
+        session.user.id = token.sub
       }
       return session
     },
+    jwt: async ({ token, user }) => {
+      if (user) {
+        token.sub = user.id
+      }
+      return token
+    }
   },
   debug: true,
 })
