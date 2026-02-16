@@ -159,7 +159,7 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                     initial={{ opacity: 0, scale: 0.9, y: 20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                    className="relative w-full max-w-lg bg-white shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto"
+                    className="relative w-full max-w-lg bg-white shadow-2xl overflow-hidden"
                     onClick={(e) => e.stopPropagation()}
                 >
                     {/* Close Button */}
