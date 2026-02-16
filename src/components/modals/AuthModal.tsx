@@ -105,13 +105,21 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
         }
 
         setIsLoading(true);
-        // Mocking OTP send logic
         try {
-            console.log("Sending OTP to:", email);
-            await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
-            setOtpSent(true);
-            setTimer(30); // 30 seconds cooldown
-            toast.success("OTP sent successfully to " + email);
+            const response = await fetch("/api/auth/otp/send", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
+
+            if (response.ok) {
+                setOtpSent(true);
+                setTimer(30); // 30 seconds cooldown
+                toast.success("OTP sent successfully to " + email);
+            } else {
+                const error = await response.text();
+                toast.error(error || "Failed to send OTP");
+            }
         } catch (error) {
             toast.error("Failed to send OTP. Please try again.");
         } finally {
@@ -128,13 +136,22 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
 
         setIsLoading(true);
         try {
-            console.log("Verifying OTP:", otpCode);
-            // In a real app, you would sign in with the OTP here
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            toast.success("Login successful!");
-            onClose();
+            const result = await signIn("credentials", {
+                email,
+                otp: otpCode,
+                redirect: false,
+                callbackUrl: callbackUrl
+            });
+
+            if (result?.error) {
+                toast.error(result.error);
+            } else {
+                toast.success("Login successful!");
+                onClose();
+                window.location.reload(); // Refresh to update auth state
+            }
         } catch (error) {
-            toast.error("Invalid OTP. Please try again.");
+            toast.error("An error occurred. Please try again.");
         } finally {
             setIsLoading(false);
         }
