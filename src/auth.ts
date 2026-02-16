@@ -14,6 +14,7 @@ console.log("DATABASE_URL:", process.env.DATABASE_URL ? "✓ Set" : "✗ Missing
 console.log("===========================")
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  trustHost: true,
   // adapter: PrismaAdapter(prisma), // Temporarily disabled for debugging
   providers: [
     Google({

@@ -626,6 +626,37 @@ const Header = () => {
                   </span>
                 )}
               </button>
+
+              {/* User Icon for quick mobile access */}
+              {status === "authenticated" ? (
+                <button
+                  onClick={() => setIsMenuOpen(true)}
+                  className="relative"
+                >
+                  {session.user?.image ? (
+                    <Image
+                      src={session.user.image}
+                      alt="User"
+                      width={24}
+                      height={24}
+                      className="rounded-full border border-gray-100"
+                    />
+                  ) : (
+                    <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
+                      <User size={16} className="text-gray-600" />
+                    </div>
+                  )}
+                </button>
+              ) : (
+                <button
+                  onClick={() => setIsAuthOpen(true)}
+                  className="text-gray-700 hover:text-black transition-colors"
+                  aria-label="Login"
+                >
+                  <User size={22} strokeWidth={1.5} />
+                </button>
+              )}
+
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-1 text-gray-700 hover:text-black transition-colors"
@@ -783,142 +814,147 @@ const Header = () => {
       </div>
 
       {/* Mobile Sidebar Overlay */}
-      {isMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[70px] bg-white z-40 overflow-y-auto border-t border-gray-200">
-          <div className="flex flex-col p-6 space-y-6">
-            <div className="space-y-4">
-              <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Menu</h3>
-              {mainHeaderLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="block text-base font-medium text-gray-800"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
+      {
+        isMenuOpen && (
+          <div className="lg:hidden fixed inset-0 top-[70px] bg-white z-40 overflow-y-auto border-t border-gray-200">
+            <div className="flex flex-col p-6 space-y-8 pb-32">
+              {/* Auth Section at Top for Mobile */}
+              {status === "authenticated" ? (
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                    {session.user?.image ? (
+                      <Image src={session.user.image} alt="Profile" width={50} height={50} className="rounded-full shadow-sm border-2 border-white" />
+                    ) : (
+                      <div className="w-[50px] h-[50px] rounded-full bg-gray-200 flex items-center justify-center text-gray-500">
+                        <User size={24} />
+                      </div>
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <p className="text-base font-bold text-gray-900 truncate">{session.user?.name}</p>
+                      <p className="text-[11px] text-gray-500 truncate mt-0.5">{session.user?.email}</p>
+                    </div>
+                  </div>
 
-            <div className="border-t border-gray-100 pt-6 space-y-4">
-              <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Categories</h3>
-              {secondaryNavLinks.map((link) => (
-                <div key={link.name}>
+                  <div className="grid grid-cols-2 gap-3">
+                    <Link href="/my-orders" onClick={() => setIsMenuOpen(false)} className="flex flex-col items-center justify-center gap-2 p-4 border border-gray-100 rounded-2xl hover:bg-gray-50 transition-all active:scale-95 bg-white">
+                      <ShoppingBag size={20} className="text-gray-700" strokeWidth={1.5} />
+                      <span className="text-[10px] font-bold text-gray-900 uppercase tracking-tighter">Orders</span>
+                    </Link>
+                    <Link href="/wishlist" onClick={() => setIsMenuOpen(false)} className="flex flex-col items-center justify-center gap-2 p-4 border border-gray-100 rounded-2xl hover:bg-gray-50 transition-all active:scale-95 bg-white">
+                      <Heart size={20} className="text-gray-700" strokeWidth={1.5} />
+                      <span className="text-[10px] font-bold text-gray-900 uppercase tracking-tighter">Wishlist</span>
+                    </Link>
+                  </div>
+
+                  <button
+                    onClick={() => signOut()}
+                    className="flex items-center justify-center gap-3 w-full h-12 bg-red-50 text-red-600 rounded-xl text-[12px] font-bold transition-all hover:bg-red-100 active:scale-[0.98]"
+                  >
+                    <LogOut size={18} />
+                    SIGN OUT
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsAuthOpen(true);
+                  }}
+                  className="flex items-center justify-center gap-3 h-14 bg-black text-white rounded-2xl w-full text-sm font-bold shadow-lg shadow-black/10 active:scale-[0.98] transition-transform"
+                >
+                  <User size={20} />
+                  LOG IN / REGISTER
+                </button>
+              )}
+
+              <div className="space-y-4">
+                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Menu</h3>
+                {mainHeaderLinks.map((link) => (
                   <Link
+                    key={link.name}
                     href={link.href}
-                    className={`block text-base font-medium text-gray-600 ${link.className || ""}`}
+                    className="block text-base font-medium text-gray-800"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.name}
                   </Link>
-                  {link.dropdown && (
-                    <div className="ml-4 mt-2 space-y-2">
-                      {link.dropdown.map((item: NavItem) => (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="block text-sm text-gray-500"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                  {link.megaMenu && (
-                    <div className="ml-4 mt-3 space-y-6">
-                      {link.megaMenu.columns.map((column: MegaMenuColumn, idx: number) => (
-                        <div key={idx} className="space-y-2">
-                          <p className="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-bold">{column.title}</p>
-                          <div className="space-y-2">
-                            {column.links.map((item: NavItem, i: number) => (
-                              <Link
-                                key={i}
-                                href={item.href}
-                                className="block text-sm text-gray-500"
-                                onClick={() => setIsMenuOpen(false)}
-                              >
-                                {item.name}
-                              </Link>
-                            ))}
-                          </div>
-
-                          {column.subTitle && (
-                            <div className="pt-2 space-y-2">
-                              <p className="text-[9px] text-gray-400 uppercase tracking-[0.2em] font-bold">{column.subTitle}</p>
-                              <div className="space-y-2">
-                                {column.subLinks?.map((item: NavItem, i: number) => (
-                                  <Link
-                                    key={i}
-                                    href={item.href}
-                                    className="block text-sm text-gray-500"
-                                    onClick={() => setIsMenuOpen(false)}
-                                  >
-                                    {item.name}
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {status === "authenticated" ? (
-              <div className="space-y-6">
-                <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-2xl border border-gray-100">
-                  {session.user?.image ? (
-                    <Image src={session.user.image} alt="Profile" width={54} height={54} className="rounded-full shadow-sm border-2 border-white" />
-                  ) : (
-                    <div className="w-[54px] h-[54px] rounded-full bg-gray-200 flex items-center justify-center text-gray-500">
-                      <User size={28} />
-                    </div>
-                  )}
-                  <div className="flex-1 min-w-0">
-                    <p className="text-base font-bold text-gray-900 truncate">{session.user?.name}</p>
-                    <p className="text-[11px] text-gray-500 truncate mt-0.5">{session.user?.email}</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3">
-                  <Link href="/my-orders" className="flex flex-col items-center justify-center gap-2.5 p-5 border border-gray-100 rounded-2xl hover:bg-gray-50 transition-all active:scale-95 shadow-sm">
-                    <ShoppingBag size={22} className="text-gray-700" strokeWidth={1.5} />
-                    <span className="text-[11px] font-bold text-gray-900 uppercase tracking-tighter">Orders</span>
-                  </Link>
-                  <Link href="/wishlist" className="flex flex-col items-center justify-center gap-2.5 p-5 border border-gray-100 rounded-2xl hover:bg-gray-50 transition-all active:scale-95 shadow-sm">
-                    <Heart size={22} className="text-gray-700" strokeWidth={1.5} />
-                    <span className="text-[11px] font-bold text-gray-900 uppercase tracking-tighter">Wishlist</span>
-                  </Link>
-                </div>
-
-                <button
-                  onClick={() => signOut()}
-                  className="flex items-center justify-center gap-3 w-full h-14 bg-red-50 text-red-600 rounded-2xl text-[13px] font-bold transition-all hover:bg-red-100 active:scale-[0.98]"
-                >
-                  <LogOut size={20} />
-                  SIGN OUT
-                </button>
+                ))}
               </div>
-            ) : (
-              <button
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  setIsAuthOpen(true);
-                }}
-                className="flex items-center justify-center gap-3 h-14 bg-black text-white rounded-2xl w-full text-sm font-bold shadow-lg shadow-black/10 active:scale-[0.98] transition-transform"
-              >
-                <User size={20} />
-                LOG IN / REGISTER
-              </button>
-            )}
+
+              <div className="border-t border-gray-100 pt-6 space-y-4">
+                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider">Categories</h3>
+                {secondaryNavLinks.map((link) => (
+                  <div key={link.name}>
+                    <Link
+                      href={link.href}
+                      className={`block text-base font-medium text-gray-600 ${link.className || ""}`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                    {link.dropdown && (
+                      <div className="ml-4 mt-2 space-y-2">
+                        {link.dropdown.map((item: NavItem) => (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            className="block text-sm text-gray-500"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                    {link.megaMenu && (
+                      <div className="ml-4 mt-3 space-y-6">
+                        {link.megaMenu.columns.map((column: MegaMenuColumn, idx: number) => (
+                          <div key={idx} className="space-y-2">
+                            <p className="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-bold">{column.title}</p>
+                            <div className="space-y-2">
+                              {column.links.map((item: NavItem, i: number) => (
+                                <Link
+                                  key={i}
+                                  href={item.href}
+                                  className="block text-sm text-gray-500"
+                                  onClick={() => setIsMenuOpen(false)}
+                                >
+                                  {item.name}
+                                </Link>
+                              ))}
+                            </div>
+
+                            {column.subTitle && (
+                              <div className="pt-2 space-y-2">
+                                <p className="text-[9px] text-gray-400 uppercase tracking-[0.2em] font-bold">{column.subTitle}</p>
+                                <div className="space-y-2">
+                                  {column.subLinks?.map((item: NavItem, i: number) => (
+                                    <Link
+                                      key={i}
+                                      href={item.href}
+                                      className="block text-sm text-gray-500"
+                                      onClick={() => setIsMenuOpen(false)}
+                                    >
+                                      {item.name}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+
+            </div>
           </div>
-        </div>
-      )}
-    </header>
+        )
+      }
+    </header >
   );
 };
 
