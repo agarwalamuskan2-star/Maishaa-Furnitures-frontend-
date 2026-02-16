@@ -44,7 +44,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
         // Handle OTP Login
         if (credentials.otp) {
-          const otpEntry = await prisma.otp.findFirst({
+          const otpEntry = await (prisma as any).otp.findFirst({
             where: {
               email: credentials.email as string,
               code: credentials.otp as string,
@@ -57,7 +57,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           }
 
           // Delete the OTP after successful use
-          await prisma.otp.delete({ where: { id: otpEntry.id } });
+          await (prisma as any).otp.delete({ where: { id: otpEntry.id } });
 
           // Find or create user
           let user = await prisma.user.findUnique({
