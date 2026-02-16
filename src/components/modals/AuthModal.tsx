@@ -23,6 +23,9 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
     const [isLogin, setIsLogin] = useState(true);
     const [isOtpMode, setIsOtpMode] = useState(false);
     const [otpSent, setOtpSent] = useState(false);
+    const [email, setEmail] = useState("");
+    const [otpCode, setOtpCode] = useState("");
+    const [timer, setTimer] = useState(0);
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);

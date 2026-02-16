@@ -46,7 +46,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           where: {
             email: credentials.email as string
           }
-        });
+        }) as any;
 
         if (!user || !user.password) {
           throw new Error('Invalid credentials');
