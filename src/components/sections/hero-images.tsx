@@ -92,7 +92,7 @@ const HeroImages = () => {
                             <h2 className="text-4xl md:text-7xl font-light mb-1">{slide.title}</h2>
                             <p className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-medium mb-6 opacity-80">{slide.subtitle}</p>
                             <p className="text-lg md:text-3xl font-light leading-snug mb-8">{slide.description}</p>
-                            <Link href="/products" className="inline-block border-b border-white pb-1 text-[10px] md:text-xs uppercase tracking-widest font-medium hover:opacity-80 transition-opacity">
+                            <Link href="/collections" className="inline-block border-b border-white pb-1 text-[10px] md:text-xs uppercase tracking-widest font-medium hover:opacity-80 transition-opacity">
                                 Shop Now
                             </Link>
                         </div>

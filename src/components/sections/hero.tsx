@@ -92,7 +92,7 @@ const HeroSection = () => {
           </p>
 
           <a
-            href="/products"
+            href="/collections"
             className="group relative inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-medium text-white border-2 border-white transition-all duration-300 overflow-hidden cursor-pointer tracking-wider uppercase"
           >
             <span className="relative z-10 group-hover:text-black transition-colors duration-300">

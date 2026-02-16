@@ -110,7 +110,7 @@ export default function ProductShowcase() {
             PRODUCTS
           </h3>
           <a
-            href="/products"
+            href="/collections"
             className="flex items-center space-x-2 text-[14px] md:text-[16px] font-medium text-[#0f172a] hover:text-[#a67f5e] transition-colors tracking-widest font-body group"
           >
             <span className="uppercase">ALL PRODUCTS</span>
