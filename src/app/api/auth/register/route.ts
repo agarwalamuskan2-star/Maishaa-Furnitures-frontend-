@@ -4,6 +4,12 @@ import bcrypt from "bcryptjs";
 
 export async function POST(req: Request) {
     try {
+        const dbUrl = process.env.DATABASE_URL;
+        if (!dbUrl || dbUrl.includes("localhost")) {
+            console.error("CRITICAL: DATABASE_URL is missing or set to localhost in Vercel!");
+            return new NextResponse("Server Configuration Error: Database not configured correctly.", { status: 500 });
+        }
+
         const { name, email, password } = await req.json();
 
         if (!email || !password) {
