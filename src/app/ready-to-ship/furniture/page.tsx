@@ -137,7 +137,13 @@ const ReadyToShipFurniturePage = () => {
                                             className="group cursor-pointer flex flex-col"
                                         >
                                             <div className="relative aspect-square overflow-hidden bg-[#f9f9f9] mb-6">
-                                                <Image src={product.image} alt={product.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                                                <Image
+                                                    src={product.image}
+                                                    alt={product.name}
+                                                    fill
+                                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                                />
                                                 <button className="absolute top-4 right-4 p-2.5 bg-white/90 backdrop-blur-sm rounded-full shadow-sm hover:text-red-500 z-10 group/heart">
                                                     <Heart size={18} strokeWidth={1} className="group-hover/heart:fill-red-500 transition-colors" />
                                                 </button>

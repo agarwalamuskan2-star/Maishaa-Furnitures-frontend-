@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import { ChevronDown, SlidersHorizontal } from "lucide-react";
+import Image from "next/image";
 import ProductCardDetailed from "@/components/ui/product-card-detailed";
 import { WarehouseSaleFilterState } from "./warehouse-sale-sidebar";
 
