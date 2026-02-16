@@ -35,7 +35,11 @@ export async function POST(req: Request) {
 
         return NextResponse.json(user);
     } catch (error: any) {
-        console.error("REGISTRATION_ERROR", error);
-        return new NextResponse("Internal Error", { status: 500 });
+        console.error("REGISTRATION_API_ERROR:", {
+            message: error.message,
+            stack: error.stack,
+            error
+        });
+        return new NextResponse(`Internal Error: ${error.message}`, { status: 500 });
     }
 }

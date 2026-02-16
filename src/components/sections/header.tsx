@@ -95,7 +95,7 @@ const Header = () => {
     { name: "Best Sellers", href: "/best-sellers" },
     { name: "Design Masters", href: "/design-masters" },
     { name: "Free Design Services", href: "/design-services" },
-    { name: "Partner Program", href: "/partner-program" },
+    { name: "Partner Program", href: "/partner" },
   ];
 
   // Secondary Navigation Links with Dropdowns
