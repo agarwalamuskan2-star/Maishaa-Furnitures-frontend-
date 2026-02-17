@@ -73,32 +73,32 @@ const CartSidebar = ({ isOpen, onClose }: CartSidebarProps) => {
                                 {cartItems.map((item) => (
                                     <div key={item.id} className="flex gap-4 mb-6 pb-6 border-b border-gray-100">
                                         <div className="w-24 h-24 bg-gray-50 rounded-md overflow-hidden flex-shrink-0">
-                                            <img 
-                                                src={item.mainImage} 
+                                            <img
+                                                src={item.mainImage}
                                                 alt={item.title}
                                                 className="w-full h-full object-cover"
                                             />
                                         </div>
                                         <div className="flex-1">
                                             <h4 className="text-sm font-medium text-gray-900 mb-1 line-clamp-2">{item.title}</h4>
-                                            <p className="text-sm text-gray-500 mb-3">₹{item.price}</p>
+                                            <p className="text-sm text-gray-500 mb-3">{item.price.startsWith('₹') ? item.price : `₹${item.price}`}</p>
                                             <div className="flex items-center justify-between">
                                                 <div className="flex items-center gap-2">
-                                                    <button 
+                                                    <button
                                                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
                                                         className="p-1 hover:bg-gray-100 rounded"
                                                     >
                                                         <Minus size={14} />
                                                     </button>
                                                     <span className="text-sm w-6 text-center">{item.quantity}</span>
-                                                    <button 
+                                                    <button
                                                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
                                                         className="p-1 hover:bg-gray-100 rounded"
                                                     >
                                                         <Plus size={14} />
                                                     </button>
                                                 </div>
-                                                <button 
+                                                <button
                                                     onClick={() => removeFromCart(item.id)}
                                                     className="p-2 text-gray-400 hover:text-red-500 transition-colors"
                                                 >
