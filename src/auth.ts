@@ -42,6 +42,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           throw new Error('Invalid credentials');
         }
 
+        /*
         // Handle OTP Login
         if (credentials.otp) {
           const otpEntry = await (prisma as any).otp.findFirst({
@@ -75,6 +76,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
           return user;
         }
+        */
 
         // Handle Password Login
         if (!credentials?.password) {
