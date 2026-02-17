@@ -20,6 +20,7 @@ interface NavItem {
 
 interface MegaMenuColumn {
   title: string;
+  href?: string;
   links: NavItem[];
   subTitle?: string;
   subLinks?: NavItem[];
@@ -157,6 +158,7 @@ const Header = () => {
         columns: [
           {
             title: "Entryway",
+            href: "/furniture/entryway",
             links: [
               { name: "Shoe Racks", href: "/furniture/shoe-racks" },
               { name: "Console Tables", href: "/furniture/console-tables" },
@@ -750,9 +752,17 @@ const Header = () => {
                       <div className={`${link.megaMenu.image ? 'col-span-3 grid grid-cols-3' : 'col-span-6 grid grid-cols-6'} gap-x-12 gap-y-16`}>
                         {link.megaMenu.columns.map((column: MegaMenuColumn, idx: number) => (
                           <div key={idx} className="space-y-6">
-                            <h4 className="text-[11px] text-gray-400 uppercase tracking-[0.4em] font-bold border-b border-gray-50 pb-3">
-                              {column.title}
-                            </h4>
+                            {column.href ? (
+                              <Link href={column.href} className="block group/title">
+                                <h4 className="text-[11px] text-gray-400 uppercase tracking-[0.4em] font-bold border-b border-gray-50 pb-3 group-hover/title:text-black group-hover/title:border-black transition-all">
+                                  {column.title}
+                                </h4>
+                              </Link>
+                            ) : (
+                              <h4 className="text-[11px] text-gray-400 uppercase tracking-[0.4em] font-bold border-b border-gray-50 pb-3">
+                                {column.title}
+                              </h4>
+                            )}
                             <ul className="space-y-3.5">
                               {column.links.map((item: NavItem, i: number) => (
                                 <li key={i}>

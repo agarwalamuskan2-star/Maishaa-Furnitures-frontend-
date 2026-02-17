@@ -10,6 +10,9 @@ export type Product = {
     image: string;
     type?: string;
     size?: string[];
+    emi?: string;
+    bestSeller?: boolean;
+    discount?: string;
 };
 
 export function useProductFilter(initialProducts: Product[]) {
