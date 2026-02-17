@@ -3,14 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Mail, Lock, Eye, EyeOff, Smartphone, ArrowLeft } from 'lucide-react';
+import { X, Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import { signIn } from "next-auth/react";
-import {
-    InputOTP,
-    InputOTPGroup,
-    InputOTPSeparator,
-    InputOTPSlot,
-} from "@/components/ui/input-otp";
 import { toast } from "sonner";
 
 interface AuthModalProps {
@@ -21,11 +15,7 @@ interface AuthModalProps {
 const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
     const [showPassword, setShowPassword] = useState(false);
     const [isLogin, setIsLogin] = useState(true);
-    // const [isOtpMode, setIsOtpMode] = useState(false);
-    // const [otpSent, setOtpSent] = useState(false);
     const [email, setEmail] = useState("");
-    // const [otpCode, setOtpCode] = useState("");
-    // const [timer, setTimer] = useState(0);
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -42,19 +32,6 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
             }
         }
     }, []);
-
-    /*
-    // Timer logic for resend OTP
-    useEffect(() => {
-        let interval: NodeJS.Timeout;
-        if (timer > 0) {
-            interval = setInterval(() => {
-                setTimer((prev) => prev - 1);
-            }, 1000);
-        }
-        return () => clearInterval(interval);
-    }, [timer]);
-    */
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -98,68 +75,6 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
             setIsLoading(false);
         }
     };
-
-    /*
-    const handleSendOtp = async (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!email) {
-            toast.error("Please enter your email address");
-            return;
-        }
-
-        setIsLoading(true);
-        try {
-            const response = await fetch("/api/auth/otp/send", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email }),
-            });
-
-            if (response.ok) {
-                setOtpSent(true);
-                setTimer(30); // 30 seconds cooldown
-                toast.success("OTP sent successfully to " + email);
-            } else {
-                const error = await response.text();
-                toast.error(error || "Failed to send OTP");
-            }
-        } catch (error) {
-            toast.error("Failed to send OTP. Please try again.");
-        } finally {
-            setIsLoading(false);
-        }
-    };
-
-    const handleVerifyOtp = async (e: React.FormEvent) => {
-        e.preventDefault();
-        if (otpCode.length !== 6) {
-            toast.error("Please enter a valid 6-digit OTP");
-            return;
-        }
-
-        setIsLoading(true);
-        try {
-            const result = await signIn("credentials", {
-                email,
-                otp: otpCode,
-                redirect: false,
-                callbackUrl: callbackUrl
-            });
-
-            if (result?.error) {
-                toast.error(result.error);
-            } else {
-                toast.success("Login successful!");
-                onClose();
-                window.location.reload(); // Refresh to update auth state
-            }
-        } catch (error) {
-            toast.error("An error occurred. Please try again.");
-        } finally {
-            setIsLoading(false);
-        }
-    };
-    */
 
     if (!isOpen) return null;
 
@@ -216,7 +131,7 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                                     required
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="Email/Mobile Number*"
+                                    placeholder="Email Address*"
                                     className="w-full h-12 px-4 border border-gray-200 outline-none text-sm placeholder:text-gray-400 focus:border-black transition-colors"
                                 />
                             </div>
@@ -248,7 +163,7 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                                 </button>
                             </div>
 
-                            {/* Buttons Row - Restored Side-by-Side */}
+                            {/* Buttons Row */}
                             <div className="flex gap-4 pt-4">
                                 <button
                                     type="submit"
@@ -261,7 +176,6 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                         </form>
 
                         {/* Shift Case */}
-                        {/* {!isOtpMode && ( */}
                         <div className="mt-8 text-center">
                             <p className="text-[13px] text-black">
                                 {isLogin ? "Don't have an account?" : "Already have an account?"}{' '}
@@ -273,7 +187,6 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                                 </button>
                             </p>
                         </div>
-                        {/* )} */}
 
                         {/* Social Login */}
                         <div className="mt-8">

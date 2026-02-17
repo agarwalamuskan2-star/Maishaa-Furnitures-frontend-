@@ -42,41 +42,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           throw new Error('Invalid credentials');
         }
 
-        /*
-        // Handle OTP Login
-        if (credentials.otp) {
-          const otpEntry = await (prisma as any).otp.findFirst({
-            where: {
-              email: credentials.email as string,
-              code: credentials.otp as string,
-              expires: { gt: new Date() }
-            }
-          });
 
-          if (!otpEntry) {
-            throw new Error('Invalid or expired OTP');
-          }
-
-          // Delete the OTP after successful use
-          await (prisma as any).otp.delete({ where: { id: otpEntry.id } });
-
-          // Find or create user
-          let user = await prisma.user.findUnique({
-            where: { email: credentials.email as string }
-          });
-
-          if (!user) {
-            user = await prisma.user.create({
-              data: {
-                email: credentials.email as string,
-                name: (credentials.email as string).split('@')[0]
-              }
-            });
-          }
-
-          return user;
-        }
-        */
 
         // Handle Password Login
         if (!credentials?.password) {
