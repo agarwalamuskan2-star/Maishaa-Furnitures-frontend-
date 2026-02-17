@@ -6,9 +6,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
-import { Heart, ChevronRight, ChevronDown } from "lucide-react";
+import { ChevronRight, ChevronDown } from "lucide-react";
 import { useProductFilter, Product } from "@/hooks/use-product-filter";
 import ProductFilterSidebar from "@/components/product/product-filter-sidebar";
+import ProductCardDetailed from "@/components/ui/product-card-detailed";
 
 const EntrywayCollection = () => {
     useEffect(() => {
@@ -109,7 +110,6 @@ const EntrywayCollection = () => {
     const {
         selectedTypes, setSelectedTypes,
         priceRange, setPriceRange,
-        selectedSizes, setSelectedSizes,
         selectedDiscounts, setSelectedDiscounts,
         filteredProducts
     } = useProductFilter(products);
@@ -119,10 +119,9 @@ const EntrywayCollection = () => {
         { label: "Shoe Cabinet", value: "Shoe Rack", count: products.filter(p => p.type === "Shoe Rack").length },
         { label: "Benches", value: "Benches", count: products.filter(p => p.type === "Benches").length },
         { label: "Daybeds & Diwans", value: "Daybeds", count: 0 },
-        { label: "O (1)", value: "0", count: 0 },
         { label: "Center Tables", value: "Center Tables", count: 0 },
         { label: "Swing", value: "Swing", count: products.filter(p => p.type === "Swing").length },
-    ].filter(t => t.count > 0 || ["Daybeds", "0", "Center Tables"].includes(t.value)); // Keep some empty ones for realism as seen in screenshot
+    ].filter(t => t.count > 0 || ["Daybeds", "Center Tables"].includes(t.value));
 
     const categories = [
         { name: "Consoles", image: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=200", href: "/furniture/console-tables" },
@@ -225,41 +224,43 @@ const EntrywayCollection = () => {
                                             transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
                                             viewport={{ once: true }}
                                         >
-                                            <div className="flex flex-col gap-1.5">
-                                                <p className="text-[10px] text-gray-400 font-light tracking-wide uppercase">
-                                                    Price inclusive of all taxes | Pan India Shipping
-                                                </p>
-                                                <p className="text-[11px] text-orange-600 font-medium tracking-wide">
-                                                    EMI starts from ₹ {product.emi}
-                                                </p>
-                                            </div>
-                                        </div>
-                                            </div>
+                                            <ProductCardDetailed
+                                                id={idx + 1000}
+                                                title={product.name}
+                                                price={product.price.startsWith('₹') ? product.price : `₹${product.price}`}
+                                                originalPrice={product.originalPrice ? (product.originalPrice.startsWith('₹') ? product.originalPrice : `₹${product.originalPrice}`) : undefined}
+                                                discount={product.discount}
+                                                emiStart={product.emi}
+                                                mainImage={product.image}
+                                                isMadeToOrder={product.tag === "MADE TO ORDER"}
+                                                isReadyToShip={product.tag === "READY TO SHIP"}
+                                                badges={product.bestSeller ? [{ text: "BEST SELLER", color: "black" }] : []}
+                                            />
                                         </motion.div>
                                     ))}
-                    </div>
-                    ) : (
-                    <div className="flex flex-col items-center justify-center p-32 border border-dashed border-gray-200 rounded-sm bg-gray-50/30">
-                        <p className="text-gray-400 font-light italic text-lg uppercase tracking-widest">No products found</p>
-                        <button
-                            onClick={() => {
-                                setSelectedTypes([]);
-                                setPriceRange([0, 200000]);
-                                setSelectedDiscounts([]);
-                            }}
-                            className="mt-6 text-[11px] font-bold uppercase tracking-widest text-black border-b border-black pb-1 hover:text-orange-600 hover:border-orange-600 transition-colors"
-                        >
-                            Clear all filters
-                        </button>
-                    </div>
+                                </div>
+                            ) : (
+                                <div className="flex flex-col items-center justify-center p-32 border border-dashed border-gray-200 rounded-sm bg-gray-50/30">
+                                    <p className="text-gray-400 font-light italic text-lg uppercase tracking-widest">No products found</p>
+                                    <button
+                                        onClick={() => {
+                                            setSelectedTypes([]);
+                                            setPriceRange([0, 200000]);
+                                            setSelectedDiscounts([]);
+                                        }}
+                                        className="mt-6 text-[11px] font-bold uppercase tracking-widest text-black border-b border-black pb-1 hover:text-orange-600 hover:border-orange-600 transition-colors"
+                                    >
+                                        Clear all filters
+                                    </button>
+                                </div>
                             )}
-                </div>
-        </div>
-                </section >
-            </main >
+                        </div>
+                    </div>
+                </section>
+            </main>
 
-    <Footer />
-        </div >
+            <Footer />
+        </div>
     );
 };
 
