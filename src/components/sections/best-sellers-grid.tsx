@@ -92,7 +92,7 @@ const products = [
         priceValue: 22400,
         category: "Lighting",
         availability: "In Stock",
-        mainImage: "https://images.unsplash.com/photo-1507473888900-52e1adad8dbf?q=80&w=800&auto=format&fit=crop",
+        mainImage: "/images/best-sellers/floor-lamp.png",
         badges: [{ text: "BEST SELLER", color: "black" as const }],
     },
     {
@@ -106,7 +106,7 @@ const products = [
         priceValue: 4500,
         category: "Decor",
         availability: "In Stock",
-        mainImage: "https://images.unsplash.com/photo-1583847268964-b28dc2f51ac9?q=80&w=800&auto=format&fit=crop",
+        mainImage: "/images/best-sellers/cushions.png",
         badges: [{ text: "BEST SELLER", color: "black" as const }],
     },
     {
