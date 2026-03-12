@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const CuratedGalleries = () => {
     return (
-        <section className="bg-white py-12 md:py-16 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+        <section id="stores" className="bg-white py-12 md:py-16 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
             <div className="max-w-[1920px] mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-8 md:mb-12 max-w-3xl mx-auto">

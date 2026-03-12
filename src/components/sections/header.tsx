@@ -104,7 +104,7 @@ const Header = () => {
     { name: "New", href: "/#new-arrivals" },
     {
       name: "Collections",
-      href: "/collections",
+      href: "/#collections",
       megaMenu: {
         columns: [
           {
@@ -354,7 +354,7 @@ const Header = () => {
         ]
       }
     },
-    { name: "Stores", href: "/stores" },
+    { name: "Stores", href: "/#stores" },
     { name: "Warehouse Sale", href: "/warehouse-sale", className: "text-red-500 font-medium" },
   ];
 
