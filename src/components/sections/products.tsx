@@ -1,80 +1,42 @@
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { getProducts } from '@/services/api';
+import { Product } from '@/types/product';
 
 /**
  * PRODUCTS section component for Maishaa Furniture & Furnishings.
  * Features a 3-column grid of product cards with light grey backgrounds.
+ * Data is fetched from the admin panel API.
  */
 
-interface Product {
-  id: string;
-  name: string;
-  price: string;
-  originalPrice?: string;
-  image: string;
-  href: string;
+interface ProductCardProps {
+  product: Product;
 }
 
-const products: Product[] = [
-  {
-    id: 'kwid',
-    name: 'KWID',
-    price: '₹8500.00',
-    image: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/7afecfaa-1d29-4229-8a38-47bf00b11636-maishaafurnitures-com/assets/images/09b782d081d2bc88d3f55f90361b03971-5.webp',
-    href: '/product/kwid',
-  },
-  {
-    id: 'vivid',
-    name: 'VIVID',
-    price: '₹24300.00',
-    originalPrice: '₹27000.00',
-    image: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/7afecfaa-1d29-4229-8a38-47bf00b11636-maishaafurnitures-com/assets/images/f1df7e8fafa4b6f159759d8a74b4c9fa1-6.jpg',
-    href: '/product/vivid',
-  },
-  {
-    id: 'sky-cocoon',
-    name: 'SKY COCOON',
-    price: '₹28000.00',
-    originalPrice: '₹36000.00',
-    image: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/7afecfaa-1d29-4229-8a38-47bf00b11636-maishaafurnitures-com/assets/images/f8cb781a77d099a6fbaf8eebdb2e3e3e1-7.jpg',
-    href: '/product/sky-cocoon',
-  },
-  {
-    id: 'cube',
-    name: 'CUBE',
-    price: '₹22400.00',
-    originalPrice: '₹28000.00',
-    image: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/7afecfaa-1d29-4229-8a38-47bf00b11636-maishaafurnitures-com/assets/images/ab7ce02f8319bb5bbe28ceb6cab90e4e1-8.jpg',
-    href: '/product/cube',
-  },
-  {
-    id: 'mapple',
-    name: 'MAPPLE',
-    price: '₹68000.00',
-    originalPrice: '₹85000.00',
-    image: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/7afecfaa-1d29-4229-8a38-47bf00b11636-maishaafurnitures-com/assets/images/2c01b1d07c2472bea3ead660fcdb6a6b1-9.webp',
-    href: '/product/mapple',
-  },
-  {
-    id: 'cascade',
-    name: 'Cascade',
-    price: '₹20000.00',
-    originalPrice: '₹25000.00',
-    image: 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/7afecfaa-1d29-4229-8a38-47bf00b11636-maishaafurnitures-com/assets/images/1758613119_main-10.png',
-    href: '/product/cascade',
-  },
-];
+const ProductCard = ({ product }: ProductCardProps) => {
+  // Get the main image or first available image
+  const mainImage = product.images?.find(img => img.is_main)?.image 
+    || product.images?.[0]?.image 
+    || '/placeholder-product.jpg';
+  
+  // Format price
+  const displayPrice = product.sale_price && product.sale_price < product.price
+    ? `₹${product.sale_price.toLocaleString('en-IN')}.00`
+    : `₹${product.price.toLocaleString('en-IN')}.00`;
+  
+  const originalPrice = product.sale_price && product.sale_price < product.price
+    ? `₹${product.price.toLocaleString('en-IN')}.00`
+    : undefined;
 
-const ProductCard = ({ product }: { product: Product }) => {
   return (
     <a
-      href={product.href}
+      href={`/product/${product.slug}`}
       className="group block space-y-4 cursor-pointer"
     >
-      <div className="relative overflow-hidden rounded-[12px] w-full h-[320px] transition-all duration-300">
+      <div className="relative overflow-hidden rounded-[12px] w-full h-[320px] transition-all duration-300 bg-gray-100">
         <Image
-          src={product.image}
+          src={mainImage}
           alt={product.name}
           fill
           className="object-contain p-8 transition-transform duration-500 group-hover:scale-105"
@@ -87,11 +49,11 @@ const ProductCard = ({ product }: { product: Product }) => {
         </h4>
         <div className="flex items-center justify-center space-x-2">
           <p className="text-[16px] font-medium text-[#64748b] font-body">
-            {product.price}
+            {displayPrice}
           </p>
-          {product.originalPrice && (
+          {originalPrice && (
             <span className="text-[14px] line-through text-[#94a3b8] font-body">
-              {product.originalPrice}
+              {originalPrice}
             </span>
           )}
         </div>
@@ -100,7 +62,10 @@ const ProductCard = ({ product }: { product: Product }) => {
   );
 };
 
-export default function ProductShowcase() {
+async function ProductShowcase() {
+  // Fetch products from API (server component)
+  const products = await getProducts({ limit: 6 });
+
   return (
     <section className="bg-[#faf7f2] py-16 md:py-24">
       <div className="max-w-[1920px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
@@ -119,11 +84,17 @@ export default function ProductShowcase() {
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        {products.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            {products.map((product) => (
+              <ProductCard key={product.product_id} product={product} />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12 text-gray-500">
+            <p>No products available at the moment.</p>
+          </div>
+        )}
       </div>
     </section>
   );
