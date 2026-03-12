@@ -28,7 +28,7 @@ const products = [
         priceValue: 84900,
         category: "Dining Room",
         availability: "Made to Order",
-        mainImage: "https://images.unsplash.com/photo-1577145745727-427f3f1e721d?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800&auto=format&fit=crop",
         badges: [{ text: "BEST SELLER", color: "black" as const }],
     },
     {
@@ -106,7 +106,7 @@ const products = [
         priceValue: 4500,
         category: "Decor",
         availability: "In Stock",
-        mainImage: "https://images.unsplash.com/photo-1616628198176-23a6f2860985?q=80&w=800&auto=format&fit=crop",
+        mainImage: "https://images.unsplash.com/photo-1583847268964-b28dc2f51ac9?q=80&w=800&auto=format&fit=crop",
         badges: [{ text: "BEST SELLER", color: "black" as const }],
     },
     {
