@@ -3,16 +3,16 @@ import Image from 'next/image';
 
 const roomsData = [
   {
-    title: 'Sofas',
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000&auto=format&fit=crop',
+    title: 'Experience Design',
+    image: '/images/spotlight/spotlight-1.jpg',
   },
   {
-    title: 'Coffee Tables',
-    image: 'https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?q=80&w=1000&auto=format&fit=crop',
+    title: 'Outdoor Collection',
+    image: '/images/spotlight/spotlight-2.jpg',
   },
   {
-    title: 'Dining Tables',
-    image: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=1000&auto=format&fit=crop',
+    title: 'Customer Stories',
+    image: '/images/spotlight/spotlight-3.jpg',
   },
   {
     title: 'Outdoor',

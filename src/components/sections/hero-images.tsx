@@ -11,25 +11,32 @@ const HeroImages = () => {
 
     const slides = [
         {
-            url: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1920&auto=format&fit=crop",
-            alt: "Modern Living Room Furniture",
-            title: "Nila",
-            subtitle: "Paper Mache Lamps",
-            description: "Like the moon, beautifully uneven."
+            url: "/images/hero/hero-1.jpg",
+            alt: "Luxury Bedroom Furniture",
+            title: "Serenity",
+            subtitle: "Bedroom Collection",
+            description: "Designed for peaceful dreams."
         },
         {
-            url: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1920&auto=format&fit=crop",
-            alt: "Contemporary Furniture Collection",
+            url: "/images/hero/hero-2.jpg",
+            alt: "Contemporary Living Room",
             title: "Artisan",
-            subtitle: "Luxury Seating",
+            subtitle: "Living Room Series",
             description: "Elegance in every curve."
         },
         {
-            url: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=1920&auto=format&fit=crop",
-            alt: "Contemporary Bedroom Design",
-            title: "Minimal",
-            subtitle: "Bedroom Series",
-            description: "Designed for peaceful dreams."
+            url: "/images/hero/hero-3.jpg",
+            alt: "Premium Marble Desk",
+            title: "Prestige",
+            subtitle: "Office Collection",
+            description: "Where craftsmanship meets purpose."
+        },
+        {
+            url: "/images/hero/hero-4.jpg",
+            alt: "Outdoor Patio Furniture",
+            title: "Alfresco",
+            subtitle: "Outdoor Living",
+            description: "Bring the indoors out."
         }
     ];
 
