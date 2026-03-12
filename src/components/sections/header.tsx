@@ -95,13 +95,13 @@ const Header = () => {
   const mainHeaderLinks: NavLink[] = [
     { name: "Best Sellers", href: "/best-sellers" },
     { name: "Design Masters", href: "/#design-masters" },
-    { name: "Free Design Services", href: "/design-services" },
+    { name: "Free Design Services", href: "/#features" },
     { name: "Partner Program", href: "/partner" },
   ];
 
   // Secondary Navigation Links with Dropdowns
   const secondaryNavLinks: NavLink[] = [
-    { name: "New", href: "/new" },
+    { name: "New", href: "/#new-arrivals" },
     {
       name: "Collections",
       href: "/collections",

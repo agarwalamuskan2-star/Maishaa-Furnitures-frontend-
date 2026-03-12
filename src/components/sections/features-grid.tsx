@@ -55,7 +55,7 @@ const features = [
 
 export default function FeaturesGrid() {
     return (
-        <section className="py-12 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-[#faf7f2]">
+        <section id="features" className="py-12 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 bg-[#faf7f2]">
             <div className="max-w-[1920px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 {features.map((feature, index) => (
                     <div
