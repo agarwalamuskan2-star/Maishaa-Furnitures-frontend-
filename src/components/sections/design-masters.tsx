@@ -24,7 +24,7 @@ const DesignMasters = () => {
     ];
 
     return (
-        <section className="bg-transparent py-8 md:py-12 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+        <section id="design-masters" className="bg-transparent py-8 md:py-12 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
             <div className="max-w-[1920px] mx-auto">
                 {/* Section Header */}
                 <div className="mb-8 md:mb-10 text-left">
